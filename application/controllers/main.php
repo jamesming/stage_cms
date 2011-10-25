@@ -6,6 +6,7 @@ class Main extends CI_Controller {
    public function __construct(){
         parent::__construct();
         
+        
 				if(  isset( $this->session->userdata['user_id'] )  ){
 					
 					
@@ -1301,7 +1302,7 @@ $this->my_database_model->	create_generic_table($table );
 $fields_array = array(
 
 											'name' => array(
-                                               'type' => 'varchar(255)')
+                                               'type' => 'varchar(255)')                                                                                       
               ); 
               
               

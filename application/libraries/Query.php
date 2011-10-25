@@ -151,12 +151,15 @@ function query(){
 					
 					if( $field == 'id' ){
 						
+	
+
+
 						$carousel_items_images = $this->CI->my_database_model->select_from_table( 
 										$table = 'carousel_items_images', 
 										$select_what = '*', 
 										$where_array = array(
 																		'carousel_item_id'=> $value,
-																		'image_type' => 'hero'
+																		'image_type_id' => 1 // HERO IMAGE
 																		), 
 										$use_order = FALSE, 
 										$order_field = '', 
@@ -182,7 +185,7 @@ function query(){
 										$select_what = '*', 
 										$where_array = array(
 																		'carousel_item_id'=> $value,
-																		'image_type' => 'right_tab'
+																		'image_type_id' => 6 // RIGHT TAB
 																		), 
 										$use_order = FALSE, 
 										$order_field = '', 
@@ -209,7 +212,7 @@ function query(){
 										$select_what = '*', 
 										$where_array = array(
 																		'carousel_item_id'=> $value,
-																		'image_type' => 'tune_in'
+																		'image_type_id' => 3 // TUNE IN
 																		), 
 										$use_order = FALSE, 
 										$order_field = '', 
@@ -228,7 +231,87 @@ function query(){
 							
 							$carousel_item['tune_in_carousel_items_image_id'] = 0;
 							
-						};						
+						};		
+						
+						$carousel_items_images = $this->CI->my_database_model->select_from_table( 
+										$table = 'carousel_items_images', 
+										$select_what = '*', 
+										$where_array = array(
+																		'carousel_item_id'=> $value,
+																		'image_type_id' => 7 // HERO IPHONE
+																		), 
+										$use_order = FALSE, 
+										$order_field = '', 
+										$order_direction = 'desc', 
+										$limit = -1
+										);
+										
+										
+						
+						if( count($carousel_items_images) > 0){				
+							
+							$carousel_item['hero_iphone_carousel_items_image_id'] = $carousel_items_images[0]->id;
+							
+							
+						}else{
+							
+							$carousel_item['hero_iphone_carousel_items_image_id'] = 0;
+							
+						};	
+						
+						$carousel_items_images = $this->CI->my_database_model->select_from_table( 
+										$table = 'carousel_items_images', 
+										$select_what = '*', 
+										$where_array = array(
+																		'carousel_item_id'=> $value,
+																		'image_type_id' => 8 // RIGHT_TAB IPHONE
+																		), 
+										$use_order = FALSE, 
+										$order_field = '', 
+										$order_direction = 'desc', 
+										$limit = -1
+										);
+										
+										
+						
+						if( count($carousel_items_images) > 0){				
+							
+							$carousel_item['right_tab_iphone_carousel_items_image_id'] = $carousel_items_images[0]->id;
+							
+							
+						}else{
+							
+							$carousel_item['right_tab_iphone_carousel_items_image_id'] = 0;
+							
+						};		
+						
+						
+						
+						$carousel_items_images = $this->CI->my_database_model->select_from_table( 
+										$table = 'carousel_items_images', 
+										$select_what = '*', 
+										$where_array = array(
+																		'carousel_item_id'=> $value,
+																		'image_type_id' => 9 // TUNE IN IPHONE
+																		), 
+										$use_order = FALSE, 
+										$order_field = '', 
+										$order_direction = 'desc', 
+										$limit = -1
+										);
+										
+										
+						
+						if( count($carousel_items_images) > 0){				
+							
+							$carousel_item['tune_in_iphone_carousel_items_image_id'] = $carousel_items_images[0]->id;
+							
+							
+						}else{
+							
+							$carousel_item['tune_in_iphone_carousel_items_image_id'] = 0;
+							
+						};																									
 						
 	
 					};
@@ -248,6 +331,16 @@ function query(){
 	}
 
 
+
+
+
+//function get_carousel_items_image(
+//	$carousel_item_id,
+//	$image_type_id	
+//){
+//	
+//	return $carousel_items_image_id
+//}
 
 
 /**

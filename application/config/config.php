@@ -24,7 +24,7 @@ $subdomain = $urlParts[0];
 if( $_SERVER['HTTP_HOST'] == 'cms.mynuvotv.com' ){
 	$config['base_url']	= "http://cms.mynuvotv.com";	
 }elseif( $_SERVER['HTTP_HOST'] == 'localhost' ){
-	$config['base_url']	= "http://localhost/cms";
+	$config['base_url']	= "http://localhost/stage_cms";
 };
 
 
