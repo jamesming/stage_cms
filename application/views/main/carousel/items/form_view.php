@@ -188,15 +188,15 @@ display:none;
 					<div  class=' image_assets' >
 						
 						
-							<div image_type='hero' image_type_id='7' class='float_left image_div'  id='image_carousel_item_hero_iphone' carousel_items_image_id='<?php  	echo $data['carousel_items'][0]['hero_iphone_carousel_items_image_id'] ?>'>
+							<div image_type='hero_iphone' image_type_id='7' class='float_left image_div'  id='image_carousel_item_hero_iphone' carousel_items_image_id='<?php  	echo $data['carousel_items'][0]['hero_iphone_carousel_items_image_id'] ?>'>
 							</div>
 							
-							<div  image_type='right_tab' image_type_id='8' class='float_left image_div'   id='image_carousel_item_right_tab_iphone'  carousel_items_image_id='<?php  	echo $data['carousel_items'][0]['right_tab_iphone_carousel_items_image_id'] ?>'>
+							<div  image_type='right_tab_iphone' image_type_id='8' class='float_left image_div'   id='image_carousel_item_right_tab_iphone'  carousel_items_image_id='<?php  	echo $data['carousel_items'][0]['right_tab_iphone_carousel_items_image_id'] ?>'>
 								
 							</div>	
 							
 							
-							<div  image_type='tune_in' image_type_id='9' class='float_left image_div'   id='image_carousel_item_tune_in_iphone'  carousel_items_image_id='<?php  	echo $data['carousel_items'][0]['tune_in_iphone_carousel_items_image_id'] ?>'>
+							<div  image_type='tune_in_iphone' image_type_id='9' class='float_left image_div'   id='image_carousel_item_tune_in_iphone'  carousel_items_image_id='<?php  	echo $data['carousel_items'][0]['tune_in_iphone_carousel_items_image_id'] ?>'>
 								
 							</div>	
 							
