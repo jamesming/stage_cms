@@ -387,7 +387,7 @@ class Main extends CI_Controller {
 		    
 		    case 'hero_iphone':
 	
-						$new_width  = '317';
+						$new_width  = '100';
 						
 		    break;
 		    
@@ -401,7 +401,7 @@ class Main extends CI_Controller {
 		    
 		    case 'right_tab_border_iphone':
 	
-						$new_width  = '300';
+						$new_width  = '77';
 						
 		    break;		    
 		    
