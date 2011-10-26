@@ -120,7 +120,7 @@ $(document).ready(function() {
 			$(this).click(function(event) {	
 
 						<?php if( $_SERVER['HTTP_HOST'] == 'cms.mynuvotv.com' ){?>
-												open('http://stage.mynuvotv.com?date=' + $(this).parent().parent().attr('year') + '-' + $(this).parent().parent().attr('month') + '-' + $(this).parent().parent().attr('day')  , 1 );
+												open('http://mynuvotv.com?date=' + $(this).parent().parent().attr('year') + '-' + $(this).parent().parent().attr('month') + '-' + $(this).parent().parent().attr('day')  , 1 );
 						
 						<?php }else{?>
 												open('http://tv.localhost?date=' + $(this).parent().parent().attr('year') + '-' + $(this).parent().parent().attr('month') + '-' + $(this).parent().parent().attr('day')  , 1 );
