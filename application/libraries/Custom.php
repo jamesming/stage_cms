@@ -302,7 +302,7 @@ function prepare_calendar($get_array){
 	
 		$polls_answers = $this->CI->my_database_model->select_from_table( 
 														$table = 'polls_answers', 
-														$select_what = 'polls_responders.email, polls_questions.question, polls_answers.*',
+														$select_what = 'polls_responders.email, polls_questions.question, polls_answers.answer',
 														$where_array = array(), 
 														$use_order = TRUE, 
 														$order_field = 'polls_answers.polls_responder_id, polls_answers.polls_question_id', 

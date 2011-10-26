@@ -653,6 +653,24 @@ function create_iframe_html_from_youtube_video_id( $youtube_video_id, $width, $h
 	
 	
 	
+	
+	
+		public function arr_to_csv_line($arr) {
+			$line = array();
+			foreach ($arr as $v) {
+				$line[] = is_array($v) ? self::arr_to_csv_line($v) : '"' . str_replace('"', '""', $v) . '"';
+			}
+			return implode(",", $line);
+		}
+	
+		public function arr_to_csv($arr) {
+			$lines = array();
+			foreach ($arr as $v) {
+				$lines[] = self::arr_to_csv_line($v);
+			}
+			return implode("\n", $lines);
+		}	
+	
 }
 /* End of file Tool.php */ 
 /* Location: \system\application\libraries\Tools.php */

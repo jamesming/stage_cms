@@ -177,6 +177,11 @@ Thank you! We appreciate your feedback on Curvy Girls as we strive to bring nuvo
 		
 		$data['responses'] = $this->custom->get_responses();
 			
+			$data['responses'] = $this->tools->object_to_array($data['responses']);
+			
+			
+			$data['responses'] = $this->tools->arr_to_csv_line($data['responses'] );
+			
 			
 			echo '<pre>';print_r(  $data['responses']  );echo '</pre>';  exit;
 			
