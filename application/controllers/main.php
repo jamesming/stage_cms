@@ -385,6 +385,26 @@ class Main extends CI_Controller {
 						
 		    break;
 		    
+		    case 'hero_iphone':
+	
+						$new_width  = '317';
+						
+		    break;
+		    
+		    
+		    case 'right_tab_iphone':
+	
+						$new_width  = '77';
+						
+		    break;
+		    
+		    
+		    case 'tune_in_iphone':
+	
+						$new_width  = '300';
+						
+		    break;		    
+		    
 		  }
 
 	$new_height = $this->tools->get_new_size_of ($what = 'height', $based_on_new = $new_width, $orig_width = $width_of_file, $orig_height = $height_of_file );

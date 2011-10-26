@@ -53,7 +53,8 @@ float:left;
 	
 	?>
 <form id='uploadForm' 
-	name='uploadForm' action='<?php echo  base_url();   ?>index.php/main/upload_carousel_image' 
+	name='uploadForm' 
+	action='<?php echo  base_url();   ?>index.php/main/upload_carousel_image' 
 	method='post' 
 	enctype='multipart/form-data'>	
 	<div id='input_container'    >
