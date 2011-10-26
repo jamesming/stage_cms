@@ -196,7 +196,7 @@ display:none;
 							</div>	
 							
 							
-							<div  image_type='tune_in_iphone' image_type_id='9' class='float_left image_div'   id='image_carousel_item_tune_in_iphone'  carousel_items_image_id='<?php  	echo $data['carousel_items'][0]['tune_in_iphone_carousel_items_image_id'] ?>'>
+							<div  image_type='right_tab_border_iphone' image_type_id='9' class='float_left image_div'   id='image_carousel_item_tune_in_iphone'  carousel_items_image_id='<?php  	echo $data['carousel_items'][0]['tune_in_iphone_carousel_items_image_id'] ?>'>
 								
 							</div>	
 							

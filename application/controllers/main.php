@@ -399,7 +399,7 @@ class Main extends CI_Controller {
 		    break;
 		    
 		    
-		    case 'tune_in_iphone':
+		    case 'right_tab_border_iphone':
 	
 						$new_width  = '300';
 						
