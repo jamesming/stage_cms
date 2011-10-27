@@ -106,7 +106,12 @@ function query(){
 
 	    break;
 	    
+	    case 'delete_feature_item':
+	    
+ 
+				$db_response = 'This feature is not built yet.';
 
+	    break;
 		};
 
 		return $db_response;

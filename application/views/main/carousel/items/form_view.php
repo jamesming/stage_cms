@@ -62,7 +62,7 @@ form#image_carousel_item_form div#image_carousel_item_hero_iphone{
 	background-repeat: no-repeat;
 	border:1px dotted gray;
 	width:317px;
-	height:194px;
+	height:476px;
 	margin-left: 10px;
 }
 form#image_carousel_item_form div#image_carousel_item_right_tab_iphone{
@@ -120,7 +120,11 @@ padding:10px 0px 0px 0px;
 form#image_carousel_item_form #submit{
 width:70px;	
 }
-
+form#image_carousel_item_form	 #iphone_directTo_div{
+	margin-left:30px;
+	float:left;
+	text-align:left
+}
 #dialog{
 display:none;	
 }
@@ -133,6 +137,7 @@ display:none;
 	margin-top:13px;
 	margin-left:5px;
 }
+
 </style>
 </head>
 
@@ -199,8 +204,12 @@ display:none;
 							<div  image_type='right_tab_border_iphone' image_type_id='9' class='float_left image_div'   id='image_carousel_item_right_tab_border_iphone'  carousel_items_image_id='<?php  	echo $data['carousel_items'][0]['tune_in_iphone_carousel_items_image_id'] ?>'>
 								
 							</div>	
-							
-												
+
+							<div   id='iphone_directTo_div' >	
+								<input name="iphone_directTo" type="radio" value="1"> Internal<br />
+								<input name="iphone_directTo" type="radio" value="2">	External<br />
+								<input name="iphone_directTo" type="radio" value="3">	None
+							</div>
 					</div>
 
 				</td>
@@ -322,6 +331,7 @@ function submit_inputs(close_fancyzoom){
 						set_what_array: $('#image_carousel_item_form').serialize(),
 						id:'<?php echo $data['carousel_items'][0]['id']    ?>'
 						},function(xml) {
+
 
 							var db_response = $(xml).find('db_response').text();
 							

@@ -76,13 +76,13 @@ display:none;
 			<tr>
 				<td  class='main_table ' > Name
 				</td>
-				<td  class='main_table '><input name="name" id="" type="text" value="">
+				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo $data['feature_items'][0]->name    ?>">
 				</td>
 			</tr>
 			<tr>
 				<td  class='main_table '> Title
 				</td>
-				<td  class='main_table '><input name="title" id="" type="text" value="">
+				<td  class='main_table '><input name="title" id="" type="text" value="<?php echo $data['feature_items'][0]->title    ?>">
 				</td>
 			</tr>
 
@@ -90,7 +90,7 @@ display:none;
 			<tr>
 				<td   class='main_table ' colspan=2>
 					<div  id='textarea_div'   >
-							<textarea  class=' clearfix' name='blurb' id='text_area'></textarea>
+							<textarea  class=' clearfix' name='content' id='text_area'><?php echo $data['feature_items'][0]->content    ?></textarea>
 					</div>
 				</td>
 			</tr>	
@@ -103,7 +103,7 @@ display:none;
 			<tr>
 				<td class='main_table image_assets' colspan=2>
 					<div  class=' image_assets' >
-							<div image_type='feature' image_type_id='4' class='float_left image_div'  id='image_feature_item_feature' feature_items_image_id=''>
+							<div image_type='feature_large' image_type_id='17' class='float_left image_div'  id='image_feature_item_feature' feature_items_image_id=''>
 							</div>
 							
 					
@@ -171,7 +171,7 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 
 
 				$('#submit').css({cursor:'pointer'}).click(function(event) {
-					
+
 					submit_inputs(
 						close_fancyzoom = 1
 					);
@@ -228,12 +228,12 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 function submit_inputs(close_fancyzoom){
 
 					$("#text_area").val( mbox.get_html() );
-	
+
 					$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
 						table:'feature_items',
 						crud:'update',
 						set_what_array: $('#image_feature_item_form').serialize(),
-						id:''
+						id:'<?php echo $data['feature_items'][0]->id    ?>'
 						},function(xml) {
 
 							//var db_response = $(xml).find('db_response').text();
@@ -257,7 +257,7 @@ function open_dialogue_upload_image( feature_items_image_id, image_type, image_t
 
 		$("#iframe_src_for_image")
 		.css({width:'350px',height:'80px'})
-		.attr('src','<?php echo base_url();    ?>index.php/main/upload_feature_image_form?feature_item_id=&feature_items_image_id=' + feature_items_image_id +'&image_type='+image_type +'&image_type_id='+image_type_id);
+		.attr('src','<?php echo base_url();    ?>index.php/main/upload_image_form?what_item=feature&feature_item_id=<?php echo $data['feature_items'][0]->id    ?>&feature_items_image_id=' + feature_items_image_id +'&image_type='+image_type +'&image_type_id='+image_type_id);
 
 			
 		var width_of_dialog = 410;

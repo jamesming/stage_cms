@@ -106,6 +106,8 @@ class Main extends CI_Controller {
 
 				};
 
+
+
 				$this->load->view('main/index_view', 
 					array('data' => $data)
 				);
@@ -150,7 +152,6 @@ class Main extends CI_Controller {
 				$data['feature_items'] = $this->query->get_feature_items(
 							$where_array = array( 'id' => $this->input->get('feature_item_id')) 
 				);	
-				
 
 				$this->load->view('main/feature/items/form_view', 
 					array( 'data' => $data )
@@ -197,6 +198,7 @@ class Main extends CI_Controller {
 
 	public function ajax_update(){
 
+
 		$db_response = $this->query->update( $this->input->post()  );
 
 		header("Content-type: text/xml");	
@@ -214,6 +216,7 @@ class Main extends CI_Controller {
 		<?php     
 
 	}
+
 	/**
 	 * upload_carousel_image_form
 	 * 
@@ -1281,10 +1284,141 @@ submitted
 <?php     
 }
 
+
+
+
+
+
+
+/**
+	 * upload_image_form
+	 * 
+	 * @package BackEnd
+	 * @author James Ming <jamesming@gmail.com>
+	 * @path /index.php/home/upload_image_form
+	 * @access public
+	 */
+	 
+
+
+	public function upload_image_form(){
+		
+		$what_item = $this->input->get('what_item');
+
+		$data= array(
+			$what_item.'_item_id' => $this->input->get($what_item.'_item_id'),
+			$what_item.'_items_image_id' => $this->input->get($what_item.'_items_image_id'),
+			'image_type' => $this->input->get('image_type'),
+			'image_type_id' => $this->input->get('image_type_id')
+		);	
+		
+			
+		$this->load->view('main/'.
+		$what_item
+		.'/items/upload_image_form_view', array('data' => $data) );
+	
+  
+
+	}	
+
+
+
+
+
+/**
+	 * upload_image
+	 *
+	 * {@source }
+	 * @package BackEnd
+	 * @author James Ming <jamesming@gmail.com>
+	 * @path /index.php/main/upload_image
+	 * @access public
+	 **/ 
+	
+	function upload_image(){
+		
+			$what_item = $this->input->post('what_item');
+
+
+			$table = $what_item.'_items_images';
+			
+		  $where_array = array('id' => $this->input->post($what_item.'_item_id' ));
+
+		  if( $this->my_database_model->check_if_exist($where_array, $table)){
+
+
+			}else{
+			
+				$insert_what = array(
+					$what_item.'_item_id' => $this->input->post($what_item.'_item_id'),
+					'image_type' => $this->input->post('image_type'),
+					'image_type_id' => $this->input->post('image_type_id')
+				);
+				                  
+				
+				$items_image_id = $this->my_database_model->insert_table(
+									$table, 
+									$insert_what
+									); 	
+			}
+
+		
+		$path_array = array(
+			'folder'=> $what_item.'_items_images', 
+			$what_item.'_items_image_id'=> $items_image_id
+		);
+		
+		$upload_path = $this->tools->set_directory_for_upload( $path_array );
+		
+		$config['upload_path'] = './' . $upload_path;
+		$config['allowed_types'] = 'bmp|jpeg|gif|jpg|png';
+		$config['overwrite'] = 'TRUE';
+		$config['file_name'] = 'image.png';
+		
+		$this->load->library('upload', $config);
+
+	
+		if ( ! $this->upload->do_upload("Filedata")){
+					?>
+							<script type="text/javascript" language="Javascript">
+								
+								alert(<?php echo $this->upload->display_errors();    ?>);
+								
+							</script>
+					 		
+					<?php 
+					exit;	
+		}	
+		else{	
+			
+					?>
+						
+									<script type="text/javascript" language="Javascript">
+												alert('so far so good.');
+												//document.location = '<?php echo base_url()    ?>index.php/main/resize_images?image_type=<?php echo  $this->input->post('image_type')   ?>&image_id=<?php echo $this->input->post($what_item.'_item_id')    ?>';		
+									</script>
+					 	
+						
+					<?php
+			
+		}				
+		
+	
+	
+	}
+
+
+
+
+
+
+
+
+
 function t(){
 	
 	
-$table = 'feature_items';
+$table = 'feature_items_images';
 
 $this->my_database_model->	create_generic_table($table );
 
@@ -1292,64 +1426,67 @@ $this->my_database_model->	create_generic_table($table );
 
 $fields_array = array(
 
-											'name' => array(
-                                               'type' => 'varchar(255)'),
-                                               
-                      'feature_format_id' => array(
-                                               'type' => 'int(11)'),
-                      'title' => array(
-                                               'type' => 'varchar(255)'),
-                      'content' => array(
-                                               'type' => 'blob'),
-                      'video' => array(
-                                               'type' => 'blob')
-
+											'image_type' => array(
+                                               'type' => 'varchar(255)')
               ); 
-              
-              
-              
-$this->my_database_model->add_column_to_table_if_exist(
-	$table, 
-	$fields_array
-);    	
-	
-$table = 'feature_formats';
-
-$this->my_database_model->	create_generic_table($table );
-
-
-
-$fields_array = array(
-
-											'name' => array(
-                                               'type' => 'varchar(255)')                                                                                       
-              ); 
-              
-              
               
 $this->my_database_model->add_column_to_table_if_exist(
 	$table, 
 	$fields_array
 );
-
-$table = 'feature_items_images';
+              
+$table = 'showpage_items_images';
 
 $this->my_database_model->	create_generic_table($table );
 
+
+
 $fields_array = array(
-                      'feature_item_id' => array(
-                                               'type' => 'int(11)')
+
+											'image_type' => array(
+                                               'type' => 'varchar(255)')
+              );  
+              
+$this->my_database_model->add_column_to_table_if_exist(
+	$table, 
+	$fields_array
+);                           
+              
+$table = 'showpage_cast_items_images';
+
+$this->my_database_model->	create_generic_table($table );
+
+
+
+$fields_array = array(
+
+											'image_type' => array(
+                                               'type' => 'varchar(255)')
               ); 
               
 $this->my_database_model->add_column_to_table_if_exist(
 	$table, 
 	$fields_array
-);   
-
+);              
        
+$table = 'showpage_feature_items_images';
 
+$this->my_database_model->	create_generic_table($table );
+
+
+
+$fields_array = array(
+
+											'image_type' => array(
+                                               'type' => 'varchar(255)')
+              ); 
+              
+$this->my_database_model->add_column_to_table_if_exist(
+	$table, 
+	$fields_array
+);              
 }
-	  
+
 }
 /* End of file main.php */
 /* Location: ./application/controllers/main.php */

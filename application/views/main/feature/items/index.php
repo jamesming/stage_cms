@@ -25,7 +25,25 @@
 					border-bottom:1px solid lightgray;
 					padding:5px;
 					}
-			
+								#feature_item_outside_container   .feature_item_row .name_of{
+								width:110px;
+								font-weight:bold;
+								font-size:20px;
+								padding-top:0px;
+								text-align:center;
+								color:gray;
+								}
+								
+	
+											
+								#feature_item_outside_container   .feature_item_row .feature_item_trash{
+								width:46px;
+								padding-top:90px;
+								}
+								
+											#feature_item_outside_container   .feature_item_row .feature_item_trash img{
+											width:30px;
+											}	
 
 		</style>
 		<img  class='clearfix ' href='#fancy_zoom_div'  title='Add Feature Item'  id='addFeatureItem' src='<?php echo base_url()    ?>images/add.png'    />
@@ -37,13 +55,19 @@
 				
 				<?php
 				
-				echo '<pre>';print_r(  $data['feature_items']   );echo '</pre>'; 
-				
+		
 				 foreach( $data['feature_items']  as  $feature_item ){?>
 				
 					<div  class='clearfix feature_item_row'>
 						
-test
+						
+						<div  class='float_left name_of '  feature_item_id='<?php echo $data['feature_items'][0]->id   ?>'  href='#fancy_zoom_div' >
+							edit
+						</div>
+
+						<div  class='float_left  feature_item_trash' >
+							<img src='<?php   echo base_url()  ?>images/trash.gif'   feature_item_id='<?php echo $data['feature_items'][0]->id   ?>' >
+						</div>			
 					
 					</div>
 					
@@ -84,6 +108,9 @@ test
 
 
 					  if(  confirm('Do you really want to delete this item?')  ){
+					  	
+					  	
+
 									$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
 										table:'feature_items',
 										crud:'delete_feature_item',

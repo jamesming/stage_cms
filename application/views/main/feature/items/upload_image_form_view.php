@@ -53,14 +53,14 @@ float:left;
 	
 	?>
 <form id='uploadForm' 
-	name='uploadForm' action='<?php echo  base_url();   ?>index.php/main/upload_feature_image' 
+	name='uploadForm' action='<?php echo  base_url();   ?>index.php/main/upload_image' 
 	method='post' 
 	enctype='multipart/form-data'>	
 	<div id='input_container'    >
 			<div  class='first float_left' >
 				<input id='select_file' type="file" name="Filedata" size="20"      />
 
-				<input name="feature_items_image_id" id="feature_items-image_id" type="hidden" value="<?php 
+				<input name="items_image_id"  type="hidden" value="<?php 
 				
 				if( isset($data['feature_item_id'])){
 				echo $data['feature_items_image_id'];
@@ -69,7 +69,8 @@ float:left;
 				};
 				
 				    ?>">
-				<input name="feature_item_id" id="feature_item_id" type="hidden" value="<?php echo $data['feature_item_id']    ?>">
+				<input name="what_item" type="hidden" value="feature">
+				<input name="item_id" id="feature_item_id" type="hidden" value="<?php echo $data['feature_item_id']    ?>">
 				<input name="image_type" id="image_type" type="hidden" value="<?php echo $data['image_type']    ?>">
 				<input name="image_type_id" id="image_type_id" type="hidden" value="<?php echo $data['image_type_id']    ?>">
 
