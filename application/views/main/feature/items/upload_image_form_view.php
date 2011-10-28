@@ -62,7 +62,7 @@ float:left;
 
 				<input name="items_image_id"  type="hidden" value="<?php 
 				
-				if( isset($data['feature_item_id'])){
+				if( isset($data['feature_items_image_id'])){
 				echo $data['feature_items_image_id'];
 				}else{
 				echo '0';
@@ -70,7 +70,7 @@ float:left;
 				
 				    ?>">
 				<input name="what_item" type="hidden" value="feature">
-				<input name="item_id" id="feature_item_id" type="hidden" value="<?php echo $data['feature_item_id']    ?>">
+				<input name="feature_item_id" id="feature_item_id" type="hidden" value="<?php echo $data['feature_item_id']    ?>">
 				<input name="image_type" id="image_type" type="hidden" value="<?php echo $data['image_type']    ?>">
 				<input name="image_type_id" id="image_type_id" type="hidden" value="<?php echo $data['image_type_id']    ?>">
 

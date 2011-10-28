@@ -216,47 +216,7 @@ font-weight:normal;
 }
 
 
-				
 
-#working_area_wrapper, .working_area_wrapper{
-	margin:0px 0px 0px 20px;
-	padding:10px 0px 10px 0px;
-	clear:both;
-}
-
-.label_header{
-	background-image:url(<?php echo base_url()    ?>images/dotted_line.png);
-  background-repeat:repeat-x;
-	background-position: 0 38px;
-	font-size:20px;
-	padding:10px 0px 3px 0px;
-	color:gray;
-	width:auto;
-	display:inline;
-    padding: 10px 0 14px;
-}
-.label_description{
-	font-size:14px;
-	padding:20px 20px 15px 0px;
-	color:gray;
-}
-
-
-.table_middle_left_section{
-	border-left:1px solid gray;
-	border-top:1px solid gray;	
-	width:706px;
-}
-		.table_middle_left_section tr.first_row td{
-			font-weight:bold;
-			background:#D8D8D8;
-		}
-		.table_middle_left_section td{
-			width:25%;
-			border-right:1px solid gray;
-			border-bottom:1px solid gray;
-			padding:0px 5px;
-		}	
 </style>
 
 

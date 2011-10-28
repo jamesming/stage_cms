@@ -18,6 +18,9 @@ CREATE TABLE IF NOT EXISTS `feature_items_images` (
   `updated` datetime DEFAULT NULL,
   `feature_item_id` int(11) DEFAULT NULL,
   `image_type_id` int(11) NOT NULL,
+  `image_type` varchar(255) DEFAULT NULL,
+  `width` int(11) NOT NULL,  
+  `height` int(11) NOT NULL,  
   PRIMARY KEY (`id`),
   KEY `feature_item_id` (`feature_item_id`),
   KEY `image_type_id` (`image_type_id`)
@@ -42,6 +45,9 @@ CREATE TABLE IF NOT EXISTS `showpage_items_images` (
   `updated` datetime DEFAULT NULL,
   `showpage_item_id` int(11) DEFAULT NULL,
   `image_type_id` int(11) NOT NULL,
+  `image_type` varchar(255) DEFAULT NULL,
+  `width` int(11) NOT NULL,  
+  `height` int(11) NOT NULL,  
   PRIMARY KEY (`id`),
   KEY `showpage_item_id` (`showpage_item_id`),
   KEY `image_type_id` (`image_type_id`)
@@ -73,6 +79,9 @@ CREATE TABLE IF NOT EXISTS `showpage_feature_items_images` (
   `updated` datetime DEFAULT NULL,
   `showpage_feature_item_id` int(11) DEFAULT NULL,
   `image_type_id` int(11) NOT NULL,
+  `image_type` varchar(255) DEFAULT NULL,
+  `width` int(11) NOT NULL,  
+  `height` int(11) NOT NULL,  
   PRIMARY KEY (`id`),
   KEY `showpage_feature_item_id` (`showpage_feature_item_id`),
   KEY `image_type_id` (`image_type_id`)
@@ -97,6 +106,9 @@ CREATE TABLE IF NOT EXISTS `showpage_cast_items_images` (
   `updated` datetime DEFAULT NULL,
   `showpage_cast_item_id` int(11) DEFAULT NULL,
   `image_type_id` int(11) NOT NULL,
+  `image_type` varchar(255) DEFAULT NULL,
+  `width` int(11) NOT NULL,  
+  `height` int(11) NOT NULL,  
   PRIMARY KEY (`id`),
   KEY `showpage_cast_item_id` (`showpage_cast_item_id`),
   KEY `image_type_id` (`image_type_id`)

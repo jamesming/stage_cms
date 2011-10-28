@@ -61,12 +61,12 @@
 					<div  class='clearfix feature_item_row'>
 						
 						
-						<div  class='float_left name_of '  feature_item_id='<?php echo $data['feature_items'][0]->id   ?>'  href='#fancy_zoom_div' >
+						<div  class='float_left name_of '  feature_item_id='<?php echo $data['feature_items'][0]['id']   ?>'  href='#fancy_zoom_div' >
 							edit
 						</div>
 
 						<div  class='float_left  feature_item_trash' >
-							<img src='<?php   echo base_url()  ?>images/trash.gif'   feature_item_id='<?php echo $data['feature_items'][0]->id   ?>' >
+							<img src='<?php   echo base_url()  ?>images/trash.gif'   feature_item_id='<?php echo $data['feature_items'][0]['id']   ?>' >
 						</div>			
 					
 					</div>

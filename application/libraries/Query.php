@@ -663,7 +663,7 @@ function query(){
 	
 	function get_feature_items( $where_array = array() ){
 		
-			$feature_items = $this->CI->my_database_model->select_from_table( 
+			$feature_items_raw = $this->CI->my_database_model->select_from_table( 
 			$table = 'feature_items', 
 			$select_what = '*', 
 			$where_array, 
@@ -672,7 +672,61 @@ function query(){
 			$order_direction = 'desc', 
 			$limit = -1
 			);
+			
 
+
+			$feature_items_raw = $this->CI->tools->object_to_array($feature_items_raw);
+			
+			foreach( $feature_items_raw  as  $keyA => $feature_item_raw){
+
+				foreach( $feature_item_raw  as  $field => $value){
+					
+					$feature_item[$field] = $value;
+					
+					if( $field == 'id' ){
+
+						
+						$feature_items_images = $this->CI->my_database_model->select_from_table( 
+										$table = 'feature_items_images', 
+										$select_what = '*', 
+										$where_array = array(
+																		'feature_item_id'=> $value,
+																		'image_type_id' => '17'
+																		), 
+										$use_order = FALSE, 
+										$order_field = '', 
+										$order_direction = 'desc', 
+										$limit = -1
+										);
+										
+				
+						
+						if( count($feature_items_images) > 0){				
+							
+							$feature_item['feature_items_image_id'] = $feature_items_images[0]->id;
+							
+							
+						}else{
+							
+							$feature_item['feature_items_image_id'] = 0;
+							
+						};
+						
+
+	
+					};
+					
+					
+
+				};
+				
+		
+				$feature_items[] = $feature_item;
+				
+			};
+			
+
+			
 			return $feature_items;
 			
 	}

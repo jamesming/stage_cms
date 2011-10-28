@@ -152,6 +152,7 @@ class Main extends CI_Controller {
 				$data['feature_items'] = $this->query->get_feature_items(
 							$where_array = array( 'id' => $this->input->get('feature_item_id')) 
 				);	
+				
 
 				$this->load->view('main/feature/items/form_view', 
 					array( 'data' => $data )
@@ -1312,7 +1313,7 @@ submitted
 			'image_type_id' => $this->input->get('image_type_id')
 		);	
 		
-			
+
 		$this->load->view('main/'.
 		$what_item
 		.'/items/upload_image_form_view', array('data' => $data) );
@@ -1338,11 +1339,13 @@ submitted
 	function upload_image(){
 		
 			$what_item = $this->input->post('what_item');
-
+			$items_image_id = $this->input->post('items_image_id' );
 
 			$table = $what_item.'_items_images';
 			
-		  $where_array = array('id' => $this->input->post($what_item.'_item_id' ));
+		  $where_array = array(
+		  	'id' => $items_image_id
+		  );
 
 		  if( $this->my_database_model->check_if_exist($where_array, $table)){
 
@@ -1394,8 +1397,7 @@ submitted
 					?>
 						
 									<script type="text/javascript" language="Javascript">
-												alert('so far so good.');
-												//document.location = '<?php echo base_url()    ?>index.php/main/resize_images?image_type=<?php echo  $this->input->post('image_type')   ?>&image_id=<?php echo $this->input->post($what_item.'_item_id')    ?>';		
+												document.location = '<?php echo base_url()    ?>index.php/main/resize_images?what_item=<?php  echo $what_item   ?>&image_type=<?php echo  $this->input->post('image_type')   ?>&image_id=<?php echo $items_image_id    ?>';		
 									</script>
 					 	
 						
@@ -1409,6 +1411,72 @@ submitted
 
 
 
+	
+/**
+	 * resize_images
+	 *
+	 * {@source }
+	 * @package BackEnd
+	 * @author James Ming <jamesming@gmail.com>
+	 * @path /index.php/main/resize_images
+	 * @access public
+	 **/ 
+	 
+	public function resize_images(){
+		
+	$what_item = $this->input->get('what_item');
+	$image_type = $this->input->get('image_type');
+	$image_id = $this->input->get('image_id');
+	
+	$dir_path = 'uploads/'.$what_item.'_items_images/'.$image_id; 
+		
+	$image_information = getimagesize($dir_path . '/' . 'image.png');
+	
+	$width_of_file = $image_information[0];
+	$height_of_file = $image_information[1];
+	
+	
+	
+		$this->my_database_model->update_table_where(
+								$table = $what_item.'_items_images', 
+								$where_array = array(
+								'id'=> $image_id
+								),
+								$set_what_array = array(
+									'width'=> $width_of_file,
+									'height'=> $height_of_file
+									)
+								);	
+
+			switch ($image_type ) {
+	
+		    case 'feature_large':
+	
+						$new_width  = '295';
+						
+		    break;
+
+		  }
+
+	$new_height = $this->tools->get_new_size_of ($what = 'height', $based_on_new = $new_width, $orig_width = $width_of_file, $orig_height = $height_of_file );
+
+
+	$this->tools->clone_and_resize_append_name_of(
+		$appended_suffix = '_tiny', 
+		$full_path = $dir_path . '/' . 'image.png', 
+		$width = $new_width, 
+		$height = $new_height
+		);
+						
+			?>
+				<script type="text/javascript" language="Javascript">
+							window.parent.location.reload(true);		
+				</script>
+ 
+			<?php 						
+						
+						
+	}
 
 
 
@@ -1426,8 +1494,11 @@ $this->my_database_model->	create_generic_table($table );
 
 $fields_array = array(
 
-											'image_type' => array(
-                                               'type' => 'varchar(255)')
+											'width' => array(
+                                               'type' => 'int(11)'),
+
+											'height' => array(
+                                               'type' => 'int(11)')                                               
               ); 
               
 $this->my_database_model->add_column_to_table_if_exist(
@@ -1443,9 +1514,12 @@ $this->my_database_model->	create_generic_table($table );
 
 $fields_array = array(
 
-											'image_type' => array(
-                                               'type' => 'varchar(255)')
-              );  
+											'width' => array(
+                                               'type' => 'int(11)'),
+
+											'height' => array(
+                                               'type' => 'int(11)')                                               
+              ); 
               
 $this->my_database_model->add_column_to_table_if_exist(
 	$table, 
@@ -1460,8 +1534,11 @@ $this->my_database_model->	create_generic_table($table );
 
 $fields_array = array(
 
-											'image_type' => array(
-                                               'type' => 'varchar(255)')
+											'width' => array(
+                                               'type' => 'int(11)'),
+
+											'height' => array(
+                                               'type' => 'int(11)')                                               
               ); 
               
 $this->my_database_model->add_column_to_table_if_exist(
@@ -1477,8 +1554,11 @@ $this->my_database_model->	create_generic_table($table );
 
 $fields_array = array(
 
-											'image_type' => array(
-                                               'type' => 'varchar(255)')
+											'width' => array(
+                                               'type' => 'int(11)'),
+
+											'height' => array(
+                                               'type' => 'int(11)')                                               
               ); 
               
 $this->my_database_model->add_column_to_table_if_exist(
