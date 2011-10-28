@@ -55,7 +55,8 @@
 				
 				<?php
 				
-		
+				if( isset($data['feature_items'])){
+					
 				 foreach( $data['feature_items']  as  $feature_item ){?>
 				
 					<div  class='clearfix feature_item_row'>
@@ -71,7 +72,11 @@
 					
 					</div>
 					
-				<?php } ?>				
+				<?php }
+				 
+				};				
+				
+				?>				
 				
 			</div>
 		
