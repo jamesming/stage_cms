@@ -726,8 +726,12 @@ function query(){
 			};
 			
 
+			if( isset($feature_items)){
+				return $feature_items;
+			}else{
+				return;
+			};
 			
-			return $feature_items;
 			
 	}
 
