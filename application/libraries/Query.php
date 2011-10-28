@@ -735,7 +735,256 @@ function query(){
 			
 	}
 
+/**
+ * get_showpage_items
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @access public
+ * @return array  */ 
+	
+	function get_showpage_items( $where_array = array() ){
+		
+			$showpage_items_raw = $this->CI->my_database_model->select_from_table( 
+			$table = 'showpage_items', 
+			$select_what = '*', 
+			$where_array, 
+			$use_order = TRUE, 
+			$order_field = 'created', 
+			$order_direction = 'desc', 
+			$limit = -1
+			);
+			
 
+
+			$showpage_items_raw = $this->CI->tools->object_to_array($showpage_items_raw);
+			
+			foreach( $showpage_items_raw  as  $keyA => $showpage_item_raw){
+
+				foreach( $showpage_item_raw  as  $field => $value){
+					
+					$showpage_item[$field] = $value;
+					
+					if( $field == 'id' ){
+
+						
+						$showpage_items_images = $this->CI->my_database_model->select_from_table( 
+										$table = 'showpage_items_images', 
+										$select_what = '*', 
+										$where_array = array(
+																		'showpage_item_id'=> $value,
+																		'image_type_id' => '10'
+																		), 
+										$use_order = FALSE, 
+										$order_field = '', 
+										$order_direction = 'desc', 
+										$limit = -1
+										);
+										
+				
+						
+						if( count($showpage_items_images) > 0){				
+							
+							$showpage_item['showpage_items_image_id'] = $showpage_items_images[0]->id;
+							
+							
+						}else{
+							
+							$showpage_item['showpage_items_image_id'] = 0;
+							
+						};
+						
+
+	
+					};
+					
+					
+
+				};
+				
+		
+				$showpage_items[] = $showpage_item;
+				
+			};
+			
+
+			if( isset($showpage_items)){
+				return $showpage_items;
+			}else{
+				return;
+			};
+			
+			
+	}
+	
+	
+	
+/**
+ * get_showpage_cast_items
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @access public
+ * @return array  */ 
+	
+	function get_showpage_cast_items( $where_array = array() ){
+		
+			$showpage_cast_items_raw = $this->CI->my_database_model->select_from_table( 
+			$table = 'showpage_cast_items', 
+			$select_what = '*', 
+			$where_array, 
+			$use_order = TRUE, 
+			$order_field = 'created', 
+			$order_direction = 'desc', 
+			$limit = -1
+			);
+			
+
+
+			$showpage_cast_items_raw = $this->CI->tools->object_to_array($showpage_cast_items_raw);
+			
+			foreach( $showpage_cast_items_raw  as  $keyA => $showpage_item_raw){
+
+				foreach( $showpage_item_raw  as  $field => $value){
+					
+					$showpage_item[$field] = $value;
+					
+					if( $field == 'id' ){
+
+						
+						$showpage_cast_items_images = $this->CI->my_database_model->select_from_table( 
+										$table = 'showpage_cast_items_images', 
+										$select_what = '*', 
+										$where_array = array(
+																		'showpage_item_id'=> $value,
+																		'image_type_id' => '13'
+																		), 
+										$use_order = FALSE, 
+										$order_field = '', 
+										$order_direction = 'desc', 
+										$limit = -1
+										);
+										
+				
+						
+						if( count($showpage_cast_items_images) > 0){				
+							
+							$showpage_item['showpage_cast_items_image_id'] = $showpage_cast_items_images[0]->id;
+							
+							
+						}else{
+							
+							$showpage_item['showpage_cast_items_image_id'] = 0;
+							
+						};
+						
+
+	
+					};
+					
+					
+
+				};
+				
+		
+				$showpage_cast_items[] = $showpage_item;
+				
+			};
+			
+
+			if( isset($showpage_cast_items)){
+				return $showpage_cast_items;
+			}else{
+				return;
+			};
+			
+			
+	}
+	
+/**
+ * get_showpage_feature_items
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @access public
+ * @return array  */ 
+	
+	function get_showpage_feature_items( $where_array = array() ){
+		
+			$showpage_items_raw = $this->CI->my_database_model->select_from_table( 
+			$table = 'showpage_items', 
+			$select_what = '*', 
+			$where_array, 
+			$use_order = TRUE, 
+			$order_field = 'created', 
+			$order_direction = 'desc', 
+			$limit = -1
+			);
+			
+
+
+			$showpage_items_raw = $this->CI->tools->object_to_array($showpage_items_raw);
+			
+			foreach( $showpage_items_raw  as  $keyA => $showpage_item_raw){
+
+				foreach( $showpage_item_raw  as  $field => $value){
+					
+					$showpage_item[$field] = $value;
+					
+					if( $field == 'id' ){
+
+						
+						$showpage_items_images = $this->CI->my_database_model->select_from_table( 
+										$table = 'showpage_items_images', 
+										$select_what = '*', 
+										$where_array = array(
+																		'showpage_item_id'=> $value,
+																		'image_type_id' => '15'
+																		), 
+										$use_order = FALSE, 
+										$order_field = '', 
+										$order_direction = 'desc', 
+										$limit = -1
+										);
+										
+				
+						
+						if( count($showpage_items_images) > 0){				
+							
+							$showpage_item['showpage_items_image_id'] = $showpage_items_images[0]->id;
+							
+							
+						}else{
+							
+							$showpage_item['showpage_items_image_id'] = 0;
+							
+						};
+						
+
+	
+					};
+					
+					
+
+				};
+				
+		
+				$showpage_items[] = $showpage_item;
+				
+			};
+			
+
+			if( isset($showpage_items)){
+				return $showpage_items;
+			}else{
+				return;
+			};
+			
+			
+	}
 /**
  * get_carousel_sets_calendars
  *

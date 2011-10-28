@@ -103,6 +103,54 @@ function prepare_feature_items( $segment4, $get_array){
 	
 }
 
+function prepare_showpage_items( $segment4, $get_array){
+	
+		
+				$showpage_items = $this->CI->query->get_showpage_items();	
+										
+				$data['showpage_items'] = $showpage_items;
+					
+
+				
+				$data['segment4'] = $segment4;
+				$data['segment3'] = 'showpage';
+				
+				return $data;
+	
+}
+
+function prepare_showpage_cast_items( $segment4, $get_array){
+	
+		
+				$showpage_cast_items = $this->CI->query->get_showpage_cast_items();	
+										
+				$data['showpage_cast_items'] = $showpage_items;
+					
+
+				
+				$data['segment4'] = $segment4;
+				$data['segment3'] = 'showpage';
+				
+				return $data;
+	
+}
+
+function prepare_showpage_feature_items( $segment4, $get_array){
+	
+		
+				$showpage_feature_items = $this->CI->query->get_showpage_feature_items();	
+										
+				$data['showpage_feature_items'] = $showpage_feature_items;
+					
+
+				
+				$data['segment4'] = $segment4;
+				$data['segment3'] = 'showpage';
+				
+				return $data;
+	
+}
+
 
 
 function prepare_calendar($get_array){

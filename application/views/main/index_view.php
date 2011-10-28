@@ -44,6 +44,10 @@ height:auto;
 }	
 #main_section div#parent_tabs li.feature{
 		background:yellow;
+}	
+
+#main_section div#parent_tabs li.showpage{
+		background:skyblue;
 }				
 #main_section div.children_tabs{
 		width:700px;
@@ -105,6 +109,14 @@ height:690px;
   				Features
   				</a>
   			</li>
+  			
+  			
+  			<li  class='showpage ' >
+  				<a href='<?php   echo base_url()  ?>index.php/main/index/showpage'>
+  				Show Pages
+  				</a>
+  			</li>
+  			
   			
   			<li  class='calendar ' >
   				<a href='<?php   echo base_url()  ?>index.php/main/index/calendar'>  				Calendar

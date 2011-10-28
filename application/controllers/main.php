@@ -97,7 +97,35 @@ class Main extends CI_Controller {
 			    break;
 			    
 			    
+			    case 'showpage':
+		
+						$data = $this->custom->prepare_showpage_items( 
+								$segment4,
+								$this->input->get()
+						 );
+						 
+
+			    break;
 			    
+			    case 'showpage_cast':
+		
+						$data = $this->custom->prepare_showpage_cast_items( 
+								$segment4,
+								$this->input->get()
+						 );
+						 
+
+			    break;
+			    
+			    case 'showpage_feature':
+		
+						$data = $this->custom->prepare_showpage_feature_items( 
+								$segment4,
+								$this->input->get()
+						 );
+						 
+
+			    break;
 			    case 'calendar':
 		
 						$data = $this->custom->prepare_calendar($this->input->get());
@@ -153,6 +181,7 @@ class Main extends CI_Controller {
 							$where_array = array( 'id' => $this->input->get('feature_item_id')) 
 				);	
 				
+				
 
 				$this->load->view('main/feature/items/form_view', 
 					array( 'data' => $data )
@@ -160,6 +189,81 @@ class Main extends CI_Controller {
 		
 	}	
 	
+	
+	/**
+	 * get_showpage_form
+	 * 
+	 * @package BackEnd
+	 * @author James Ming <jamesming@gmail.com>
+	 * @path /index.php/home/get_showpage_form
+	 * @access public
+	 */
+	 
+	 
+	public function get_showpage_form(){
+		
+				$data['showpage_items'] = $this->query->get_showpage_items(
+							$where_array = array( 'id' => $this->input->get('showpage_item_id')) 
+				);	
+				
+				
+
+				$this->load->view('main/showpage/items/form_view', 
+					array( 'data' => $data )
+				);
+		
+	}
+	
+	
+	/**
+	 * get_showpage_cast_form
+	 * 
+	 * @package BackEnd
+	 * @author James Ming <jamesming@gmail.com>
+	 * @path /index.php/home/get_showpage_cast_form
+	 * @access public
+	 */
+	 
+	 
+	public function get_showpage_cast_form(){
+		
+				$data['showpage_cast_items'] = $this->query->get_showpage_cast_items(
+							$where_array = array( 'id' => $this->input->get('showpage_cast_item_id')) 
+				);	
+				
+				
+
+				$this->load->view('main/showpage_cast/items/form_view', 
+					array( 'data' => $data )
+				);
+		
+	}
+	
+
+	/**
+	 * showpage_feature
+	 * 
+	 * @package BackEnd
+	 * @author James Ming <jamesming@gmail.com>
+	 * @path /index.php/home/showpage_feature
+	 * @access public
+	 */
+	 
+	 
+	public function showpage_feature(){
+		
+				$data['showpage_items'] = $this->query->get_showpage_items(
+							$where_array = array( 'id' => $this->input->get('showpage_item_id')) 
+				);	
+				
+				
+
+				$this->load->view('main/showpage/items/form_view', 
+					array( 'data' => $data )
+				);
+		
+	}
+
 	/**
 	 * get_carousel_form
 	 * 
