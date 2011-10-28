@@ -46,6 +46,18 @@ function query(){
 	
 	    break;
 	    
+	    case 'insert_with_showpage_id':
+
+					$db_response = $this->CI->my_database_model->insert_table(
+													$post_array['table'], 
+													$insert_what = array(
+														'showpage_item_id' => $post_array['showpage_item_id']
+													)
+													); 
+	
+	    break;	    
+	    
+	    
 	    case 'update':
 
 					$fields = explode('&', $post_array['set_what_array']);
@@ -858,7 +870,7 @@ function query(){
 										$table = 'showpage_cast_items_images', 
 										$select_what = '*', 
 										$where_array = array(
-																		'showpage_item_id'=> $value,
+																		'showpage_cast_item_id'=> $value,
 																		'image_type_id' => '13'
 																		), 
 										$use_order = FALSE, 
@@ -904,7 +916,7 @@ function query(){
 	}
 	
 /**
- * get_showpage_feature_items
+ * get_showpage_feature_feature_items
  *
  * {@source }
  * @package BackEnd
@@ -914,8 +926,8 @@ function query(){
 	
 	function get_showpage_feature_items( $where_array = array() ){
 		
-			$showpage_items_raw = $this->CI->my_database_model->select_from_table( 
-			$table = 'showpage_items', 
+			$showpage_feature_items_raw = $this->CI->my_database_model->select_from_table( 
+			$table = 'showpage_feature_items', 
 			$select_what = '*', 
 			$where_array, 
 			$use_order = TRUE, 
@@ -926,23 +938,23 @@ function query(){
 			
 
 
-			$showpage_items_raw = $this->CI->tools->object_to_array($showpage_items_raw);
+			$showpage_feature_items_raw = $this->CI->tools->object_to_array($showpage_feature_items_raw);
 			
-			foreach( $showpage_items_raw  as  $keyA => $showpage_item_raw){
+			foreach( $showpage_feature_items_raw  as  $keyA => $showpage_feature_item_raw){
 
-				foreach( $showpage_item_raw  as  $field => $value){
+				foreach( $showpage_feature_item_raw  as  $field => $value){
 					
-					$showpage_item[$field] = $value;
+					$showpage_feature_item[$field] = $value;
 					
 					if( $field == 'id' ){
 
 						
-						$showpage_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'showpage_items_images', 
+						$showpage_feature_items_images = $this->CI->my_database_model->select_from_table( 
+										$table = 'showpage_feature_items_images', 
 										$select_what = '*', 
 										$where_array = array(
-																		'showpage_item_id'=> $value,
-																		'image_type_id' => '15'
+																		'showpage_feature_item_id'=> $value,
+																		'image_type_id' => '16'
 																		), 
 										$use_order = FALSE, 
 										$order_field = '', 
@@ -952,14 +964,14 @@ function query(){
 										
 				
 						
-						if( count($showpage_items_images) > 0){				
+						if( count($showpage_feature_items_images) > 0){				
 							
-							$showpage_item['showpage_items_image_id'] = $showpage_items_images[0]->id;
+							$showpage_feature_item['showpage_feature_items_image_id'] = $showpage_feature_items_images[0]->id;
 							
 							
 						}else{
 							
-							$showpage_item['showpage_items_image_id'] = 0;
+							$showpage_feature_item['showpage_feature_items_image_id'] = 0;
 							
 						};
 						
@@ -972,13 +984,13 @@ function query(){
 				};
 				
 		
-				$showpage_items[] = $showpage_item;
+				$showpage_feature_items[] = $showpage_feature_item;
 				
 			};
 			
 
-			if( isset($showpage_items)){
-				return $showpage_items;
+			if( isset($showpage_feature_items)){
+				return $showpage_feature_items;
 			}else{
 				return;
 			};

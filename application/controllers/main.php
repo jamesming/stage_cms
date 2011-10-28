@@ -231,8 +231,6 @@ class Main extends CI_Controller {
 							$where_array = array( 'id' => $this->input->get('showpage_cast_item_id')) 
 				);	
 				
-				
-
 				$this->load->view('main/showpage_cast/items/form_view', 
 					array( 'data' => $data )
 				);
@@ -250,15 +248,15 @@ class Main extends CI_Controller {
 	 */
 	 
 	 
-	public function showpage_feature(){
+	public function get_showpage_feature_form(){
 		
-				$data['showpage_items'] = $this->query->get_showpage_items(
-							$where_array = array( 'id' => $this->input->get('showpage_item_id')) 
+				$data['showpage_feature_items'] = $this->query->get_showpage_feature_items(
+							$where_array = array( 'id' => $this->input->get('showpage_feature_item_id')) 
 				);	
 				
 				
 
-				$this->load->view('main/showpage/items/form_view', 
+				$this->load->view('main/showpage_feature/items/form_view', 
 					array( 'data' => $data )
 				);
 		
@@ -1551,14 +1549,30 @@ submitted
 									'height'=> $height_of_file
 									)
 								);	
+								
+								
+								
 
 			switch ($image_type ) {
+				
+		    case 'showpage_feature_large':
 	
+						$new_width  = '295';
+						
+		    break;	
+		    
 		    case 'feature_large':
 	
 						$new_width  = '295';
 						
 		    break;
+		    
+		    
+		    case 'showpage_cast':
+	
+						$new_width  = '295';
+						
+		    break;		    
 
 		  }
 

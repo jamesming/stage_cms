@@ -10,29 +10,29 @@ $this->load->view('header/common_css.php');
 body{
 background:white;		
 }
-form#image_feature_item_form{
+form#image_showpage_cast_item_form{
 font-size:16px;
 }
-form#image_feature_item_form input[type=text]{
+form#image_showpage_cast_item_form input[type=text]{
 padding:6px 5px;
 width:490px;	
 }
 
-form#image_feature_item_form table#main {
+form#image_showpage_cast_item_form table#main {
 width:100%;
 margin:30px 0px 0px 0px;	
 }
-form#image_feature_item_form table#main td.main_table{
+form#image_showpage_cast_item_form table#main td.main_table{
 padding-top:5px;
 padding-bottom:5px;	
 }
 
-form#image_feature_item_form table#main div.image_assets{
+form#image_showpage_cast_item_form table#main div.image_assets{
 margin-top:25px;
 }
-form#image_feature_item_form div#image_feature_item_feature{
-	background-image: url(<?php echo base_url();    ?>uploads/feature_items_images/<?php
-	  	echo $data['feature_items'][0]['feature_items_image_id']; 
+form#image_showpage_cast_item_form div#image_showpage_cast_item_showpage_cast{
+	background-image: url(<?php echo base_url();    ?>uploads/showpage_cast_items_images/<?php
+	  	echo $data['showpage_cast_items'][0]['showpage_cast_items_image_id']; 
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
@@ -41,13 +41,13 @@ form#image_feature_item_form div#image_feature_item_feature{
 	margin-left: 72px;
 }
 
-form#image_feature_item_form #textarea_div{
+form#image_showpage_cast_item_form #textarea_div{
 width:100%;
 height: 180px;
 margin:0px 0px 0px 0px;
 padding:10px 0px 0px 0px;
 }
-form#image_feature_item_form #submit{
+form#image_showpage_cast_item_form #submit{
 width:70px;	
 }
 
@@ -71,18 +71,12 @@ display:none;
 
 
 <body >
-<form id='image_feature_item_form'>
+<form id='image_showpage_cast_item_form'>
 		<table  id='main'>
 			<tr>
 				<td  class='main_table ' > Name
 				</td>
-				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo $data['feature_items'][0]['name']    ?>">
-				</td>
-			</tr>
-			<tr>
-				<td  class='main_table '> Title
-				</td>
-				<td  class='main_table '><input name="title" id="" type="text" value="<?php echo $data['feature_items'][0]['title']    ?>">
+				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo $data['showpage_cast_items'][0]['name']    ?>">
 				</td>
 			</tr>
 
@@ -90,7 +84,7 @@ display:none;
 			<tr>
 				<td   class='main_table ' colspan=2>
 					<div  id='textarea_div'   >
-							<textarea  class=' clearfix' name='content' id='text_area'><?php echo $data['feature_items'][0]['content']    ?></textarea>
+							<textarea  class=' clearfix' name='content' id='text_area'><?php echo $data['showpage_cast_items'][0]['content']    ?></textarea>
 					</div>
 				</td>
 			</tr>	
@@ -103,7 +97,7 @@ display:none;
 			<tr>
 				<td class='main_table image_assets' colspan=2>
 					<div  class=' image_assets' >
-							<div image_type='feature_large' image_type_id='17' class='float_left image_div'  id='image_feature_item_feature' feature_items_image_id='<?php echo $data['feature_items'][0]['feature_items_image_id']    ?>'>
+							<div image_type='showpage_cast' image_type_id='13' class='float_left image_div'  id='image_showpage_cast_item_showpage_cast' showpage_cast_items_image_id='<?php echo $data['showpage_cast_items'][0]['showpage_cast_items_image_id']    ?>'>
 							</div>
 							
 					
@@ -154,7 +148,7 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 				$('.image_div').css({cursor:'pointer'}).click(function(event) {
 
 					open_dialogue_upload_image(
-					 $(this).attr('feature_items_image_id'),
+					 $(this).attr('showpage_cast_items_image_id'),
 					 $(this).attr('image_type'),
 					 $(this).attr('image_type_id')
 					);
@@ -230,10 +224,10 @@ function submit_inputs(close_fancyzoom){
 					$("#text_area").val( mbox.get_html() );
 
 					$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
-						table:'feature_items',
+						table:'showpage_cast_items',
 						crud:'update',
-						set_what_array: $('#image_feature_item_form').serialize(),
-						id:'<?php echo $data['feature_items'][0]['id']    ?>'
+						set_what_array: $('#image_showpage_cast_item_form').serialize(),
+						id:'<?php echo $data['showpage_cast_items'][0]['id']    ?>'
 						},function(xml) {
 
 							//var db_response = $(xml).find('db_response').text();
@@ -248,20 +242,20 @@ function submit_inputs(close_fancyzoom){
 }	
 
 function open_dialogue_upload_image(
- feature_items_image_id, 
+ showpage_cast_items_image_id, 
  image_type, 
  image_type_id 
  ){
 
 		submit_inputs(close_fancyzoom=0);
 
-		if( feature_items_image_id == null){
-			feature_items_image_id = 0;
+		if( showpage_cast_items_image_id == null){
+			showpage_cast_items_image_id = 0;
 		};
 
 		$("#iframe_src_for_image")
 		.css({width:'350px',height:'80px'})
-		.attr('src','<?php echo base_url();    ?>index.php/main/upload_image_form?what_item=feature&feature_item_id=<?php echo $data['feature_items'][0]['id']    ?>&feature_items_image_id=' + feature_items_image_id +'&image_type='+image_type +'&image_type_id='+image_type_id);
+		.attr('src','<?php echo base_url();    ?>index.php/main/upload_image_form?what_item=showpage_cast&showpage_cast_item_id=<?php echo $data['showpage_cast_items'][0]['id']    ?>&showpage_cast_items_image_id=' + showpage_cast_items_image_id +'&image_type='+image_type +'&image_type_id='+image_type_id);
 
 			
 		var width_of_dialog = 410;

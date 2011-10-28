@@ -6,13 +6,13 @@
 		}
 			
 			
-		img#addFeatureItem{
+		img#addshowpageItem{
 			width:30px;	
 			margin:23px 23px 10px 23px;
 			}
 			
 			
-			#feature_item_outside_container{
+			#showpage_item_outside_container{
 				clear:both;
 				margin:0px 20px;
 				border-top:1px solid lightgray;
@@ -21,11 +21,11 @@
 				width:892px;
 			}
 			
-					#feature_item_outside_container div.feature_item_row{
+					#showpage_item_outside_container div.showpage_item_row{
 					border-bottom:1px solid lightgray;
 					padding:5px;
 					}
-								#feature_item_outside_container   .feature_item_row .name_of{
+								#showpage_item_outside_container   .showpage_item_row .name_of{
 								width:110px;
 								font-weight:bold;
 								font-size:20px;
@@ -34,42 +34,74 @@
 								color:gray;
 								}
 								
-	
-											
-								#feature_item_outside_container   .feature_item_row .feature_item_trash{
+								#showpage_item_outside_container   .showpage_item_row .show_page_cast{
+								width:110px;
+								font-weight:bold;
+								font-size:20px;
+								padding-top:0px;
+								text-align:center;
+								color:gray;
+								}
+									
+								#showpage_item_outside_container   .showpage_item_row .show_page_feature{
+								width:110px;
+								font-weight:bold;
+								font-size:20px;
+								padding-top:0px;
+								text-align:center;
+								color:gray;
+								}			
+								
+																
+								#showpage_item_outside_container   .showpage_item_row .showpage_item_trash{
 								width:46px;
 								padding-top:90px;
 								}
 								
-											#feature_item_outside_container   .feature_item_row .feature_item_trash img{
+											#showpage_item_outside_container   .showpage_item_row .showpage_item_trash img{
 											width:30px;
 											}	
 
 		</style>
-		<img  class='clearfix ' href='#fancy_zoom_div'  title='Add Feature Item'  id='addFeatureItem' src='<?php echo base_url()    ?>images/add.png'    />
+		<img  class='clearfix ' href='#fancy_zoom_div'  title='Add showpage Item'  id='addshowpageItem' src='<?php echo base_url()    ?>images/add.png'    />
 			
   	
-  	<div  id='feature_item_outside_container'  class='clearfix ' >
+  	<div  id='showpage_item_outside_container'  class='clearfix ' >
 				
-			<div   id='feature_item_container'>
+			<div   id='showpage_item_container'>
 				
 				<?php
 				
-				if( isset($data['feature_items'])){
+				if( isset($data['showpage_items'])){
 					
 
-				 foreach( $data['feature_items']  as  $feature_item ){?>
+				 foreach( $data['showpage_items']  as  $showpage_item ){?>
 				
-					<div  class='clearfix feature_item_row'>
+					<div  class='clearfix showpage_item_row'>
 						
 						
-						<div  class='float_left name_of '  feature_item_id='<?php echo  $feature_item['id']   ?>'  href='#fancy_zoom_div' >
-							<?php echo  $feature_item['id']   ?>
+						<div  class='float_left name_of '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  href='#fancy_zoom_div' >
+							<?php echo  $showpage_item['id']   ?>
 						</div>
+						
+						
+						
+						<div  class='float_left show_page_cast '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  href='#fancy_zoom_div' >
+							cast
+						</div>								
+						
+						
+						<div  class='float_left show_page_feature '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  href='#fancy_zoom_div' >
+							features
+						</div>								
+						
 
-						<div  class='float_left  feature_item_trash' >
-							<img src='<?php   echo base_url()  ?>images/trash.gif'   feature_item_id='<?php echo  $feature_item['id']   ?>' >
-						</div>			
+						<div  class='float_left  showpage_item_trash' >
+							<img src='<?php   echo base_url()  ?>images/trash.gif'   showpage_item_id='<?php echo  $showpage_item['id']   ?>' >
+						</div>	
+
+						
+												
 					
 					</div>
 					
@@ -88,30 +120,48 @@
 			
 			$(document).ready(function() {
 
-				$('#addFeatureItem').css({cursor:'pointer'}).fancyZoom().click(function(event) {
+				$('#addshowpageItem').css({cursor:'pointer'}).fancyZoom().click(function(event) {
 
 						$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
-							table:'feature_items',
+							table:'showpage_items',
 							crud:'insert'
 							},function(xml) {
 							
 								var status = $(xml).find('status').text();
 								var message = $(xml).find('message').text();
-								$("#iframe_src").attr('src','<?php echo base_url();    ?>index.php/main/get_feature_form?feature_item_id=' + $(xml).find('db_response').text()  );
+								$("#iframe_src").attr('src','<?php echo base_url();    ?>index.php/main/get_showpage_form?showpage_item_id=' + $(xml).find('db_response').text()  );
 								
 						});	
 				
 				});		
 				
 				
-				$('#feature_item_outside_container   .feature_item_row .name_of').css({cursor:'pointer'}).fancyZoom().click(function(event) {
+				$('#showpage_item_outside_container   .showpage_item_row .name_of').css({cursor:'pointer'}).fancyZoom().click(function(event) {
 					
 
-						$("#iframe_src").attr('src','<?php echo base_url();    ?>index.php/main/get_feature_form?feature_item_id=' + $(this).attr('feature_item_id')  );
+						$("#iframe_src").attr('src','<?php echo base_url();    ?>index.php/main/get_showpage_form?showpage_item_id=' + $(this).attr('showpage_item_id')  );
 				
 				});		
+				
+				
+				
+				$('#showpage_item_outside_container   .showpage_item_row .show_page_cast').css({cursor:'pointer'}).fancyZoom().click(function(event) {
+					
 
-				$('.feature_item_trash img').css({cursor:'pointer'}).click(function(event) {
+						document.location = '<?php echo  base_url()   ?>index.php/main/index/showpage_cast/items?showpage_item_id=' + $(this).attr('showpage_item_id');
+				
+				});			
+				
+				
+				$('#showpage_item_outside_container   .showpage_item_row .show_page_feature').css({cursor:'pointer'}).fancyZoom().click(function(event) {
+					
+
+						document.location = '<?php echo  base_url()   ?>index.php/main/index/showpage_feature/items?showpage_item_id=' + $(this).attr('showpage_item_id');
+				
+				});							
+				
+
+				$('.showpage_item_trash img').css({cursor:'pointer'}).click(function(event) {
 
 
 					  if(  confirm('Do you really want to delete this item?')  ){
@@ -119,9 +169,9 @@
 					  	
 
 									$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
-										table:'feature_items',
-										crud:'delete_feature_item',
-										feature_item_id:$(this).attr('feature_item_id')
+										table:'showpage_items',
+										crud:'delete_showpage_item',
+										showpage_item_id:$(this).attr('showpage_item_id')
 										
 										},function(xml) {
 										

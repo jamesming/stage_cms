@@ -88,10 +88,9 @@ height:690px;
 	</div>
   <div class="middle"     >
 
-
-
 		<div  id='parent_tabs'>
 			
+<?php if (  in_array( $data['segment3'], array('carousel','nu_spotlight','feature','showpage','calendar'))  ) { ?>			
   		<ul>
   			<li  class='carousel'>
   				<a href='<?php   echo base_url()  ?>index.php/main/index/carousel'>
@@ -123,7 +122,12 @@ height:690px;
   				</a>
   			</li>
   		</ul>
-			
+<?php }else{ ?>	
+
+<a href='<?php  echo  base_url()  ?>index.php/main/index/showpage'>Back</a>&nbsp;|&nbsp;<?php  echo $data['segment3'];   ?>
+
+<?php } ?>	
+
 		</div>
 
 <?php if( $data['segment3'] == 'carousel'){?>
