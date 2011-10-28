@@ -133,7 +133,7 @@ display:none;
 			<tr>
 				<td  class='main_table '> Video Embed
 				</td>
-				<td  class='main_table '><textarea name="video_embed" id="video_embed" ></textarea>
+				<td  class='main_table '><textarea name="video_embed" id="video_embed" ><?php echo $data['showpage_items'][0]['video_embed']    ?></textarea>
 				</td>
 			</tr>					
 			<tr>
@@ -144,8 +144,13 @@ display:none;
 				</td>
 			</tr>	
 
-
-
+			<tr>
+				<td   colspan=2>
+					<div>
+						<input name="" id="submit" type="button" value="submit">
+					</div>
+				</td>
+			</tr>	
 			<tr>
 				<td class='main_table image_assets' colspan=2>
 					<div  class=' image_assets' >

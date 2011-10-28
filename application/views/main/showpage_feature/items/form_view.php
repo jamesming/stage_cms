@@ -94,21 +94,6 @@ display:none;
 				<td  class='main_table '><input name="title" id="" type="text" value="<?php echo $data['showpage_feature_items'][0]['title']    ?>">
 				</td>
 			</tr>
-
-
-			<tr>
-				<td   class='main_table ' colspan=2>
-					<div  id='textarea_div'   >
-							<textarea  class=' clearfix' name='content' id='text_area'><?php echo $data['showpage_feature_items'][0]['content']    ?></textarea>
-					</div>
-				</td>
-			</tr>	
-
-
-
-
-
-
 			<tr>
 				<td class='main_table image_assets' colspan=2>
 					<div  class=' image_assets' >
@@ -129,6 +114,20 @@ display:none;
 					</div>
 				</td>
 			</tr>	
+
+			<tr>
+				<td   class='main_table ' colspan=2>
+					<div  id='textarea_div'   >
+							<textarea  class=' clearfix' name='content' id='text_area'><?php echo $data['showpage_feature_items'][0]['content']    ?></textarea>
+					</div>
+				</td>
+			</tr>	
+
+
+
+
+
+
 			
 		</table>
 </form>
@@ -189,7 +188,7 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 				});	
 			
 				mbox = $("#text_area").css({
-						height:"100px",
+						height:"300px",
 						width:"100%"
 						}).htmlbox({
 				    toolbars:[
