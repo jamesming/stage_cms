@@ -2,7 +2,7 @@
 			
 		iframe#iframe_src{
 		width:850px;
-		height:620px;	
+		height:1020px;	
 		}
 			
 			
@@ -81,7 +81,7 @@
 						
 						
 						<div  class='float_left name_of '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  href='#fancy_zoom_div' >
-							<?php echo  $showpage_item['id']   ?>
+							<?php echo  $showpage_item['name']   ?>
 						</div>
 						
 						

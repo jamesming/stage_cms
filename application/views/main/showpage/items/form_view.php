@@ -17,7 +17,10 @@ form#image_showpage_item_form input[type=text]{
 padding:6px 5px;
 width:490px;	
 }
-
+form#image_showpage_item_form textarea#video_embed{
+width:495px;
+height:90px;	
+}
 form#image_showpage_item_form table#main {
 width:100%;
 margin:30px 0px 0px 0px;	
@@ -73,8 +76,24 @@ display:none;
 				<td  class='main_table '><input name="title" id="" type="text" value="<?php echo $data['showpage_items'][0]['title']    ?>">
 				</td>
 			</tr>
-
-
+			<tr>
+				<td  class='main_table '> Keywords
+				</td>
+				<td  class='main_table '><input name="keywords" id="" type="text" value="<?php echo $data['showpage_items'][0]['keywords']    ?>">
+				</td>
+			</tr>
+			<tr>
+				<td  class='main_table '> Facebook
+				</td>
+				<td  class='main_table '><input name="facebook_url" id="" type="text" value="<?php echo $data['showpage_items'][0]['facebook_url']    ?>">
+				</td>
+			</tr>			
+			<tr>
+				<td  class='main_table '> Video Embed
+				</td>
+				<td  class='main_table '><textarea name="video_embed" id="video_embed" ></textarea>
+				</td>
+			</tr>					
 			<tr>
 				<td   class='main_table ' colspan=2>
 					<div  id='textarea_div'   >

@@ -59,6 +59,8 @@ function query(){
 	    
 	    
 	    case 'update':
+	    
+	    		$table = $post_array['table'];
 
 					$fields = explode('&', $post_array['set_what_array']);
 					foreach($fields as $field){
@@ -67,10 +69,23 @@ function query(){
 						$value = urldecode($field_key_value[1]);
 						eval("$$key = \"$value\";");
 						$set_where_array[$key] = $value;
-					};
+					};	  
+  
+  
+  				foreach( $set_where_array  as  $key => $value){
+							$fields_array = array(
+										$key => array('type' => 'varchar(255)')                                          
+		              	); 
+		  
+							$this->CI->my_database_model->add_column_to_table_if_exist(
+								$table, 
+								$fields_array
+							);    					
+  				};
+ 
 
 					$db_response = $this->CI->my_database_model->update_table_where(
-								$table = $post_array['table'], 
+								$table, 
 								$where_array = array('id'=>$post_array['id']),
 								$set_what_array = $set_where_array
 								);
@@ -949,7 +964,7 @@ function query(){
 					if( $field == 'id' ){
 
 						
-						$showpage_feature_items_images = $this->CI->my_database_model->select_from_table( 
+						$showpage_feature_large_items_images = $this->CI->my_database_model->select_from_table( 
 										$table = 'showpage_feature_items_images', 
 										$select_what = '*', 
 										$where_array = array(
@@ -964,14 +979,42 @@ function query(){
 										
 				
 						
-						if( count($showpage_feature_items_images) > 0){				
+						if( count($showpage_feature_large_items_images) > 0){				
 							
-							$showpage_feature_item['showpage_feature_items_image_id'] = $showpage_feature_items_images[0]->id;
+							$showpage_feature_item['showpage_feature_large_items_image_id'] = $showpage_feature_large_items_images[0]->id;
 							
 							
 						}else{
 							
-							$showpage_feature_item['showpage_feature_items_image_id'] = 0;
+							$showpage_feature_item['showpage_feature_large_items_image_id'] = 0;
+							
+						};
+						
+						
+						
+						$showpage_feature_small_items_images = $this->CI->my_database_model->select_from_table( 
+										$table = 'showpage_feature_items_images', 
+										$select_what = '*', 
+										$where_array = array(
+																		'showpage_feature_item_id'=> $value,
+																		'image_type_id' => '15'
+																		), 
+										$use_order = FALSE, 
+										$order_field = '', 
+										$order_direction = 'desc', 
+										$limit = -1
+										);
+										
+				
+						
+						if( count($showpage_feature_small_items_images) > 0){				
+							
+							$showpage_feature_item['showpage_feature_small_items_image_id'] = $showpage_feature_small_items_images[0]->id;
+							
+							
+						}else{
+							
+							$showpage_feature_item['showpage_feature_small_items_image_id'] = 0;
 							
 						};
 						

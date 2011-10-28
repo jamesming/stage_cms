@@ -30,17 +30,26 @@ padding-bottom:5px;
 form#image_showpage_feature_item_form table#main div.image_assets{
 margin-top:25px;
 }
-form#image_showpage_feature_item_form div#image_showpage_feature_item_showpage_feature{
+form#image_showpage_feature_item_form div#image_showpage_feature_item_showpage_feature_large{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_feature_items_images/<?php
-	  	echo $data['showpage_feature_items'][0]['showpage_feature_items_image_id']; 
+	  	echo $data['showpage_feature_items'][0]['showpage_feature_large_items_image_id']; 
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
-	width:242px;
-	height:222px;
+	width:458px;
+	height:248px;
 	margin-left: 72px;
 }
-
+form#image_showpage_feature_item_form div#image_showpage_feature_item_showpage_feature_small{
+	background-image: url(<?php echo base_url();    ?>uploads/showpage_feature_items_images/<?php
+	  	echo $data['showpage_feature_items'][0]['showpage_feature_small_items_image_id']; 
+	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	background-repeat: no-repeat;
+	border:1px dotted gray;
+	width:138px;
+	height:138px;
+	margin-left: 72px;
+}
 form#image_showpage_feature_item_form #textarea_div{
 width:100%;
 height: 180px;
@@ -103,10 +112,11 @@ display:none;
 			<tr>
 				<td class='main_table image_assets' colspan=2>
 					<div  class=' image_assets' >
-							<div image_type='showpage_feature_large' image_type_id='16' class='float_left image_div'  id='image_showpage_feature_item_showpage_feature' showpage_feature_items_image_id='<?php echo $data['showpage_feature_items'][0]['showpage_feature_items_image_id']    ?>'>
+							<div image_type='showpage_feature_large' image_type_id='16' class='float_left image_div'  id='image_showpage_feature_item_showpage_feature_large' showpage_feature_items_image_id='<?php echo $data['showpage_feature_items'][0]['showpage_feature_large_items_image_id']    ?>'>
 							</div>
 							
-					
+							<div image_type='showpage_feature_small' image_type_id='15' class='float_left image_div'  id='image_showpage_feature_item_showpage_feature_small' showpage_feature_items_image_id='<?php echo $data['showpage_feature_items'][0]['showpage_feature_small_items_image_id']    ?>'>
+							</div>
 					</div>
 
 				</td>

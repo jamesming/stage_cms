@@ -113,7 +113,7 @@ class Main extends CI_Controller {
 								$segment4,
 								$this->input->get()
 						 );
-						 
+					
 
 			    break;
 			    
@@ -253,7 +253,6 @@ class Main extends CI_Controller {
 				$data['showpage_feature_items'] = $this->query->get_showpage_feature_items(
 							$where_array = array( 'id' => $this->input->get('showpage_feature_item_id')) 
 				);	
-				
 				
 
 				$this->load->view('main/showpage_feature/items/form_view', 
@@ -1554,12 +1553,37 @@ submitted
 								
 
 			switch ($image_type ) {
+
+		    case 'showpage_hero':
+	
+						$new_width  = '500';
+						
+		    break;	
+
+
+		    case 'showpage_title':
+	
+						$new_width  = '455';
+						
+		    break;					
+				
+		    case 'showpage_dropdown':
+	
+						$new_width  = '971';
+						
+		    break;					
 				
 		    case 'showpage_feature_large':
 	
-						$new_width  = '295';
+						$new_width  = '458';
 						
 		    break;	
+
+		    case 'showpage_feature_small':
+	
+						$new_width  = '138';
+						
+		    break;			    
 		    
 		    case 'feature_large':
 	
@@ -1570,7 +1594,7 @@ submitted
 		    
 		    case 'showpage_cast':
 	
-						$new_width  = '295';
+						$new_width  = '148';
 						
 		    break;		    
 

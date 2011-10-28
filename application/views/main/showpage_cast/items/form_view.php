@@ -36,8 +36,8 @@ form#image_showpage_cast_item_form div#image_showpage_cast_item_showpage_cast{
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
-	width:242px;
-	height:222px;
+	width:148px;
+	height:148px;
 	margin-left: 72px;
 }
 

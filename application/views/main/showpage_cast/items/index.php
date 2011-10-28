@@ -64,7 +64,7 @@
 						
 						
 						<div  class='float_left name_of '  showpage_cast_item_id='<?php echo  $showpage_cast_item['id']   ?>'  href='#fancy_zoom_div' >
-							<?php echo  $showpage_cast_item['id']   ?>
+							<?php echo  $showpage_cast_item['name']   ?>
 						</div>
 
 						<div  class='float_left  showpage_cast_item_trash' >
