@@ -30,7 +30,49 @@ padding-top:5px;
 padding-bottom:5px;	
 }
 
-
+form#image_showpage_item_form table#main div.image_assets{
+margin-top:25px;
+}
+form#image_showpage_item_form div#image_showpage_hero_item_showpage_hero{
+	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
+	  	echo $data['showpage_items'][0]['showpage_hero_items_image_id']; 
+	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	background-repeat: no-repeat;
+	border:1px dotted gray;
+	width:500px;
+	height:422px;
+	margin-left: 72px;
+}
+form#image_showpage_item_form div#image_showpage_title_item_showpage_title{
+	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
+	  	echo $data['showpage_items'][0]['showpage_title_items_image_id']; 
+	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	background-repeat: no-repeat;
+	border:1px dotted gray;
+	width:455px;
+	height:167px;
+	margin-left: 72px;
+}
+form#image_showpage_item_form div#image_showpage_dropdown_item_showpage_dropdown{
+	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
+	  	echo $data['showpage_items'][0]['showpage_dropdown_items_image_id']; 
+	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	background-repeat: no-repeat;
+	border:1px dotted gray;
+	width:460px;
+	height:323px;
+	margin-left: 72px;
+}
+form#image_showpage_item_form div#image_showpage_hero_iphone_item_showpage_hero_iphone{
+	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
+	  	echo $data['showpage_items'][0]['showpage_hero_iphone_items_image_id']; 
+	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	background-repeat: no-repeat;
+	border:1px dotted gray;
+	width:320px;
+	height:480px;
+	margin-left: 72px;
+}
 
 form#image_showpage_item_form #textarea_div{
 width:100%;
@@ -104,11 +146,57 @@ display:none;
 
 
 
+			<tr>
+				<td class='main_table image_assets' colspan=2>
+					<div  class=' image_assets' >
+							<div image_type='showpage_hero' image_type_id='10' class='float_left image_div'  id='image_showpage_hero_item_showpage_hero' showpage_items_image_id='<?php echo $data['showpage_items'][0]['showpage_hero_items_image_id']    ?>'>
+							</div>
+							
+					
+					</div>
 
-
-
+				</td>
+			</tr>	
 	
+
+			<tr>
+				<td class='main_table image_assets' colspan=2>
+					<div  class=' image_assets' >
+							<div image_type='showpage_title' image_type_id='12' class='float_left image_div'  id='image_showpage_title_item_showpage_title' showpage_items_image_id='<?php echo $data['showpage_items'][0]['showpage_title_items_image_id']    ?>'>
+							</div>
+							
+					
+					</div>
+
+				</td>
+			</tr>	
+
+
+			<tr>
+				<td class='main_table image_assets' colspan=2>
+					<div  class=' image_assets' >
+							<div image_type='showpage_dropdown' image_type_id='19' class='float_left image_div'  id='image_showpage_dropdown_item_showpage_dropdown' showpage_items_image_id='<?php echo $data['showpage_items'][0]['showpage_dropdown_items_image_id']    ?>'>
+							</div>
+							
+					
+					</div>
+
+				</td>
+			</tr>	
 			
+			
+			<tr>
+				<td class='main_table image_assets' colspan=2>
+					<div  class=' image_assets' >
+							<div image_type='showpage_hero_iphone' image_type_id='11' class='float_left image_div'  id='image_showpage_hero_iphone_item_showpage_hero_iphone' showpage_items_image_id='<?php echo $data['showpage_iphone_items'][0]['showpage_hero_iphone_items_image_id']    ?>'>
+							</div>
+							
+					
+					</div>
+
+				</td>
+			</tr>				
+
 			<tr>
 				<td   colspan=2>
 					<div>
@@ -147,7 +235,14 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 
 	$(document).ready(function() {
 		
+				$('.image_div').css({cursor:'pointer'}).click(function(event) {
 
+					open_dialogue_upload_image(
+					 $(this).attr('showpage_items_image_id'),
+					 $(this).attr('image_type'),
+					 $(this).attr('image_type_id')
+					);
+				})
 
 				$('#main td:nth-child(odd)').css({
 					'text-align':'right',
@@ -239,6 +334,8 @@ function open_dialogue_upload_image(
  image_type, 
  image_type_id 
  ){
+
+
 
 		submit_inputs(close_fancyzoom=0);
 

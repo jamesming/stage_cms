@@ -103,7 +103,6 @@ class Main extends CI_Controller {
 								$segment4,
 								$this->input->get()
 						 );
-						 
 
 			    break;
 			    
@@ -205,7 +204,6 @@ class Main extends CI_Controller {
 				$data['showpage_items'] = $this->query->get_showpage_items(
 							$where_array = array( 'id' => $this->input->get('showpage_item_id')) 
 				);	
-				
 				
 
 				$this->load->view('main/showpage/items/form_view', 
@@ -1556,7 +1554,7 @@ submitted
 
 		    case 'showpage_hero':
 	
-						$new_width  = '500';
+						$new_width  = '700';
 						
 		    break;	
 
@@ -1569,7 +1567,7 @@ submitted
 				
 		    case 'showpage_dropdown':
 	
-						$new_width  = '971';
+						$new_width  = '460';
 						
 		    break;					
 				

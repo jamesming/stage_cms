@@ -796,12 +796,12 @@ function query(){
 					if( $field == 'id' ){
 
 						
-						$showpage_items_images = $this->CI->my_database_model->select_from_table( 
+						$showpage_hero_items_images = $this->CI->my_database_model->select_from_table( 
 										$table = 'showpage_items_images', 
 										$select_what = '*', 
 										$where_array = array(
 																		'showpage_item_id'=> $value,
-																		'image_type_id' => '10'
+																		'image_type_id' => '10'  // showpage_hero
 																		), 
 										$use_order = FALSE, 
 										$order_field = '', 
@@ -811,18 +811,95 @@ function query(){
 										
 				
 						
-						if( count($showpage_items_images) > 0){				
+						if( count($showpage_hero_items_images) > 0){				
 							
-							$showpage_item['showpage_items_image_id'] = $showpage_items_images[0]->id;
+							$showpage_item['showpage_hero_items_image_id'] = $showpage_hero_items_images[0]->id;
 							
 							
 						}else{
 							
-							$showpage_item['showpage_items_image_id'] = 0;
+							$showpage_item['showpage_hero_items_image_id'] = 0;
+							
+						};
+						//****
+						$showpage_title_items_images = $this->CI->my_database_model->select_from_table( 
+										$table = 'showpage_items_images', 
+										$select_what = '*', 
+										$where_array = array(
+																		'showpage_item_id'=> $value,
+																		'image_type_id' => '12'  // showpage_title
+																		), 
+										$use_order = FALSE, 
+										$order_field = '', 
+										$order_direction = 'desc', 
+										$limit = -1
+										);
+										
+				
+						
+						if( count($showpage_title_items_images) > 0){				
+							
+							$showpage_item['showpage_title_items_image_id'] = $showpage_title_items_images[0]->id;
+							
+							
+						}else{
+							
+							$showpage_item['showpage_title_items_image_id'] = 0;
 							
 						};
 						
-
+						//****
+						$showpage_dropdown_items_images = $this->CI->my_database_model->select_from_table( 
+										$table = 'showpage_items_images', 
+										$select_what = '*', 
+										$where_array = array(
+																		'showpage_item_id'=> $value,
+																		'image_type_id' => '19'  // showpage_dropdown
+																		), 
+										$use_order = FALSE, 
+										$order_field = '', 
+										$order_direction = 'desc', 
+										$limit = -1
+										);
+										
+				
+						
+						if( count($showpage_dropdown_items_images) > 0){				
+							
+							$showpage_item['showpage_dropdown_items_image_id'] = $showpage_dropdown_items_images[0]->id;
+							
+							
+						}else{
+							
+							$showpage_item['showpage_dropdown_items_image_id'] = 0;
+							
+						};
+						//****
+						$showpage_hero_iphone_items_images = $this->CI->my_database_model->select_from_table( 
+										$table = 'showpage_items_images', 
+										$select_what = '*', 
+										$where_array = array(
+																		'showpage_item_id'=> $value,
+																		'image_type_id' => '11'  // showpage_hero_iphone
+																		), 
+										$use_order = FALSE, 
+										$order_field = '', 
+										$order_direction = 'desc', 
+										$limit = -1
+										);
+										
+				
+						
+						if( count($showpage_hero_iphone_items_images) > 0){				
+							
+							$showpage_item['showpage_hero_iphone_items_image_id'] = $showpage_hero_iphone_items_images[0]->id;
+							
+							
+						}else{
+							
+							$showpage_item['showpage_hero_iphone_items_image_id'] = 0;
+							
+						};
 	
 					};
 					
