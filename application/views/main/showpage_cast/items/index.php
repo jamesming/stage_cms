@@ -107,10 +107,10 @@
 				
 				$('.show_on_showpage').click(function(event) {
 					
-						if( $(this).val() == 0){
-							$(this).val(1);
+						if( $(this).is(':checked')){
+							show_on_showpage = 1;
 						}else{
-							$(this).val(0);
+							show_on_showpage = 0;
 						};
 						
 						alert($(this).val());
@@ -120,7 +120,7 @@
 							table:'showpage_cast_items_images',
 							id:$(this).attr('showpage_cast_items_image_id'),
 							crud:'update',
-							set_what_array:'show_on_showpage='+$(this).val()
+							set_what_array:'show_on_showpage='+show_on_showpage
 							},function(xml) {
 							
 								var status = $(xml).find('status').text();
