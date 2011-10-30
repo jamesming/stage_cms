@@ -112,6 +112,9 @@
 						}else{
 							$(this).val(0);
 						};
+						
+						
+						alert($(this).serialize());
 
 						$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
 							table:'showpage_cast_items_images',
