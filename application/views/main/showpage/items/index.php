@@ -86,12 +86,12 @@
 						
 						
 						
-						<div  class='float_left show_page_cast '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  href='#fancy_zoom_div' >
+						<div  class='float_left show_page_cast '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  >
 							cast
 						</div>								
 						
 						
-						<div  class='float_left show_page_feature '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  href='#fancy_zoom_div' >
+						<div  class='float_left show_page_feature '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  >
 							features
 						</div>								
 						
