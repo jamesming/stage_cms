@@ -169,7 +169,7 @@ display:none;
 					<div  class=' image_assets' >
 							<div image_type='showpage_title' image_type_id='12' class='float_left image_div'  id='image_showpage_title_item_showpage_title' showpage_items_image_id='<?php echo $data['showpage_items'][0]['showpage_title_items_image_id']    ?>'>
 							</div>
-							
+							<input showpage_items_id=<?php echo  $data['showpage_items'][0]['id']   ?>  style='width:20px'   class='float_left ' name="showpage_title_left_margin" id="showpage_title_left_margin" type="text" value="<?php echo  $data['showpage_items'][0]['showpage_title_left_margin']   ?>">
 					
 					</div>
 
@@ -239,6 +239,24 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 	
 
 	$(document).ready(function() {
+		
+		
+				$('#showpage_title_left_margin').blur(function(event) {
+
+							
+						$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
+							table:'showpage_items',
+							id:$(this).attr('showpage_items_id'),
+							crud:'update',
+							set_what_array:$(this).serialize()
+							},function(xml) {
+							
+								var status = $(xml).find('status').text();
+								var message = $(xml).find('message').text();
+								
+								
+						});		
+				});		
 		
 				$('.image_div').css({cursor:'pointer'}).click(function(event) {
 
