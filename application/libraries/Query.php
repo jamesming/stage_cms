@@ -960,7 +960,7 @@ function query(){
 						
 						$showpage_cast_items_images = $this->CI->my_database_model->select_from_table( 
 										$table = 'showpage_cast_items_images', 
-										$select_what = '*', 
+										$select_what = 'id, order, show_on_showpage', 
 										$where_array = array(
 																		'showpage_cast_item_id'=> $value,
 																		'image_type_id' => '13'
@@ -970,12 +970,13 @@ function query(){
 										$order_direction = 'desc', 
 										$limit = -1
 										);
-										
-				
+
 						
 						if( count($showpage_cast_items_images) > 0){				
 							
 							$showpage_item['showpage_cast_items_image_id'] = $showpage_cast_items_images[0]->id;
+							$showpage_item['order'] = $showpage_cast_items_images[0]->order;
+							$showpage_item['show_on_showpage'] = $showpage_cast_items_images[0]->show_on_showpage;
 							
 							
 						}else{
@@ -997,8 +998,11 @@ function query(){
 				
 			};
 			
+			
 
 			if( isset($showpage_cast_items)){
+				
+				$this->CI->tools->aasort($showpage_cast_items,'order');
 				return $showpage_cast_items;
 			}else{
 				return;
@@ -1006,6 +1010,10 @@ function query(){
 			
 			
 	}
+	
+	
+	
+
 	
 /**
  * get_showpage_feature_feature_items

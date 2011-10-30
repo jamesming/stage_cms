@@ -44,7 +44,12 @@
 											#showpage_cast_item_outside_container   .showpage_cast_item_row .showpage_cast_item_trash img{
 											width:30px;
 											}	
-
+											
+											
+											#showpage_cast_item_outside_container   .showpage_cast_item_row div input.order,
+											#showpage_cast_item_outside_container   .showpage_cast_item_row div input.show_on_showpage{
+											width:20px;
+											}	
 		</style>
 		<img  class='clearfix ' href='#fancy_zoom_div'  title='Add showpage_cast Item'  id='addshowpage_castItem' src='<?php echo base_url()    ?>images/add.png'    />
 			
@@ -65,6 +70,17 @@
 						
 						<div  class='float_left name_of '  showpage_cast_item_id='<?php echo  $showpage_cast_item['id']   ?>'  href='#fancy_zoom_div' >
 							<?php echo  $showpage_cast_item['name']   ?>
+						</div>
+						
+						<div class='float_left '>
+							<input name="show_on_showpage" <?php echo ($showpage_cast_item['show_on_showpage']==1?' checked ':'')    ?> showpage_cast_items_image_id='<?php echo $showpage_cast_item['showpage_cast_items_image_id']    ?>'  class='show_on_showpage '  type="checkbox" value="1">
+						</div>	
+										
+						<div class='float_left '>
+							<input  name="order"  showpage_cast_items_image_id='<?php echo $showpage_cast_item['showpage_cast_items_image_id']    ?>'class='order '  type="" value="<?php echo  $showpage_cast_item['order']   ?>">
+						</div>
+						<div  class='float_left ' >
+							<img src='<?php echo base_url()    ?>uploads/showpage_cast_items_images/<?php  echo $showpage_cast_item['showpage_cast_items_image_id']   ?>/image_tiny.png'/>
 						</div>
 
 						<div  class='float_left  showpage_cast_item_trash' >
@@ -87,6 +103,42 @@
 		<script type="text/javascript" language="Javascript">  
 			
 			$(document).ready(function() {
+				
+				
+				$('.show_on_showpage').click(function(event) {
+
+						$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
+							table:'showpage_cast_items_images',
+							id:$(this).attr('showpage_cast_items_image_id'),
+							crud:'update',
+							set_what_array:$(this).serialize()
+							},function(xml) {
+							
+								var status = $(xml).find('status').text();
+								var message = $(xml).find('message').text();
+								
+								
+						});	
+							
+							
+				});	
+				
+				$('.order').blur(function(event) {
+
+							
+						$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
+							table:'showpage_cast_items_images',
+							id:$(this).attr('showpage_cast_items_image_id'),
+							crud:'update',
+							set_what_array:$(this).serialize()
+							},function(xml) {
+							
+								var status = $(xml).find('status').text();
+								var message = $(xml).find('message').text();
+								document.location.reload(true);
+								
+						});		
+				});					
 
 				$('#addshowpage_castItem').css({cursor:'pointer'}).fancyZoom().click(function(event) {
 
