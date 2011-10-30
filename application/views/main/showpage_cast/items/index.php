@@ -114,13 +114,13 @@
 						};
 						
 						
-						alert($(this).serialize());
+						
 
 						$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
 							table:'showpage_cast_items_images',
 							id:$(this).attr('showpage_cast_items_image_id'),
 							crud:'update',
-							set_what_array:$(this).serialize()
+							set_what_array:'show_on_showpage='+$(this).val()
 							},function(xml) {
 							
 								var status = $(xml).find('status').text();
