@@ -106,6 +106,12 @@
 				
 				
 				$('.show_on_showpage').click(function(event) {
+					
+						if( $(this).val() == 0){
+							$(this).val(1);
+						}else{
+							$(this).val(0);
+						};
 
 						$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
 							table:'showpage_cast_items_images',
