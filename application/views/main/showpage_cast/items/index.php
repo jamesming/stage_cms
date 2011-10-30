@@ -113,7 +113,7 @@
 							$(this).val(0);
 						};
 						
-						
+						alert($(this).val());
 						
 
 						$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
