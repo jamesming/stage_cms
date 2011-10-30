@@ -1039,7 +1039,6 @@ function query(){
 
 
 			$showpage_feature_items_raw = $this->CI->tools->object_to_array($showpage_feature_items_raw);
-			
 			foreach( $showpage_feature_items_raw  as  $keyA => $showpage_feature_item_raw){
 
 				foreach( $showpage_feature_item_raw  as  $field => $value){
@@ -1111,7 +1110,7 @@ function query(){
 
 				};
 				
-		
+				$showpage_feature_item['short_version'] = $showpage_feature_items_raw[0]['short_version'];
 				$showpage_feature_items[] = $showpage_feature_item;
 				
 			};

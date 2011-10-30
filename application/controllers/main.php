@@ -122,7 +122,6 @@ class Main extends CI_Controller {
 								$segment4,
 								$this->input->get()
 						 );
-						 
 
 			    break;
 			    case 'calendar':
@@ -252,7 +251,6 @@ class Main extends CI_Controller {
 							$where_array = array( 'id' => $this->input->get('showpage_feature_item_id')) 
 				);	
 				
-
 				$this->load->view('main/showpage_feature/items/form_view', 
 					array( 'data' => $data )
 				);

@@ -17,7 +17,9 @@ form#image_showpage_feature_item_form input[type=text]{
 padding:6px 5px;
 width:490px;	
 }
-
+form#image_showpage_feature_item_form #short_version{
+width:490px;	
+}
 form#image_showpage_feature_item_form table#main {
 width:100%;
 margin:30px 0px 0px 0px;	
@@ -94,6 +96,18 @@ display:none;
 				<td  class='main_table '><input name="title" id="" type="text" value="<?php echo $data['showpage_feature_items'][0]['title']    ?>">
 				</td>
 			</tr>
+			
+			<tr>
+				<td  class='main_table '>Short Version
+				</td>				
+				
+				<td   class='main_table ' colspan=2>
+					<div>
+							<textarea  class=' clearfix' name='short_version' id='short_version'><?php echo $data['showpage_feature_items'][0]['short_version']    ?></textarea>
+					</div>
+				</td>
+			</tr>	
+			
 			<tr>
 				<td class='main_table image_assets' colspan=2>
 					<div  class=' image_assets' >
