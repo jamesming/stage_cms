@@ -112,9 +112,6 @@
 						}else{
 							show_on_showpage = 0;
 						};
-						
-						alert($(this).val());
-						
 
 						$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
 							table:'showpage_cast_items_images',
