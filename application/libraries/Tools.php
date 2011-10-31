@@ -653,19 +653,7 @@ function create_iframe_html_from_youtube_video_id( $youtube_video_id, $width, $h
 	
 	
 	
-		public function aasort (&$array, $key) {
-		    $sorter=array();
-		    $ret=array();
-		    reset($array);
-		    foreach ($array as $ii => $va) {
-		        $sorter[$ii]=$va[$key];
-		    }
-		    asort($sorter);
-		    foreach ($sorter as $ii => $va) {
-		        $ret[$ii]=$array[$ii];
-		    }
-		    $array=$ret;
-		}
+
 
 	
 		public function arr_to_csv_line($arr) {
