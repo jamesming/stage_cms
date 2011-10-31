@@ -1001,8 +1001,9 @@ function query(){
 			
 
 			if( isset($showpage_cast_items)){
-				
-				$this->CI->tools->aasort($showpage_cast_items,'order');
+				if( isset($showpage_item['order'])){
+					$this->CI->tools->aasort($showpage_cast_items,'order');
+				};
 				return $showpage_cast_items;
 			}else{
 				return;
