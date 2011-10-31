@@ -73,7 +73,7 @@
 						</div>
 						
 						<div class='float_left '>
-							<input name="show_on_showpage" <?php echo ($showpage_cast_item['show_on_showpage']==1?' checked ':'')    ?> showpage_cast_items_image_id='<?php echo $showpage_cast_item['showpage_cast_items_image_id']    ?>'  class='show_on_showpage '  type="checkbox" value="1">
+							<input name="show_on_showpage" <?php echo (isset($showpage_cast_item['show_on_showpage']) && $showpage_cast_item['show_on_showpage']==1?' checked ':'')    ?> showpage_cast_items_image_id='<?php echo $showpage_cast_item['showpage_cast_items_image_id']    ?>'  class='show_on_showpage '  type="checkbox" value="1">
 						</div>	
 										
 						<div class='float_left '>
