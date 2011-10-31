@@ -77,7 +77,7 @@
 						</div>	
 										
 						<div class='float_left '>
-							<input  name="order"  showpage_cast_items_image_id='<?php echo $showpage_cast_item['showpage_cast_items_image_id']    ?>'class='order '  type="" value="<?php echo  $showpage_cast_item['order']   ?>">
+							<input  name="order"  showpage_cast_items_image_id='<?php echo $showpage_cast_item['showpage_cast_items_image_id']    ?>'class='order '  type="" value="<?php echo (isset($showpage_cast_item['order']) ?$showpage_cast_item['order']:'')    ?>">
 						</div>
 						<div  class='float_left ' >
 							<img src='<?php echo base_url()    ?>uploads/showpage_cast_items_images/<?php  echo $showpage_cast_item['showpage_cast_items_image_id']   ?>/image_tiny.png'/>
