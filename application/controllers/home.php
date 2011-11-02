@@ -132,9 +132,18 @@ function upload_photos(){
 
 function upload_photos_success(){
 	
+		$thumb_array = array(
+			'folder'=> 'showpage_photos_items_images', 
+			'showpage_item_id'=> $this->input->get('showpage_item_id'),
+			'thumb'=> 'thumb'
+		);
+		
+		$this->tools->set_directory_for_upload( $thumb_array );
+	
 		$path_array = array(
 			'folder'=> 'showpage_photos_items_images', 
-			'showpage_item_id'=> $this->input->get('showpage_item_id')
+			'showpage_item_id'=> $this->input->get('showpage_item_id'),
+			'fullsize'=> 'fullsize'
 		);
 		
 		$upload_path = $this->tools->set_directory_for_upload( $path_array );
@@ -153,9 +162,10 @@ function upload_photos_success(){
 			
 		}	
 		else
-		{
-				echo $_FILES["Filedata"]['name'] . " has been successfully uploaded."."<br><br>";
-			
+		{?>
+				<?php  echo $_FILES["Filedata"]['name'] . " has been successfully uploaded."."<br><br>";   ?>
+				<iframe   style='0px;height:0px'   src='<?php  echo base_url()   ?>index.php/home/resize_images?filename=<?php  echo $_FILES["Filedata"]['name']   ?>&showpage_item_id=<?php echo $this->input->get('showpage_item_id')    ?>'></iframe>
+		<?php     	
 		}
 	
 	
@@ -164,7 +174,52 @@ function upload_photos_success(){
 	
 }  
 	
+
 	
+/**
+	 * resize_images
+	 *
+	 * {@source }
+	 * @package BackEnd
+	 * @author James Ming <jamesming@gmail.com>
+	 * @path /index.php/main/resize_images
+	 * @access public
+	 **/ 
+	 
+	public function resize_images(){
+
+	
+	$dir_path = 'uploads/showpage_photos_items_images/'. $this->input->get('showpage_item_id').'/fullsize/'.$this->input->get('filename'); 
+		
+	$image_information = getimagesize($dir_path );
+	
+	$width_of_file = $image_information[0];
+	$height_of_file = $image_information[1];
+
+	
+	$new_width  = '146';
+
+	$new_height = $this->tools->get_new_size_of ($what = 'height', $based_on_new = $new_width, $orig_width = $width_of_file, $orig_height = $height_of_file );
+
+	$new_name = $this->tools->clone_and_resize_append_name_of(
+		$appended_suffix = '_thumb', 
+		$full_path = $dir_path, 
+		$width = $new_width, 
+		$height = $new_height
+		);
+		
+	$new_name_array = explode('.',$this->input->get('filename'));
+	$new_name = $new_name_array[0].'_thumb.'.$new_name_array[1];
+	rename(
+		'uploads/showpage_photos_items_images/'. $this->input->get('showpage_item_id').'/fullsize/' . $new_name, 
+		'uploads/showpage_photos_items_images/'. $this->input->get('showpage_item_id').'/thumb/' . $new_name
+	);
+		
+						
+	}
+
+
+
 	
 }
 /* End of file main.php */

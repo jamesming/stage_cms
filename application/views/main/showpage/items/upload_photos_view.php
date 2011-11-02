@@ -62,15 +62,7 @@
 		     };
 	
 	</script>
-	<script type="text/javascript" language="Javascript">
-	
-			$(document).ready(function() { 
-	
-					
-				
-			});
-			 
-	</script>
+
 </head>
 <body>
 	
