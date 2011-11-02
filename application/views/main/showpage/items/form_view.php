@@ -129,7 +129,14 @@ display:none;
 				</td>
 				<td  class='main_table '><input name="facebook_url" id="" type="text" value="<?php echo $data['showpage_items'][0]['facebook_url']    ?>">
 				</td>
-			</tr>			
+			</tr>		
+			
+			<tr>
+				<td  class='main_table '> Twitter
+				</td>
+				<td  class='main_table '><input name="twitter_url" id="" type="text" value="<?php echo ( isset( $data['showpage_items'][0]['twitter_url']) ? $data['showpage_items'][0]['twitter_url'] :'' )    ?>">
+				</td>
+			</tr>						
 			<tr>
 				<td  class='main_table '> Video Embed
 				</td>
