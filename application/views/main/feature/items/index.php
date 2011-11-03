@@ -66,13 +66,13 @@
 						<div  class='float_left name_of '  feature_item_id='<?php echo  $feature_item['id']   ?>'  href='#fancy_zoom_div' >
 							<?php echo  $feature_item['name']   ?>
 						</div>
-						<div  class='float_left'  >
-							<a target='_blank' href='http://stage.mynuvotv.com/features/<?php echo $feature_item['name']    ?>'>launch</a>
-						</div>
+
 						<div  class='float_left  feature_item_trash' >
 							<img src='<?php   echo base_url()  ?>images/trash.gif'   feature_item_id='<?php echo  $feature_item['id']   ?>' >
 						</div>			
-					
+						<div  class='float_left'  >
+							<a target='_blank' href='http://stage.mynuvotv.com/features/<?php echo $feature_item['name']    ?>'>launch</a>
+						</div>					
 					</div>
 					
 				<?php }
