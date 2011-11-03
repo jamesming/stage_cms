@@ -32,15 +32,24 @@ margin-top:25px;
 }
 form#image_feature_item_form div#image_feature_item_feature{
 	background-image: url(<?php echo base_url();    ?>uploads/feature_items_images/<?php
-	  	echo $data['feature_items'][0]['feature_items_image_id']; 
+	  	echo $data['feature_items'][0]['feature_large_items_image_id']; 
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
-	width:242px;
-	height:222px;
+	width:244px;
+	height:126px;
 	margin-left: 72px;
 }
-
+form#image_feature_item_form div#image_feature_item_title_graphic{
+	background-image: url(<?php echo base_url();    ?>uploads/feature_items_images/<?php
+	  	echo $data['feature_items'][0]['feature_title_graphic_items_image_id']; 
+	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	background-repeat: no-repeat;
+	border:1px dotted gray;
+	width:244px;
+	height:126px;
+	margin-left: 72px;
+}
 form#image_feature_item_form #textarea_div{
 width:100%;
 height: 180px;
@@ -74,11 +83,19 @@ display:none;
 <form id='image_feature_item_form'>
 		<table  id='main'>
 			<tr>
-				<td  class='main_table ' > Name
+				<td  class='main_table ' > URL Name
 				</td>
 				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo $data['feature_items'][0]['name']    ?>">
 				</td>
 			</tr>
+			
+			<tr>
+				<td  class='main_table '> Title Tag
+				</td>
+				<td  class='main_table '><input name="title_tag" id="" type="text" value="<?php echo ( isset( $data['feature_items'][0]['title_tag']) ? $data['feature_items'][0]['title_tag'] :'' )    ?>">
+				</td>
+			</tr>		
+			
 			<tr>
 				<td  class='main_table '> Title
 				</td>
@@ -88,10 +105,11 @@ display:none;
 			<tr>
 				<td class='main_table image_assets' colspan=2>
 					<div  class=' image_assets' >
-							<div image_type='feature_large' image_type_id='17' class='float_left image_div'  id='image_feature_item_feature' feature_items_image_id='<?php echo $data['feature_items'][0]['feature_items_image_id']    ?>'>
+							<div image_type='feature_large' image_type_id='17' class='float_left image_div'  id='image_feature_item_feature' feature_items_image_id='<?php echo $data['feature_items'][0]['feature_large_items_image_id']    ?>'>
 							</div>
 							
-					
+							<div image_type='feature_title_graphic' image_type_id='20' class='float_left image_div'  id='image_feature_item_title_graphic' feature_items_image_id='<?php echo $data['feature_items'][0]['feature_title_graphic_items_image_id']    ?>'>
+							</div>					
 					</div>
 
 				</td>

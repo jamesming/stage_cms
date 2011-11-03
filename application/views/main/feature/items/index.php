@@ -64,7 +64,7 @@
 						
 						
 						<div  class='float_left name_of '  feature_item_id='<?php echo  $feature_item['id']   ?>'  href='#fancy_zoom_div' >
-							<?php echo  $feature_item['id']   ?>
+							<?php echo  $feature_item['name']   ?>
 						</div>
 
 						<div  class='float_left  feature_item_trash' >

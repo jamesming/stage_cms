@@ -718,7 +718,7 @@ function query(){
 										$select_what = '*', 
 										$where_array = array(
 																		'feature_item_id'=> $value,
-																		'image_type_id' => '17'
+																		'image_type_id' => '17' //feature_large
 																		), 
 										$use_order = FALSE, 
 										$order_field = '', 
@@ -730,16 +730,40 @@ function query(){
 						
 						if( count($feature_items_images) > 0){				
 							
-							$feature_item['feature_items_image_id'] = $feature_items_images[0]->id;
+							$feature_item['feature_large_items_image_id'] = $feature_items_images[0]->id;
 							
 							
 						}else{
 							
-							$feature_item['feature_items_image_id'] = 0;
+							$feature_item['feature_large_items_image_id'] = 0;
 							
 						};
 						
-
+						$feature_items_images = $this->CI->my_database_model->select_from_table( 
+										$table = 'feature_items_images', 
+										$select_what = '*', 
+										$where_array = array(
+																		'feature_item_id'=> $value,
+																		'image_type_id' => '20' //feature_title
+																		), 
+										$use_order = FALSE, 
+										$order_field = '', 
+										$order_direction = 'desc', 
+										$limit = -1
+										);
+										
+				
+						
+						if( count($feature_items_images) > 0){				
+							
+							$feature_item['feature_title_graphic_items_image_id'] = $feature_items_images[0]->id;
+							
+							
+						}else{
+							
+							$feature_item['feature_title_graphic_items_image_id'] = 0;
+							
+						};
 	
 					};
 					

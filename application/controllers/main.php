@@ -1549,6 +1549,12 @@ submitted
 								
 
 			switch ($image_type ) {
+				
+		    case 'feature_title_graphic':
+	
+						$new_width  = '255';
+						
+		    break;	
 
 		    case 'showpage_hero':
 	
