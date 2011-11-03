@@ -179,7 +179,7 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 				});	
 			
 				mbox = $("#text_area").css({
-						height:"100px",
+						height:"400px",
 						width:"100%"
 						}).htmlbox({
 				    toolbars:[
