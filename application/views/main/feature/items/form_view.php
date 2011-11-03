@@ -85,8 +85,17 @@ display:none;
 				<td  class='main_table '><input name="title" id="" type="text" value="<?php echo $data['feature_items'][0]['title']    ?>">
 				</td>
 			</tr>
+			<tr>
+				<td class='main_table image_assets' colspan=2>
+					<div  class=' image_assets' >
+							<div image_type='feature_large' image_type_id='17' class='float_left image_div'  id='image_feature_item_feature' feature_items_image_id='<?php echo $data['feature_items'][0]['feature_items_image_id']    ?>'>
+							</div>
+							
+					
+					</div>
 
-
+				</td>
+			</tr>	
 			<tr>
 				<td   class='main_table ' colspan=2>
 					<div  id='textarea_div'   >
@@ -100,17 +109,7 @@ display:none;
 
 
 
-			<tr>
-				<td class='main_table image_assets' colspan=2>
-					<div  class=' image_assets' >
-							<div image_type='feature_large' image_type_id='17' class='float_left image_div'  id='image_feature_item_feature' feature_items_image_id='<?php echo $data['feature_items'][0]['feature_items_image_id']    ?>'>
-							</div>
-							
-					
-					</div>
 
-				</td>
-			</tr>	
 			
 			<tr>
 				<td   colspan=2>
