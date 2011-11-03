@@ -96,6 +96,16 @@ display:none;
 
 				</td>
 			</tr>	
+			
+			<tr>
+				<td   colspan=2>
+					<div>
+						<input name="" id="submit" type="button" value="submit">
+					</div>
+				</td>
+			</tr>	
+			
+			
 			<tr>
 				<td   class='main_table ' colspan=2>
 					<div  id='textarea_div'   >
@@ -111,13 +121,7 @@ display:none;
 
 
 			
-			<tr>
-				<td   colspan=2>
-					<div>
-						<input name="" id="submit" type="button" value="submit">
-					</div>
-				</td>
-			</tr>	
+
 			
 		</table>
 </form>
@@ -178,7 +182,7 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 				});	
 			
 				mbox = $("#text_area").css({
-						height:"400px",
+						height:"600px",
 						width:"100%"
 						}).htmlbox({
 				    toolbars:[
