@@ -14,6 +14,11 @@
 	<script type="text/javascript" src="<?php echo  base_url();   ?>js/swfupload/js/fileprogress.js"></script>
 	<script type="text/javascript" src="<?php echo  base_url();   ?>js/swfupload/js/handlers.js"></script>
 	<script type="text/javascript">
+		
+		
+	$(document).ready(function() { 
+		queueComplete();
+	});
 			var swfu;
 	
 			// Flash will not pass through your existing PHP Session information, so if you are getting the 302 error it is likely that your application is returning the login URL to the Flash player. To resolve this issue, you could include the session information in scriptData and manage it manually in your application.
@@ -60,6 +65,19 @@
 	
 				swfu = new SWFUpload(settings);
 		     };
+		     
+		     
+	function queueComplete(){
+	
+							$.post("<?php echo base_url(). 'index.php/home/get_thumb_photos';    ?>",{
+							showpage_item_id:<?php echo (isset($showpage_item_id)?$showpage_item_id:'0');    ?>
+							},function(data) {
+										$('#error_div').html(data);
+										$('#fsUploadProgress').html('');
+							});		
+
+		
+	}
 	
 	</script>
 
@@ -105,7 +123,7 @@
 </div>
 
 
-<div id='error_div'     style='background:lightyellow;margin-left:90px;font-size:23px'  ><u>Server Message:</u><br><br>
+<div id='error_div'     style='background:lightyellow;margin-left:90px;font-size:9px'  >
 </div>
 
 

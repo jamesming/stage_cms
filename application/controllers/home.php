@@ -219,7 +219,19 @@ function upload_photos_success(){
 	}
 
 
+function get_thumb_photos(){
+		$images  = scandir("./uploads/showpage_photos_items_images/".$this->input->post('showpage_item_id')."/thumb");
 
+		for($i=2;$i<count($images)-1;$i++){
+			?>
+			
+			<img src='<?php echo base_url()    ?>uploads/showpage_photos_items_images/<?php echo  $this->input->post('showpage_item_id')   ?>/thumb/<?php  echo $images[$i]   ?>'  />
+			
+			<?php     
+		}
+		
+	
+}
 	
 }
 /* End of file main.php */
