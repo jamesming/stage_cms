@@ -33,7 +33,7 @@ form#image_carousel_item_form table#main div.image_assets{
 margin-top:25px;
 }
 form#image_carousel_item_form div#image_carousel_item_hero{
-	background-image: url(<?php echo base_url();    ?>uploads/carousel_items_images/<?php  	echo $data['carousel_items'][0]['hero_carousel_items_image_id'] ?>/image_tiny.png);
+	background-image: url(<?php echo base_url();    ?>uploads/carousel_items_images/<?php  	echo $data['carousel_items'][0]['hero_carousel_items_image_id'] ?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
 	width:317px;
@@ -41,7 +41,7 @@ form#image_carousel_item_form div#image_carousel_item_hero{
 	margin-left: 10px;
 }
 form#image_carousel_item_form div#image_carousel_item_right_tab{
-	background-image: url(<?php echo base_url();    ?>uploads/carousel_items_images/<?php  	echo $data['carousel_items'][0]['right_tab_carousel_items_image_id'] ?>/image_tiny.png);
+	background-image: url(<?php echo base_url();    ?>uploads/carousel_items_images/<?php  	echo $data['carousel_items'][0]['right_tab_carousel_items_image_id'] ?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
 	width:77px;
@@ -50,7 +50,7 @@ form#image_carousel_item_form div#image_carousel_item_right_tab{
 }
 
 form#image_carousel_item_form div#image_carousel_item_tune_in{
-	background-image: url(<?php echo base_url();    ?>uploads/carousel_items_images/<?php  	echo $data['carousel_items'][0]['tune_in_carousel_items_image_id'] ?>/image_tiny.png);
+	background-image: url(<?php echo base_url();    ?>uploads/carousel_items_images/<?php  	echo $data['carousel_items'][0]['tune_in_carousel_items_image_id'] ?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
 	width:300px;
@@ -58,7 +58,7 @@ form#image_carousel_item_form div#image_carousel_item_tune_in{
 	margin-left: 12px;
 }
 form#image_carousel_item_form div#image_carousel_item_hero_iphone{
-	background-image: url(<?php echo base_url();    ?>uploads/carousel_items_images/<?php  	echo $data['carousel_items'][0]['hero_iphone_carousel_items_image_id'] ?>/image_tiny.png);
+	background-image: url(<?php echo base_url();    ?>uploads/carousel_items_images/<?php  	echo $data['carousel_items'][0]['hero_iphone_carousel_items_image_id'] ?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
 	width:317px;
@@ -66,7 +66,7 @@ form#image_carousel_item_form div#image_carousel_item_hero_iphone{
 	margin-left: 10px;
 }
 form#image_carousel_item_form div#image_carousel_item_right_tab_iphone{
-	background-image: url(<?php echo base_url();    ?>uploads/carousel_items_images/<?php  	echo $data['carousel_items'][0]['right_tab_iphone_carousel_items_image_id'] ?>/image_tiny.png);
+	background-image: url(<?php echo base_url();    ?>uploads/carousel_items_images/<?php  	echo $data['carousel_items'][0]['right_tab_iphone_carousel_items_image_id'] ?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
 	width:77px;
@@ -75,7 +75,7 @@ form#image_carousel_item_form div#image_carousel_item_right_tab_iphone{
 }
 
 form#image_carousel_item_form div#image_carousel_item_right_tab_border_iphone{
-	background-image: url(<?php echo base_url();    ?>uploads/carousel_items_images/<?php  	echo $data['carousel_items'][0]['tune_in_iphone_carousel_items_image_id'] ?>/image_tiny.png);
+	background-image: url(<?php echo base_url();    ?>uploads/carousel_items_images/<?php  	echo $data['carousel_items'][0]['tune_in_iphone_carousel_items_image_id'] ?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
 	width:77px;

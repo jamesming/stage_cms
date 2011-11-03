@@ -33,7 +33,7 @@ form#image_nu_spotlight_item_form table#main div.image_assets{
 margin-top:25px;
 }
 form#image_nu_spotlight_item_form div#image_nu_spotlight_item_feature{
-	background-image: url(<?php echo base_url();    ?>uploads/nu_spotlight_items_images/<?php  	echo $data['nu_spotlight_items'][0]['feature_nu_spotlight_items_image_id'] ?>/image.png);
+	background-image: url(<?php echo base_url();    ?>uploads/nu_spotlight_items_images/<?php  	echo $data['nu_spotlight_items'][0]['feature_nu_spotlight_items_image_id'] ?>/image.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
 	width:242px;
@@ -41,7 +41,7 @@ form#image_nu_spotlight_item_form div#image_nu_spotlight_item_feature{
 	margin-left: 72px;
 }
 form#image_nu_spotlight_item_form div#image_nu_spotlight_item_thumb{
-	background-image: url(<?php echo base_url();    ?>uploads/nu_spotlight_items_images/<?php  	echo $data['nu_spotlight_items'][0]['thumb_nu_spotlight_items_image_id'] ?>/image.png);
+	background-image: url(<?php echo base_url();    ?>uploads/nu_spotlight_items_images/<?php  	echo $data['nu_spotlight_items'][0]['thumb_nu_spotlight_items_image_id'] ?>/image.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
 	width:69px;
