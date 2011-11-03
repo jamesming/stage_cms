@@ -105,7 +105,9 @@
 						<div  class='float_left show_page_photos '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'    href='#fancy_zoom_div'>
 							photos
 						</div>	
-						
+						<div  class='float_left'  >
+							<a target='_blank' href='http://stage.mynuvotv.com/shows/<?php echo $showpage_item['name']    ?>'>launch</a>
+						</div>
 						<div  class='float_left  showpage_item_trash' >
 							<img src='<?php   echo base_url()  ?>images/trash.gif'   showpage_item_id='<?php echo  $showpage_item['id']   ?>' >
 						</div>	
