@@ -32,6 +32,7 @@
 								padding-top:0px;
 								text-align:center;
 								color:gray;
+								width:350px;
 								 margin-right:200px;
 								}
 								
