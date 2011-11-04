@@ -45,7 +45,6 @@
 											
 								#feature_item_outside_container   .feature_item_row .feature_item_trash{
 								
-								 background:red;
 								}
 								
 
