@@ -26,13 +26,12 @@
 					padding:5px;
 					}
 								#feature_item_outside_container   .feature_item_row .name_of{
-								width:110px;
+								
 								font-weight:bold;
 								font-size:20px;
 								padding-top:0px;
 								text-align:center;
 								color:gray;
-								 background:orange;
 								 margin-right:200px;
 								}
 								
