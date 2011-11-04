@@ -99,7 +99,7 @@ display:none;
 			<tr>
 				<td  class='main_table '> Title
 				</td>
-				<td  class='main_table '><input name="title" id="" type="text" value="<?php echo $data['feature_items'][0]['title']    ?>">
+				<td  class='main_table '><input name="title" id="" type="text" value="<?php echo $data['feature_items'][0]['title']    ?>">  &nbsp; &nbsp;Include title:<input <?php   echo (isset($data['feature_items'][0]['include_title']) && $data['feature_items'][0]['include_title'] == 1? " checked ": "" )  ?> name="include_title" id="include_title" type="checkbox" value="1">
 				</td>
 			</tr>
 			<tr>
@@ -248,12 +248,21 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 
 function submit_inputs(close_fancyzoom){
 
+					serialized = $('#image_feature_item_form').serialize();
+					
+					if( !$('#include_title').is(':checked')  ){
+						
+					serialized = serialized + '&include_title=0';
+						
+					};
+					
+
 					$("#text_area").val( mbox.get_html() );
 
 					$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
 						table:'feature_items',
 						crud:'update',
-						set_what_array: $('#image_feature_item_form').serialize(),
+						set_what_array: serialized,
 						id:'<?php echo $data['feature_items'][0]['id']    ?>'
 						},function(xml) {
 

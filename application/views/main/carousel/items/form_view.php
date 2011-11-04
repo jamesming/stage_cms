@@ -324,11 +324,20 @@ $this->load->view('footer/jquery_ui_for_dialog.php');
 
 
 function submit_inputs(close_fancyzoom){
+	
+					serialized = $('#image_carousel_item_form').serialize();
+				
+					if( !$('#launch').is(':checked')  ){
+						
+					serialized = serialized + '&launch=0';
+						
+					};
+	
 
 					$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
 						table:'carousel_items',
 						crud:'update',
-						set_what_array: $('#image_carousel_item_form').serialize(),
+						set_what_array: serialized,
 						id:'<?php echo $data['carousel_items'][0]['id']    ?>'
 						},function(xml) {
 
