@@ -30,7 +30,6 @@
 								font-weight:bold;
 								font-size:20px;
 								padding-top:0px;
-								text-align:center;
 								color:gray;
 								width:350px;
 								 margin-right:200px;
