@@ -32,15 +32,24 @@
 								padding-top:0px;
 								text-align:center;
 								color:gray;
+								 background:orange;
+								 margin-right:200px;
 								}
 								
-	
+								#feature_item_outside_container   .feature_item_row .feature_item_launch{
+								
+								font-size:30px;
+								 
+								 margin-right:200px;
+								}								
+									
 											
 								#feature_item_outside_container   .feature_item_row .feature_item_trash{
-								width:46px;
-								padding-top:90px;
+								
+								 background:red;
 								}
 								
+
 											#feature_item_outside_container   .feature_item_row .feature_item_trash img{
 											width:30px;
 											}	
@@ -66,13 +75,13 @@
 						<div  class='float_left name_of '  feature_item_id='<?php echo  $feature_item['id']   ?>'  href='#fancy_zoom_div' >
 							<?php echo  $feature_item['name']   ?>
 						</div>
-
+						<div  class='float_left feature_item_launch'   >
+							<a target='_blank' href='http://stage.mynuvotv.com/features/<?php echo $feature_item['name']    ?>'>launch</a>
+						</div>	
 						<div  class='float_left  feature_item_trash' >
 							<img src='<?php   echo base_url()  ?>images/trash.gif'   feature_item_id='<?php echo  $feature_item['id']   ?>' >
 						</div>			
-						<div  class='float_left'  >
-							<a target='_blank' href='http://stage.mynuvotv.com/features/<?php echo $feature_item['name']    ?>'>launch</a>
-						</div>					
+				
 					</div>
 					
 				<?php }
