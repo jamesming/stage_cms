@@ -204,11 +204,53 @@ display:none;
 							<div  image_type='right_tab_border_iphone' image_type_id='9' class='float_left image_div'   id='image_carousel_item_right_tab_border_iphone'  carousel_items_image_id='<?php  	echo $data['carousel_items'][0]['tune_in_iphone_carousel_items_image_id'] ?>'>
 								
 							</div>	
+							<style>
+								table#iphone_directTo_table{
+									border:1px solid gray;	
+									/*border-left:0px solid gray;	
+									border-top:0px solid gray;	*/
+								}
+								table#iphone_directTo_table td{/*
+									border-right:0px solid gray;	
+									border-bottom:0px solid gray;*/
+									white-space:nowrap;
+									vertical-align:middle;
+								}
+							</style>
+ 							<div   id='iphone_directTo_div' >	
+ 								
+ 								<table id='iphone_directTo_table'>
+ 									<tr>
+ 										<td><input name="iphone_directTo" type="radio" value="1"> </td>
+ 										<td>Internal 
+ 										</td>
+ 										<td><select  style='width:95px' ><option>test</option></select>
+ 										</td>
+ 									</tr>
+ 									<tr>
+ 										<td><input name="iphone_directTo" type="radio" value="2">	</td>
+ 										<td>External
+ 										</td>
+ 										<td>
+ 										</td>
+ 									</tr>
+ 									<tr>
+ 										<td><input name="iphone_directTo" type="radio" value="3"></td>
+ 										<td>Video
+ 										</td>
+ 										<td><input name="videoID" id="videoID" type="text" value="<?php echo ( isset( $data['carousel_items'][0]['videoID']  ) ? $data['carousel_items'][0]['videoID']  :'' )  ?>"    style='width:95px'  >
+ 										</td>
+ 									</tr>
+ 									<tr>
+ 										<td><input name="iphone_directTo" type="radio" value="4">	</td>
+ 										<td>None
+ 										</td>
+ 										<td>
+ 										</td>
+ 									</tr> 									 									 									
+ 								</table>
 
-							<div   id='iphone_directTo_div' >	
-								<input name="iphone_directTo" type="radio" value="1"> Internal<br />
-								<input name="iphone_directTo" type="radio" value="2">	External<br />
-								<input name="iphone_directTo" type="radio" value="3">	None
+								
 							</div>
 					</div>
 
@@ -260,6 +302,14 @@ $this->load->view('footer/jquery_ui_for_dialog.php');
 
 	$(document).ready(function() {
 		
+
+
+				$('#iphone_directTo_div input').each(function(event) {
+					if( $(this).val() == <?php  echo $data['carousel_items'][0]['iphone_directTo']   ?>){		
+							$(this).attr("checked","checked");
+					};
+				});	
+
 
 				$(".image_div").append("<div  class='icon_container ' ><div  class='icon change_pic'  >c</div></div>")
 				.mouseover(function(event) {

@@ -273,7 +273,6 @@ class Main extends CI_Controller {
 							$where_array = array( 'id' => $this->input->get('carousel_item_id')) 
 				);	
 				
-				
 
 				$this->load->view('main/carousel/items/form_view', 
 					array( 'data' => $data )
