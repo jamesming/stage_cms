@@ -1545,7 +1545,7 @@ submitted
 									)
 								);	
 								
-								
+			$new_width  = '255';								
 								
 
 			switch ($image_type ) {
@@ -1580,7 +1580,11 @@ submitted
 						$new_width  = '458';
 						
 		    break;	
-
+		    case 'showpage_hero_iphone':
+	
+						$new_width  = '321';
+						
+		    break;			 
 		    case 'showpage_feature_small':
 	
 						$new_width  = '138';

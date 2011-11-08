@@ -70,7 +70,7 @@ form#image_showpage_item_form div#image_showpage_hero_iphone_item_showpage_hero_
 	background-repeat: no-repeat;
 	border:1px dotted gray;
 	width:320px;
-	height:480px;
+	height:461px;
 	margin-left: 72px;
 }
 
@@ -200,7 +200,7 @@ display:none;
 			<tr>
 				<td class='main_table image_assets' colspan=2>
 					<div  class=' image_assets' >
-							<div image_type='showpage_hero_iphone' image_type_id='11' class='float_left image_div'  id='image_showpage_hero_iphone_item_showpage_hero_iphone' showpage_items_image_id='<?php echo $data['showpage_iphone_items'][0]['showpage_hero_iphone_items_image_id']    ?>'>
+							<div image_type='showpage_hero_iphone' image_type_id='11' class='float_left image_div'  id='image_showpage_hero_iphone_item_showpage_hero_iphone' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_hero_iphone_items_image_id']) ? $data['showpage_items'][0]['showpage_hero_iphone_items_image_id']:'' )    ?>'>
 							</div>
 							
 					
