@@ -218,6 +218,7 @@ function upload_photos_success(){
 	);
 	
 	
+	chmod_R('uploads/showpage_photos_items_images/'. $this->input->get('showpage_item_id'), 0666, 0777);
 	chmod('uploads/showpage_photos_items_images/'. $this->input->get('showpage_item_id').'/'. $this->input->get('showpage_photos_item_id').'/fullsize/' . $new_name, 0755);
 	chmod('uploads/showpage_photos_items_images/'. $this->input->get('showpage_item_id').'/'. $this->input->get('showpage_photos_item_id').'/thumb/' . $new_name, 0755);
 		
