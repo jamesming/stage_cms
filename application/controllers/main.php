@@ -124,6 +124,18 @@ class Main extends CI_Controller {
 						 );
 
 			    break;
+			    
+			    
+			    case 'showpage_photos':
+		
+						$data = $this->custom->prepare_showpage_photos_items( 
+								$segment4,
+								$this->input->get()
+						 );
+
+			    break;			    
+			    
+			    
 			    case 'calendar':
 		
 						$data = $this->custom->prepare_calendar($this->input->get());
@@ -234,6 +246,31 @@ class Main extends CI_Controller {
 		
 	}
 	
+
+
+	
+	/**
+	 * get_showpage_photos_form
+	 * 
+	 * @package BackEnd
+	 * @author James Ming <jamesming@gmail.com>
+	 * @path /index.php/home/get_showpage_photos_form
+	 * @access public
+	 */
+	 
+	 
+	public function get_showpage_photos_form(){
+		
+				$data['showpage_photos_items'] = $this->query->get_showpage_photos_items(
+							$where_array = array( 'id' => $this->input->get('showpage_photos_item_id')) 
+				);	
+				
+
+				$this->load->view('main/showpage_photos/items/form_view', 
+					array( 'data' => $data )
+				);
+		
+	}
 
 	/**
 	 * showpage_feature
@@ -1633,86 +1670,49 @@ submitted
 function t(){
 	
 	
-$table = 'feature_items_images';
-
-$this->my_database_model->	create_generic_table($table );
-
-
-
-$fields_array = array(
-
-											'width' => array(
-                                               'type' => 'int(11)'),
-
-											'height' => array(
-                                               'type' => 'int(11)')                                               
-              ); 
+				$table = 'showpage_photos_items';
+				
+				$this->my_database_model->	create_generic_table($table );
+				
+				
+				
+				$fields_array = array(
+				
+															'width' => array(
+				                                               'type' => 'int(11)'),
+				
+															'height' => array(
+				                                               'type' => 'int(11)')                                               
+				              ); 
+				              
+				$this->my_database_model->add_column_to_table_if_exist(
+					$table, 
+					$fields_array
+				);
               
-$this->my_database_model->add_column_to_table_if_exist(
-	$table, 
-	$fields_array
-);
+                      
               
-$table = 'showpage_items_images';
+				$table = 'showpage_photos_items_images';
+				
+				$this->my_database_model->	create_generic_table($table );
+				
+				
+				
+				$fields_array = array(
+				
+															'width' => array(
+				                                               'type' => 'int(11)'),
+				
+															'height' => array(
+				                                               'type' => 'int(11)')                                               
+				              ); 
+				              
+				$this->my_database_model->add_column_to_table_if_exist(
+					$table, 
+					$fields_array
+				);              
+  }  
 
-$this->my_database_model->	create_generic_table($table );
-
-
-
-$fields_array = array(
-
-											'width' => array(
-                                               'type' => 'int(11)'),
-
-											'height' => array(
-                                               'type' => 'int(11)')                                               
-              ); 
-              
-$this->my_database_model->add_column_to_table_if_exist(
-	$table, 
-	$fields_array
-);                           
-              
-$table = 'showpage_cast_items_images';
-
-$this->my_database_model->	create_generic_table($table );
-
-
-
-$fields_array = array(
-
-											'width' => array(
-                                               'type' => 'int(11)'),
-
-											'height' => array(
-                                               'type' => 'int(11)')                                               
-              ); 
-              
-$this->my_database_model->add_column_to_table_if_exist(
-	$table, 
-	$fields_array
-);              
-       
-$table = 'showpage_feature_items_images';
-
-$this->my_database_model->	create_generic_table($table );
-
-
-
-$fields_array = array(
-
-											'width' => array(
-                                               'type' => 'int(11)'),
-
-											'height' => array(
-                                               'type' => 'int(11)')                                               
-              ); 
-              
-$this->my_database_model->add_column_to_table_if_exist(
-	$table, 
-	$fields_array
-);              
-}
 
 }
 /* End of file main.php */

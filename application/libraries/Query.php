@@ -1038,7 +1038,36 @@ function query(){
 	
 	
 	
+/**
+ * get_showpage_photos_items
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @access public
+ * @return array  */ 
+	
+	function get_showpage_photos_items( $where_array = array() ){
+		
+			$showpage_photos_items = $this->CI->my_database_model->select_from_table( 
+			$table = 'showpage_photos_items', 
+			$select_what = '*', 
+			$where_array, 
+			$use_order = TRUE, 
+			$order_field = 'order', 
+			$order_direction = 'desc', 
+			$limit = -1
+			);
+			
 
+
+			$showpage_photos_items = $this->CI->tools->object_to_array($showpage_photos_items);
+
+
+			return $showpage_photos_items;
+
+			
+	}
 	
 /**
  * get_showpage_feature_feature_items

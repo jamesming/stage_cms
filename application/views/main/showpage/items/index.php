@@ -105,8 +105,10 @@
 						<div  class='float_left show_page_photos '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'    href='#fancy_zoom_div'>
 							photos
 						</div>	
+
+						
 						<div  class='float_left'  >
-							<a target='_blank' href='http://stage.mynuvotv.com/shows/<?php echo $showpage_item['name']    ?>'>launch</a>
+							<a target='_blank' href='http://stage.mynuvotv.com/shows/<?php echo $showpage_item['name']    ?>'>preview</a>
 						</div>
 						<div  class='float_left  showpage_item_trash' >
 							<img src='<?php   echo base_url()  ?>images/trash.gif'   showpage_item_id='<?php echo  $showpage_item['id']   ?>' >
@@ -172,14 +174,12 @@
 				
 				});							
 				
-				$('#showpage_item_outside_container   .showpage_item_row .show_page_photos').css({cursor:'pointer'}).fancyZoom().click(function(event) {
+				$('#showpage_item_outside_container   .showpage_item_row .show_page_photos').css({cursor:'pointer'}).click(function(event) {
 					
-						
+						document.location = '<?php echo  base_url()   ?>index.php/main/index/showpage_photos/items?showpage_item_id=' + $(this).attr('showpage_item_id');
 						
 						// Flash will not pass through your existing PHP Session information, so if you are getting the 302 error it is likely that your application is returning the login URL to the Flash player. To resolve this issue, you could include the session information in scriptData and manage it manually in your application.
 						// Using the home controller instead of the main controller since main contructor contains code to boot users that do not have sessions.
-						
-						
 						$("#iframe_src").attr('src','<?php echo base_url();    ?>index.php/home/upload_photos?showpage_item_id=' + $(this).attr('showpage_item_id')  );
 				
 				});		

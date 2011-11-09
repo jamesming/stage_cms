@@ -135,6 +135,7 @@ function upload_photos_success(){
 		$thumb_array = array(
 			'folder'=> 'showpage_photos_items_images', 
 			'showpage_item_id'=> $this->input->get('showpage_item_id'),
+			'showpage_photos_item_id'=> $this->input->get('showpage_photos_item_id'),
 			'thumb'=> 'thumb'
 		);
 		
@@ -143,6 +144,7 @@ function upload_photos_success(){
 		$path_array = array(
 			'folder'=> 'showpage_photos_items_images', 
 			'showpage_item_id'=> $this->input->get('showpage_item_id'),
+			'showpage_photos_item_id'=> $this->input->get('showpage_photos_item_id'),
 			'fullsize'=> 'fullsize'
 		);
 		
@@ -164,7 +166,7 @@ function upload_photos_success(){
 		else
 		{?>
 				<?php  echo $_FILES["Filedata"]['name'] . " has been successfully uploaded."."<br><br>";   ?>
-				<iframe   style='0px;height:0px'   src='<?php  echo base_url()   ?>index.php/home/resize_images?filename=<?php  echo $_FILES["Filedata"]['name']   ?>&showpage_item_id=<?php echo $this->input->get('showpage_item_id')    ?>'></iframe>
+				<iframe   style='0px;height:0px'   src='<?php  echo base_url()   ?>index.php/home/resize_images?filename=<?php  echo $_FILES["Filedata"]['name']   ?>&showpage_item_id=<?php echo $this->input->get('showpage_item_id') ?>&showpage_photos_item_id=<?php echo $this->input->get('showpage_photos_item_id')    ?>'></iframe>
 		<?php     	
 		}
 	
@@ -189,7 +191,7 @@ function upload_photos_success(){
 	public function resize_images(){
 
 	
-	$dir_path = 'uploads/showpage_photos_items_images/'. $this->input->get('showpage_item_id').'/fullsize/'.$this->input->get('filename'); 
+	$dir_path = 'uploads/showpage_photos_items_images/'. $this->input->get('showpage_item_id').'/'. $this->input->get('showpage_photos_item_id').'/fullsize/'.$this->input->get('filename'); 
 		
 	$image_information = getimagesize($dir_path );
 	
@@ -211,8 +213,8 @@ function upload_photos_success(){
 	$new_name_array = explode('.',$this->input->get('filename'));
 	$new_name = $new_name_array[0].'_thumb.'.$new_name_array[1];
 	rename(
-		'uploads/showpage_photos_items_images/'. $this->input->get('showpage_item_id').'/fullsize/' . $new_name, 
-		'uploads/showpage_photos_items_images/'. $this->input->get('showpage_item_id').'/thumb/' . $new_name
+		'uploads/showpage_photos_items_images/'. $this->input->get('showpage_item_id').'/'. $this->input->get('showpage_photos_item_id').'/fullsize/' . $new_name, 
+		'uploads/showpage_photos_items_images/'. $this->input->get('showpage_item_id').'/'. $this->input->get('showpage_photos_item_id').'/thumb/' . $new_name
 	);
 		
 						
@@ -220,12 +222,16 @@ function upload_photos_success(){
 
 
 function get_thumb_photos(){
-		$images  = scandir("./uploads/showpage_photos_items_images/".$this->input->post('showpage_item_id')."/thumb");
+	
+		$dir = "./uploads/showpage_photos_items_images/".$this->input->post('showpage_item_id')."/".$this->input->post('showpage_photos_item_id')."/thumb";
+		
+		
+		$images = ( file_exists($dir) ? scandir( $dir ): array() );
 
-		for($i=2;$i<count($images)-1;$i++){
+		for($i=2;$i<count($images);$i++){
 			?>
 			
-			<img src='<?php echo base_url()    ?>uploads/showpage_photos_items_images/<?php echo  $this->input->post('showpage_item_id')   ?>/thumb/<?php  echo $images[$i]   ?>'  />
+			<img src='<?php echo base_url()    ?>uploads/showpage_photos_items_images/<?php echo  $this->input->post('showpage_item_id')   ?>/<?php echo  $this->input->post('showpage_photos_item_id')   ?>/thumb/<?php  echo $images[$i]   ?>'  />
 			
 			<?php     
 		}
