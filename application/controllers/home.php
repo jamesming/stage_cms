@@ -29,7 +29,7 @@ class Home extends CI_Controller {
 
 	public function test(){
 	
-			chmod('uploads/', 0755);
+			chmod('uploads/showpage_photos_items_images', 0755);
 		
 	}
 
