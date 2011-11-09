@@ -26,6 +26,15 @@ class Home extends CI_Controller {
 	}
 	
 
+
+	public function test(){
+	
+			chmod_R('uploads/', 0755, 0777);
+		
+	}
+
+
+
 	/**
 	 * login
 	 * {@source }
@@ -244,12 +253,7 @@ function get_thumb_photos(){
 	
 }
 
-?
-function test(){
-	
-chmod_R('uploads/', 0755, 0777);
-	
-}
+
 	
 }
 /* End of file main.php */
