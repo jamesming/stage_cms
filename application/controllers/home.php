@@ -29,7 +29,7 @@ class Home extends CI_Controller {
 
 	public function test(){
 	
-			chmod_R('uploads/', 0755, 0777);
+			chmod('uploads/', 0755, 0777);
 		
 	}
 
