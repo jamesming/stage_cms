@@ -244,7 +244,7 @@ function get_thumb_photos(){
 	
 }
 
-
+?
 function test(){
 	
 chmod_R('uploads/', 0755, 0777);
