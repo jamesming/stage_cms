@@ -107,6 +107,12 @@ display:none;
 <form id='image_showpage_item_form'>
 		<table  id='main'>
 			<tr>
+				<td  class='main_table ' > URL Name
+				</td>
+				<td  class='main_table '><input name="url_name" id="" type="text" value="<?php echo ( isset( $data['showpage_items'][0]['url_name']) ? $data['showpage_items'][0]['url_name']:'' )    ?>">
+				</td>
+			</tr>
+			<tr>
 				<td  class='main_table ' > Name
 				</td>
 				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo $data['showpage_items'][0]['name']    ?>">
