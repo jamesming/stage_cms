@@ -41,6 +41,10 @@ form#image_showpage_cast_item_form div#image_showpage_cast_item_showpage_cast{
 	margin-left: 72px;
 }
 
+form#image_showpage_cast_item_form #short_content{
+width:753px;
+}
+
 form#image_showpage_cast_item_form #textarea_div{
 width:100%;
 height: 180px;
@@ -79,6 +83,15 @@ display:none;
 				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo $data['showpage_cast_items'][0]['name']    ?>">
 				</td>
 			</tr>
+			<tr>
+				<td  class='main_table ' >Shortened 
+				</td>				
+				<td   class='main_table ' >
+					<div    >
+							<textarea    class=' clearfix' name='short_content' id='short_content'><?php echo  ( isset( $data['showpage_cast_items'][0]['short_content'] ) ? $data['showpage_cast_items'][0]['short_content'] :'' )  ?></textarea>
+					</div>
+				</td>
+			</tr>	
 
 
 			<tr>
