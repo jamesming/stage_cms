@@ -224,7 +224,17 @@ display:none;
  										<td><input name="iphone_directTo" type="radio" value="1"> </td>
  										<td>Internal 
  										</td>
- 										<td><select  style='width:95px' ><option>test</option></select>
+ 										<td>
+ 											
+
+ 											<select id='showpage_item_id' name='showpage_item_id' style='width:95px' >
+ 											<?php foreach( $data['showpage_items']  as  $showpage_item){?>
+ 												<option value='<?php echo $showpage_item['id']    ?>'><?php  echo $showpage_item['name']   ?></option>
+ 											<?php } ?>
+ 											</select>
+ 											
+ 											
+ 											
  										</td>
  									</tr>
  									<tr>
@@ -302,6 +312,9 @@ $this->load->view('footer/jquery_ui_for_dialog.php');
 
 	$(document).ready(function() {
 		
+		
+				$("#showpage_item_id option[value='<?php  echo $data['carousel_items'][0]['showpage_item_id']       ?>']").attr('selected', 'selected'); 
+
 
 
 				$('#iphone_directTo_div input').each(function(event) {
