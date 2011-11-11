@@ -61,8 +61,8 @@ form#image_carousel_item_form div#image_carousel_item_hero_iphone{
 	background-image: url(<?php echo base_url();    ?>uploads/carousel_items_images/<?php  	echo $data['carousel_items'][0]['hero_iphone_carousel_items_image_id'] ?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
-	width:317px;
-	height:476px;
+	width:102px;
+	height:151px;
 	margin-left: 10px;
 }
 form#image_carousel_item_form div#image_carousel_item_right_tab_iphone{

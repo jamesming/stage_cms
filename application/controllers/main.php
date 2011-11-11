@@ -489,79 +489,109 @@ class Main extends CI_Controller {
 	$width_of_file = $image_information[0];
 	$height_of_file = $image_information[1];
 	
-	
-	
-		$this->my_database_model->update_table_where(
-								$table = 'carousel_items_images', 
-								$where_array = array(
-								'id'=> $carousel_image_id
-								),
-								$set_what_array = array(
-									'width'=> $width_of_file,
-									'height'=> $height_of_file
-									)
-								);	
+	$this->my_database_model->update_table_where(
+							$table = 'carousel_items_images', 
+							$where_array = array(
+							'id'=> $carousel_image_id
+							),
+							$set_what_array = array(
+								'width'=> $width_of_file,
+								'height'=> $height_of_file
+								)
+							);	
 
-			switch ($image_type ) {
-	
-		    case 'hero':
-	
-						$new_width  = '317';
-						
-		    break;
-		    
-		    
-		    case 'right_tab':
-	
-						$new_width  = '77';
-						
-		    break;
-		    
-		    
-		    case 'tune_in':
-	
-						$new_width  = '300';
-						
-		    break;
-		    
-		    case 'hero_iphone':
-	
-						$new_width  = '100';
-						
-		    break;
-		    
-		    
-		    case 'right_tab_iphone':
-	
-						$new_width  = '77';
-						
-		    break;
-		    
-		    
-		    case 'right_tab_border_iphone':
-	
-						$new_width  = '77';
-						
-		    break;		    
-		    
-		  }
+	switch ($image_type ) {
 
-	$new_height = $this->tools->get_new_size_of ($what = 'height', $based_on_new = $new_width, $orig_width = $width_of_file, $orig_height = $height_of_file );
+    case 'hero':
 
+				$new_width  = '317';
+				
+    break;
+    
+    
+    case 'right_tab':
+
+				$new_width  = '77';
+				
+    break;
+    
+    
+    case 'tune_in':
+
+				$new_width  = '300';
+				
+    break;
+    
+    case 'hero_iphone':
+
+				$new_width  = '100';
+				
+    break;
+    
+    
+    case 'right_tab_iphone':
+
+				$new_width  = '77';
+				
+    break;
+    
+    
+    case 'right_tab_border_iphone':
+
+				$new_width  = '77';
+				
+    break;		    
+    
+  }
+
+	$new_height = $this->tools->get_new_size_of (
+			$what = 'height', 
+			$based_on_new = $new_width, 
+			$orig_width = $width_of_file, 
+			$orig_height = $height_of_file 
+	);
 
 	$this->tools->clone_and_resize_append_name_of(
-		$appended_suffix = '_tiny', 
-		$full_path = $dir_path . '/' . 'image.png', 
-		$width = $new_width, 
-		$height = $new_height
+	$appended_suffix = '_tiny', 
+	$full_path = $dir_path . '/' . 'image.png', 
+	$width = $new_width, 
+	$height = $new_height
+	);
+	
+	/* IPHONE IMAGES .. TAKE HI-RES AND SHRINK DOWN TO LOW */
+	if (in_array($image_type, array(
+																	'hero_iphone',
+																	'right_tab_iphone',
+																	'right_tab_border_iphone'
+																	)
+							)
+		){
+
+		copy(
+			$dir_path . '/' . 'image.png', 
+			$dir_path . '/' . 'image@2x.png'
+		);		
+
+		$new_height = $this->tools->get_new_size_of (
+				$what = 'height', 
+				$based_on_new = $width_of_file/2, 
+				$orig_width = $width_of_file, 
+				$orig_height = $height_of_file 
 		);
-						
-			?>
-				<script type="text/javascript" language="Javascript">
-							window.parent.location.reload(true);		
-				</script>
- 
-			<?php 						
+		
+		$this->tools->resize_this(
+			$full_path = $dir_path . '/' . 'image.png', 
+			$width = $width_of_file/2, 
+			$height = $new_height
+		);
+		
+	};
+					
+	?>
+	<script type="text/javascript" language="Javascript">
+				window.parent.location.reload(true);		
+	</script>
+	<?php 						
 						
 						
 	}
