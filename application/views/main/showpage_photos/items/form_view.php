@@ -108,7 +108,7 @@
 	
 
  
-<div   style='display:block'   class=' container' >
+<div   style='display:none'   class=' container' >
 			<form id='uploadForm' name='uploadForm' action='<?php echo  base_url();   ?>index.php/home/upload_photos_success?showpage_item_id=<?php echo (isset($showpage_item_id)?$showpage_item_id:'');    ?>' 
 			method='post' 
 			enctype='multipart/form-data'>	

@@ -145,7 +145,7 @@ function upload_photos_success(){
 			'folder'=> 'showpage_photos_items_images', 
 			'showpage_item_id'=> $this->input->get('showpage_item_id'),
 			'showpage_photos_item_id'=> $this->input->get('showpage_photos_item_id'),
-			'thumb'=> 'thumb'
+			'sub_folder'=> 'thumb'
 		);
 		
 		$this->tools->set_directory_for_upload( $thumb_array );
@@ -154,7 +154,7 @@ function upload_photos_success(){
 			'folder'=> 'showpage_photos_items_images', 
 			'showpage_item_id'=> $this->input->get('showpage_item_id'),
 			'showpage_photos_item_id'=> $this->input->get('showpage_photos_item_id'),
-			'fullsize'=> 'fullsize'
+			'sub_folder'=> 'fullsize'
 		);
 		
 		$upload_path = $this->tools->set_directory_for_upload( $path_array );
@@ -212,7 +212,7 @@ function upload_photos_success(){
 
 	$new_height = $this->tools->get_new_size_of ($what = 'height', $based_on_new = $new_width, $orig_width = $width_of_file, $orig_height = $height_of_file );
 
-	$new_name = $this->tools->clone_and_resize_append_name_of(
+	$this->tools->clone_and_resize_append_name_of(
 		$appended_suffix = '_thumb', 
 		$full_path = $dir_path, 
 		$width = $new_width, 
@@ -226,12 +226,7 @@ function upload_photos_success(){
 		'uploads/showpage_photos_items_images/'. $this->input->get('showpage_item_id').'/'. $this->input->get('showpage_photos_item_id').'/thumb/' . $new_name
 	);
 	
-	
-	chmod_R('uploads/', 0755, 0777);
-	chmod('uploads/showpage_photos_items_images/'. $this->input->get('showpage_item_id').'/'. $this->input->get('showpage_photos_item_id').'/fullsize/' . $new_name, 0755);
-	chmod('uploads/showpage_photos_items_images/'. $this->input->get('showpage_item_id').'/'. $this->input->get('showpage_photos_item_id').'/thumb/' . $new_name, 0755);
-		
-						
+			
 	}
 
 

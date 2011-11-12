@@ -1704,8 +1704,7 @@ submitted
 	/* IPHONE IMAGES .. TAKE HI-RES AND SHRINK DOWN TO LOW */
 	if (in_array($image_type, array(
 																	'showpage_hero_iphone',
-																	'showpage_cast_iphone',
-																	'right_tab_border_iphone'
+																	'showpage_cast_iphone'
 																	)
 							)
 		){
@@ -1733,7 +1732,7 @@ submitted
 			$dir_path . '/' . 'image_iphone.png'
 		);	
 		
-		
+	}		
 						
 			?>
 				<script type="text/javascript" language="Javascript">
@@ -1743,7 +1742,7 @@ submitted
 			<?php 						
 						
 						
-	}
+
 }
 
 
