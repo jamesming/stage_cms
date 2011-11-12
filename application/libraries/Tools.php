@@ -317,7 +317,7 @@ function set_directory_for_upload ($path_array ){
 		$path .= '/' . $directory;
 		
 		if( is_dir($path) == FALSE){		
-			mkdir($path, 0700);
+			mkdir($path, 0777);
 		};
 		
 	}
