@@ -569,7 +569,7 @@ class Main extends CI_Controller {
 
 		copy(
 			$dir_path . '/' . 'image.png', 
-			$dir_path . '/' . 'image@2x.png'
+			$dir_path . '/' . 'image_iphone@2x.png'
 		);		
 
 		$new_height = $this->tools->get_new_size_of (
@@ -584,6 +584,11 @@ class Main extends CI_Controller {
 			$width = $width_of_file/2, 
 			$height = $new_height
 		);
+		
+		rename(
+			$dir_path . '/' . 'image.png', 
+			$dir_path . '/' . 'image_iphone.png'
+		);		
 		
 	};
 					
@@ -1671,6 +1676,13 @@ submitted
 						$new_width  = '148';
 						
 		    break;		    
+		    
+		    
+		    case 'showpage_cast_iphone':
+	
+						$new_width  = '148';
+						
+		    break;		    		    
 
 		  }
 
@@ -1683,6 +1695,44 @@ submitted
 		$width = $new_width, 
 		$height = $new_height
 		);
+		
+		
+		
+		
+		
+		
+	/* IPHONE IMAGES .. TAKE HI-RES AND SHRINK DOWN TO LOW */
+	if (in_array($image_type, array(
+																	'showpage_hero_iphone',
+																	'showpage_cast_iphone'
+																	)
+							)
+		){
+
+		copy(
+			$dir_path . '/' . 'image.png', 
+			$dir_path . '/' . 'image_iphone@2x.png'
+		);		
+
+		$new_height = $this->tools->get_new_size_of (
+				$what = 'height', 
+				$based_on_new = $width_of_file/2, 
+				$orig_width = $width_of_file, 
+				$orig_height = $height_of_file 
+		);
+		
+		$this->tools->resize_this(
+			$full_path = $dir_path . '/' . 'image.png', 
+			$width = $width_of_file/2, 
+			$height = $new_height
+		);
+		
+		rename(
+			$dir_path . '/' . 'image.png', 
+			$dir_path . '/' . 'image_iphone.png'
+		);	
+		
+		
 						
 			?>
 				<script type="text/javascript" language="Javascript">
