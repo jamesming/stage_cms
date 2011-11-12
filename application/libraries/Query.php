@@ -1092,6 +1092,303 @@ function query(){
 			
 	}
 	
+	
+/**
+ * get_showpage_iphone_gallery_photo_items
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @access public
+ * @return array  */ 
+	
+	function get_showpage_iphone_gallery_photo_items( $where_array = array() ){
+		
+			$showpage_iphone_gallery_photo_items_raw = $this->CI->my_database_model->select_from_table( 
+			$table = 'showpage_iphone_gallery_photo_items', 
+			$select_what = '*', 
+			$where_array, 
+			$use_order = TRUE, 
+			$order_field = 'created', 
+			$order_direction = 'desc', 
+			$limit = -1
+			);
+			
+
+
+			$showpage_iphone_gallery_photo_items_raw = $this->CI->tools->object_to_array($showpage_iphone_gallery_photo_items_raw);
+			
+			foreach( $showpage_iphone_gallery_photo_items_raw  as  $keyA => $showpage_item_raw){
+
+				foreach( $showpage_item_raw  as  $field => $value){
+					
+					$showpage_item[$field] = $value;
+					
+					if( $field == 'id' ){
+
+						
+						$showpage_iphone_gallery_photo_items_images = $this->CI->my_database_model->select_from_table( 
+										$table = 'showpage_iphone_gallery_photo_items_images', 
+										$select_what = 'id, order, show_on_showpage', 
+										$where_array = array(
+																		'showpage_iphone_gallery_photo_item_id'=> $value,
+																		'image_type_id' => '23'
+																		), 
+										$use_order = FALSE, 
+										$order_field = '', 
+										$order_direction = 'desc', 
+										$limit = -1
+										);
+
+						
+						if( count($showpage_iphone_gallery_photo_items_images) > 0){				
+							
+							$showpage_item['showpage_iphone_gallery_photo_items_image_id'] = $showpage_iphone_gallery_photo_items_images[0]->id;
+							
+							
+						}else{
+							
+							$showpage_item['showpage_iphone_gallery_photo_items_image_id'] = 0;
+							
+						};
+						
+						$showpage_iphone_gallery_photo_items_images = $this->CI->my_database_model->select_from_table( 
+										$table = 'showpage_iphone_gallery_photo_items_images', 
+										$select_what = 'id, order, show_on_showpage', 
+										$where_array = array(
+																		'showpage_iphone_gallery_photo_item_id'=> $value,
+																		'image_type_id' => '24'
+																		), 
+										$use_order = FALSE, 
+										$order_field = '', 
+										$order_direction = 'desc', 
+										$limit = -1
+										);
+
+						
+						if( count($showpage_iphone_gallery_photo_items_images) > 0){				
+							
+							$showpage_item['showpage_iphone_gallery_photo_thumb_inactive_items_image_id'] = $showpage_iphone_gallery_photo_items_images[0]->id;
+
+							
+						}else{
+							
+							$showpage_item['showpage_iphone_gallery_photo_thumb_inactive_items_image_id'] = 0;
+							
+						};
+	
+
+					
+						if( count($showpage_iphone_gallery_photo_items_images) > 0){				
+							
+							$showpage_item['showpage_iphone_gallery_photo_items_image_id'] = $showpage_iphone_gallery_photo_items_images[0]->id;
+							
+							
+						}else{
+							
+							$showpage_item['showpage_iphone_gallery_photo_items_image_id'] = 0;
+							
+						};
+						
+						$showpage_iphone_gallery_photo_items_images = $this->CI->my_database_model->select_from_table( 
+										$table = 'showpage_iphone_gallery_photo_items_images', 
+										$select_what = 'id, order, show_on_showpage', 
+										$where_array = array(
+																		'showpage_iphone_gallery_photo_item_id'=> $value,
+																		'image_type_id' => '25'
+																		), 
+										$use_order = FALSE, 
+										$order_field = '', 
+										$order_direction = 'desc', 
+										$limit = -1
+										);
+
+						
+						if( count($showpage_iphone_gallery_photo_items_images) > 0){				
+							
+							$showpage_item['showpage_iphone_gallery_photo_thumb_active_items_image_id'] = $showpage_iphone_gallery_photo_items_images[0]->id;
+
+							
+						}else{
+							
+							$showpage_item['showpage_iphone_gallery_photo_thumb_active_items_image_id'] = 0;
+							
+						};
+	
+					};
+
+				};
+				
+		
+				$showpage_iphone_gallery_photo_items[] = $showpage_item;
+				
+			};
+			
+			
+
+			if( isset($showpage_iphone_gallery_photo_items)){
+				if( isset($showpage_item['order'])){
+					$this->CI->tools->aasort($showpage_iphone_gallery_photo_items,'order');
+				};
+				return $showpage_iphone_gallery_photo_items;
+			}else{
+				return;
+			};
+			
+			
+	}
+	
+
+
+	
+	
+/**
+ * get_showpage_android_gallery_photo_items
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @access public
+ * @return array  */ 
+	
+	function get_showpage_android_gallery_photo_items( $where_array = array() ){
+		
+			$showpage_android_gallery_photo_items_raw = $this->CI->my_database_model->select_from_table( 
+			$table = 'showpage_android_gallery_photo_items', 
+			$select_what = '*', 
+			$where_array, 
+			$use_order = TRUE, 
+			$order_field = 'created', 
+			$order_direction = 'desc', 
+			$limit = -1
+			);
+			
+
+
+			$showpage_android_gallery_photo_items_raw = $this->CI->tools->object_to_array($showpage_android_gallery_photo_items_raw);
+			
+			foreach( $showpage_android_gallery_photo_items_raw  as  $keyA => $showpage_item_raw){
+
+				foreach( $showpage_item_raw  as  $field => $value){
+					
+					$showpage_item[$field] = $value;
+					
+					if( $field == 'id' ){
+
+						
+						$showpage_android_gallery_photo_items_images = $this->CI->my_database_model->select_from_table( 
+										$table = 'showpage_android_gallery_photo_items_images', 
+										$select_what = 'id, order, show_on_showpage', 
+										$where_array = array(
+																		'showpage_android_gallery_photo_item_id'=> $value,
+																		'image_type_id' => '26'
+																		), 
+										$use_order = FALSE, 
+										$order_field = '', 
+										$order_direction = 'desc', 
+										$limit = -1
+										);
+
+						
+						if( count($showpage_android_gallery_photo_items_images) > 0){				
+							
+							$showpage_item['showpage_android_gallery_photo_items_image_id'] = $showpage_android_gallery_photo_items_images[0]->id;
+							
+							
+						}else{
+							
+							$showpage_item['showpage_android_gallery_photo_items_image_id'] = 0;
+							
+						};
+						
+						$showpage_android_gallery_photo_items_images = $this->CI->my_database_model->select_from_table( 
+										$table = 'showpage_android_gallery_photo_items_images', 
+										$select_what = 'id, order, show_on_showpage', 
+										$where_array = array(
+																		'showpage_android_gallery_photo_item_id'=> $value,
+																		'image_type_id' => '27'
+																		), 
+										$use_order = FALSE, 
+										$order_field = '', 
+										$order_direction = 'desc', 
+										$limit = -1
+										);
+
+						
+						if( count($showpage_android_gallery_photo_items_images) > 0){				
+							
+							$showpage_item['showpage_android_gallery_photo_thumb_inactive_items_image_id'] = $showpage_android_gallery_photo_items_images[0]->id;
+
+							
+						}else{
+							
+							$showpage_item['showpage_android_gallery_photo_thumb_inactive_items_image_id'] = 0;
+							
+						};
+	
+
+					
+						if( count($showpage_android_gallery_photo_items_images) > 0){				
+							
+							$showpage_item['showpage_android_gallery_photo_items_image_id'] = $showpage_android_gallery_photo_items_images[0]->id;
+							
+							
+						}else{
+							
+							$showpage_item['showpage_android_gallery_photo_items_image_id'] = 0;
+							
+						};
+						
+						$showpage_android_gallery_photo_items_images = $this->CI->my_database_model->select_from_table( 
+										$table = 'showpage_android_gallery_photo_items_images', 
+										$select_what = 'id, order, show_on_showpage', 
+										$where_array = array(
+																		'showpage_android_gallery_photo_item_id'=> $value,
+																		'image_type_id' => '28'
+																		), 
+										$use_order = FALSE, 
+										$order_field = '', 
+										$order_direction = 'desc', 
+										$limit = -1
+										);
+
+						
+						if( count($showpage_android_gallery_photo_items_images) > 0){				
+							
+							$showpage_item['showpage_android_gallery_photo_thumb_active_items_image_id'] = $showpage_android_gallery_photo_items_images[0]->id;
+
+							
+						}else{
+							
+							$showpage_item['showpage_android_gallery_photo_thumb_active_items_image_id'] = 0;
+							
+						};
+	
+					};
+
+				};
+				
+		
+				$showpage_android_gallery_photo_items[] = $showpage_item;
+				
+			};
+			
+			
+
+			if( isset($showpage_android_gallery_photo_items)){
+				if( isset($showpage_item['order'])){
+					$this->CI->tools->aasort($showpage_android_gallery_photo_items,'order');
+				};
+				return $showpage_android_gallery_photo_items;
+			}else{
+				return;
+			};
+			
+			
+	}
+	
+	
+
 /**
  * get_showpage_feature_feature_items
  *

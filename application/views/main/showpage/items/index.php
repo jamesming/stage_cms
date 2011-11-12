@@ -59,7 +59,28 @@
 								padding-top:0px;
 								text-align:center;
 								color:gray;
-								}																		
+								}			
+								
+								#showpage_item_outside_container   .showpage_item_row .show_page_iphone_gallery_photo{
+													width:110px;
+													font-weight:bold;
+													font-size:20px;
+													padding-top:0px;
+													text-align:center;
+													color:gray;
+													}
+																						
+								#showpage_item_outside_container   .showpage_item_row .show_page_android_gallery_photo{
+													width:110px;
+													font-weight:bold;
+													font-size:20px;
+													padding-top:0px;
+													text-align:center;
+													color:gray;
+													}
+																						
+																
+																							
 								#showpage_item_outside_container   .showpage_item_row .showpage_item_trash{
 								width:46px;
 								padding-top:90px;
@@ -106,6 +127,16 @@
 							photos
 						</div>	
 
+						
+						
+						<div  class='float_left show_page_iphone_gallery_photo '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  >
+							iphone gallery
+						</div>	
+						
+						<div  class='float_left show_page_android_gallery_photo '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  >
+							iphone gallery
+						</div>							
+													
 						
 						<div  class='float_left'  >
 							<a target='_blank' href='http://stage.mynuvotv.com/shows/<?php echo $showpage_item['name']    ?>'>preview</a>
@@ -181,6 +212,22 @@
 						// Flash will not pass through your existing PHP Session information, so if you are getting the 302 error it is likely that your application is returning the login URL to the Flash player. To resolve this issue, you could include the session information in scriptData and manage it manually in your application.
 						// Using the home controller instead of the main controller since main contructor contains code to boot users that do not have sessions.
 						$("#iframe_src").attr('src','<?php echo base_url();    ?>index.php/home/upload_photos?showpage_item_id=' + $(this).attr('showpage_item_id')  );
+				
+				});		
+				
+				
+				
+				$('#showpage_item_outside_container   .showpage_item_row .show_page_iphone_gallery_photo').css({cursor:'pointer'}).click(function(event) {
+					
+
+						document.location = '<?php echo  base_url()   ?>index.php/main/index/showpage_iphone_gallery_photo/items?showpage_item_id=' + $(this).attr('showpage_item_id');
+				
+				});			
+				
+				$('#showpage_item_outside_container   .showpage_item_row .show_page_android_gallery_photo').css({cursor:'pointer'}).click(function(event) {
+					
+
+						document.location = '<?php echo  base_url()   ?>index.php/main/index/showpage_android_gallery_photo/items?showpage_item_id=' + $(this).attr('showpage_item_id');
 				
 				});		
 				

@@ -159,6 +159,46 @@ function prepare_showpage_photos_items( $segment4, $get_array){
 	
 }
 
+
+function prepare_showpage_iphone_gallery_photo_items( $segment4, $get_array){
+	
+				$showpage_iphone_gallery_photo_items = $this->CI->query->get_showpage_iphone_gallery_photo_items(
+					array('showpage_item_id' => $get_array['showpage_item_id'])
+				);	
+							
+	
+										
+				$data['showpage_iphone_gallery_photo_items'] = $showpage_iphone_gallery_photo_items;
+				$data['showpage_item_id'] = $get_array['showpage_item_id'];
+					
+
+				
+				$data['segment4'] = $segment4;
+				$data['segment3'] = 'showpage_iphone_gallery_photo';
+				
+				return $data;
+	
+}
+
+function prepare_showpage_android_gallery_photo_items( $segment4, $get_array){
+	
+				$showpage_android_gallery_photo_items = $this->CI->query->get_showpage_android_gallery_photo_items(
+					array('showpage_item_id' => $get_array['showpage_item_id'])
+				);	
+							
+	
+										
+				$data['showpage_android_gallery_photo_items'] = $showpage_android_gallery_photo_items;
+				$data['showpage_item_id'] = $get_array['showpage_item_id'];
+					
+
+				
+				$data['segment4'] = $segment4;
+				$data['segment3'] = 'showpage_android_gallery_photo';
+				
+				return $data;
+	
+}
 function prepare_showpage_feature_items( $segment4, $get_array){
 	
 		

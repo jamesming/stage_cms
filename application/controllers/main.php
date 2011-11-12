@@ -133,8 +133,28 @@ class Main extends CI_Controller {
 								$this->input->get()
 						 );
 
-			    break;			    
+			    break;	
 			    
+			    
+			    case 'showpage_iphone_gallery_photo':
+		
+						$data = $this->custom->prepare_showpage_iphone_gallery_photo_items( 
+								$segment4,
+								$this->input->get()
+						 );
+					
+
+			    break;
+			    
+			    case 'showpage_android_gallery_photo':
+		
+						$data = $this->custom->prepare_showpage_android_gallery_photo_items( 
+								$segment4,
+								$this->input->get()
+						 );
+					
+
+			    break;			    
 			    
 			    case 'calendar':
 		
