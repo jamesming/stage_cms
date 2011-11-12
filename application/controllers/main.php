@@ -1676,7 +1676,13 @@ submitted
 						$new_width  = '148';
 						
 		    break;		    
-
+		    
+		    
+		    case 'showpage_cast_iphone':
+	
+						$new_width  = '148';
+						
+		    break;		    		    
 
 		  }
 
@@ -1738,6 +1744,7 @@ submitted
 						
 						
 	}
+}
 
 
 
