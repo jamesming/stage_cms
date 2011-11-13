@@ -291,7 +291,52 @@ class Main extends CI_Controller {
 				);
 		
 	}
+	
+	/**
+	 * get_showpage_iphone_gallery_photo__form
+	 * 
+	 * @package BackEnd
+	 * @author James Ming <jamesming@gmail.com>
+	 * @path /index.php/home/get_showpage_iphone_gallery_photo__form
+	 * @access public
+	 */
+	 
+	 
+	public function get_showpage_iphone_gallery_photo_form(){
+		
+				$data['showpage_iphone_gallery_photo_items'] = $this->query->get_showpage_iphone_gallery_photo_items(
+							$where_array = array( 'id' => $this->input->get('showpage_iphone_gallery_photo_item_id')) 
+				);	
 
+
+				$this->load->view('main/showpage_iphone_gallery_photo/items/form_view', 
+					array( 'data' => $data )
+				);
+		
+	}
+	
+	/**
+	 * get_showpage_android_gallery_photo_form
+	 * 
+	 * @package BackEnd
+	 * @author James Ming <jamesming@gmail.com>
+	 * @path /index.php/home/get_showpage_android_gallery_photo__form
+	 * @access public
+	 */
+	 
+	 
+	public function get_showpage_android_gallery_photo_form(){
+		
+				$data['showpage_android_gallery_photo_items'] = $this->query->get_showpage_android_gallery_photo_items(
+							$where_array = array( 'id' => $this->input->get('showpage_android_gallery_photo_item_id')) 
+				);	
+				
+				$this->load->view('main/showpage_android_gallery_photo/items/form_view', 
+					array( 'data' => $data )
+				);
+		
+	}	
+	
 	/**
 	 * showpage_feature
 	 * 
@@ -1702,7 +1747,45 @@ submitted
 	
 						$new_width  = '148';
 						
-		    break;		    		    
+		    break;		   
+		    
+		    case 'showpage_iphone_gallery_photo':
+	
+						$new_width  = '160';
+						
+		    break;		
+
+
+		    case 'showpage_iphone_gallery_photo_thumb_inactive':
+	
+						$new_width  = '132';
+						
+		    break;		
+
+		    case 'showpage_iphone_gallery_photo_thumb_active':
+	
+						$new_width  = '132';
+						
+		    break;		
+		    
+		    case 'showpage_android_gallery_photo':
+	
+						$new_width  = '160';
+						
+		    break;		
+
+
+		    case 'showpage_android_gallery_photo_thumb_inactive':
+	
+						$new_width  = '132';
+						
+		    break;		
+
+		    case 'showpage_android_gallery_photo_thumb_active':
+	
+						$new_width  = '132';
+						
+		    break;			        	    		     		    
 
 		  }
 
@@ -1724,7 +1807,10 @@ submitted
 	/* IPHONE IMAGES .. TAKE HI-RES AND SHRINK DOWN TO LOW */
 	if (in_array($image_type, array(
 																	'showpage_hero_iphone',
-																	'showpage_cast_iphone'
+																	'showpage_cast_iphone',
+																	'showpage_iphone_gallery_photo',
+																	'showpage_iphone_gallery_photo_thumb_inactive',
+																	'showpage_iphone_gallery_photo_thumb_active'
 																	)
 							)
 		){
@@ -1752,7 +1838,46 @@ submitted
 			$dir_path . '/' . 'image_iphone.png'
 		);	
 		
+	}	
+	
+	
+	
+	/* ANDROID IMAGES .. TAKE HI-RES AND SHRINK DOWN TO LOW */
+	if (in_array($image_type, array(
+																	'showpage_hero_android',
+																	'showpage_cast_android',
+																	'showpage_android_gallery_photo',
+																	'showpage_android_gallery_photo_thumb_inactive',
+																	'showpage_android_gallery_photo_thumb_active'
+																	)
+							)
+		){
+
+		copy(
+			$dir_path . '/' . 'image.png', 
+			$dir_path . '/' . 'image_android@2x.png'
+		);		
+
+		$new_height = $this->tools->get_new_size_of (
+				$what = 'height', 
+				$based_on_new = $width_of_file/2, 
+				$orig_width = $width_of_file, 
+				$orig_height = $height_of_file 
+		);
+		
+		$this->tools->resize_this(
+			$full_path = $dir_path . '/' . 'image.png', 
+			$width = $width_of_file/2, 
+			$height = $new_height
+		);
+		
+		rename(
+			$dir_path . '/' . 'image.png', 
+			$dir_path . '/' . 'image_android.png'
+		);	
+		
 	}		
+		
 						
 			?>
 				<script type="text/javascript" language="Javascript">

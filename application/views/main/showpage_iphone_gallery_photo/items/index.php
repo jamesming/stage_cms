@@ -2,7 +2,7 @@
 			
 		iframe#iframe_src{
 		width:850px;
-		height:920px;	
+		height:650px;	
 		}
 			
 			
@@ -72,13 +72,7 @@
 							<?php echo  $showpage_iphone_gallery_photo_item['name']   ?>
 						</div>
 						
-						<div class='float_left '>
-							<input name="show_on_showpage" <?php echo (isset($showpage_iphone_gallery_photo_item['show_on_showpage']) && $showpage_iphone_gallery_photo_item['show_on_showpage']==1?' checked ':'')    ?> showpage_iphone_gallery_photo_items_image_id='<?php echo $showpage_iphone_gallery_photo_item['showpage_iphone_gallery_photo_items_image_id']    ?>'  class='show_on_showpage '  type="checkbox" value="1">
-						</div>	
-										
-						<div class='float_left '>
-							<input  name="order"  showpage_iphone_gallery_photo_items_image_id='<?php echo $showpage_iphone_gallery_photo_item['showpage_iphone_gallery_photo_items_image_id']    ?>'class='order '  type="" value="<?php echo (isset($showpage_iphone_gallery_photo_item['order']) ?$showpage_iphone_gallery_photo_item['order']:'')    ?>">
-						</div>
+						
 						<div  class='float_left ' >
 							<img src='<?php echo base_url()    ?>uploads/showpage_iphone_gallery_photo_items_images/<?php  echo $showpage_iphone_gallery_photo_item['showpage_iphone_gallery_photo_items_image_id']   ?>/image_tiny.png'/>
 						</div>
@@ -129,23 +123,7 @@
 							
 				});	
 				
-				$('.order').blur(function(event) {
-
-							
-						$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
-							table:'showpage_iphone_gallery_photo_items_images',
-							id:$(this).attr('showpage_iphone_gallery_photo_items_image_id'),
-							crud:'update',
-							set_what_array:$(this).serialize()
-							},function(xml) {
-							
-								var status = $(xml).find('status').text();
-								var message = $(xml).find('message').text();
-								document.location.reload(true);
-								
-						});		
-				});					
-
+			
 				$('#addshowpage_iphone_gallery_photoItem').css({cursor:'pointer'}).fancyZoom().click(function(event) {
 
 						$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{

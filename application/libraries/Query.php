@@ -984,7 +984,7 @@ function query(){
 						
 						$showpage_cast_items_images = $this->CI->my_database_model->select_from_table( 
 										$table = 'showpage_cast_items_images', 
-										$select_what = 'id, order, show_on_showpage', 
+										$select_what = 'id', 
 										$where_array = array(
 																		'showpage_cast_item_id'=> $value,
 																		'image_type_id' => '13'
@@ -1108,7 +1108,7 @@ function query(){
 			$table = 'showpage_iphone_gallery_photo_items', 
 			$select_what = '*', 
 			$where_array, 
-			$use_order = TRUE, 
+			$use_order = FALSE, 
 			$order_field = 'created', 
 			$order_direction = 'desc', 
 			$limit = -1
@@ -1129,7 +1129,7 @@ function query(){
 						
 						$showpage_iphone_gallery_photo_items_images = $this->CI->my_database_model->select_from_table( 
 										$table = 'showpage_iphone_gallery_photo_items_images', 
-										$select_what = 'id, order, show_on_showpage', 
+										$select_what = 'id', 
 										$where_array = array(
 																		'showpage_iphone_gallery_photo_item_id'=> $value,
 																		'image_type_id' => '23'
@@ -1140,11 +1140,10 @@ function query(){
 										$limit = -1
 										);
 
-						
+
 						if( count($showpage_iphone_gallery_photo_items_images) > 0){				
 							
 							$showpage_item['showpage_iphone_gallery_photo_items_image_id'] = $showpage_iphone_gallery_photo_items_images[0]->id;
-							
 							
 						}else{
 							
@@ -1154,7 +1153,7 @@ function query(){
 						
 						$showpage_iphone_gallery_photo_items_images = $this->CI->my_database_model->select_from_table( 
 										$table = 'showpage_iphone_gallery_photo_items_images', 
-										$select_what = 'id, order, show_on_showpage', 
+										$select_what = 'id', 
 										$where_array = array(
 																		'showpage_iphone_gallery_photo_item_id'=> $value,
 																		'image_type_id' => '24'
@@ -1165,9 +1164,9 @@ function query(){
 										$limit = -1
 										);
 
-						
+					
 						if( count($showpage_iphone_gallery_photo_items_images) > 0){				
-							
+
 							$showpage_item['showpage_iphone_gallery_photo_thumb_inactive_items_image_id'] = $showpage_iphone_gallery_photo_items_images[0]->id;
 
 							
@@ -1179,20 +1178,10 @@ function query(){
 	
 
 					
-						if( count($showpage_iphone_gallery_photo_items_images) > 0){				
-							
-							$showpage_item['showpage_iphone_gallery_photo_items_image_id'] = $showpage_iphone_gallery_photo_items_images[0]->id;
-							
-							
-						}else{
-							
-							$showpage_item['showpage_iphone_gallery_photo_items_image_id'] = 0;
-							
-						};
-						
+
 						$showpage_iphone_gallery_photo_items_images = $this->CI->my_database_model->select_from_table( 
 										$table = 'showpage_iphone_gallery_photo_items_images', 
-										$select_what = 'id, order, show_on_showpage', 
+										$select_what = 'id', 
 										$where_array = array(
 																		'showpage_iphone_gallery_photo_item_id'=> $value,
 																		'image_type_id' => '25'
@@ -1278,7 +1267,7 @@ function query(){
 						
 						$showpage_android_gallery_photo_items_images = $this->CI->my_database_model->select_from_table( 
 										$table = 'showpage_android_gallery_photo_items_images', 
-										$select_what = 'id, order, show_on_showpage', 
+										$select_what = 'id', 
 										$where_array = array(
 																		'showpage_android_gallery_photo_item_id'=> $value,
 																		'image_type_id' => '26'
@@ -1303,7 +1292,7 @@ function query(){
 						
 						$showpage_android_gallery_photo_items_images = $this->CI->my_database_model->select_from_table( 
 										$table = 'showpage_android_gallery_photo_items_images', 
-										$select_what = 'id, order, show_on_showpage', 
+										$select_what = 'id', 
 										$where_array = array(
 																		'showpage_android_gallery_photo_item_id'=> $value,
 																		'image_type_id' => '27'
@@ -1327,21 +1316,11 @@ function query(){
 						};
 	
 
-					
-						if( count($showpage_android_gallery_photo_items_images) > 0){				
-							
-							$showpage_item['showpage_android_gallery_photo_items_image_id'] = $showpage_android_gallery_photo_items_images[0]->id;
-							
-							
-						}else{
-							
-							$showpage_item['showpage_android_gallery_photo_items_image_id'] = 0;
-							
-						};
+
 						
 						$showpage_android_gallery_photo_items_images = $this->CI->my_database_model->select_from_table( 
 										$table = 'showpage_android_gallery_photo_items_images', 
-										$select_what = 'id, order, show_on_showpage', 
+										$select_what = 'id', 
 										$where_array = array(
 																		'showpage_android_gallery_photo_item_id'=> $value,
 																		'image_type_id' => '28'

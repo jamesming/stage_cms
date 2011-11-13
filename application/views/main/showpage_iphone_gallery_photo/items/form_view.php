@@ -30,36 +30,38 @@ padding-bottom:5px;
 form#image_showpage_iphone_gallery_photo_item_form table#main div.image_assets{
 margin-top:25px;
 }
-form#image_showpage_iphone_gallery_photo_item_form div#image_showpage_iphone_gallery_photo_item_showpage_iphone_gallery_photo{
+form#image_showpage_iphone_gallery_photo_item_form div#image_showpage_iphone_gallery_photo_item_div{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_iphone_gallery_photo_items_images/<?php
 	  	echo $data['showpage_iphone_gallery_photo_items'][0]['showpage_iphone_gallery_photo_items_image_id']; 
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
-	width:148px;
-	height:148px;
+	width:160px;
+	height:240px;
 	margin-left: 72px;
 }
-form#image_showpage_iphone_gallery_photo_item_form div#image_showpage_iphone_gallery_photo_iphone_item_showpage_iphone_gallery_photo{
+form#image_showpage_iphone_gallery_photo_item_form div#image_showpage_iphone_gallery_photo_thumb_inactive_item_div{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_iphone_gallery_photo_items_images/<?php
-	  	echo ( isset( $data['showpage_iphone_gallery_photo_items'][0]['showpage_iphone_gallery_photo_iphone_items_image_id']) ? $data['showpage_iphone_gallery_photo_items'][0]['showpage_iphone_gallery_photo_iphone_items_image_id']:'' ); 
-	?>/image_iphone@2x.png?random=<?php echo rand(5,12334)    ?>);
+	  	echo ( isset( $data['showpage_iphone_gallery_photo_items'][0]['showpage_iphone_gallery_photo_thumb_inactive_items_image_id']) ? $data['showpage_iphone_gallery_photo_items'][0]['showpage_iphone_gallery_photo_thumb_inactive_items_image_id']:'' ); 
+	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
-	width:296px;
-	height:296px;
+	width:132px;
+	height:61px;
 	margin-left: 72px;
 }
-form#image_showpage_iphone_gallery_photo_item_form #short_content{
-width:753px;
+
+form#image_showpage_iphone_gallery_photo_item_form div#image_showpage_iphone_gallery_photo_thumb_active_item_div{
+	background-image: url(<?php echo base_url();    ?>uploads/showpage_iphone_gallery_photo_items_images/<?php
+	  	echo ( isset( $data['showpage_iphone_gallery_photo_items'][0]['showpage_iphone_gallery_photo_thumb_active_items_image_id']) ? $data['showpage_iphone_gallery_photo_items'][0]['showpage_iphone_gallery_photo_thumb_active_items_image_id']:'' ); 
+	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	background-repeat: no-repeat;
+	border:1px dotted gray;
+	width:132px;
+	height:61px;
+	margin-left: 72px;
 }
 
-form#image_showpage_iphone_gallery_photo_item_form #textarea_div{
-width:100%;
-height: 180px;
-margin:0px 0px 0px 0px;
-padding:10px 0px 0px 0px;
-}
 form#image_showpage_iphone_gallery_photo_item_form #submit{
 width:70px;	
 }
@@ -92,26 +94,7 @@ display:none;
 				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo $data['showpage_iphone_gallery_photo_items'][0]['name']    ?>">
 				</td>
 			</tr>
-			<tr>
-				<td  class='main_table ' >Shortened 
-				</td>				
-				<td   class='main_table ' >
-					<div    >
-							<textarea    class=' clearfix' name='short_content' id='short_content'><?php echo  ( isset( $data['showpage_iphone_gallery_photo_items'][0]['short_content'] ) ? $data['showpage_iphone_gallery_photo_items'][0]['short_content'] :'' )  ?></textarea>
-					</div>
-				</td>
-			</tr>	
-
-
-			<tr>
-				<td   class='main_table ' colspan=2>
-					<div  id='textarea_div'   >
-							<textarea  class=' clearfix' name='content' id='text_area'><?php echo $data['showpage_iphone_gallery_photo_items'][0]['content']    ?></textarea>
-					</div>
-				</td>
-			</tr>	
-
-
+			
 
 
 
@@ -122,7 +105,7 @@ display:none;
 				
 				<td class='main_table image_assets'  colspan=2>
 					<div  class='float_left image_assets' >
-							<div image_type='showpage_iphone_gallery_photo' image_type_id='13' class='float_left image_div'  id='image_showpage_iphone_gallery_photo_item_showpage_iphone_gallery_photo' showpage_iphone_gallery_photo_items_image_id='<?php echo $data['showpage_iphone_gallery_photo_items'][0]['showpage_iphone_gallery_photo_items_image_id']    ?>'>
+							<div image_type='showpage_iphone_gallery_photo' image_type_id='23' class='float_left image_div'  id='image_showpage_iphone_gallery_photo_item_div' showpage_iphone_gallery_photo_items_image_id='<?php echo $data['showpage_iphone_gallery_photo_items'][0]['showpage_iphone_gallery_photo_items_image_id']    ?>'>
 							</div>
 							
 					
@@ -130,11 +113,18 @@ display:none;
 
 
 					<div  class='float_left image_assets' >
-							<div image_type='showpage_iphone_gallery_photo_iphone' image_type_id='22' class='float_left image_div'  id='image_showpage_iphone_gallery_photo_iphone_item_showpage_iphone_gallery_photo' showpage_iphone_gallery_photo_items_image_id='<?php echo $data['showpage_iphone_gallery_photo_items'][0]['showpage_iphone_gallery_photo_iphone_items_image_id']    ?>'>
+							<div image_type='showpage_iphone_gallery_photo_thumb_inactive' image_type_id='24' class='float_left image_div'  id='image_showpage_iphone_gallery_photo_thumb_inactive_item_div' showpage_iphone_gallery_photo_items_image_id='<?php echo $data['showpage_iphone_gallery_photo_items'][0]['showpage_iphone_gallery_photo_thumb_inactive_items_image_id']    ?>'>
 							</div>
 							
 					
 					</div>
+
+					<div  class='float_left image_assets' >
+							<div image_type='showpage_iphone_gallery_photo_thumb_active' image_type_id='25' class='float_left image_div'  id='image_showpage_iphone_gallery_photo_thumb_active_item_div' showpage_iphone_gallery_photo_items_image_id='<?php echo $data['showpage_iphone_gallery_photo_items'][0]['showpage_iphone_gallery_photo_thumb_active_items_image_id']    ?>'>
+							</div>
+							
+					
+					</div>					
 
 				</td>
 				
@@ -169,7 +159,6 @@ display:none;
 <?php 
 
 $this->load->view('footer/jquery_ui_for_dialog.php');    
-$this->load->view('javascript/htmlbox_wsiwyg.php');  
 
 ?>
 
@@ -206,48 +195,7 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 					);
 						
 				});	
-			
-				mbox = $("#text_area").css({
-						height:"100px",
-						width:"100%"
-						}).htmlbox({
-				    toolbars:[
-					    [
-						// Cut, Copy, Paste
-						"separator","cut","copy","paste",
-						// Undo, Redo
-						"separator","undo","redo",
-						// Bold, Italic, Underline, Strikethrough, Sup, Sub
-						"separator","bold","italic","underline","strike","sup","sub",
-						// Left, Right, Center, Justify
-						"separator","justify","left","center","right",
-						// Ordered List, Unordered List, Indent, Outdent
-						"separator","ol","ul","indent","outdent",
-						// Hyperlink, Remove Hyperlink, Image
-						"separator","link","unlink","image"
-						
-						],
-						[// Show code
-						"separator","code",
-				        // Formats, Font size, Font family, Font color, Font, Background
-				        "separator","formats","fontsize","fontfamily",
-						"separator","fontcolor","highlight",
-						],
-						[
-						//Strip tags
-						"separator","removeformat","striptags","hr","paragraph",
-						// Styles, Source code syntax buttons
-						"separator","quote","styles","syntax"
-						]
-					],
-					skin:"gray"
-				});
-				
-				
-				setTimeout(function() { 											
-						mbox.set_text( $('#text_area').text()   );
-				}, 100);
-				
+
 				
   });
     
@@ -256,7 +204,6 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 
 function submit_inputs(close_fancyzoom){
 
-					$("#text_area").val( mbox.get_html() );
 
 					$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
 						table:'showpage_iphone_gallery_photo_items',

@@ -134,7 +134,7 @@
 						</div>	
 						
 						<div  class='float_left show_page_android_gallery_photo '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  >
-							iphone gallery
+							android gallery
 						</div>							
 													
 						
