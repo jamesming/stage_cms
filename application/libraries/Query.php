@@ -984,7 +984,7 @@ function query(){
 						
 						$showpage_cast_items_images = $this->CI->my_database_model->select_from_table( 
 										$table = 'showpage_cast_items_images', 
-										$select_what = 'id', 
+										$select_what = 'id, order, show_on_showpage', 
 										$where_array = array(
 																		'showpage_cast_item_id'=> $value,
 																		'image_type_id' => '13'
