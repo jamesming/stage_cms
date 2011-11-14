@@ -593,6 +593,12 @@ class Main extends CI_Controller {
 				
     break;
     
+    case 'hero_android':
+
+				$new_width  = '100';
+				
+    break;    
+    
     
     case 'right_tab_iphone':
 
@@ -626,6 +632,7 @@ class Main extends CI_Controller {
 	/* IPHONE IMAGES .. TAKE HI-RES AND SHRINK DOWN TO LOW */
 	if (in_array($image_type, array(
 																	'hero_iphone',
+																	'hero_android',
 																	'right_tab_iphone',
 																	'right_tab_border_iphone',
 																	'hero_android',

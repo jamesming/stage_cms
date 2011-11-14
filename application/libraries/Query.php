@@ -278,16 +278,40 @@ function query(){
 										$limit = -1
 										);
 										
-										
-						
 						if( count($carousel_items_images) > 0){				
 							
-							$carousel_item['hero_iphone_carousel_items_image_id'] = $carousel_items_images[0]->id;
+							$carousel_item['tune_in_carousel_items_image_id'] = $carousel_items_images[0]->id;
 							
 							
 						}else{
 							
-							$carousel_item['hero_iphone_carousel_items_image_id'] = 0;
+							$carousel_item['tune_in_carousel_items_image_id'] = 0;
+							
+						};		
+						
+						$carousel_items_images = $this->CI->my_database_model->select_from_table( 
+										$table = 'carousel_items_images', 
+										$select_what = '*', 
+										$where_array = array(
+																		'carousel_item_id'=> $value,
+																		'image_type_id' => 32 // HERO ANDROID
+																		), 
+										$use_order = FALSE, 
+										$order_field = '', 
+										$order_direction = 'desc', 
+										$limit = -1
+										);
+										
+										
+						
+						if( count($carousel_items_images) > 0){				
+							
+							$carousel_item['hero_android_carousel_items_image_id'] = $carousel_items_images[0]->id;
+							
+							
+						}else{
+							
+							$carousel_item['hero_android_carousel_items_image_id'] = 0;
 							
 						};	
 						
