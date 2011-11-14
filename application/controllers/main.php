@@ -1899,7 +1899,7 @@ submitted
 						
 			?>
 				<script type="text/javascript" language="Javascript">
-							window.parent.location.reload(true);		
+					//		window.parent.location.reload(true);		
 				</script>
  
 			<?php 						
