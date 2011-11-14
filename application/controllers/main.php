@@ -1720,9 +1720,16 @@ submitted
 		    break;	
 		    case 'showpage_hero_iphone':
 	
-						$new_width  = '321';
+						$new_width  = '200';
 						
-		    break;			 
+		    break;	
+		    
+		    case 'showpage_hero_android':
+	
+						$new_width  = '200';
+						
+		    break;	
+		    		 
 		    case 'showpage_feature_small':
 	
 						$new_width  = '138';

@@ -69,8 +69,30 @@ form#image_showpage_item_form div#image_showpage_hero_iphone_item_showpage_hero_
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
-	width:320px;
-	height:461px;
+	width:200px;
+	height:301px;
+	margin-left: 72px;
+}
+
+form#image_showpage_item_form div#image_showpage_hero_android_item_showpage_hero_android{
+	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
+	  	echo $data['showpage_items'][0]['showpage_hero_android_items_image_id']; 
+	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	background-repeat: no-repeat;
+	border:1px dotted gray;
+	width:200px;
+	height:301px;
+	margin-left: 72px;
+}
+
+form#image_showpage_item_form div#image_showpage_hero_mobile_thumb{
+	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
+	  	echo $data['showpage_items'][0]['showpage_hero_mobile_thumb_items_image_id']; 
+	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	background-repeat: no-repeat;
+	border:1px dotted gray;
+	width:100px;
+	height:70px;
 	margin-left: 72px;
 }
 
@@ -205,14 +227,29 @@ display:none;
 			
 			<tr>
 				<td class='main_table image_assets' colspan=2>
-					<div  class=' image_assets' >
+					<div  class='float_left image_assets' >
 							<div image_type='showpage_hero_iphone' image_type_id='11' class='float_left image_div'  id='image_showpage_hero_iphone_item_showpage_hero_iphone' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_hero_iphone_items_image_id']) ? $data['showpage_items'][0]['showpage_hero_iphone_items_image_id']:'' )    ?>'>
 							</div>
 							
 					
 					</div>
-
+					<div  class='float_left image_assets' >
+							<div image_type='showpage_hero_android' image_type_id='29' class='float_left image_div'  id='image_showpage_hero_android_item_showpage_hero_android' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_hero_android_items_image_id']) ? $data['showpage_items'][0]['showpage_hero_android_items_image_id']:'' )    ?>'>
+							</div>
+							
+					
+					</div>
+					
+					<div  class='float_left image_assets' >
+							<div image_type='showpage_hero_mobile_thumb' image_type_id='30' class='float_left image_div'  id='image_showpage_hero_mobile_thumb' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_hero_mobile_thumb_items_image_id']) ? $data['showpage_items'][0]['showpage_hero_mobile_thumb_items_image_id']:'' )    ?>'>
+							</div>
+							
+					
+					</div>					
+					
 				</td>
+				
+				
 			</tr>				
 
 			<tr>

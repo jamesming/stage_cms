@@ -2,7 +2,7 @@
 			
 		iframe#iframe_src{
 		width:850px;
-		height:2220px;	
+		height:2120px;	
 		}
 			
 			
