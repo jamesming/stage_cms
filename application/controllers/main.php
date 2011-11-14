@@ -1819,15 +1819,11 @@ submitted
 		
 	/* IPHONE IMAGES .. TAKE HI-RES AND SHRINK DOWN TO LOW */
 	if (in_array($image_type, array(
-																	'showpage_hero_android',
 																	'showpage_hero_iphone',
 																	'showpage_cast_iphone',
 																	'showpage_iphone_gallery_photo',
 																	'showpage_iphone_gallery_photo_thumb_inactive',
-																	'showpage_iphone_gallery_photo_thumb_active',
-																	'showpage_android_gallery_photo',
-																	'showpage_android_gallery_photo_thumb_inactive',
-																	'showpage_android_gallery_photo_thumb_active',																	
+																	'showpage_iphone_gallery_photo_thumb_active',																
 																	'showpage_hero_mobile_thumb'
 																	)
 							)
