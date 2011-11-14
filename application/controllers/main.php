@@ -1729,6 +1729,12 @@ submitted
 						$new_width  = '200';
 						
 		    break;	
+		    
+		    case 'showpage_hero_mobile_thumb':
+	
+						$new_width  = '100';
+						
+		    break;			    
 		    		 
 		    case 'showpage_feature_small':
 	
