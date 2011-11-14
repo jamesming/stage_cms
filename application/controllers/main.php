@@ -627,14 +627,17 @@ class Main extends CI_Controller {
 	if (in_array($image_type, array(
 																	'hero_iphone',
 																	'right_tab_iphone',
-																	'right_tab_border_iphone'
+																	'right_tab_border_iphone',
+																	'hero_android',
+																	'right_tab_android',
+																	'right_tab_border_android'																	
 																	)
 							)
 		){
 
 		copy(
 			$dir_path . '/' . 'image.png', 
-			$dir_path . '/' . 'image_iphone@2x.png'
+			$dir_path . '/' . 'image@2x.png'
 		);		
 
 		$new_height = $this->tools->get_new_size_of (
@@ -650,10 +653,7 @@ class Main extends CI_Controller {
 			$height = $new_height
 		);
 		
-		rename(
-			$dir_path . '/' . 'image.png', 
-			$dir_path . '/' . 'image_iphone.png'
-		);		
+		
 		
 	};
 					
@@ -1824,14 +1824,16 @@ submitted
 																	'showpage_iphone_gallery_photo',
 																	'showpage_iphone_gallery_photo_thumb_inactive',
 																	'showpage_iphone_gallery_photo_thumb_active',																
-																	'showpage_hero_mobile_thumb'
+																	'showpage_hero_mobile_thumb',
+																	'showpage_hero_android',
+																	'showpage_android_gallery_photo'																	
 																	)
 							)
 		){
 
 		copy(
 			$dir_path . '/' . 'image.png', 
-			$dir_path . '/' . 'image_iphone@2x.png'
+			$dir_path . '/' . 'image@2x.png'
 		);		
 
 		$new_height = $this->tools->get_new_size_of (
@@ -1847,51 +1849,12 @@ submitted
 			$height = $new_height
 		);
 		
-		rename(
-			$dir_path . '/' . 'image.png', 
-			$dir_path . '/' . 'image_iphone.png'
-		);	
+
 		
 	}	
 	
 	
-	
-	/* ANDROID IMAGES .. TAKE HI-RES AND SHRINK DOWN TO LOW */
-	if (in_array($image_type, array(
-																	'showpage_hero_android',
-																	'showpage_cast_android',
-																	'showpage_android_gallery_photo',
-																	'showpage_android_gallery_photo_thumb_inactive',
-																	'showpage_android_gallery_photo_thumb_active'
-																	)
-							)
-		){
 
-		copy(
-			$dir_path . '/' . 'image.png', 
-			$dir_path . '/' . 'image_android@2x.png'
-		);		
-
-		$new_height = $this->tools->get_new_size_of (
-				$what = 'height', 
-				$based_on_new = $width_of_file/2, 
-				$orig_width = $width_of_file, 
-				$orig_height = $height_of_file 
-		);
-		
-		$this->tools->resize_this(
-			$full_path = $dir_path . '/' . 'image.png', 
-			$width = $width_of_file/2, 
-			$height = $new_height
-		);
-		
-		rename(
-			$dir_path . '/' . 'image.png', 
-			$dir_path . '/' . 'image_android.png'
-		);	
-		
-	}		
-		
 						
 			?>
 				<script type="text/javascript" language="Javascript">
