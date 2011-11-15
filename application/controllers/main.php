@@ -80,8 +80,7 @@ class Main extends CI_Controller {
 								$segment4,
 								$this->input->get()
 						 );
-						 
-						 
+	 
 
 			    break;
 			    
@@ -163,7 +162,6 @@ class Main extends CI_Controller {
 			    break;
 
 				};
-
 
 
 				$this->load->view('main/index_view', 
@@ -375,6 +373,7 @@ class Main extends CI_Controller {
 							$where_array = array( 'id' => $this->input->get('carousel_item_id')) 
 				);	
 				
+	
 				$data['showpage_items'] = $this->query->get_showpage_items();	
 
 

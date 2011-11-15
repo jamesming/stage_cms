@@ -253,7 +253,7 @@ function query(){
 										);
 										
 										
-						
+					
 						if( count($carousel_items_images) > 0){				
 							
 							$carousel_item['tune_in_carousel_items_image_id'] = $carousel_items_images[0]->id;
@@ -280,12 +280,12 @@ function query(){
 										
 						if( count($carousel_items_images) > 0){				
 							
-							$carousel_item['tune_in_carousel_items_image_id'] = $carousel_items_images[0]->id;
+							$carousel_item['hero_iphone_carousel_items_image_id'] = $carousel_items_images[0]->id;
 							
 							
 						}else{
 							
-							$carousel_item['tune_in_carousel_items_image_id'] = 0;
+							$carousel_item['hero_iphone_carousel_items_image_id'] = 0;
 							
 						};		
 						
