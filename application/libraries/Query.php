@@ -172,216 +172,28 @@ function query(){
 			$order_direction = 'desc',
 			$limit = -1
 			);
-			
-			$carousel_items_raw = $this->CI->tools->object_to_array($carousel_items_raw);
-			
-			foreach( $carousel_items_raw  as  $keyA => $carousel_item_raw){
-
-				foreach( $carousel_item_raw  as  $field => $value){
-					
-					$carousel_item[$field] = $value;
-					
-					if( $field == 'id' ){
-						
-	
 
 
-						$carousel_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'carousel_items_images', 
-										$select_what = '*', 
-										$where_array = array(
-																		'carousel_item_id'=> $value,
-																		'image_type_id' => 1 // HERO IMAGE
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-										
-										
-						
-						if( count($carousel_items_images) > 0){				
-							
-							$carousel_item['hero_carousel_items_image_id'] = $carousel_items_images[0]->id;
-							
-							
-						}else{
-							
-							$carousel_item['hero_carousel_items_image_id'] = 0;
-							
-						};
-						
-						$carousel_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'carousel_items_images', 
-										$select_what = '*', 
-										$where_array = array(
-																		'carousel_item_id'=> $value,
-																		'image_type_id' => 6 // RIGHT TAB
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-										
-										
-						
-						if( count($carousel_items_images) > 0){				
-							
-							$carousel_item['right_tab_carousel_items_image_id'] = $carousel_items_images[0]->id;
-							
-							
-						}else{
-							
-							$carousel_item['right_tab_carousel_items_image_id'] = 0;
-							
-						};
-						
-						
-						$carousel_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'carousel_items_images', 
-										$select_what = '*', 
-										$where_array = array(
-																		'carousel_item_id'=> $value,
-																		'image_type_id' => 3 // TUNE IN
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-										
-										
-					
-						if( count($carousel_items_images) > 0){				
-							
-							$carousel_item['tune_in_carousel_items_image_id'] = $carousel_items_images[0]->id;
-							
-							
-						}else{
-							
-							$carousel_item['tune_in_carousel_items_image_id'] = 0;
-							
-						};		
-						
-						$carousel_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'carousel_items_images', 
-										$select_what = '*', 
-										$where_array = array(
-																		'carousel_item_id'=> $value,
-																		'image_type_id' => 7 // HERO IPHONE
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-										
-						if( count($carousel_items_images) > 0){				
-							
-							$carousel_item['hero_iphone_carousel_items_image_id'] = $carousel_items_images[0]->id;
-							
-							
-						}else{
-							
-							$carousel_item['hero_iphone_carousel_items_image_id'] = 0;
-							
-						};		
-						
-						$carousel_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'carousel_items_images', 
-										$select_what = '*', 
-										$where_array = array(
-																		'carousel_item_id'=> $value,
-																		'image_type_id' => 32 // HERO ANDROID
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-										
-										
-						
-						if( count($carousel_items_images) > 0){				
-							
-							$carousel_item['hero_android_carousel_items_image_id'] = $carousel_items_images[0]->id;
-							
-							
-						}else{
-							
-							$carousel_item['hero_android_carousel_items_image_id'] = 0;
-							
-						};	
-						
-						$carousel_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'carousel_items_images', 
-										$select_what = '*', 
-										$where_array = array(
-																		'carousel_item_id'=> $value,
-																		'image_type_id' => 8 // RIGHT_TAB IPHONE
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-										
-										
-						
-						if( count($carousel_items_images) > 0){				
-							
-							$carousel_item['right_tab_iphone_carousel_items_image_id'] = $carousel_items_images[0]->id;
-							
-							
-						}else{
-							
-							$carousel_item['right_tab_iphone_carousel_items_image_id'] = 0;
-							
-						};		
-						
-						
-						
-						$carousel_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'carousel_items_images', 
-										$select_what = '*', 
-										$where_array = array(
-																		'carousel_item_id'=> $value,
-																		'image_type_id' => 9 // TUNE IN IPHONE
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-										
-										
-						
-						if( count($carousel_items_images) > 0){				
-							
-							$carousel_item['tune_in_iphone_carousel_items_image_id'] = $carousel_items_images[0]->id;
-							
-							
-						}else{
-							
-							$carousel_item['tune_in_iphone_carousel_items_image_id'] = 0;
-							
-						};																									
-						
-	
-					};
-					
-					
-
-				};
+			$image_types_array = array(
+								'hero_carousel_items_image_id' => 1,
+								'right_tab_carousel_items_image_id' => 6,
+								'tune_in_carousel_items_image_id' => 3,
+								'hero_iphone_carousel_items_image_id' => 7,
+								'hero_android_carousel_items_image_id' => 32,
+								'right_tab_iphone_carousel_items_image_id' => 8,
+								'right_tab_border_iphone_carousel_items_image_id' => 9,
+								'hero_ipad_carousel_items_image_id' => 33,
+								'right_tab_ipad_carousel_items_image_id' => 34,
+								'right_tab_border_ipad_carousel_items_image_id' => 35
+							);
 				
-		
-				$carousel_items[] = $carousel_item;
-				
-			};
+			$carousel_items = $this->prepare_array(
+				$items_tables_raw = $this->CI->tools->object_to_array($carousel_items_raw),
+				$name_of_item_id	 = 'carousel_item_id',
+				$image_table = 'carousel_items_images',
+				$image_types_array);
 			
-			
+
 			return $carousel_items;	
 		
 	}
@@ -832,191 +644,23 @@ function query(){
 			);
 			
 
+			$image_types_array = array(
+								'showpage_hero_items_image_id' => 10,
+								'showpage_title_items_image_id' => 12,
+								'showpage_dropdown_items_image_id' => 19,
+								'showpage_hero_iphone_items_image_id' => 11,
+								'showpage_hero_android_items_image_id' => 29,
+								'showpage_hero_mobile_thumb_items_image_id' => 30,
+								'showpage_ipad_hero_thumb_items_id' => 36,
+								'showpage_hero_ipad_id' => 37
+							);
+				
+			$showpage_items = $this->prepare_array(
+				$items_tables_raw = $this->CI->tools->object_to_array($showpage_items_raw),
+				$name_of_item_id	 = 'showpage_item_id',
+				$image_table = 'showpage_items_images',
+				$image_types_array);
 
-			$showpage_items_raw = $this->CI->tools->object_to_array($showpage_items_raw);
-			
-			foreach( $showpage_items_raw  as  $keyA => $showpage_item_raw){
-
-				foreach( $showpage_item_raw  as  $field => $value){
-					
-					$showpage_item[$field] = $value;
-					
-					if( $field == 'id' ){
-
-						
-						$showpage_hero_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'showpage_items_images', 
-										$select_what = '*', 
-										$where_array = array(
-																		'showpage_item_id'=> $value,
-																		'image_type_id' => '10'  // showpage_hero
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-										
-				
-						
-						if( count($showpage_hero_items_images) > 0){				
-							
-							$showpage_item['showpage_hero_items_image_id'] = $showpage_hero_items_images[0]->id;
-							
-							
-						}else{
-							
-							$showpage_item['showpage_hero_items_image_id'] = 0;
-							
-						};
-						//****
-						$showpage_title_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'showpage_items_images', 
-										$select_what = '*', 
-										$where_array = array(
-																		'showpage_item_id'=> $value,
-																		'image_type_id' => '12'  // showpage_title
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-										
-				
-						
-						if( count($showpage_title_items_images) > 0){				
-							
-							$showpage_item['showpage_title_items_image_id'] = $showpage_title_items_images[0]->id;
-							
-							
-						}else{
-							
-							$showpage_item['showpage_title_items_image_id'] = 0;
-							
-						};
-						
-						//****
-						$showpage_dropdown_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'showpage_items_images', 
-										$select_what = '*', 
-										$where_array = array(
-																		'showpage_item_id'=> $value,
-																		'image_type_id' => '19'  // showpage_dropdown
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-										
-				
-						
-						if( count($showpage_dropdown_items_images) > 0){				
-							
-							$showpage_item['showpage_dropdown_items_image_id'] = $showpage_dropdown_items_images[0]->id;
-							
-							
-						}else{
-							
-							$showpage_item['showpage_dropdown_items_image_id'] = 0;
-							
-						};
-						//****
-						$showpage_hero_iphone_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'showpage_items_images', 
-										$select_what = '*', 
-										$where_array = array(
-																		'showpage_item_id'=> $value,
-																		'image_type_id' => '11'  // showpage_hero_iphone
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-										
-				
-						
-						if( count($showpage_hero_iphone_items_images) > 0){				
-							
-							$showpage_item['showpage_hero_iphone_items_image_id'] = $showpage_hero_iphone_items_images[0]->id;
-							
-							
-						}else{
-							
-							$showpage_item['showpage_hero_iphone_items_image_id'] = 0;
-							
-						};
-						
-						//****
-						$showpage_hero_iphone_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'showpage_items_images', 
-										$select_what = '*', 
-										$where_array = array(
-																		'showpage_item_id'=> $value,
-																		'image_type_id' => '29'  // showpage_hero_android
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-										
-				
-						
-						if( count($showpage_hero_iphone_items_images) > 0){				
-							
-							$showpage_item['showpage_hero_android_items_image_id'] = $showpage_hero_iphone_items_images[0]->id;
-							
-							
-						}else{
-							
-							$showpage_item['showpage_hero_android_items_image_id'] = 0;
-							
-						};	
-						
-						
-						//****
-						$showpage_hero_iphone_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'showpage_items_images', 
-										$select_what = '*', 
-										$where_array = array(
-																		'showpage_item_id'=> $value,
-																		'image_type_id' => '30'  // showpage_hero_mobile_thumb
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-										
-				
-						
-						if( count($showpage_hero_iphone_items_images) > 0){				
-							
-							$showpage_item['showpage_hero_mobile_thumb_items_image_id'] = $showpage_hero_iphone_items_images[0]->id;
-							
-							
-						}else{
-							
-							$showpage_item['showpage_hero_mobile_thumb_items_image_id'] = 0;
-							
-						};
-						
-					
-	
-					};
-					
-					
-
-				};
-				
-		
-				$showpage_items[] = $showpage_item;
-				
-			};
-			
 
 			if( isset($showpage_items)){
 				return $showpage_items;
@@ -1027,8 +671,7 @@ function query(){
 			
 	}
 	
-	
-	
+
 /**
  * get_showpage_cast_items
  *
@@ -1758,6 +1401,71 @@ function query(){
 	}
 	
 
+
+
+
+		function prepare_array(
+			$items_tables_raw,
+			$name_of_item_id,
+			$image_table,
+			$image_types_array){
+			
+
+		
+					foreach( $items_tables_raw  as  $keyA => $items_table_raw){
+		
+						foreach( $items_table_raw  as  $field => $value){
+							
+							$items_table[$field] = $value;
+							
+							if( $field == 'id' ){
+								
+								foreach( $image_types_array  as  $name_of_hero_items_image_id => $image_type_id){
+									
+									
+									
+									$items_images = $this->CI->my_database_model->select_from_table( 
+												$table = $image_table, 
+												$select_what = '*', 
+												$where_array = array(
+																				$name_of_item_id=> $value,
+																				'image_type_id' => $image_type_id  
+																				), 
+												$use_order = FALSE, 
+												$order_field = '', 
+												$order_direction = 'desc', 
+												$limit = -1
+												);
+												
+								
+								
+								if( count($items_images) > 0){				
+									
+									$items_table[$name_of_hero_items_image_id] = $items_images[0]->id;
+									
+									
+								}else{
+									
+									$items_table[$name_of_hero_items_image_id] = 0;
+									
+								};
+								}
+			
+							};
+							
+							
+		
+						};
+						
+				
+						$items_tables[] = $items_table;
+						
+					};
+					
+					
+					return $items_tables;
+			
+		}
 	
 }
 

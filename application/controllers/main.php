@@ -102,6 +102,8 @@ class Main extends CI_Controller {
 								$segment4,
 								$this->input->get()
 						 );
+						 
+						 
 
 			    break;
 			    
@@ -519,7 +521,7 @@ class Main extends CI_Controller {
 					?>
 						
 									<script type="text/javascript" language="Javascript">
-												document.location = '<?php echo base_url()    ?>index.php/main/resize_carousel_images?image_type=<?php echo  $this->input->post('image_type')   ?>&carousel_image_id=<?php echo $carousel_items_image_id    ?>';		
+												document.location = '<?php echo base_url()    ?>index.php/main/Resize_carousel_images?image_type=<?php echo  $this->input->post('image_type')   ?>&carousel_image_id=<?php echo $carousel_items_image_id    ?>';		
 									</script>
 					 	
 						
@@ -665,7 +667,7 @@ class Main extends CI_Controller {
 					
 	?>
 	<script type="text/javascript" language="Javascript">
-				window.parent.location.reload(true);		
+		 window.parent.location.reload(true);		
 	</script>
 	<?php 						
 						

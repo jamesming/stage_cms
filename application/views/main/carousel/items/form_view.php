@@ -86,7 +86,7 @@ form#image_carousel_item_form div#image_carousel_item_right_tab_iphone{
 }
 
 form#image_carousel_item_form div#image_carousel_item_right_tab_border_iphone{
-	background-image: url(<?php echo base_url();    ?>uploads/carousel_items_images/<?php  	echo $data['carousel_items'][0]['tune_in_iphone_carousel_items_image_id'] ?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	background-image: url(<?php echo base_url();    ?>uploads/carousel_items_images/<?php  	echo $data['carousel_items'][0]['right_tab_border_iphone_carousel_items_image_id'] ?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
 	width:77px;
@@ -213,7 +213,7 @@ display:none;
 							</div>	
 							
 							
-							<div  image_type='right_tab_border_iphone' image_type_id='9' class='float_left image_div'   id='image_carousel_item_right_tab_border_iphone'  carousel_items_image_id='<?php  	echo $data['carousel_items'][0]['tune_in_iphone_carousel_items_image_id'] ?>'>
+							<div  image_type='right_tab_border_iphone' image_type_id='9' class='float_left image_div'   id='image_carousel_item_right_tab_border_iphone'  carousel_items_image_id='<?php  	echo $data['carousel_items'][0]['right_tab_border_iphone_carousel_items_image_id'] ?>'>
 								
 							</div>	
 							<style>
