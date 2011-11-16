@@ -61,7 +61,7 @@
 								color:gray;
 								}			
 								
-								#showpage_item_outside_container   .showpage_item_row .show_page_iphone_gallery_photo{
+								#showpage_item_outside_container   .showpage_item_row .show_page_mobile_gallery_photo{
 													width:110px;
 													font-weight:bold;
 													font-size:20px;
@@ -129,13 +129,10 @@
 
 						
 						
-						<div  class='float_left show_page_iphone_gallery_photo '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  >
-							iphone gallery
+						<div  class='float_left show_page_mobile_gallery_photo '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  >
+							mobile gallery
 						</div>	
-						
-						<div  class='float_left show_page_android_gallery_photo '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  >
-							android gallery
-						</div>							
+			
 													
 						
 						<div  class='float_left'  >
@@ -217,10 +214,10 @@
 				
 				
 				
-				$('#showpage_item_outside_container   .showpage_item_row .show_page_iphone_gallery_photo').css({cursor:'pointer'}).click(function(event) {
+				$('#showpage_item_outside_container   .showpage_item_row .show_page_mobile_gallery_photo').css({cursor:'pointer'}).click(function(event) {
 					
 
-						document.location = '<?php echo  base_url()   ?>index.php/main/index/showpage_iphone_gallery_photo/items?showpage_item_id=' + $(this).attr('showpage_item_id');
+						document.location = '<?php echo  base_url()   ?>index.php/main/index/showpage_mobile_gallery_photo/items?showpage_item_id=' + $(this).attr('showpage_item_id');
 				
 				});			
 				

@@ -201,16 +201,6 @@ function query(){
 
 
 
-
-//function get_carousel_items_image(
-//	$carousel_item_id,
-//	$image_type_id	
-//){
-//	
-//	return $carousel_items_image_id
-//}
-
-
 /**
  * get_carousel_sets
  *
@@ -434,82 +424,21 @@ function query(){
 			$order_direction = 'desc', 
 			$limit = -1
 			);
-			
-			$nu_spotlight_items_raw = $this->CI->tools->object_to_array($nu_spotlight_items_raw);
-			
-			foreach( $nu_spotlight_items_raw  as  $keyA => $nu_spotlight_item_raw){
 
-				foreach( $nu_spotlight_item_raw  as  $field => $value){
-					
-					$nu_spotlight_item[$field] = $value;
-					
-					if( $field == 'id' ){
-						
-						$nu_spotlight_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'nu_spotlight_items_images', 
-										$select_what = '*', 
-										$where_array = array(
-																		'nu_spotlight_item_id'=> $value,
-																		'image_type' => 'feature'
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-										
-										
-						
-						if( count($nu_spotlight_items_images) > 0){				
-							
-							$nu_spotlight_item['feature_nu_spotlight_items_image_id'] = $nu_spotlight_items_images[0]->id;
-							
-							
-						}else{
-							
-							$nu_spotlight_item['feature_nu_spotlight_items_image_id'] = 0;
-							
-						};
-						
-						$nu_spotlight_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'nu_spotlight_items_images', 
-										$select_what = '*', 
-										$where_array = array(
-																		'nu_spotlight_item_id'=> $value,
-																		'image_type' => 'thumb'
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-										
-										
-						
-						if( count($nu_spotlight_items_images) > 0){				
-							
-							$nu_spotlight_item['thumb_nu_spotlight_items_image_id'] = $nu_spotlight_items_images[0]->id;
-							
-							
-						}else{
-							
-							$nu_spotlight_item['thumb_nu_spotlight_items_image_id'] = 0;
-							
-						};
-	
-					};
-					
-					
-
-				};
+			$image_types_array = array(
+								'feature_nu_spotlight_items_image_id' => 4,
+								'thumb_nu_spotlight_items_image_id' => 5
+							);
 				
-		
-				$nu_spotlight_items[] = $nu_spotlight_item;
+			$nu_spotlight_items_raw = 	$this->CI->tools->object_to_array($nu_spotlight_items_raw);
 				
-			};
+			$nu_spotlight_items = $this->prepare_array(
+				$items_tables_raw = $nu_spotlight_items_raw,
+				$name_of_item_id	 = 'nu_spotlight_item_id',
+				$image_table = 'nu_spotlight_items_images',
+				$image_types_array);
 			
 
-			
 			return $nu_spotlight_items;
 			
 	}
@@ -536,82 +465,18 @@ function query(){
 			$limit = -1
 			);
 			
-
-
-			$feature_items_raw = $this->CI->tools->object_to_array($feature_items_raw);
-			
-			foreach( $feature_items_raw  as  $keyA => $feature_item_raw){
-
-				foreach( $feature_item_raw  as  $field => $value){
-					
-					$feature_item[$field] = $value;
-					
-					if( $field == 'id' ){
-
-						
-						$feature_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'feature_items_images', 
-										$select_what = '*', 
-										$where_array = array(
-																		'feature_item_id'=> $value,
-																		'image_type_id' => '17' //feature_large
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-										
+			$image_types_array = array(
+								'feature_large_items_image_id' => 17,
+								'feature_title_graphic_items_image_id' => 20
+							);
 				
-						
-						if( count($feature_items_images) > 0){				
-							
-							$feature_item['feature_large_items_image_id'] = $feature_items_images[0]->id;
-							
-							
-						}else{
-							
-							$feature_item['feature_large_items_image_id'] = 0;
-							
-						};
-						
-						$feature_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'feature_items_images', 
-										$select_what = '*', 
-										$where_array = array(
-																		'feature_item_id'=> $value,
-																		'image_type_id' => '20' //feature_title
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-										
+			$feature_items_raw = 	$this->CI->tools->object_to_array($feature_items_raw);
 				
-						
-						if( count($feature_items_images) > 0){				
-							
-							$feature_item['feature_title_graphic_items_image_id'] = $feature_items_images[0]->id;
-							
-							
-						}else{
-							
-							$feature_item['feature_title_graphic_items_image_id'] = 0;
-							
-						};
-	
-					};
-					
-					
-
-				};
-				
-		
-				$feature_items[] = $feature_item;
-				
-			};
-			
+			$feature_items = $this->prepare_array(
+				$items_tables_raw = $feature_items_raw,
+				$name_of_item_id	 = 'feature_item_id',
+				$image_table = 'feature_items_images',
+				$image_types_array);
 
 			if( isset($feature_items)){
 				return $feature_items;
@@ -680,9 +545,9 @@ function query(){
  * @author James Ming <jamesming@gmail.com>
  * @access public
  * @return array  */ 
-	
+
 	function get_showpage_cast_items( $where_array = array() ){
-		
+
 			$showpage_cast_items_raw = $this->CI->my_database_model->select_from_table( 
 			$table = 'showpage_cast_items', 
 			$select_what = '*', 
@@ -692,20 +557,20 @@ function query(){
 			$order_direction = 'desc', 
 			$limit = -1
 			);
-			
+
 
 
 			$showpage_cast_items_raw = $this->CI->tools->object_to_array($showpage_cast_items_raw);
-			
+
 			foreach( $showpage_cast_items_raw  as  $keyA => $showpage_item_raw){
 
 				foreach( $showpage_item_raw  as  $field => $value){
-					
+
 					$showpage_item[$field] = $value;
-					
+
 					if( $field == 'id' ){
 
-						
+
 						$showpage_cast_items_images = $this->CI->my_database_model->select_from_table( 
 										$table = 'showpage_cast_items_images', 
 										$select_what = 'id, order, show_on_showpage', 
@@ -719,20 +584,20 @@ function query(){
 										$limit = -1
 										);
 
-						
+
 						if( count($showpage_cast_items_images) > 0){				
-							
+
 							$showpage_item['showpage_cast_items_image_id'] = $showpage_cast_items_images[0]->id;
 							$showpage_item['order'] = $showpage_cast_items_images[0]->order;
 							$showpage_item['show_on_showpage'] = $showpage_cast_items_images[0]->show_on_showpage;
-							
-							
+
+
 						}else{
-							
+
 							$showpage_item['showpage_cast_items_image_id'] = 0;
-							
+
 						};
-						
+
 						$showpage_cast_items_images = $this->CI->my_database_model->select_from_table( 
 										$table = 'showpage_cast_items_images', 
 										$select_what = 'id, order, show_on_showpage', 
@@ -746,30 +611,30 @@ function query(){
 										$limit = -1
 										);
 
-						
+
 						if( count($showpage_cast_items_images) > 0){				
-							
+
 							$showpage_item['showpage_cast_iphone_items_image_id'] = $showpage_cast_items_images[0]->id;
 
-							
+
 						}else{
-							
+
 							$showpage_item['showpage_cast_iphone_items_image_id'] = 0;
-							
+
 						};
-	
+
 					};
-					
-					
+
+
 
 				};
-				
-		
+
+
 				$showpage_cast_items[] = $showpage_item;
-				
+
 			};
-			
-			
+
+
 
 			if( isset($showpage_cast_items)){
 				if( isset($showpage_item['order'])){
@@ -779,11 +644,11 @@ function query(){
 			}else{
 				return;
 			};
-			
-			
+
+
 	}
-	
-	
+
+
 	
 /**
  * get_showpage_photos_items
@@ -818,7 +683,7 @@ function query(){
 	
 	
 /**
- * get_showpage_iphone_gallery_photo_items
+ * get_showpage_mobile_gallery_photo_items
  *
  * {@source }
  * @package BackEnd
@@ -826,10 +691,10 @@ function query(){
  * @access public
  * @return array  */ 
 	
-	function get_showpage_iphone_gallery_photo_items( $where_array = array() ){
+	function get_showpage_mobile_gallery_photo_items( $where_array = array() ){
 		
-			$showpage_iphone_gallery_photo_items_raw = $this->CI->my_database_model->select_from_table( 
-			$table = 'showpage_iphone_gallery_photo_items', 
+			$showpage_mobile_gallery_photo_items_raw = $this->CI->my_database_model->select_from_table( 
+			$table = 'showpage_mobile_gallery_photo_items', 
 			$select_what = '*', 
 			$where_array, 
 			$use_order = FALSE, 
@@ -839,259 +704,40 @@ function query(){
 			);
 			
 
-
-			$showpage_iphone_gallery_photo_items_raw = $this->CI->tools->object_to_array($showpage_iphone_gallery_photo_items_raw);
+			$image_types_array = array(
 			
-			foreach( $showpage_iphone_gallery_photo_items_raw  as  $keyA => $showpage_item_raw){
-
-				foreach( $showpage_item_raw  as  $field => $value){
-					
-					$showpage_item[$field] = $value;
-					
-					if( $field == 'id' ){
-
-						
-						$showpage_iphone_gallery_photo_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'showpage_iphone_gallery_photo_items_images', 
-										$select_what = 'id', 
-										$where_array = array(
-																		'showpage_iphone_gallery_photo_item_id'=> $value,
-																		'image_type_id' => '23'
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-
-
-						if( count($showpage_iphone_gallery_photo_items_images) > 0){				
-							
-							$showpage_item['showpage_iphone_gallery_photo_items_image_id'] = $showpage_iphone_gallery_photo_items_images[0]->id;
-							
-						}else{
-							
-							$showpage_item['showpage_iphone_gallery_photo_items_image_id'] = 0;
-							
-						};
-						
-						$showpage_iphone_gallery_photo_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'showpage_iphone_gallery_photo_items_images', 
-										$select_what = 'id', 
-										$where_array = array(
-																		'showpage_iphone_gallery_photo_item_id'=> $value,
-																		'image_type_id' => '24'
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-
-					
-						if( count($showpage_iphone_gallery_photo_items_images) > 0){				
-
-							$showpage_item['showpage_iphone_gallery_photo_thumb_inactive_items_image_id'] = $showpage_iphone_gallery_photo_items_images[0]->id;
-
-							
-						}else{
-							
-							$showpage_item['showpage_iphone_gallery_photo_thumb_inactive_items_image_id'] = 0;
-							
-						};
-	
-
-					
-
-						$showpage_iphone_gallery_photo_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'showpage_iphone_gallery_photo_items_images', 
-										$select_what = 'id', 
-										$where_array = array(
-																		'showpage_iphone_gallery_photo_item_id'=> $value,
-																		'image_type_id' => '25'
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-
-						
-						if( count($showpage_iphone_gallery_photo_items_images) > 0){				
-							
-							$showpage_item['showpage_iphone_gallery_photo_thumb_active_items_image_id'] = $showpage_iphone_gallery_photo_items_images[0]->id;
-
-							
-						}else{
-							
-							$showpage_item['showpage_iphone_gallery_photo_thumb_active_items_image_id'] = 0;
-							
-						};
-	
-					};
-
-				};
+								'showpage_iphone_gallery_photo_items_image_id' => 23,
+								'showpage_iphone_gallery_photo_thumb_inactive_items_image_id' => 24,
+								'showpage_iphone_gallery_photo_thumb_active_items_image_id' => 25,
+								
+								'showpage_android_gallery_photo_items_image_id' => 26,
+								
+								'showpage_ipad_gallery_photo_items_image_id' => 39,
+								'showpage_ipad_gallery_photo_thumb_inactive_items_image_id' => 41,
+								'showpage_ipad_gallery_photo_thumb_active_items_image_id' => 40
+								
+							);
 				
-		
-				$showpage_iphone_gallery_photo_items[] = $showpage_item;
+			$showpage_mobile_gallery_photo_items = $this->prepare_array(
+				$items_tables_raw = $this->CI->tools->object_to_array($showpage_mobile_gallery_photo_items_raw),
+				$name_of_item_id	 = 'showpage_mobile_gallery_photo_item_id',
+				$image_table = 'showpage_mobile_gallery_photo_items_images',
+				$image_types_array);
 				
-			};
-			
-			
 
-			if( isset($showpage_iphone_gallery_photo_items)){
+			if( isset($showpage_mobile_gallery_photo_items)){
 				if( isset($showpage_item['order'])){
-					$this->CI->tools->aasort($showpage_iphone_gallery_photo_items,'order');
+					$this->CI->tools->aasort($showpage_mobile_gallery_photo_items,'order');
 				};
-				return $showpage_iphone_gallery_photo_items;
+				return $showpage_mobile_gallery_photo_items;
 			}else{
 				return;
 			};
 			
 			
 	}
-	
-
 
 	
-	
-/**
- * get_showpage_android_gallery_photo_items
- *
- * {@source }
- * @package BackEnd
- * @author James Ming <jamesming@gmail.com>
- * @access public
- * @return array  */ 
-	
-	function get_showpage_android_gallery_photo_items( $where_array = array() ){
-		
-			$showpage_android_gallery_photo_items_raw = $this->CI->my_database_model->select_from_table( 
-			$table = 'showpage_android_gallery_photo_items', 
-			$select_what = '*', 
-			$where_array, 
-			$use_order = TRUE, 
-			$order_field = 'created', 
-			$order_direction = 'desc', 
-			$limit = -1
-			);
-			
-
-
-			$showpage_android_gallery_photo_items_raw = $this->CI->tools->object_to_array($showpage_android_gallery_photo_items_raw);
-			
-			foreach( $showpage_android_gallery_photo_items_raw  as  $keyA => $showpage_item_raw){
-
-				foreach( $showpage_item_raw  as  $field => $value){
-					
-					$showpage_item[$field] = $value;
-					
-					if( $field == 'id' ){
-
-						
-						$showpage_android_gallery_photo_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'showpage_android_gallery_photo_items_images', 
-										$select_what = 'id', 
-										$where_array = array(
-																		'showpage_android_gallery_photo_item_id'=> $value,
-																		'image_type_id' => '26'
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-
-						
-						if( count($showpage_android_gallery_photo_items_images) > 0){				
-							
-							$showpage_item['showpage_android_gallery_photo_items_image_id'] = $showpage_android_gallery_photo_items_images[0]->id;
-							
-							
-						}else{
-							
-							$showpage_item['showpage_android_gallery_photo_items_image_id'] = 0;
-							
-						};
-						
-						$showpage_android_gallery_photo_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'showpage_android_gallery_photo_items_images', 
-										$select_what = 'id', 
-										$where_array = array(
-																		'showpage_android_gallery_photo_item_id'=> $value,
-																		'image_type_id' => '27'
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-
-						
-						if( count($showpage_android_gallery_photo_items_images) > 0){				
-							
-							$showpage_item['showpage_android_gallery_photo_thumb_inactive_items_image_id'] = $showpage_android_gallery_photo_items_images[0]->id;
-
-							
-						}else{
-							
-							$showpage_item['showpage_android_gallery_photo_thumb_inactive_items_image_id'] = 0;
-							
-						};
-	
-
-
-						
-						$showpage_android_gallery_photo_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'showpage_android_gallery_photo_items_images', 
-										$select_what = 'id', 
-										$where_array = array(
-																		'showpage_android_gallery_photo_item_id'=> $value,
-																		'image_type_id' => '28'
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-
-						
-						if( count($showpage_android_gallery_photo_items_images) > 0){				
-							
-							$showpage_item['showpage_android_gallery_photo_thumb_active_items_image_id'] = $showpage_android_gallery_photo_items_images[0]->id;
-
-							
-						}else{
-							
-							$showpage_item['showpage_android_gallery_photo_thumb_active_items_image_id'] = 0;
-							
-						};
-	
-					};
-
-				};
-				
-		
-				$showpage_android_gallery_photo_items[] = $showpage_item;
-				
-			};
-			
-			
-
-			if( isset($showpage_android_gallery_photo_items)){
-				if( isset($showpage_item['order'])){
-					$this->CI->tools->aasort($showpage_android_gallery_photo_items,'order');
-				};
-				return $showpage_android_gallery_photo_items;
-			}else{
-				return;
-			};
-			
-			
-	}
-	
-	
-
 /**
  * get_showpage_feature_feature_items
  *
@@ -1113,85 +759,19 @@ function query(){
 			$limit = -1
 			);
 			
-
-
-			$showpage_feature_items_raw = $this->CI->tools->object_to_array($showpage_feature_items_raw);
-			foreach( $showpage_feature_items_raw  as  $keyA => $showpage_feature_item_raw){
-
-				foreach( $showpage_feature_item_raw  as  $field => $value){
-					
-					$showpage_feature_item[$field] = $value;
-					
-					if( $field == 'id' ){
-
-						
-						$showpage_feature_large_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'showpage_feature_items_images', 
-										$select_what = '*', 
-										$where_array = array(
-																		'showpage_feature_item_id'=> $value,
-																		'image_type_id' => '16'
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-										
+			$image_types_array = array(
+								'showpage_feature_large_items_image_id' => 16,
+								'showpage_feature_small_items_image_id' => 15
+							);
 				
-						
-						if( count($showpage_feature_large_items_images) > 0){				
-							
-							$showpage_feature_item['showpage_feature_large_items_image_id'] = $showpage_feature_large_items_images[0]->id;
-							
-							
-						}else{
-							
-							$showpage_feature_item['showpage_feature_large_items_image_id'] = 0;
-							
-						};
-						
-						
-						
-						$showpage_feature_small_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'showpage_feature_items_images', 
-										$select_what = '*', 
-										$where_array = array(
-																		'showpage_feature_item_id'=> $value,
-																		'image_type_id' => '15'
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-										
+			$showpage_feature_items_raw = 	$this->CI->tools->object_to_array($showpage_feature_items_raw);
 				
-						
-						if( count($showpage_feature_small_items_images) > 0){				
-							
-							$showpage_feature_item['showpage_feature_small_items_image_id'] = $showpage_feature_small_items_images[0]->id;
-							
-							
-						}else{
-							
-							$showpage_feature_item['showpage_feature_small_items_image_id'] = 0;
-							
-						};
-						
+			$showpage_feature_items = $this->prepare_array(
+				$items_tables_raw = $showpage_feature_items_raw,
+				$name_of_item_id	 = 'showpage_feature_item_id',
+				$image_table = 'showpage_feature_items_images',
+				$image_types_array);
 
-	
-					};
-					
-					
-
-				};
-				
-				$showpage_feature_item['short_version'] = $showpage_feature_items_raw[0]['short_version'];
-				$showpage_feature_items[] = $showpage_feature_item;
-				
-			};
-			
 
 			if( isset($showpage_feature_items)){
 				return $showpage_feature_items;
@@ -1337,7 +917,7 @@ function query(){
  * @return array  */ 
 
 	function get_nu_spotlight_sets( $where_array = array()){
-		;
+
 				$nu_spotlight_sets_raw = $this->CI->my_database_model->select_from_table( 
 														$table = 'nu_spotlight_sets', 
 														$select_what = '*', 
@@ -1357,8 +937,7 @@ function query(){
 					foreach( $nu_spotlight_set as  $field => $value){
 						
 						if( $field == 'id' ){
-							
-							
+
 								$join_array = array(
 												'nu_spotlight_items' => 'nu_spotlight_items_sets.nu_spotlight_item_id = nu_spotlight_items.id',
 												'nu_spotlight_items_images' => 'nu_spotlight_items.id = nu_spotlight_items_images.nu_spotlight_item_id'

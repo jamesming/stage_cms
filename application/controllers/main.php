@@ -137,9 +137,9 @@ class Main extends CI_Controller {
 			    break;	
 			    
 			    
-			    case 'showpage_iphone_gallery_photo':
+			    case 'showpage_mobile_gallery_photo':
 		
-						$data = $this->custom->prepare_showpage_iphone_gallery_photo_items( 
+						$data = $this->custom->prepare_showpage_mobile_gallery_photo_items( 
 								$segment4,
 								$this->input->get()
 						 );
@@ -147,15 +147,7 @@ class Main extends CI_Controller {
 
 			    break;
 			    
-			    case 'showpage_android_gallery_photo':
-		
-						$data = $this->custom->prepare_showpage_android_gallery_photo_items( 
-								$segment4,
-								$this->input->get()
-						 );
-					
-
-			    break;			    
+	    
 			    
 			    case 'calendar':
 		
@@ -293,7 +285,7 @@ class Main extends CI_Controller {
 	}
 	
 	/**
-	 * get_showpage_iphone_gallery_photo__form
+	 * get_showpage_mobile_gallery_photo__form
 	 * 
 	 * @package BackEnd
 	 * @author James Ming <jamesming@gmail.com>
@@ -302,14 +294,14 @@ class Main extends CI_Controller {
 	 */
 	 
 	 
-	public function get_showpage_iphone_gallery_photo_form(){
+	public function get_showpage_mobile_gallery_mobile_form(){
 		
-				$data['showpage_iphone_gallery_photo_items'] = $this->query->get_showpage_iphone_gallery_photo_items(
-							$where_array = array( 'id' => $this->input->get('showpage_iphone_gallery_photo_item_id')) 
+				$data['showpage_mobile_gallery_photo_items'] = $this->query->get_showpage_mobile_gallery_photo_items(
+							$where_array = array( 'id' => $this->input->get('showpage_mobile_gallery_photo_item_id')) 
 				);	
 
 
-				$this->load->view('main/showpage_iphone_gallery_photo/items/form_view', 
+				$this->load->view('main/showpage_mobile_gallery_photo/items/form_view', 
 					array( 'data' => $data )
 				);
 		
@@ -1774,8 +1766,14 @@ submitted
 	
 						$new_width  = '160';
 						
-		    break;		
-
+		    break;
+		    
+		    		
+		    case 'showpage_ipad_gallery_photo':
+	
+						$new_width  = '320';
+						
+		    break;
 
 		    case 'showpage_iphone_gallery_photo_thumb_inactive':
 	
@@ -1860,6 +1858,10 @@ submitted
 
 		
 	}	
+	
+	
+	
+	
 	
 	
 
