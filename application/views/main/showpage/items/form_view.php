@@ -345,7 +345,31 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 //					);
 //				})
 
+				$('.image_div div.icon_container div.change_pic')
+					.css({cursor:'pointer'})
+					.click(function(event) {
+						open_dialogue_upload_image(
+						 $(this).parent().parent().attr('showpage_items_image_id'),
+						 $(this).parent().parent().attr('image_type'),
+						 $(this).parent().parent().attr('image_type_id')
+						);
+					})
 
+				$('.image_div div.icon_container div.facebook')
+					.css({cursor:'pointer'})
+					.click(function(event) {
+						open_dialogue_facebook_link()();
+					})					
+		
+		
+				$('.image_div div.icon_container div.video')
+					.css({cursor:'pointer'})
+					.click(function(event) {
+						open_dialogue_video_link()();
+					})					
+		
+		
+		
 				$(".image_div").css({cursor:'pointer',border:'4px solid red'}).append("<div  class='icon_container ' ><div  class='icon change_pic'  >c</div></div>")
 				.mouseover(function(event) {
 							$(this).children('div.icon_container').show()
@@ -356,14 +380,38 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 
 				<?php if( $data['showpage_items'][0]['showpage_title_items_image_id'] != 0 ){?>
 					$(".image_div[image_type='showpage_title']").children('div.icon_container').append("<div  class='icon video'  >v</div><div  class='icon facebook'  >f</div>")
-				<?php } ?>
-
-				$('#main td:nth-child(odd)').css({
+				<?php } ?>		$('#main td:nth-child(odd)').css({
 					'text-align':'right',
 					'padding-right':'9px',
 					'padding-top':'8px',
 					'width':'15%'
 				})
+
+
+				$('.image_div div.icon_container div.change_pic')
+					.css({cursor:'pointer'})
+					.click(function(event) {
+						open_dialogue_upload_image(
+						 $(this).parent().parent().attr('showpage_items_image_id'),
+						 $(this).parent().parent().attr('image_type'),
+						 $(this).parent().parent().attr('image_type_id')
+						);
+					})
+					
+				$('.image_div div.icon_container div.facebook')
+					.css({cursor:'pointer'})
+					.click(function(event) {
+						open_dialogue_facebook_link()();
+					})					
+		
+		
+				$('.image_div div.icon_container div.video')
+					.css({cursor:'pointer'})
+					.click(function(event) {
+						open_dialogue_video_link()();
+					})					
+		
+
 
 
 				$('#submit').css({cursor:'pointer'}).click(function(event) {
@@ -420,6 +468,59 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
     
 
 
+function open_dialogue_facebook_link(){
+
+		submit_inputs(close_fancyzoom=0);
+
+
+		$("#iframe_src_for_image")
+		.css({width:'750px',height:'400px'})
+		.attr('src','<?php echo base_url();    ?>index.php/main/create_facebook_link_form?showpage_items_image_id=<?php  echo $data['showpage_items'][0]['showpage_title_items_image_id']   ?>');
+
+			
+		var width_of_dialog = 795;
+		var left_coord = ($(window).width()/2 - width_of_dialog/2);
+
+		$("#dialog" ).dialog({
+			position:[left_coord,10],
+			height: 510,
+			zIndex: -10,
+			width: width_of_dialog,
+			resizable: false 
+			})
+						
+};	
+
+
+
+function open_dialogue_video_link(){
+
+		submit_inputs(close_fancyzoom=0);
+
+
+		$("#iframe_src_for_image")
+		.css({width:'750px',height:'400px'})
+		.attr('src','<?php echo base_url();    ?>index.php/main/create_video_link_form?showpage_items_image_id=<?php  echo $data['showpage_items'][0]['showpage_title_items_image_id']   ?>');
+
+			
+		var width_of_dialog = 795;
+		var left_coord = ($(window).width()/2 - width_of_dialog/2);
+
+		$("#dialog" ).dialog({
+			position:[left_coord,10],
+			height: 510,
+			zIndex: -10,
+			width: width_of_dialog,
+			resizable: false 
+			})
+						
+};	
+
+
+function dialog_close(){
+	$( "#dialog" ).dialog('close');
+}
+
 
 function submit_inputs(close_fancyzoom){
 
@@ -475,7 +576,8 @@ function open_dialogue_upload_image(
 						
 };	
 	
-
+	
+	
 </script>
 
 <?php
