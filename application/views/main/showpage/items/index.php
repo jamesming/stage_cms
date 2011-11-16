@@ -136,7 +136,7 @@
 													
 						
 						<div  class='float_left'  >
-							<a target='_blank' href='http://stage.mynuvotv.com/shows/<?php echo $showpage_item['name']    ?>'>preview</a>
+							<a target='_blank' href='http://stage.mynuvotv.com/shows/<?php echo $showpage_item['url_name']    ?>'>preview</a>
 						</div>
 						<div  class='float_left  showpage_item_trash' >
 							<img src='<?php   echo base_url()  ?>images/trash.gif'   showpage_item_id='<?php echo  $showpage_item['id']   ?>' >
