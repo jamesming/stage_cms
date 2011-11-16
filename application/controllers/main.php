@@ -1885,19 +1885,43 @@ submitted
 function t(){
 	
 	
-				$table = 'showpage_photos_items';
+				$table = 'showpage_items_images';
 				
-				$this->my_database_model->	create_generic_table($table );
+//				$this->my_database_model->	create_generic_table($table );
 				
 				
 				
 				$fields_array = array(
 				
-															'width' => array(
+															'facebook_top' => array(
 				                                               'type' => 'int(11)'),
 				
-															'height' => array(
-				                                               'type' => 'int(11)')                                               
+															'facebook_left' => array(
+				                                               'type' => 'int(11)'),   
+				
+															'facebook_width' => array(
+				                                               'type' => 'int(11)'),
+				
+															'facebook_height' => array(
+				                                               'type' => 'int(11)'),  
+				
+															'video_top' => array(
+				                                               'type' => 'int(11)'),
+				
+															'video_left' => array(
+				                                               'type' => 'int(11)'),  	
+				
+															'video_width' => array(
+				                                               'type' => 'int(11)'),
+				
+															'video_height' => array(
+				                                               'type' => 'int(11)'),  		
+				                                               
+															'facebook_link' => array(
+				                                               'type' => 'int(11)'),
+				
+															'video_link' => array(
+				                                               'type' => 'int(11)'),  						                                               		                                               			                                               				                                                                                           
 				              ); 
 				              
 				$this->my_database_model->add_column_to_table_if_exist(
@@ -1906,26 +1930,7 @@ function t(){
 				);
               
                       
-              
-				$table = 'showpage_photos_items_images';
-				
-				$this->my_database_model->	create_generic_table($table );
-				
-				
-				
-				$fields_array = array(
-				
-															'width' => array(
-				                                               'type' => 'int(11)'),
-				
-															'height' => array(
-				                                               'type' => 'int(11)')                                               
-				              ); 
-				              
-				$this->my_database_model->add_column_to_table_if_exist(
-					$table, 
-					$fields_array
-				);              
+    
   }  
 
 
