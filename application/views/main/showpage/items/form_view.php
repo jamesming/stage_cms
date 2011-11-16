@@ -102,6 +102,34 @@ height: 180px;
 margin:0px 0px 0px 0px;
 padding:10px 0px 0px 0px;
 }
+
+form#image_showpage_item_form div.image_div div.icon_container{
+	display:none;
+	width:99%;
+	height:26px;
+	padding-top:5px;
+	padding-right:5px;
+	background:white;
+	filter:alpha(opacity=75);    /* ie  */
+	-moz-opacity:0.75;    /* old mozilla browser like netscape  */
+	-khtml-opacity: 0.75;    /* for really really old safari */
+	opacity: 0.75;    /* css standard, currently it works in most modern browsers like firefox,  */
+}
+form#image_showpage_item_form  div.image_div div.icon_container div.icon{
+	width:20px;
+	height:20px;
+	margin-right:5px;
+	float:right;
+}
+form#image_showpage_item_form  div.image_div div.icon_container div.change_pic{
+	background:lightblue;	
+}
+form#image_showpage_item_form  div.image_div div.icon_container div.facebook{
+	background:orange;	
+}
+form#image_showpage_item_form  div.image_div div.icon_container div.video{
+	background:gray;	
+}
 form#image_showpage_item_form #submit{
 width:70px;	
 }
@@ -308,14 +336,27 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 						});		
 				});		
 		
-				$('.image_div').css({cursor:'pointer'}).click(function(event) {
+//				$('.image_div').css({cursor:'pointer'}).click(function(event) {
+//
+//					open_dialogue_upload_image(
+//					 $(this).attr('showpage_items_image_id'),
+//					 $(this).attr('image_type'),
+//					 $(this).attr('image_type_id')
+//					);
+//				})
 
-					open_dialogue_upload_image(
-					 $(this).attr('showpage_items_image_id'),
-					 $(this).attr('image_type'),
-					 $(this).attr('image_type_id')
-					);
+
+				$(".image_div").css({cursor:'pointer',border:'4px solid red'}).append("<div  class='icon_container ' ><div  class='icon change_pic'  >c</div></div>")
+				.mouseover(function(event) {
+							$(this).children('div.icon_container').show()
 				})
+				.mouseout(function(event) {
+							$(this).children('div.icon_container').hide()
+				})
+
+				<?php if( $data['showpage_items'][0]['showpage_title_items_image_id'] != 0 ){?>
+					$(".image_div[image_type='showpage_title']").children('div.icon_container').append("<div  class='icon video'  >v</div><div  class='icon facebook'  >f</div>")
+				<?php } ?>
 
 				$('#main td:nth-child(odd)').css({
 					'text-align':'right',
