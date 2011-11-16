@@ -1042,7 +1042,7 @@ function query(){
 					};
 					
 					
-					return $items_tables;
+					return ( isset( $items_tables) ? $items_tables:array() );
 			
 		}
 	
