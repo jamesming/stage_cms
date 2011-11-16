@@ -74,7 +74,7 @@
 						
 
 						<div class='float_left '>
-							<input  name="order"  showpage_photos_items_image_id='<?php echo $showpage_photos_item['showpage_photos_items_image_id']    ?>'class='order '  type="" value="<?php echo (isset($showpage_photos_item['order']) ?$showpage_photos_item['order']:'')    ?>">
+							<input  name="order"  showpage_photos_items_id='<?php echo $showpage_photos_item['id']    ?>' class='order '  type="" value="<?php echo (isset($showpage_photos_item['order']) ?$showpage_photos_item['order']:'')    ?>">
 						</div>
 
 
@@ -103,10 +103,9 @@
 				
 				$('.order').blur(function(event) {
 
-							
 						$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
-							table:'showpage_photos_items_images',
-							id:$(this).attr('showpage_photos_items_image_id'),
+							table:'showpage_photos_items',
+							id:$(this).attr('showpage_photos_items_id'),
 							crud:'update',
 							set_what_array:$(this).serialize()
 							},function(xml) {

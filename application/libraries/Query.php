@@ -667,11 +667,10 @@ function query(){
 			$where_array, 
 			$use_order = TRUE, 
 			$order_field = 'order', 
-			$order_direction = 'desc', 
+			$order_direction = 'asc', 
 			$limit = -1
 			);
 			
-
 
 			$showpage_photos_items = $this->CI->tools->object_to_array($showpage_photos_items);
 
