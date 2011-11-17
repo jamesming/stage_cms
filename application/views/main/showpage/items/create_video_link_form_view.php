@@ -78,6 +78,7 @@ Link&nbsp;&nbsp;<input name="video_link" id="video_link" type="text" value="<?ph
 								
 										// AJAX UPDATE
 										$.post("<?php echo base_url() . 'index.php/main/create_video_hotspot_on_tune_in_image';    ?>",{
+											table: 'showpage',
 											x_origin: $('#x').val(),
 											y_origin: $('#y').val(),
 											width: $('#w').val(),

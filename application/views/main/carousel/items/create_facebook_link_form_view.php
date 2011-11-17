@@ -74,6 +74,7 @@ width:610px;
 								
 										// AJAX UPDATE
 										$.post("<?php echo base_url() . 'index.php/main/create_facebook_hotspot_on_tune_in_image';    ?>",{
+											table: 'carousel',
 											x_origin: $('#x').val(),
 											y_origin: $('#y').val(),
 											width: $('#w').val(),

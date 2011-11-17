@@ -34,7 +34,7 @@ width:610px;
 <div  class='header '>FACEBOOK HOTSPOT
 </div>
 <div  class='input_div '>
-	Link <input name="facebook_link" id="facebook_link" type="text" value="<?php echo $data['showpage_items_images'][0]['facebook_link']    ?>">
+	Link <input name="facebook_link" id="facebook_link" type="text" value="<?php echo $data['showpage_items_images'][0]->facebook_link    ?>">
 </div>
 
 	<img   id='cropbox' src='<?php echo base_url()    ?>uploads/showpage_items_images/<?php echo $data['showpage_items_images'][0]->id   ?>/image.png'/>
@@ -74,6 +74,7 @@ width:610px;
 								
 										// AJAX UPDATE
 										$.post("<?php echo base_url() . 'index.php/main/create_facebook_hotspot_on_tune_in_image';    ?>",{
+											table: 'showpage',
 											x_origin: $('#x').val(),
 											y_origin: $('#y').val(),
 											width: $('#w').val(),

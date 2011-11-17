@@ -475,7 +475,7 @@ function open_dialogue_facebook_link(){
 
 		$("#iframe_src_for_image")
 		.css({width:'750px',height:'400px'})
-		.attr('src','<?php echo base_url();    ?>index.php/main/create_facebook_link_form?showpage_items_image_id=<?php  echo $data['showpage_items'][0]['showpage_title_items_image_id']   ?>');
+		.attr('src','<?php echo base_url();    ?>index.php/main/create_facebook_link_form?table=showpage&showpage_items_image_id=<?php  echo $data['showpage_items'][0]['showpage_title_items_image_id']   ?>');
 
 			
 		var width_of_dialog = 795;
@@ -500,7 +500,7 @@ function open_dialogue_video_link(){
 
 		$("#iframe_src_for_image")
 		.css({width:'750px',height:'400px'})
-		.attr('src','<?php echo base_url();    ?>index.php/main/create_video_link_form?showpage_items_image_id=<?php  echo $data['showpage_items'][0]['showpage_title_items_image_id']   ?>');
+		.attr('src','<?php echo base_url();    ?>index.php/main/create_video_link_form?table=showpage&showpage_items_image_id=<?php  echo $data['showpage_items'][0]['showpage_title_items_image_id']   ?>');
 
 			
 		var width_of_dialog = 795;

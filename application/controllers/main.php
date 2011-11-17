@@ -1402,22 +1402,53 @@ function update_nu_spotlight_calendar(){
 	 **/ 
 function create_facebook_link_form(){
 	
+	$which_table = $this->input->get('table');
+	
+	switch ( $which_table ) {
+	
+		  case 'carousel':
+		
+					$data['carousel_items_images'] =  $this->my_database_model->select_from_table( 
+									$table = 'carousel_items_images', 
+									$select_what = '*', 
+									$where_array = array(
+																	'id'=> $this->input->get('carousel_items_image_id')
+																	), 
+									$use_order = FALSE, 
+									$order_field = '', 
+									$order_direction = 'desc', 
+									$limit = -1
+									);
+				
+					$this->load->view('main/carousel/items/create_facebook_link_form_view', 
+						array('data' => $data)
+					);		
+					
+		  break;	
+		  
+		  case 'showpage':
+		
+					$data['showpage_items_images'] =  $this->my_database_model->select_from_table( 
+									$table = 'showpage_items_images', 
+									$select_what = '*', 
+									$where_array = array(
+																	'id'=> $this->input->get('showpage_items_image_id')
+																	), 
+									$use_order = FALSE, 
+									$order_field = '', 
+									$order_direction = 'desc', 
+									$limit = -1
+									);
+				
+					$this->load->view('main/showpage/items/create_facebook_link_form_view', 
+						array('data' => $data)
+					);		
+					
+		  break;	
+		  
+	};
 
-	$data['carousel_items_images'] =  $this->my_database_model->select_from_table( 
-					$table = 'carousel_items_images', 
-					$select_what = '*', 
-					$where_array = array(
-													'id'=> $this->input->get('carousel_items_image_id')
-													), 
-					$use_order = FALSE, 
-					$order_field = '', 
-					$order_direction = 'desc', 
-					$limit = -1
-					);
 
-	$this->load->view('main/carousel/items/create_facebook_link_form_view', 
-		array('data' => $data)
-	);
   
 	
 }
@@ -1433,20 +1464,21 @@ function create_facebook_link_form(){
 	 **/ 
 function create_facebook_hotspot_on_tune_in_image(){
 	
-	
-		$this->my_database_model->update_table_where(
-								$table = 'carousel_items_images', 
-								$where_array = array(
-								'id'=> $this->input->post('carousel_items_image_id')
-								),
-								$set_what_array = array(
-									'facebook_left'=> $this->input->post('x_origin'),
-									'facebook_top'=> $this->input->post('y_origin'),
-									'facebook_width'=> $this->input->post('width'),
-									'facebook_height'=> $this->input->post('height'),
-									'facebook_link'=> $this->input->post('facebook_link')
-									)
-								);	
+	$which_table = $this->input->post('table');
+
+	$this->my_database_model->update_table_where(
+							$table = $which_table.'_items_images', 
+							$where_array = array(
+							'id'=> $this->input->post($which_table.'_items_image_id')
+							),
+							$set_what_array = array(
+								'facebook_left'=> $this->input->post('x_origin'),
+								'facebook_top'=> $this->input->post('y_origin'),
+								'facebook_width'=> $this->input->post('width'),
+								'facebook_height'=> $this->input->post('height'),
+								'facebook_link'=> $this->input->post('facebook_link')
+								)
+							);	
 ?>	
 submitted	
 <?php     
@@ -1469,24 +1501,53 @@ submitted
 	 * @access public
 	 **/ 
 function create_video_link_form(){
+
+	$which_table = $this->input->get('table');
 	
+	switch ( $which_table ) {
+	
+		  case 'carousel':
+		
+				$data['carousel_items_images'] =  $this->my_database_model->select_from_table( 
+								$table = 'carousel_items_images', 
+								$select_what = '*', 
+								$where_array = array(
+																'id'=> $this->input->get('carousel_items_image_id')
+																), 
+								$use_order = FALSE, 
+								$order_field = '', 
+								$order_direction = 'desc', 
+								$limit = -1
+								);
+			
+				$this->load->view('main/carousel/items/create_video_link_form_view', 
+					array('data' => $data)
+				);
+				
+		  break;	
+		  
+		  case 'showpage':
+		
+				$data['showpage_items_images'] =  $this->my_database_model->select_from_table( 
+								$table = 'showpage_items_images', 
+								$select_what = '*', 
+								$where_array = array(
+																'id'=> $this->input->get('showpage_items_image_id')
+																), 
+								$use_order = FALSE, 
+								$order_field = '', 
+								$order_direction = 'desc', 
+								$limit = -1
+								);
+			
+				$this->load->view('main/showpage/items/create_video_link_form_view', 
+					array('data' => $data)
+				);
+				
+		  break;	
 
-	$data['carousel_items_images'] =  $this->my_database_model->select_from_table( 
-					$table = 'carousel_items_images', 
-					$select_what = '*', 
-					$where_array = array(
-													'id'=> $this->input->get('carousel_items_image_id')
-													), 
-					$use_order = FALSE, 
-					$order_field = '', 
-					$order_direction = 'desc', 
-					$limit = -1
-					);
+	}
 
-	$this->load->view('main/carousel/items/create_video_link_form_view', 
-		array('data' => $data)
-	);
-  
 	
 }
 
@@ -1501,20 +1562,23 @@ function create_video_link_form(){
 	 **/ 
 function create_video_hotspot_on_tune_in_image(){
 	
-	
-		$this->my_database_model->update_table_where(
-								$table = 'carousel_items_images', 
-								$where_array = array(
-								'id'=> $this->input->post('carousel_items_image_id')
-								),
-								$set_what_array = array(
+	$which_table = $this->input->post('table');
+
+	$this->my_database_model->update_table_where(
+							$table = $which_table.'_items_images', 
+							$where_array = array(
+							'id'=> $this->input->post($which_table.'_items_image_id')
+							),
+							$set_what_array = array(
 									'video_left'=> $this->input->post('x_origin'),
 									'video_top'=> $this->input->post('y_origin'),
 									'video_width'=> $this->input->post('width'),
 									'video_height'=> $this->input->post('height'),
 									'video_link'=> $this->input->post('video_link')
-									)
-								);
+								)
+							);	
+							
+
 ?>	
 submitted	
 <?php     
