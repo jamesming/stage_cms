@@ -17,7 +17,13 @@ form#image_showpage_item_form input[type=text]{
 padding:6px 5px;
 width:490px;	
 }
-form#image_showpage_item_form textarea#video_embed{
+form#image_showpage_item_form textarea#video_embed
+{
+width:495px;
+height:90px;	
+}
+form#image_showpage_item_form textarea#getglue_embed
+{
 width:495px;
 height:90px;	
 }
@@ -192,11 +198,25 @@ display:none;
 				</td>
 				<td  class='main_table '><input name="twitter_url" id="" type="text" value="<?php echo ( isset( $data['showpage_items'][0]['twitter_url']) ? $data['showpage_items'][0]['twitter_url'] :'' )    ?>">
 				</td>
-			</tr>						
+			</tr>		
+			
+			<tr>
+				<td  class='main_table '> Hulu
+				</td>
+				<td  class='main_table '><input name="hulu_url" id="" type="text" value="<?php echo ( isset( $data['showpage_items'][0]['hulu_url']) ? $data['showpage_items'][0]['hulu_url'] :'' )    ?>">
+				</td>
+			</tr>								
 			<tr>
 				<td  class='main_table '> Video Embed
 				</td>
 				<td  class='main_table '><textarea name="video_embed" id="video_embed" ><?php echo $data['showpage_items'][0]['video_embed']    ?></textarea>
+				</td>
+			</tr>	
+			
+			<tr>
+				<td  class='main_table '> Get Glue Embed
+				</td>
+				<td  class='main_table '><textarea name="getglue_embed" id="getglue_embed" ><?php echo ( isset( $data['showpage_items'][0]['getglue_embed']) ? $data['showpage_items'][0]['getglue_embed']:'' )    ?></textarea>
 				</td>
 			</tr>					
 			<tr>
