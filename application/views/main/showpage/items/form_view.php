@@ -152,6 +152,23 @@ form#image_showpage_item_form div.image_div div.icon_container{
 	-khtml-opacity: 0.75;    /* for really really old safari */
 	opacity: 0.75;    /* css standard, currently it works in most modern browsers like firefox,  */
 }
+
+form#image_showpage_item_form div.image_div div.label{
+	text-align:center;
+	font-weight:bold;
+	font-size:20px;
+	color:blue;
+	display:none;
+	width:99%;
+	height:26px;
+	padding-top:35px;
+	padding-right:5px;
+	background:white;
+	filter:alpha(opacity=75);    /* ie  */
+	-moz-opacity:0.75;    /* old mozilla browser like netscape  */
+	-khtml-opacity: 0.75;    /* for really really old safari */
+	opacity: 0.75;    /* css standard, currently it works in most modern browsers like firefox,  */
+}
 form#image_showpage_item_form  div.image_div div.icon_container div.icon{
 	width:20px;
 	height:20px;
@@ -509,14 +526,7 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 						});		
 				});		
 		
-//				$('.image_div').css({cursor:'pointer'}).click(function(event) {
-//
-//					open_dialogue_upload_image(
-//					 $(this).attr('showpage_items_image_id'),
-//					 $(this).attr('image_type'),
-//					 $(this).attr('image_type_id')
-//					);
-//				})
+
 
 				$('.image_div div.icon_container div.change_pic')
 					.css({cursor:'pointer'})
@@ -549,7 +559,14 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 				})
 				.mouseout(function(event) {
 							$(this).children('div.icon_container').hide()
+				}).append("<div  class='label ' ></div>")
+				.mouseover(function(event) {
+							$(this).css({'padding-top':$(this).height/2}).children('div.label').html($(this).attr('image_type')).show()
 				})
+				.mouseout(function(event) {
+							$(this).children('div.label').hide()
+				})
+
 
 				<?php if( $data['showpage_items'][0]['showpage_title_items_image_id'] != 0 ){?>
 					$(".image_div[image_type='showpage_title']").children('div.icon_container').append("<div  class='icon video'  >v</div><div  class='icon facebook'  >f</div>")
@@ -652,10 +669,18 @@ function open_dialogue_facebook_link(){
 
 			
 		var width_of_dialog = 795;
+		
+		
+		
+		var p = $('#image_showpage_title_item_showpage_title');
+		position = p.position();
+		
+		
+		
 		var left_coord = ($(window).width()/2 - width_of_dialog/2);
 
 		$("#dialog" ).dialog({
-			position:[left_coord,10],
+			position:[left_coord,position.top],
 			height: 510,
 			zIndex: -10,
 			width: width_of_dialog,
@@ -677,10 +702,14 @@ function open_dialogue_video_link(){
 
 			
 		var width_of_dialog = 795;
+		
+		var p = $('#image_showpage_title_item_showpage_title');
+		position = p.position();
+		
 		var left_coord = ($(window).width()/2 - width_of_dialog/2);
 
 		$("#dialog" ).dialog({
-			position:[left_coord,10],
+			position:[left_coord,position.top],
 			height: 510,
 			zIndex: -10,
 			width: width_of_dialog,
@@ -746,9 +775,13 @@ function open_dialogue_upload_image(
 			
 		var width_of_dialog = 410;
 		var left_coord = ($(window).width()/2 - width_of_dialog/2);
+		
+		var p = $('div[image_type_id='+image_type_id+']');
+		position = p.position();
+
 
 		$("#dialog" ).dialog({
-			position:[left_coord,200],
+			position:[left_coord,position.top],
 			height: 160,
 			zIndex: -10,
 			width: width_of_dialog,

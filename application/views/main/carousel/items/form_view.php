@@ -106,6 +106,23 @@ form#image_carousel_item_form div.image_div div.icon_container{
 	opacity: 0.75;    /* css standard, currently it works in most modern browsers like firefox,  */
 }
 
+form#image_carousel_item_form div.image_div div.label{
+	text-align:center;
+	font-weight:bold;
+	font-size:20px;
+	color:blue;
+	display:none;
+	width:99%;
+	height:26px;
+	padding-top:35px;
+	padding-right:5px;
+	background:white;
+	filter:alpha(opacity=75);    /* ie  */
+	-moz-opacity:0.75;    /* old mozilla browser like netscape  */
+	-khtml-opacity: 0.75;    /* for really really old safari */
+	opacity: 0.75;    /* css standard, currently it works in most modern browsers like firefox,  */
+}
+
 form#image_carousel_item_form div.image_div div.icon_container div.icon{
 	width:20px;
 	height:20px;
@@ -342,6 +359,12 @@ $this->load->view('footer/jquery_ui_for_dialog.php');
 				})
 				.mouseout(function(event) {
 							$(this).children('div.icon_container').hide()
+				}).append("<div  class='label ' ></div>")
+				.mouseover(function(event) {
+							$(this).css({'padding-top':$(this).height/2}).children('div.label').html($(this).attr('image_type')).show()
+				})
+				.mouseout(function(event) {
+							$(this).children('div.label').hide()
 				})
 				
 				<?php if( $data['carousel_items'][0]['tune_in_carousel_items_image_id'] != 0 ){?>
