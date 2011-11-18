@@ -39,6 +39,7 @@ padding-bottom:5px;
 form#image_showpage_item_form table#main div.image_assets{
 margin-top:25px;
 }
+/* showpage_hero */
 form#image_showpage_item_form div#image_showpage_hero_item_showpage_hero{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
 	  	echo $data['showpage_items'][0]['showpage_hero_items_image_id']; 
@@ -49,6 +50,7 @@ form#image_showpage_item_form div#image_showpage_hero_item_showpage_hero{
 	height:422px;
 	margin-left: 72px;
 }
+/* showpage_title */
 form#image_showpage_item_form div#image_showpage_title_item_showpage_title{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
 	  	echo $data['showpage_items'][0]['showpage_title_items_image_id']; 
@@ -59,6 +61,7 @@ form#image_showpage_item_form div#image_showpage_title_item_showpage_title{
 	height:167px;
 	margin-left: 72px;
 }
+/* showpage_dropdown */
 form#image_showpage_item_form div#image_showpage_dropdown_item_showpage_dropdown{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
 	  	echo $data['showpage_items'][0]['showpage_dropdown_items_image_id']; 
@@ -69,6 +72,8 @@ form#image_showpage_item_form div#image_showpage_dropdown_item_showpage_dropdown
 	height:323px;
 	margin-left: 72px;
 }
+
+/* showpage_hero_iphone */
 form#image_showpage_item_form div#image_showpage_hero_iphone_item_showpage_hero_iphone{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
 	  	echo $data['showpage_items'][0]['showpage_hero_iphone_items_image_id']; 
@@ -80,6 +85,7 @@ form#image_showpage_item_form div#image_showpage_hero_iphone_item_showpage_hero_
 	margin-left: 72px;
 }
 
+/* hero_android */
 form#image_showpage_item_form div#image_showpage_hero_android_item_showpage_hero_android{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
 	  	echo $data['showpage_items'][0]['showpage_hero_android_items_image_id']; 
@@ -91,6 +97,7 @@ form#image_showpage_item_form div#image_showpage_hero_android_item_showpage_hero
 	margin-left: 72px;
 }
 
+/* mobile_thumb*/
 form#image_showpage_item_form div#image_showpage_hero_mobile_thumb{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
 	  	echo $data['showpage_items'][0]['showpage_hero_mobile_thumb_items_image_id']; 
@@ -99,6 +106,30 @@ form#image_showpage_item_form div#image_showpage_hero_mobile_thumb{
 	border:1px dotted gray;
 	width:100px;
 	height:70px;
+	margin-left: 72px;
+}
+
+/* IPAD HERO */
+form#image_showpage_item_form div#image_showpage_ipad_item_div{
+	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
+	  	echo $data['showpage_items'][0]['showpage_hero_ipad_id']; 
+	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	background-repeat: no-repeat;
+	border:1px dotted gray;
+	width:320px;
+	height:480px;
+	margin-left: 72px;
+}
+
+/* IPAD HERO THUMB */
+form#image_showpage_item_form div#image_showpage_ipad_hero_thumb_item_div{
+	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
+	  	echo ( isset( $data['showpage_items'][0]['showpage_ipad_hero_thumb_items_id']) ? $data['showpage_items'][0]['showpage_ipad_hero_thumb_items_id']:'' ); 
+	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	background-repeat: no-repeat;
+	border:1px dotted gray;
+	width:262px;
+	height:122px;
 	margin-left: 72px;
 }
 
@@ -206,6 +237,13 @@ display:none;
 				<td  class='main_table '><input name="hulu_url" id="" type="text" value="<?php echo ( isset( $data['showpage_items'][0]['hulu_url']) ? $data['showpage_items'][0]['hulu_url'] :'' )    ?>">
 				</td>
 			</tr>		
+			
+			<tr>
+				<td  class='main_table '> GetGlue
+				</td>
+				<td  class='main_table '><input name="getglue_url" id="" type="text" value="<?php echo ( isset( $data['showpage_items'][0]['getglue_url']) ? $data['showpage_items'][0]['getglue_url'] :'' )    ?>">
+				</td>
+			</tr>	
 						
 			<tr>
 				<td  class='main_table '> Video Embed
@@ -390,7 +428,26 @@ display:none;
 				
 				
 			</tr>				
+			<tr>
+				<td class='main_table image_assets' colspan=2>
 
+					<div  class='float_left image_assets' >
+							<div image_type='showpage_hero_ipad' image_type_id='37' class='float_left image_div'  id='image_showpage_ipad_item_div' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_hero_ipad_id']) ? $data['showpage_items'][0]['showpage_hero_ipad_id']:'' )    ?>'>
+							</div>
+							
+					
+					</div>
+					
+					<div  class='float_left image_assets' >
+							<div image_type='showpage_ipad_hero_thumb' image_type_id='36' class='float_left image_div'  id='image_showpage_ipad_hero_thumb_item_div' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_ipad_hero_thumb_items_id']) ? $data['showpage_items'][0]['showpage_ipad_hero_thumb_items_id']:'' )    ?>'>
+							</div>
+
+					</div>					
+					
+				</td>
+				
+				
+			</tr>		
 			<tr>
 				<td   colspan=2>
 					<div>
@@ -486,7 +543,7 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 		
 		
 		
-				$(".image_div").css({cursor:'pointer',border:'4px solid red'}).append("<div  class='icon_container ' ><div  class='icon change_pic'  >c</div></div>")
+				$(".image_div").css({cursor:'pointer',border:'1px solid gray'}).append("<div  class='icon_container ' ><div  class='icon change_pic'  >c</div></div>")
 				.mouseover(function(event) {
 							$(this).children('div.icon_container').show()
 				})

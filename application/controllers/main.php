@@ -1794,6 +1794,17 @@ submitted
 						
 		    break;	
 		    
+		    case 'showpage_hero_ipad':
+	
+						$new_width  = '320';
+						
+		    break;			    
+		    
+		    case 'showpage_ipad_hero_thumb':
+	
+						$new_width  = '262';
+						
+		    break;		    
 		    case 'showpage_hero_mobile_thumb':
 	
 						$new_width  = '100';
