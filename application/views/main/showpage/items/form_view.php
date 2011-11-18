@@ -205,7 +205,8 @@ display:none;
 				</td>
 				<td  class='main_table '><input name="hulu_url" id="" type="text" value="<?php echo ( isset( $data['showpage_items'][0]['hulu_url']) ? $data['showpage_items'][0]['hulu_url'] :'' )    ?>">
 				</td>
-			</tr>								
+			</tr>		
+						
 			<tr>
 				<td  class='main_table '> Video Embed
 				</td>
@@ -230,7 +231,7 @@ display:none;
 			<tr>
 				<td   colspan=2>
 					<div>
-						<input name="" id="submit" type="button" value="submit">
+						<input  class=' submit' name="" type="button" value="submit">
 					</div>
 				</td>
 			</tr>	
@@ -271,8 +272,98 @@ display:none;
 
 				</td>
 			</tr>	
-			
-			
+
+				<tr>
+					<td colspan=2>
+						<br />
+						<hr /   style='border:2px solid gray; background:gray;'  >
+					</td>
+				</tr>
+
+			<tr>
+				<td>
+					&nbsp;
+				</td>
+				<td >
+							<style>
+								#iphone_directTo_div{
+								margin-right:420px;	
+								}
+								table#iphone_directTo_table{
+									border:1px solid gray;
+								}
+								table#iphone_directTo_table td{/*
+									border-right:0px solid gray;	
+									border-bottom:0px solid gray;*/
+									white-space:nowrap;
+									vertical-align:middle;
+								}
+							</style>
+ 							<div   id='iphone_directTo_div' >	
+ 								
+ 								<table id='iphone_directTo_table'>
+ 									<tr>
+ 										<td>
+ 											<input <?php   echo ($data['showpage_items'][0]['isHot'] == 1? " checked ": "" )  ?> name="isHot" id="isHot" type="checkbox" value="1">	
+ 										</td>
+ 										<td>Hot 
+ 										</td>
+ 										<td>
+ 											
+
+ 											&nbsp;
+ 											
+ 											
+ 											
+ 										</td>
+ 									</tr> 									
+ 									<tr>
+ 										<td><input name="iphone_directTo" type="radio" value="1"> </td>
+ 										<td>Internal 
+ 										</td>
+ 										<td>
+ 											
+
+ 											&nbsp;
+ 											
+ 											
+ 											
+ 										</td>
+ 									</tr>
+ 									<tr>
+ 										<td><input name="iphone_directTo" type="radio" value="2">	</td>
+ 										<td>External
+ 										</td>
+ 										<td>
+ 										</td>
+ 									</tr>
+ 									<tr>
+ 										<td><input name="iphone_directTo" type="radio" value="3"></td>
+ 										<td>Video
+ 										</td>
+ 										<td><input name="videoID" id="videoID" type="text" value="<?php echo ( isset( $data['showpage_items'][0]['videoID']  ) ? $data['showpage_items'][0]['videoID']  :'' )  ?>"    style='width:95px'  >
+ 										</td>
+ 									</tr>
+ 									<tr>
+ 										<td>
+ 											<input name="iphone_directTo" type="radio" value="4">	
+ 											<br /><br />	
+ 										</td>
+ 										<td>
+ 											None
+ 											<br /><br />
+ 										</td>
+ 										<td>
+ 										</td>
+ 									</tr> 									 									 									
+ 								</table>
+
+								
+							</div>	
+				</td>
+			</tr>
+
+
 			<tr>
 				<td class='main_table image_assets' colspan=2>
 					<div  class='float_left image_assets' >
@@ -303,7 +394,7 @@ display:none;
 			<tr>
 				<td   colspan=2>
 					<div>
-						<input name="" id="submit" type="button" value="submit">
+						<input  class=' submit' name="" type="button" value="submit">
 					</div>
 				</td>
 			</tr>	
@@ -337,8 +428,13 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 	
 
 	$(document).ready(function() {
-		
-		
+
+				$('#iphone_directTo_div input').each(function(event) {
+					if( $(this).val() == <?php  echo ( isset( $data['showpage_items'][0]['iphone_directTo']) ? $data['showpage_items'][0]['iphone_directTo']:0 )   ?>){		
+							$(this).attr("checked","checked");
+					};
+				});	
+
 				$('#showpage_title_left_margin').blur(function(event) {
 
 							
@@ -434,7 +530,7 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 
 
 
-				$('#submit').css({cursor:'pointer'}).click(function(event) {
+				$('.submit').css({cursor:'pointer'}).click(function(event) {
 
 					submit_inputs(
 						close_fancyzoom = 1
@@ -543,13 +639,21 @@ function dialog_close(){
 
 
 function submit_inputs(close_fancyzoom){
+	
+					serialized = $('#image_showpage_item_form').serialize();
+				
+					if( !$('#isHot').is(':checked')  ){
+						
+					serialized = serialized + '&isHot=0';
+						
+					};
 
 					$("#text_area").val( mbox.get_html() );
 
 					$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
 						table:'showpage_items',
 						crud:'update',
-						set_what_array: $('#image_showpage_item_form').serialize(),
+						set_what_array: serialized,
 						id:'<?php echo $data['showpage_items'][0]['id']    ?>'
 						},function(xml) {
 
