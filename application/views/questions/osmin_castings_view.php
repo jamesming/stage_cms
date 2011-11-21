@@ -34,7 +34,6 @@ margin-bottom:10px;
 }
 .container{
 margin-bottom:20px;
-width:500px;
 }
 </style>
 
