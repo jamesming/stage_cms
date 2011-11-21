@@ -38,6 +38,12 @@ margin-bottom:20px;
 .top{
 margin-top:0px;
 }
+table.pdf{
+width:350px;	
+}
+table.pdf td{
+
+}
 </style>
 
 <script type="text/javascript" language="Javascript" src = "<?php echo  base_url();   ?>js/jquery.js"></script>
@@ -46,6 +52,25 @@ margin-top:0px;
 <html>
 
 <body>
+	
+
+<table  class='pdf '  >
+	<tr>
+		<td align='right'>
+			<a target='_blank' href='http://www.mynuvotv.com/assets/pdf/OPERATION_OSMIN_OPEN_CASTING_CALL_GUIDELINES.pdf	'>
+					<img src='http://www.mynuvotv.com/assets/images/pdf.gif'/></a>
+		</td>
+		<td><a  target='_blank' href='http://www.mynuvotv.com/assets/pdf/OPERATION_OSMIN_OPEN_CASTING_CALL_GUIDELINES.pdf	'>	See Open Casting Guidelines for full details.</a>
+	
+		</td>
+	</tr>
+</table>
+	
+
+	
+	<br /><br />
+
+	
 		<div   style='width:630px'   >
 
 			<form id='form0'>
