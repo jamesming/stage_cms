@@ -46,7 +46,7 @@ margin-top:0px;
 <html>
 
 <body>
-		<div   style='width:640px'   >
+		<div   style='width:630px'   >
 
 			<form id='form0'>
 			<div  class='  section-header top' >
