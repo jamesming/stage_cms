@@ -197,86 +197,100 @@ Thank you! We appreciate your feedback on Curvy Girls as we strive to bring nuvo
 	
 	
 	
+	function osmin_castings(){
+		
+		$this->load->view('questions/osmin_castings_view', 
+			array('data' => array())
+		); 
+		
+	}
+	
+	
+	function insert_osmin_castings(){
+		
+		echo $this->input->post('set_what_array');
+		
+	}
 	
 	
 		function t(){
 
-			$table = 'polls_names';
+			$table = 'osmin_castings';
 			
 			$this->my_database_model->	create_generic_table($table );
 			
 			
-			
-			$fields_array = array(
-			                      'name' => array(
-			                                               'type' => 'varchar(255)')
-			              ); 
-			              
-			$this->my_database_model->add_column_to_table_if_exist(
-				$table, 
-				$fields_array
-			);  			
-			
-			$table = 'polls_questions';
-			
-			$this->my_database_model->	create_generic_table($table );
-			
-			
-			
-			$fields_array = array(
-			                      'question' => array(
-			                                               'type' => 'blob'),
-			                      'polls_name_id' => array(
-			                                               'type' => 'int(11)')
-			
-			              ); 
-			              
-			$this->my_database_model->add_column_to_table_if_exist(
-				$table, 
-				$fields_array
-			); 
-			
-			
-			
-			$table = 'polls_responders';
-			
-			$this->my_database_model->	create_generic_table($table );
-			
-			
-			
-			$fields_array = array(
-			                      'email' => array(
-			                                               'type' => 'varchar(255)')
-			              ); 
-			              
-			$this->my_database_model->add_column_to_table_if_exist(
-				$table, 
-				$fields_array
-			);			
-			             
-
-
-			$table = 'polls_answers';
-			
-			$this->my_database_model->	create_generic_table($table );
-			
-			
-			
-			$fields_array = array(
-			                      'polls_question_id' => array(
-			                                               'type' => 'int(11)'),
-			                      'polls_responder_id' => array(
-			                                               'type' => 'int(11)'),
-			                      'answer' => array(
-			                                               'type' => 'blob')
-			
-			              ); 
-			              
-			$this->my_database_model->add_column_to_table_if_exist(
-				$table, 
-				$fields_array
-			);                       
-			
+//			
+//			$fields_array = array(
+//			                      'name' => array(
+//			                                               'type' => 'varchar(255)')
+//			              ); 
+//			              
+//			$this->my_database_model->add_column_to_table_if_exist(
+//				$table, 
+//				$fields_array
+//			);  			
+//			
+//			$table = 'polls_questions';
+//			
+//			$this->my_database_model->	create_generic_table($table );
+//			
+//			
+//			
+//			$fields_array = array(
+//			                      'question' => array(
+//			                                               'type' => 'blob'),
+//			                      'polls_name_id' => array(
+//			                                               'type' => 'int(11)')
+//			
+//			              ); 
+//			              
+//			$this->my_database_model->add_column_to_table_if_exist(
+//				$table, 
+//				$fields_array
+//			); 
+//			
+//			
+//			
+//			$table = 'polls_responders';
+//			
+//			$this->my_database_model->	create_generic_table($table );
+//			
+//			
+//			
+//			$fields_array = array(
+//			                      'email' => array(
+//			                                               'type' => 'varchar(255)')
+//			              ); 
+//			              
+//			$this->my_database_model->add_column_to_table_if_exist(
+//				$table, 
+//				$fields_array
+//			);			
+//			             
+//
+//
+//			$table = 'polls_answers';
+//			
+//			$this->my_database_model->	create_generic_table($table );
+//			
+//			
+//			
+//			$fields_array = array(
+//			                      'polls_question_id' => array(
+//			                                               'type' => 'int(11)'),
+//			                      'polls_responder_id' => array(
+//			                                               'type' => 'int(11)'),
+//			                      'answer' => array(
+//			                                               'type' => 'blob')
+//			
+//			              ); 
+//			              
+//			$this->my_database_model->add_column_to_table_if_exist(
+//				$table, 
+//				$fields_array
+//			);                       
+//			
 			
 		}
 	
