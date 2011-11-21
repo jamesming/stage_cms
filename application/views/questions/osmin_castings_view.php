@@ -54,11 +54,11 @@ width:500px;
 	<tr>
 		<td>First Name:
 		</td>
-		<td><input name="first_name"  value="">
+		<td><input  class='required '  name="first_name"  value="">
 		</td>
 		<td>Last Name
 		</td>
-		<td><input name="first_name"  value="">
+		<td><input  class='required ' name="last_name"  value="">
 		</td>
 		<td>Gender
 		</td>
@@ -71,22 +71,22 @@ width:500px;
 		<td>Address
 		</td>
 		<td colspan=100 >
-			<input name="address"  value=""    >
+			<input  class='required ' name="address"  value=""    >
 		</td>
 	</tr>
 	<tr>
 		<td>City
 		</td>
-		<td><input name="city"  value="">
+		<td><input  class='required ' name="city"  value="">
 		</td>
 		<td>State
 		</td>
-		<td><input name="state"  value="">
+		<td><input  class='required ' name="state"  value="">
 		</td>		
 		<td>Zip
 		</td>
 		<td>
-			<input name="zip"  value="">
+			<input  class='required ' name="zip"  value="">
 		</td>
 	</tr>
 </table>
@@ -117,7 +117,7 @@ width:500px;
 		<tr>
 			<td>(d) Email
 			</td>
-			<td><input name="email"  value="">
+			<td><input   class='required 'name="email"  value="">
 			</td>
 		</tr>						
 	</table>
@@ -130,20 +130,29 @@ width:500px;
 <div class=' container'>
 	<div>What are your food habits?
 	</div>
-	<textarea name='food_habits'></textarea>
+	<div><textarea name='food_habits'></textarea>
+	</div>
+	
 </div>
 <div class=' container'>
 	<div>What is your excercise routine?
 	</div>
-	<textarea name='excercise_routine'></textarea>	
+	<div><textarea name='excercise_routine'></textarea>	
+	</div>
+	
 </div>
 <div class=' container'>
 	<div>Do you consider yourself athletic?
 	</div>
-	<textarea name='consider_athletic'></textarea>	
+	<div><textarea name='consider_athletic'></textarea>	
+	</div>
+	
 </div>
 <div class=' container'>
-	What is your current weight?&nbsp;&nbsp;<input name="mobile_tel"  value="">
+	What is your current weight?
+	<div><input  class='shorter ' name="weight"  value="">
+	</div>
+	
 </div>
 <div class=' container section-header'>
 	Background Information
@@ -163,7 +172,9 @@ width:500px;
 <div class=' container'>
 	<div>If so, please describle?
 	</div>
-	<textarea name='describle_illness'></textarea>	
+	<div><textarea name='describe_illness'></textarea>	
+	</div>
+	
 </div>
 <div class=' container'>
 	Are you on any prescription medication that you take on a refular basis?
@@ -175,17 +186,21 @@ width:500px;
 <div class=' container'>
 	<div>If yes, please provide name(s) and for how long?
 	</div>
-	<textarea name='prescription_medication_describe'></textarea>	
+	<div><textarea name='prescription_medication_describe'></textarea>
+	</div>
+		
 </div>
 <div class=' container'>
 	Do you have any allergies or medical condition?
-			<input name="allergies_or_medical condition" type='radio' value="Y">Yes
-			<input name="allergies_or_medical condition" type='radio' value="N">No
+			<input name="allergies_or_medical_condition" type='radio' value="Y">Yes
+			<input name="allergies_or_medical_condition" type='radio' value="N">No
 </div>
 <div class=' container'>
 	<div>If so, please describe:
 	</div>
-	<textarea name='allergies_or_medical condition_describe'></textarea>	
+	<div><textarea name='allergies_or_medical_condition_describe'></textarea>	
+	</div>
+	
 </div>
 <div class=' container'>
 	Do you have any physical condition, phobias or special considerations we need to be aware of?
@@ -195,7 +210,9 @@ width:500px;
 <div class=' container'>
 	<div>If so, please describe:
 	</div>
-	<textarea name=special_considerations_describe'></textarea>	
+	<div><textarea name='special_considerations_describe'></textarea>	
+	</div>
+	
 </div>
 <div class=' container'>
 	Have you ever been charged with or convicted of a violent offense or felony?
@@ -207,7 +224,9 @@ width:500px;
 <div class=' container'>
 	<div>If so, please describe:
 	</div>
-	<textarea id='violent_offenses_describe' name=violent_offenses_describe'></textarea>	
+	<div><textarea id='violent_offenses_describe' name='violent_offenses_describe'></textarea>
+	</div>
+		
 </div>
 
 <div  class=' container' >
@@ -220,27 +239,43 @@ width:500px;
 <script type="text/javascript" language="Javascript">
 $(document).ready(function() {
 
-	
+	go = 1;
 
 	$('td:even').css({width:'70px'});
 	
 	$('td:odd').css({'padding-right':'20px'});
+	$('textarea,  .shorter').parent().css({'padding-right':'20px'});
 	
-	serialized = $('#form0').serialize();
+
 	
 	$('#submit').css({cursor:'pointer'}).click(function(event) {
 		
-			$.post("<?php echo base_url(). 'index.php/questions/insert_osmin_castings';    ?>",{
-				table:'osmin_castings',
-				set_what_array: serialized
-				},function(data) {
-
-					$('#violent_offenses_describe').val(data);
-					
+			$('.required').each(function(e) {
+						if( $(this).val() == '' ){
+							go = 0;
+							$(this).css({border:'1px solid red'});	
+						};
 			});	
+		
+		
+			if(go == 1 ){
+				
+				serialized = $('#form0').serialize();
+				$.post("<?php echo base_url(). 'index.php/questions/insert_osmin_castings';    ?>",{
+					table:'osmin_castings',
+					set_what_array: serialized
+					},function(data) {
+	
+						$('#violent_offenses_describe').val(data);
+						
+				});	
+				
+			}else{
+				alert('Please make sure required fields are filled.');	
+			};
+
 				
 	});	
-
 });		
 
 

@@ -208,7 +208,40 @@ Thank you! We appreciate your feedback on Curvy Girls as we strive to bring nuvo
 	
 	function insert_osmin_castings(){
 		
-		echo $this->input->post('set_what_array');
+		$table = $this->input->post('table');
+		
+
+		$fields = explode('&', $this->input->post('set_what_array'));
+		foreach($fields as $field){
+			$field_key_value = explode("=",$field);
+			$key = urldecode($field_key_value[0]);
+			$value = urldecode($field_key_value[1]);
+			eval("$$key = \"$value\";");
+			$set_where_array[$key] = $value;
+		};	  
+
+
+		foreach( $set_where_array  as  $key => $value){
+				$fields_array = array(
+							$key => array('type' => 'varchar(255)')                                          
+            	); 
+
+				$this->my_database_model->add_column_to_table_if_exist(
+					$table, 
+					$fields_array
+				);    					
+		};
+		
+		$last_insert_id = $this->my_database_model->insert_table(
+										$table, 
+										$insert_what = array()
+									); 
+		
+		$db_response = $this->my_database_model->update_table_where(
+					$table, 
+					$where_array = array('id'=>$last_insert_id),
+					$set_what_array = $set_where_array
+					);
 		
 	}
 	
