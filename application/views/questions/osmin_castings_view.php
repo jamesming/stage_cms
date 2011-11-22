@@ -148,7 +148,7 @@ cursor:pointer;
 									<input name="home_tel"  value="">
 								</td>
 								<td >
-									<input id='select_file' type="file" name="Filedata"   />
+									<input  class='required ' id='select_file' type="file" name="Filedata"   />
 									
 								</td>
 								<td>&nbsp;
