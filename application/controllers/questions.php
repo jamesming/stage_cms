@@ -273,7 +273,9 @@ Thank you! We appreciate your feedback on Curvy Girls as we strive to bring nuvo
 					echo $this->upload->display_errors(); 
 		}	
 		else{	
-					echo 'success!';
+				$this->load->view('questions/osmin_castings_thank_you_view', 
+				array('data' => array())
+				);  
 		}	
 		
 		

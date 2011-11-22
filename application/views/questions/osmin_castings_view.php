@@ -281,7 +281,7 @@ cursor:pointer;
 				
 			</div>
 			<div class='block'>
-				Do you have any physical conditions, phobias or special considerations that should be mentioned here?
+				Do you have any physical conditions, phobias or special considerations that should be mentioned here?<br />
 						<input name="special_considerations" type='radio' value="Y">Yes
 						<input name="special_considerations" type='radio' value="N">No
 			</div>
