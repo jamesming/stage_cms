@@ -13,6 +13,9 @@ width:100%;
 input[type=radio]{
 width:20px;
 }
+input[type=file]{
+width:120px;
+}
 input[type=button]{
 width:60px;
 }
@@ -44,6 +47,13 @@ width:350px;
 table.pdf td{
 
 }
+.upload{
+color:blue;
+font-weight:bold;
+text-decoration:underline;
+cursor:pointer;	
+}
+
 </style>
 
 <script type="text/javascript" language="Javascript" src = "<?php echo  base_url();   ?>js/jquery.js"></script>
@@ -73,7 +83,11 @@ table.pdf td{
 	
 		<div   style='width:630px'   >
 
-			<form id='form0'>
+			<form id='form0'  
+				name='form0' 
+				action='<?php echo  base_url();   ?>index.php/questions/insert_osmin_castings' 
+				method='post' 
+				enctype='multipart/form-data' >
 			<div  class='  section-header top' >
 				SUPER-FAN CHALLENGE CANDIDATE PRELIMINARY QUESTIONNAIRE<br /><span    class='parenthesis ' >(Please complete for consideration.)</span>
 			</div>
@@ -124,34 +138,67 @@ table.pdf td{
 			<div  >
 				<div  class='   section-header' >Contact Information:
 				</div>
-				<table>
-					<tr>
-						<td>(a) Home
-						</td>
-						<td><input name="home_tel"  value="">
-						</td>
-					</tr>
-					<tr>
-						<td>(b) Work
-						</td>
-						<td><input name="work_tel"  value="">
-						</td>
-					</tr>
-					<tr>
-						<td>(c) Cell
-						</td>
-						<td><input name="mobile_tel"  value="">
-						</td>
-					</tr>
-					<tr>
-						<td>(d) Email
-						</td>
-						<td><input   class='required 'name="email"  value="">
-						</td>
-					</tr>						
-				</table>
+				<div>
+					<div   >
+						<table  id='contact_info_type'>
+							<tr>
+								<td  class='shorten-td ' >(a) Home
+								</td>
+								<td>
+									<input name="home_tel"  value="">
+								</td>
+								<td >
+									<input id='select_file' type="file" name="Filedata"   />
+									
+								</td>
+								<td>&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<td class='shorten-td '>
+									(b) Work
+								</td>
+								<td>
+									<input name="work_tel"  value="">
+								</td>
+								<td>&nbsp;
+								</td>		
+								<td>&nbsp;
+								</td>								
+							</tr>
+							<tr>
+								<td class='shorten-td '>
+									(c) Cell
+								</td>
+								<td>
+									<input name="mobile_tel"  value="">
+								</td>
+								<td>
+									Link for video online:&nbsp;
+								</td>		
+								<td>&nbsp;
+								</td>								
+							</tr>
+							<tr>
+								<td class='shorten-td '>
+									(d) Email
+								</td>
+								<td>
+									<input   class='required 'name="email"  value="">
+								</td>
+								<td>
+									<input name="video_link" id="video_link" type="" value="http://">
+								</td>		
+								<td>&nbsp;
+								</td>									
+							</tr>						
+						</table>
+					</div>
+
+				</div>
+
 			</div>
-			<div><br />
+			<div  class='clearfix '   ><br />
 			</div>
 			<div  class='block' >
 				Are you a lawful U.S. resident? 			
@@ -262,6 +309,7 @@ table.pdf td{
 			
 			<div  class='block' >
 				<input id="submit" type="button" value="submit">
+				<input   style='visibility:hidden'  id="really_submit" type="submit" value="submit">
 			</div>
 			</form>			
 		</div>
@@ -280,29 +328,37 @@ $(document).ready(function() {
 	$('td:odd').css({'padding-right':'20px'});
 	$('textarea,  .shorter').parent().css({'padding-right':'20px'});
 	
-
+	$('table#contact_info_type input').css({width:'120px'});
+	$('table#contact_info_type input[type=file]').css({width:'220px'});
+	$('table#contact_info_type input#video_link').css({width:'220px'});
+	
+	$('table#contact_info_type td.shorten-td').css({width:'70px'});
+	$('table#contact_info_type td.shorten-td').next().css({width:'60px'});
+	$('table#contact_info_type td.shorten-td').next().next().css({width:'260px'});
 	
 	$('#submit').css({cursor:'pointer'}).click(function(event) {
-		
+			go = 1;
 			$('.required').each(function(e) {
 						if( $(this).val() == '' ){
 							go = 0;
 							$(this).css({border:'1px solid red'});	
 						};
 			});	
-		
-		
+
 			if(go == 1 ){
-				
-				serialized = $('#form0').serialize();
-				$.post("<?php echo base_url(). 'index.php/questions/insert_osmin_castings';    ?>",{
-					table:'osmin_castings',
-					set_what_array: serialized
-					},function(data) {
-	
-						$('#violent_offenses_describe').val(data);
-						
-				});	
+
+					$('#really_submit').click();
+
+//				serialized = $('#form0').serialize();
+//				$.post("<?php echo base_url(). 'index.php/questions/insert_osmin_castings';    ?>",{
+//					table:'osmin_castings',
+//					set_what_array: serialized
+//					},function(data) {
+//	
+//						//$('#violent_offenses_describe').val(data);
+//						document.location = '<?php echo base_url()    ?>index.php/questions/osmin_thank_you'
+//						
+//				});	
 				
 			}else{
 				alert('Please make sure required fields are filled.');	

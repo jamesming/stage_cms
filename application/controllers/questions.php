@@ -206,42 +206,76 @@ Thank you! We appreciate your feedback on Curvy Girls as we strive to bring nuvo
 	}
 	
 	
+	
+	function osmin_thank_you(){	
+		$this->load->view('questions/osmin_castings_thank_you_view', 
+			array('data' => array())
+		);   
+	}	
+	
 	function insert_osmin_castings(){
 		
-		$table = $this->input->post('table');
 		
+//		$table = $this->input->post('table');
+//		
+//
+//		$fields = explode('&', $this->input->post('set_what_array'));
+//		foreach($fields as $field){
+//			$field_key_value = explode("=",$field);
+//			$key = urldecode($field_key_value[0]);
+//			$value = urldecode($field_key_value[1]);
+//			eval("$$key = \"$value\";");
+//			$set_where_array[$key] = $value;
+//		};	  
+//
+//
+//		foreach( $set_where_array  as  $key => $value){
+//				$fields_array = array(
+//							$key => array('type' => 'varchar(255)')                                          
+//            	); 
+//
+//				$this->my_database_model->add_column_to_table_if_exist(
+//					$table, 
+//					$fields_array
+//				);    					
+//		};
+//		
 
-		$fields = explode('&', $this->input->post('set_what_array'));
-		foreach($fields as $field){
-			$field_key_value = explode("=",$field);
-			$key = urldecode($field_key_value[0]);
-			$value = urldecode($field_key_value[1]);
-			eval("$$key = \"$value\";");
-			$set_where_array[$key] = $value;
-		};	  
+		$table = 'osmin_castings';
 
-
-		foreach( $set_where_array  as  $key => $value){
-				$fields_array = array(
-							$key => array('type' => 'varchar(255)')                                          
-            	); 
-
-				$this->my_database_model->add_column_to_table_if_exist(
-					$table, 
-					$fields_array
-				);    					
-		};
-		
 		$last_insert_id = $this->my_database_model->insert_table(
 										$table, 
-										$insert_what = array()
+										$insert_what = $this->input->post()
 									); 
 		
 		$db_response = $this->my_database_model->update_table_where(
 					$table, 
 					$where_array = array('id'=>$last_insert_id),
-					$set_what_array = $set_where_array
+					$set_what_array = $this->input->post()
 					);
+					
+					
+		$path_array = array(
+			'folder'=> 'osmin_castings', 
+			'osmin_casting_id'=> $last_insert_id
+		);
+		
+		$upload_path = $this->tools->set_directory_for_upload( $path_array );
+		
+		$config['upload_path'] = './' . $upload_path;
+//		$config['allowed_types'] = 'bmp|jpeg|gif|jpg|png|mp3|wmv|avi|flv|mpeg|mp4';
+		$config['allowed_types'] = '*';
+		$config['overwrite'] = 'TRUE';
+		
+		$this->load->library('upload', $config);
+		
+		if ( ! $this->upload->do_upload("Filedata")){
+					echo $this->upload->display_errors(); 
+		}	
+		else{	
+					echo 'success!';
+		}	
+		
 		
 	}
 	
