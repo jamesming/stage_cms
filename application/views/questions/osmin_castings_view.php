@@ -148,10 +148,10 @@ cursor:pointer;
 									<input name="home_tel"  value="">
 								</td>
 								<td >
-									<input  class='required ' id='select_file' type="file" name="Filedata"   />
-									
+									Upload Picture/Video
 								</td>
-								<td>&nbsp;
+								<td><input  class='required ' id='select_file' type="file" name="Filedata"   />
+									
 								</td>
 							</tr>
 							<tr>
@@ -161,7 +161,7 @@ cursor:pointer;
 								<td>
 									<input name="work_tel"  value="">
 								</td>
-								<td>&nbsp;
+								<td>
 								</td>		
 								<td>&nbsp;
 								</td>								
@@ -176,7 +176,7 @@ cursor:pointer;
 								<td>
 									Link for video online:&nbsp;
 								</td>		
-								<td>&nbsp;
+								<td><input name="video_link" id="video_link" type="" value="http://">
 								</td>								
 							</tr>
 							<tr>
@@ -187,7 +187,7 @@ cursor:pointer;
 									<input   class='required 'name="email"  value="">
 								</td>
 								<td>
-									<input name="video_link" id="video_link" type="" value="http://">
+									
 								</td>		
 								<td>&nbsp;
 								</td>									
@@ -334,7 +334,7 @@ $(document).ready(function() {
 	
 	$('table#contact_info_type td.shorten-td').css({width:'70px'});
 	$('table#contact_info_type td.shorten-td').next().css({width:'60px'});
-	$('table#contact_info_type td.shorten-td').next().next().css({width:'260px'});
+	$('table#contact_info_type td.shorten-td').next().next().css({width:'120px'});
 	
 	$('#submit').css({cursor:'pointer'}).click(function(event) {
 			go = 1;
