@@ -349,17 +349,6 @@ $(document).ready(function() {
 
 					$('#really_submit').click();
 
-//				serialized = $('#form0').serialize();
-//				$.post("<?php echo base_url(). 'index.php/questions/insert_osmin_castings';    ?>",{
-//					table:'osmin_castings',
-//					set_what_array: serialized
-//					},function(data) {
-//	
-//						//$('#violent_offenses_describe').val(data);
-//						document.location = '<?php echo base_url()    ?>index.php/questions/osmin_thank_you'
-//						
-//				});	
-				
 			}else{
 				alert('Please make sure required fields are filled.');	
 			};

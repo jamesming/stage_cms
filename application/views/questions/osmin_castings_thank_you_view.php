@@ -28,6 +28,9 @@ background:white;
 $(document).ready(function() {
 
 
+	$('.hero', window.parent.document).css({background:'red'})
+	
+	
 });		
 
 
