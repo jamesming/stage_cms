@@ -32,7 +32,7 @@
 								padding-top:0px;
 								color:gray;
 								width:350px;
-								 margin-right:200px;
+								 margin-right:100px;
 								}
 								
 								#feature_item_outside_container   .feature_item_row .feature_item_launch{
@@ -62,6 +62,7 @@
 				
 				<?php
 				
+
 				if( isset($data['feature_items'])){
 					
 
@@ -74,8 +75,13 @@
 							<?php echo  $feature_item['name']   ?>
 						</div>
 						<div  class='float_left feature_item_launch'   >
-							<a target='_blank' href='http://stage.mynuvotv.com/features/<?php echo $feature_item['name']    ?>'>preview</a>
+							<a target='_blank' href='http://stage.mynuvotv.com/features/<?php echo $feature_item['name']    ?>'>Preview</a>
 						</div>	
+						
+						<div class='float_left '>
+							<input <?php echo (isset($feature_item['publish']) && $feature_item['publish']==1?' checked ':'')    ?>  class='publish 'type="checkbox" value=""  feature_item_id='<?php echo  $feature_item['id']   ?>'>Publish
+						</div>
+						
 						<div  class='float_left  feature_item_trash' >
 							<img src='<?php   echo base_url()  ?>images/trash.gif'   feature_item_id='<?php echo  $feature_item['id']   ?>' >
 						</div>			
@@ -96,6 +102,30 @@
 		<script type="text/javascript" language="Javascript">  
 			
 			$(document).ready(function() {
+
+
+				$('.publish').click(function(event) {
+				
+						if( $(this).is(':checked')){
+							publish = 1;
+						}else{
+							publish = 0;
+						};
+						
+						$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
+							table:'feature_items',
+							id:$(this).attr('feature_item_id'),
+							crud:'update',
+							set_what_array:'publish='+publish
+							},function(data) {
+							
+								
+								
+								
+						});	
+				
+				
+				});	
 
 				$('#addFeatureItem').css({cursor:'pointer'}).fancyZoom().click(function(event) {
 

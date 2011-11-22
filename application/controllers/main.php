@@ -8,8 +8,7 @@ class Main extends CI_Controller {
         
         
 				if(  isset( $this->session->userdata['user_id'] )  ){
-					
-					
+		
 				}else{
 					
 					redirect('/home/login');
