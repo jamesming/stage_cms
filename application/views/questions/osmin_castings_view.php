@@ -151,6 +151,8 @@ table.pdf td{
 					</tr>						
 				</table>
 			</div>
+			<div><br />
+			</div>
 			<div  class='block' >
 				Are you a lawful U.S. residient? 			
 						<input name="citizen" type='radio' value="Y">Yes
