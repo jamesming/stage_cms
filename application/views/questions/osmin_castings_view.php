@@ -75,13 +75,13 @@ table.pdf td{
 
 			<form id='form0'>
 			<div  class='  section-header top' >
-				SUPER-FAN CALLENGE CANDIDATE PRELIMINARY QUESTIONNAIRE<br /><span    class='parenthesis ' >(Please complete for consideration)</span>
+				SUPER-FAN CHALLENGE CANDIDATE PRELIMINARY QUESTIONNAIRE<br /><span    class='parenthesis ' >(Please complete for consideration.)</span>
 			</div>
 			<div   class='block' >
 				
 			<table>
 				<tr>
-					<td>First Name:
+					<td>First Name
 					</td>
 					<td><input  class='required '  name="first_name"  value="">
 					</td>
@@ -154,7 +154,7 @@ table.pdf td{
 			<div><br />
 			</div>
 			<div  class='block' >
-				Are you a lawful U.S. residient? 			
+				Are you a lawful U.S. resident? 			
 						<input name="citizen" type='radio' value="Y">Yes
 						<input name="citizen" type='radio' value="N">No
 			</div>
@@ -196,12 +196,12 @@ table.pdf td{
 						
 			</div>
 			<div class='block'>
-				Have you ever been treated for any serious physical or mental illness or have had any serious injuries?<br />
+				Have you ever been treated for any serious physical or mental illness or had any serious injuries?<br />
 						<input name="illness_or_injuries" type='radio' value="Y">Yes
 						<input name="illness_or_injuries" type='radio' value="N">No
 			</div>
 			<div class='block'>
-				<div>If so, please describe?
+				<div>If so, please describe:
 				</div>
 				<div><textarea name='describe_illness'></textarea>	
 				</div>
@@ -215,14 +215,14 @@ table.pdf td{
 						
 			</div>
 			<div class='block'>
-				<div>If yes, please provide name(s) and for how long?
+				<div>If yes, please provide name(s) and for how long:
 				</div>
 				<div><textarea name='prescription_medication_describe'></textarea>
 				</div>
 					
 			</div>
 			<div class='block'>
-				Do you have any allergies or medical condition?
+				Do you have any allergies or medical conditions:
 						<input name="allergies_or_medical_condition" type='radio' value="Y">Yes
 						<input name="allergies_or_medical_condition" type='radio' value="N">No
 			</div>
@@ -234,7 +234,7 @@ table.pdf td{
 				
 			</div>
 			<div class='block'>
-				Do you have any physical condition, phobias or special considerations we need to be aware of?
+				Do you have any physical conditions, phobias or special considerations that should be mentioned here?
 						<input name="special_considerations" type='radio' value="Y">Yes
 						<input name="special_considerations" type='radio' value="N">No
 			</div>
