@@ -152,7 +152,7 @@ table.pdf td{
 				</table>
 			</div>
 			<div  class='block' >
-				Are you a lawful U.S. Residient? 			
+				Are you a lawful U.S. residient? 			
 						<input name="citizen" type='radio' value="Y">Yes
 						<input name="citizen" type='radio' value="N">No
 			</div>
@@ -164,7 +164,7 @@ table.pdf td{
 				
 			</div>
 			<div class='block'>
-				<div>What is your excercise routine?
+				<div>What is your exercise routine?
 				</div>
 				<div><textarea name='excercise_routine'></textarea>	
 				</div>
@@ -194,19 +194,19 @@ table.pdf td{
 						
 			</div>
 			<div class='block'>
-				Have you ever been treated for any serious physical or mental illness or have had any serious injuries?
+				Have you ever been treated for any serious physical or mental illness or have had any serious injuries?<br />
 						<input name="illness_or_injuries" type='radio' value="Y">Yes
 						<input name="illness_or_injuries" type='radio' value="N">No
 			</div>
 			<div class='block'>
-				<div>If so, please describle?
+				<div>If so, please describe?
 				</div>
 				<div><textarea name='describe_illness'></textarea>	
 				</div>
 				
 			</div>
 			<div class='block'>
-				Are you on any prescription medication that you take on a refular basis?
+				Are you on any prescription medication that you take on a regular basis?
 				<div><input name="prescription_medication" type='radio' value="Y">Yes
 						<input name="prescription_medication" type='radio' value="N">No
 				</div>

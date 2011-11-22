@@ -1,0 +1,24 @@
+
+<br />
+<br />
+							<style>
+
+							iframe#osmin_iframe{
+
+							width:650px;
+
+							height:2363px;
+
+							border:0px dotted red;
+
+							}
+
+							</style>
+
+								
+
+							<iframe id="osmin_iframe" scrolling="no" frameborder="0" src="http://cms.mynuvotv.com/index.php/questions/osmin_castings">
+
+							
+
+							</iframe>
