@@ -27,6 +27,10 @@ if( $_SERVER['HTTP_HOST'] == 'cms.mynuvotv.com' ){
 	$config['base_url']	= "http://localhost/stage_cms";
 }elseif( $_SERVER['HTTP_HOST'] == 'stage.mynuvotv.com' ){
 	$config['base_url']	= "http://stage.mynuvotv.com/features/questionnaire";
+}elseif( $_SERVER['HTTP_HOST'] == 'mynuvotv.com' ){
+	$config['base_url']	= "http://mynuvotv.com/features/questionnaire";
+}elseif( $_SERVER['HTTP_HOST'] == 'www.mynuvotv.com' ){
+	$config['base_url']	= "http://www.mynuvotv.com/features/questionnaire";
 };
 
 
