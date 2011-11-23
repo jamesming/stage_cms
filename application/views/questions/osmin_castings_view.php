@@ -334,7 +334,7 @@ function submitnow(){
 			});	
 			
 			
-			go = 1
+			
 			if(go == 1 ){
 
 					$('#really_submit').click();
@@ -346,7 +346,7 @@ function submitnow(){
 	
 $(document).ready(function() {
 
-	go = 1;
+
 
 	$('td:even').css({width:'70px'});
 	
