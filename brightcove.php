@@ -116,7 +116,8 @@ JSONscriptRequest.prototype.addScriptTag = function () {
 
 	// The web service call
 
-	var token = "mfu5Nh2a27pJx7LrgZbLx363WrLDHUmtJ5BXY0GkYK4.";
+	var token = var token = "j1R2gIYQ1ws3N8_M3iJJ-XgPpFIMbGkeDGDbsimt_dNkT0uim3KgvA..";
+
 
 	
 
