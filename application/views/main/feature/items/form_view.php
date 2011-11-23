@@ -199,6 +199,9 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 						
 				});	
 			
+
+
+				setTimeout(function() { 											
 				mbox = $("#text_area").css({
 						height:"600px",
 						width:"100%"
@@ -234,11 +237,8 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 					],
 					skin:"gray"
 				});
-				
-				
-				setTimeout(function() { 											
-						mbox.set_text( $('#text_area').text()   );
-				}, 100);
+				}, 1000);	
+
 				
 				
   });
