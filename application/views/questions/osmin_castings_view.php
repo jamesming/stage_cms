@@ -310,14 +310,14 @@ cursor:pointer;
 			</div>
 			
 			<div  class='block' >
-				<input id="submit" type="button" value="submit">
+				
 				<input   style='visibility:hidden'  id="really_submit" type="submit" value="submit">
 			</div>
 			</form>			
 		</div>
 
 		<input onclick="$('body').scrollTo( $('#very_top'), 		1000 )" type="button" value="scroll">
-		<input name="" id="submitnow" type="button" value="submitnow">
+
 
 </body>
 
@@ -325,8 +325,7 @@ cursor:pointer;
 <script type="text/javascript" language="Javascript">
 	
 function submitnow(){
-	alert('test');
-	//$('#submit').click();
+	$('#submit').click();
 }
 	
 $(document).ready(function() {
