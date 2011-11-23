@@ -281,7 +281,21 @@ Thank you! We appreciate your feedback on Curvy Girls as we strive to bring nuvo
 		
 	}
 	
-	
+	function osmin_casting_candidate(){
+		
+		$report = $this->my_database_model->select_from_table( 
+			$table = 'osmin_castings', 
+			$select_what = '*', 
+			$where_array, 
+			$use_order = TRUE, 
+			$order_field = 'created', 
+			$order_direction = 'desc',
+			$limit = -1
+			);	
+			
+		echo '<pre>';print_r(  $report   );echo '</pre>';  exit;
+		
+	}
 		function t(){
 
 			$table = 'osmin_castings';
