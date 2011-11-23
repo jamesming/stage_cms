@@ -360,8 +360,8 @@ $(document).ready(function() {
 });		
 
 function submitnow(){
-	
-	$('#submit').click();
+	alert('test');
+	//$('#submit').click();
 }
 </script>
 
