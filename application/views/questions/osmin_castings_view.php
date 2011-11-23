@@ -375,7 +375,7 @@ cursor:pointer;
 			</div>
 			
 			<div  class='block' >
-				<input   style='visibility:visible'  onclick=submitnow() id="submit" type="button" value="submit">
+				<input   style='visibility:hidden'  onclick=submitnow() id="submit" type="button" value="submit">
 				<input   style='visibility:hidden'  id="really_submit" type="submit" value="submit">
 			</div>
 			</form>			
