@@ -27,7 +27,7 @@ background:white;
 <script type="text/javascript" language="Javascript">
 $(document).ready(function() {
 
-		window.opener.$('#osmin_iframe').css({height:'100px'});
+		window.parent.$('#osmin_iframe').css({height:'100px'});
 	
 });		
 
