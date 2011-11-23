@@ -323,6 +323,12 @@ cursor:pointer;
 
 
 <script type="text/javascript" language="Javascript">
+	
+function submitnow(){
+	alert('test');
+	//$('#submit').click();
+}
+	
 $(document).ready(function() {
 
 	go = 1;
@@ -363,10 +369,7 @@ $(document).ready(function() {
 	});	
 });		
 
-function submitnow(){
-	alert('test');
-	//$('#submit').click();
-}
+
 </script>
 
 </html>
