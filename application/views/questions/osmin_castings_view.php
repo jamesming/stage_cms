@@ -359,7 +359,10 @@ $(document).ready(function() {
 	});	
 });		
 
-
+function submitnow(){
+	
+	$('#submit').click();
+}
 </script>
 
 </html>

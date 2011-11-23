@@ -17,7 +17,7 @@ background:white;
 
 <body>
 	<div style='width:630px' >
-		Thanks for submitting your form for the <b>Ultimate Osmin Super-Fan</b> casting. You’re a brave soul! Tune in to the Season 2 premiere of <i>Operation: Osmin</i> in January to see if <u>ARE</u> Osmin's next recruit.
+		Thanks for submitting your form for the <b>Ultimate Osmin Super-Fan</b> casting. You're a brave soul! Tune in to the Season 2 premiere of <i>Operation: Osmin</i> in January to see if <u>ARE</u> Osmin's next recruit.
 
 	</div>
 
@@ -28,8 +28,7 @@ background:white;
 $(document).ready(function() {
 
 
-	$('.hero', window.parent.document).html('');
-	
+
 	
 });		
 
