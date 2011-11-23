@@ -8,8 +8,107 @@
 <title>Player API Example - HTML</title>
 
 <link rel="stylesheet" href="displayTitles.css"/>
+<style>
+#bcPlayer {
+	float:left;
+}
 
-<script src="jsr_class.js"></script>
+#titleList {
+	float:left;
+	margin:0px 2px 0px 12px;
+	width:350px;
+	height:412px;
+	overflow:auto;
+	font: bold 65% arial, sans-serif;
+	color:#555;
+}
+
+.title {
+	height:46px;
+	margin-bottom:2px;
+	padding:4px;
+	overflow:hidden;
+	cursor:pointer;
+}
+
+.title:hover {
+	background:#ddd;
+}
+
+.title p {
+	margin:0;
+	padding:0;
+}
+
+p.displayName {
+	font-weight:bold;
+	color:#000000;
+}
+
+p.shortDescription {
+	font-weight:normal;
+	color:#cccccc;
+}
+
+div.thumb {
+	float:left;
+	width:60px;
+	height:44px;
+	margin-right:10px;
+	background:#333;
+	border:1px solid #666;
+}
+
+div.thumb img {
+	width:100%;
+	height:100%;
+}
+</style>
+<script type="text/javascript" language="Javascript">
+
+function JSONscriptRequest(fullUrl) {
+    // REST request path
+    this.fullUrl = fullUrl; 
+    // Keep IE from caching requests
+    this.noCacheIE = '&noCacheIE=' + (new Date()).getTime();
+    // Get the DOM location to put the script tag
+    this.headLoc = document.getElementsByTagName("head").item(0);
+    // Generate a unique script tag id
+    this.scriptId = 'JscriptId' + JSONscriptRequest.scriptCounter++;
+}
+
+// Static script ID counter
+JSONscriptRequest.scriptCounter = 1;
+
+// buildScriptTag method
+//
+JSONscriptRequest.prototype.buildScriptTag = function () {
+
+    // Create the script tag
+    this.scriptObj = document.createElement("script");
+    
+    // Add script object attributes
+    this.scriptObj.setAttribute("type", "text/javascript");
+    this.scriptObj.setAttribute("charset", "utf-8");
+    this.scriptObj.setAttribute("src", this.fullUrl + this.noCacheIE);
+    this.scriptObj.setAttribute("id", this.scriptId);
+}
+ 
+// removeScriptTag method
+// 
+JSONscriptRequest.prototype.removeScriptTag = function () {
+    // Destroy the script tag
+    this.headLoc.removeChild(this.scriptObj);  
+}
+
+// addScriptTag method
+//
+JSONscriptRequest.prototype.addScriptTag = function () {
+    // Create the script tag
+    this.headLoc.appendChild(this.scriptObj);
+}
+
+</script>
 
 <script>
 
@@ -17,7 +116,7 @@
 
 	// The web service call
 
-	var token = "j1R2gIYQ1ws3N8_M3iJJ-XgPpFIMbGkeDGDbsimt_dNkT0uim3KgvA..";
+	var token = "mfu5Nh2a27pJx7LrgZbLx363WrLDHUmtJ5BXY0GkYK4.";
 
 	
 
