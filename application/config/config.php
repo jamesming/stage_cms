@@ -19,7 +19,7 @@
 $urlParts = explode('.', $_SERVER['HTTP_HOST']);
 $subdomain = $urlParts[0];		
 
-
+echo '<pre>';print_r( $_SERVER['HTTP_HOST'] );echo '</pre>';  exit;
 
 if( $_SERVER['HTTP_HOST'] == 'cms.mynuvotv.com' ){
 	$config['base_url']	= "http://cms.mynuvotv.com";	
