@@ -14,7 +14,7 @@ input[type=radio]{
 width:20px;
 }
 input[type=file]{
-width:120px;
+width:100px;
 }
 input[type=button]{
 width:60px;
@@ -95,7 +95,7 @@ cursor:pointer;
 				enctype='multipart/form-data' >
 				
 			<div  class='  section-header top' >
-				ENTER CODES<br /><span    class='parenthesis ' ></span>
+				ENTER CODES WORDS:<br /><span    class='parenthesis ' ></span>
 			</div>
 		<div>
 			<table>
@@ -156,17 +156,17 @@ cursor:pointer;
 				
 				
 			<div  class='  section-header top' >
-				SUPER-FAN CHALLENGE CANDIDATE PRELIMINARY QUESTIONNAIRE<br /><span    class='parenthesis ' >(Please complete for consideration.)</span>
+				SUPER-FAN CHALLENGE CANDIDATE PRELIMINARY QUESTIONNAIRE<br /><span    class='parenthesis ' >(Please complete for consideration.  Required fields denoted by "*")</span>
 			</div>
 			<div   class='block' >
 				
 			<table>
 				<tr>
-					<td>First Name
+					<td>First Name *
 					</td>
 					<td><input  class='required '  name="first_name"  value="">
 					</td>
-					<td>Last Name
+					<td>Last Name *
 					</td>
 					<td><input  class='required ' name="last_name"  value="">
 					</td>
@@ -178,22 +178,22 @@ cursor:pointer;
 					</td>
 				</tr>
 				<tr>
-					<td>Address
+					<td>Address *
 					</td>
 					<td colspan=100 >
 						<input  class='required ' name="address"  value=""    >
 					</td>
 				</tr>
 				<tr>
-					<td>City
+					<td>City *
 					</td>
 					<td><input  class='required ' name="city"  value="">
 					</td>
-					<td>State
+					<td>State *
 					</td>
 					<td><input  class='required ' name="state"  value="">
 					</td>		
-					<td>Zip
+					<td>Zip *
 					</td>
 					<td>
 						<input  class='required ' name="zip"  value="">
@@ -215,9 +215,9 @@ cursor:pointer;
 									<input name="home_tel"  value="">
 								</td>
 								<td >
-									Upload Picture/Video
+									Upload Picture/Video *
 								</td>
-								<td><input  class='required ' id='select_file' type="file" name="Filedata"   />
+								<td><input  id='select_file' type="file" name="Filedata"   />
 									
 								</td>
 							</tr>
@@ -248,7 +248,7 @@ cursor:pointer;
 							</tr>
 							<tr>
 								<td class='shorten-td '>
-									(d) Email
+									(d) Email  *
 								</td>
 								<td>
 									<input   class='required 'name="email"  value="">
@@ -300,7 +300,7 @@ cursor:pointer;
 				
 			</div>
 			<div class=' section-header'>
-				Background Information
+				Background Information:
 			</div>
 			<div class='block'>
 				Have you ever been arrested or had a restraining order placed against you?
@@ -375,7 +375,7 @@ cursor:pointer;
 			</div>
 			
 			<div  class='block' >
-				<input   style='visibility:hidden'  onclick=submitnow() id="submit" type="button" value="submit">
+				<input   style='visibility:visible'  onclick=submitnow() id="submit" type="button" value="submit">
 				<input   style='visibility:hidden'  id="really_submit" type="submit" value="submit">
 			</div>
 			</form>			
@@ -390,7 +390,17 @@ cursor:pointer;
 <script type="text/javascript" language="Javascript">
 	
 function submitnow(){
+	
 			go = 1;
+			item_entered_for_upload = 0;
+			
+			count = 0;
+			$('.either_or').each(function(e) {
+						if( $(this).val() == '' ){
+							count++;
+						};
+			});	
+
 			$('.required').each(function(e) {
 						if( $(this).val() == '' ){
 							go = 0;
@@ -398,11 +408,25 @@ function submitnow(){
 						};
 			});	
 			
+			if( $('#select_file').val() != '' 
+			){
+						item_entered_for_upload = 1;
+			};
 			
+			if( $('#video_link').val() != 'http://'
+			){
+						item_entered_for_upload = 1;
+			};			
 			
-			if(go == 1 ){
-
-					$('#really_submit').click();
+			if( item_entered_for_upload == 0){
+				
+				$('#video_link, #select_file').css({border:'1px solid red'});	
+				
+			};
+			
+			if(go == 1 && item_entered_for_upload == 1 ){
+alert('submit');
+//					$('#really_submit').click();
 
 			}else{
 				alert('Please make sure required fields are filled.');	
@@ -424,7 +448,7 @@ $(document).ready(function() {
 	
 	$('table#contact_info_type td.shorten-td').css({width:'70px'});
 	$('table#contact_info_type td.shorten-td').next().css({width:'60px'});
-	$('table#contact_info_type td.shorten-td').next().next().css({width:'120px'});
+	$('table#contact_info_type td.shorten-td').next().next().css({width:'126px'});
 	
 
 });		
