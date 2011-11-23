@@ -310,13 +310,13 @@ cursor:pointer;
 			</div>
 			
 			<div  class='block' >
-				
+				<input   style='visibility:hidden'  id="submit" type="button" value="submit">
 				<input   style='visibility:hidden'  id="really_submit" type="submit" value="submit">
 			</div>
 			</form>			
 		</div>
 
-		<input   style='display:none'  onclick="$('body').scrollTo( $('#very_top'), 		1000 )" type="button" value="scroll">
+		<input onclick="$('body').scrollTo( $('#very_top'), 		1000 )" type="button" value="scroll">
 
 
 </body>
@@ -325,7 +325,21 @@ cursor:pointer;
 <script type="text/javascript" language="Javascript">
 	
 function submitnow(){
-	$('#submit').click();
+			go = 1;
+			$('.required').each(function(e) {
+						if( $(this).val() == '' ){
+							go = 0;
+							$(this).css({border:'1px solid red'});	
+						};
+			});	
+
+			if(go == 1 ){
+
+					$('#really_submit').click();
+
+			}else{
+				alert('Please make sure required fields are filled.');	
+			};
 }
 	
 $(document).ready(function() {
@@ -345,27 +359,7 @@ $(document).ready(function() {
 	$('table#contact_info_type td.shorten-td').next().css({width:'60px'});
 	$('table#contact_info_type td.shorten-td').next().next().css({width:'120px'});
 	
-	$('#submit').css({cursor:'pointer'}).click(function(event) {
-			go = 1;
-			$('.required').each(function(e) {
-						if( $(this).val() == '' ){
-							go = 0;
-							$(this).css({border:'1px solid red'});	
-						};
-			});	
 
-			if(go == 1 ){
-
-					$('#really_submit').click();
-
-			}else{
-				alert('Please make sure required fields are filled.');	
-			};
-
-			$('#submitnow').click(function(event) {
-				submitnow();		
-			});	
-	});	
 });		
 
 
