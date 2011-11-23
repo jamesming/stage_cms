@@ -16,7 +16,7 @@ background:white;
 <html>
 
 <body>
-	<div style='width:630px;font-size:12px;color:gray;font-weight:bold' >
+	<div style='width:630px;font-size:14px;color:bluey;font-weight:bold' >
 		<br /><br /><br />
 		Thanks for submitting your form for the <b>Ultimate Osmin Super-Fan</b> casting. You're a brave soul! Tune in to the Season 2 premiere of <i>Operation: Osmin</i> in January to see if <u>ARE</u> Osmin's next recruit.
 
