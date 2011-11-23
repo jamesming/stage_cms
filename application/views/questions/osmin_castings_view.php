@@ -57,12 +57,14 @@ cursor:pointer;
 </style>
 
 <script type="text/javascript" language="Javascript" src = "<?php echo  base_url();   ?>js/jquery.js"></script>
+<script type="text/javascript" src="<?php echo  base_url();   ?>js/jquery.scrollTo-min.js"></script>
+
 </head>
 
 <html>
 
 <body>
-	
+<div id="very_top"><div>
 
 <table  class='pdf '  >
 	<tr>
@@ -314,7 +316,7 @@ cursor:pointer;
 			</form>			
 		</div>
 
-
+		<input onclick="$('body').scrollTo( $('#very_top'), 		1000 )" type="button" value="scroll">
 </body>
 
 
