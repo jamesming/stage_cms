@@ -80,7 +80,10 @@ cursor:pointer;
 	
 
 	
-	<br /><br />
+	<br />
+	
+	
+	<br />
 
 	
 		<div   style='width:630px'   >
@@ -90,6 +93,68 @@ cursor:pointer;
 				action='<?php echo  base_url();   ?>index.php/questions/insert_osmin_castings' 
 				method='post' 
 				enctype='multipart/form-data' >
+				
+			<div  class='  section-header top' >
+				ENTER CODES<br /><span    class='parenthesis ' ></span>
+			</div>
+		<div>
+			<table>
+			<tr>
+				<td>Code 1
+				</td>
+				<td><input  class='codes_inputs '  name="code1" type="" value="">
+				</td>
+				<td>Code 6
+				</td>
+				<td><input  class='codes_inputs '  name="code6" type="" value="">
+				</td>
+			</tr>
+			<tr>
+				<td>Code 2
+				</td>
+				<td><input  class='codes_inputs '  name="code2" type="" value="">
+				</td>
+				<td>Code 7
+				</td>
+				<td><input  class='codes_inputs '  name="code7" type="" value="">
+				</td>
+			</tr>	
+			<tr>
+				<td>Code 3
+				</td>
+				<td><input  class='codes_inputs '  name="code3" type="" value="">
+				</td>
+				<td>Code 8
+				</td>
+				<td><input  class='codes_inputs '  name="code8" type="" value="">
+				</td>
+			</tr>
+			<tr>
+				<td>Code 4
+				</td>
+				<td><input  class='codes_inputs '  name="code4" type="" value="">
+				</td>
+				<td>Code 9
+				</td>
+				<td><input  class='codes_inputs '  name="code9" type="" value="">
+				</td>
+			</tr>	
+			<tr>
+				<td>Code 5
+				</td>
+				<td><input  class='codes_inputs '  name="code5" type="" value="">
+				</td>
+				<td>Code 10
+				</td>
+				<td><input  class='codes_inputs '  name="code10" type="" value="">
+				</td>
+			</tr>				
+			
+		</table>
+		<br /><br />
+		</div>
+				
+				
 			<div  class='  section-header top' >
 				SUPER-FAN CHALLENGE CANDIDATE PRELIMINARY QUESTIONNAIRE<br /><span    class='parenthesis ' >(Please complete for consideration.)</span>
 			</div>
@@ -310,7 +375,7 @@ cursor:pointer;
 			</div>
 			
 			<div  class='block' >
-				<input   style='visibility:hidden'  id="submit" type="button" value="submit">
+				<input   style='visibility:visible'  onclick=submitnow() id="submit" type="button" value="submit">
 				<input   style='visibility:hidden'  id="really_submit" type="submit" value="submit">
 			</div>
 			</form>			

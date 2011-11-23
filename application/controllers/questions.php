@@ -242,6 +242,20 @@ Thank you! We appreciate your feedback on Curvy Girls as we strive to bring nuvo
 //		
 
 		$table = 'osmin_castings';
+		
+		
+		foreach( $this->input->post()  as  $key => $value){
+				$fields_array = array(
+							$key => array('type' => 'varchar(255)')                                          
+            	); 
+
+				$this->my_database_model->add_column_to_table_if_exist(
+					$table, 
+					$fields_array
+				);    					
+		};
+		
+		
 
 		$last_insert_id = $this->my_database_model->insert_table(
 										$table, 
