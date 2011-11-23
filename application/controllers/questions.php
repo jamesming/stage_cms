@@ -286,7 +286,7 @@ Thank you! We appreciate your feedback on Curvy Girls as we strive to bring nuvo
 		$report = $this->my_database_model->select_from_table( 
 			$table = 'osmin_castings', 
 			$select_what = '*', 
-			$where_array = $array(), 
+			$where_array = array(), 
 			$use_order = TRUE, 
 			$order_field = 'created', 
 			$order_direction = 'desc',
