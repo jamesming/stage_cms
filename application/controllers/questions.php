@@ -283,7 +283,7 @@ Thank you! We appreciate your feedback on Curvy Girls as we strive to bring nuvo
 	
 	function osmin_casting_candidate(){
 		
-		$report = $this->my_database_model->select_from_table( 
+		$reports_raw = $this->my_database_model->select_from_table( 
 			$table = 'osmin_castings', 
 			$select_what = '*', 
 			$where_array = array(), 
@@ -293,7 +293,20 @@ Thank you! We appreciate your feedback on Curvy Girls as we strive to bring nuvo
 			$limit = -1
 			);	
 			
-		echo '<pre>';print_r(  $report   );echo '</pre>';  exit;
+			
+//		foreach( $reports_raw  as  $key => $value){
+//			
+//			$reports[$key] = $value;
+//			
+//			if( $key == id){
+//				
+//				$reports['file_location'] = base_url().'uploads/'';
+//					
+//			};
+//			
+//		}
+			
+		echo '<pre>';print_r(  $reports_raw  );echo '</pre>';  exit;
 		
 	}
 		function t(){
