@@ -16,7 +16,7 @@ background:white;
 <html>
 
 <body>
-	<div style='width:630px;font-size:14px;color:blue;font-weight:bold' >
+	<div style='width:620px;font-size:14px;color:blue;font-weight:bold' >
 		<br /><br /><br />
 		Thanks for submitting your form for the <b>Ultimate Osmin Super-Fan</b> casting. You're a brave soul! Tune in to the Season 2 premiere of <i>Operation: Osmin</i> in January to see if <u>ARE</u> Osmin's next recruit.
 
@@ -29,6 +29,7 @@ background:white;
 $(document).ready(function() {
 
 		window.parent.$('#osmin_iframe').css({height:'100px'});
+		window.parent.$('#submitnow').css({display:none});
 	
 });		
 
