@@ -425,8 +425,7 @@ function submitnow(){
 			};
 			
 			if(go == 1 && item_entered_for_upload == 1 ){
-alert('submit');
-//					$('#really_submit').click();
+				$('#really_submit').click();
 
 			}else{
 				alert('Please make sure required fields are filled.');	
