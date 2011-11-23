@@ -316,7 +316,7 @@ cursor:pointer;
 			</form>			
 		</div>
 
-		<input onclick="$('body').scrollTo( $('#very_top'), 		1000 )" type="button" value="scroll">
+		<input   style='visibility:hidden' onclick="$('body').scrollTo( $('#very_top'), 		1000 )" type="button" value="scroll">
 
 
 </body>
