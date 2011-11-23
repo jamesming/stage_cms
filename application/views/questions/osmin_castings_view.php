@@ -156,7 +156,7 @@ cursor:pointer;
 				
 				
 			<div  class='  section-header top' >
-				SUPER-FAN CHALLENGE CANDIDATE PRELIMINARY QUESTIONNAIRE<br /><span    class='parenthesis ' >(Please complete for consideration.  Required fields denoted by "*")</span>
+				SUPER-FAN CHALLENGE CANDIDATE PRELIMINARY QUESTIONNAIRE<br /><span    class='parenthesis ' >(Please complete for consideration.  Required fields denoted by *)</span>
 			</div>
 			<div   class='block' >
 				
