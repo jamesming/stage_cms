@@ -332,7 +332,9 @@ function submitnow(){
 							$(this).css({border:'1px solid red'});	
 						};
 			});	
-
+			
+			
+			go = 1
 			if(go == 1 ){
 
 					$('#really_submit').click();
