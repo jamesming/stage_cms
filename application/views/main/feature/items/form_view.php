@@ -115,24 +115,33 @@ display:none;
 				</td>
 			</tr>	
 			
-
+			<tr>
+				<td   colspan=2>
+					<div>
+						<input name="" id="submit" type="button" value="submit">
+					</div>
+				</td>
+			</tr>	
 			
 			
 			<tr>
 				<td   class='main_table ' colspan=2>
-					<div  id='textarea_div'     >
-							<textarea   style='width:700px;height:100px' class=' clearfix' name='content' id='text_area'><?php echo $data['feature_items'][0]['content']    ?></textarea>
+					<div  id='textarea_div'   >
+							<textarea  class=' clearfix' name='content' id='text_area'><?php echo $data['feature_items'][0]['content']    ?></textarea>
 					</div>
 				</td>
 			</tr>	
+
+
+
+
+
 
 
 			
 
 			
 		</table>
-		<div><input name="" id="submit" type="button" value="submit">
-		</div>
 </form>
 </body>
 
@@ -190,46 +199,46 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 						
 				});	
 			
-//				mbox = $("#text_area").css({
-//						height:"600px",
-//						width:"100%"
-//						}).htmlbox({
-//				    toolbars:[
-//					    [
-//						// Cut, Copy, Paste
-//						"separator","cut","copy","paste",
-//						// Undo, Redo
-//						"separator","undo","redo",
-//						// Bold, Italic, Underline, Strikethrough, Sup, Sub
-//						"separator","bold","italic","underline","strike","sup","sub",
-//						// Left, Right, Center, Justify
-//						"separator","justify","left","center","right",
-//						// Ordered List, Unordered List, Indent, Outdent
-//						"separator","ol","ul","indent","outdent",
-//						// Hyperlink, Remove Hyperlink, Image
-//						"separator","link","unlink","image"
-//						
-//						],
-//						[// Show code
-//						"separator","code",
-//				        // Formats, Font size, Font family, Font color, Font, Background
-//				        "separator","formats","fontsize","fontfamily",
-//						"separator","fontcolor","highlight",
-//						],
-//						[
-//						//Strip tags
-//						"separator","removeformat","striptags","hr","paragraph",
-//						// Styles, Source code syntax buttons
-//						"separator","quote","styles","syntax"
-//						]
-//					],
-//					skin:"gray"
-//				});
+				mbox = $("#text_area").css({
+						height:"600px",
+						width:"100%"
+						}).htmlbox({
+				    toolbars:[
+					    [
+						// Cut, Copy, Paste
+						"separator","cut","copy","paste",
+						// Undo, Redo
+						"separator","undo","redo",
+						// Bold, Italic, Underline, Strikethrough, Sup, Sub
+						"separator","bold","italic","underline","strike","sup","sub",
+						// Left, Right, Center, Justify
+						"separator","justify","left","center","right",
+						// Ordered List, Unordered List, Indent, Outdent
+						"separator","ol","ul","indent","outdent",
+						// Hyperlink, Remove Hyperlink, Image
+						"separator","link","unlink","image"
+						
+						],
+						[// Show code
+						"separator","code",
+				        // Formats, Font size, Font family, Font color, Font, Background
+				        "separator","formats","fontsize","fontfamily",
+						"separator","fontcolor","highlight",
+						],
+						[
+						//Strip tags
+						"separator","removeformat","striptags","hr","paragraph",
+						// Styles, Source code syntax buttons
+						"separator","quote","styles","syntax"
+						]
+					],
+					skin:"gray"
+				});
 				
 				
-//				setTimeout(function() { 											
-//						mbox.set_text( $('#text_area').text()   );
-//				}, 100);
+				setTimeout(function() { 											
+						mbox.set_text( $('#text_area').text()   );
+				}, 100);
 				
 				
   });
@@ -248,9 +257,7 @@ function submit_inputs(close_fancyzoom){
 					};
 					
 
-					//$("#text_area").css({width:'690px';height:'300px'})
-					
-					//.val( mbox.get_html() );
+					$("#text_area").val( mbox.get_html() );
 
 					$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
 						table:'feature_items',
