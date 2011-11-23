@@ -317,6 +317,8 @@ cursor:pointer;
 		</div>
 
 		<input onclick="$('body').scrollTo( $('#very_top'), 		1000 )" type="button" value="scroll">
+		<input name="" id="submitnow" type="button" value="submitnow">
+
 </body>
 
 
@@ -355,7 +357,9 @@ $(document).ready(function() {
 				alert('Please make sure required fields are filled.');	
 			};
 
-				
+			$('#submitnow').click(function(event) {
+				submitnow();		
+			});	
 	});	
 });		
 
