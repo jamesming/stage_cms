@@ -122,7 +122,7 @@ JSONscriptRequest.prototype.addScriptTag = function () {
 
 	var req = "http://api.brightcove.com/services/library?";
 
-	req += "command=find_all_videos&token=" + encodeURIComponent(token);  // tokens need to be URL-encoded
+	req += "command=find_playlist_by_id&playlist_id=1279653691001&playlist_fields=videos,videoIds&token=" + encodeURIComponent(token);  // tokens need to be URL-encoded
 
 	req += "&fields=id,name,shortDescription,thumbnailURL,length&callback=response";
 
