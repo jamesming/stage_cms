@@ -124,7 +124,7 @@ JSONscriptRequest.prototype.addScriptTag = function () {
 
 // 	req += "command=find_all_videos&token=" + encodeURIComponent(token);  // tokens need to be URL-encoded
 
-	req += "command=command=find_playlist_by_id&playlist_id=123&playlist_fields=videos,videoIds&token=" + encodeURIComponent(token);  // tokens need to be URL-encoded
+	req += "command=command=find_playlist_by_id&playlist_id=1045731469001&playlist_fields=videos,videoIds&token=" + encodeURIComponent(token);  // tokens need to be URL-encoded
 
 	req += "&fields=id,name,shortDescription,thumbnailURL,length&callback=response";
 
