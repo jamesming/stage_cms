@@ -274,7 +274,7 @@ found at https://accounts.brightcove.com/en/terms-and-conditions/.
 -->
 
 <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
-
+  <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"></script>
 <object id="myExperience" class="BrightcoveExperience">
   <param name="bgcolor" value="#FFFFFF" />
   <param name="width" value="802" />
