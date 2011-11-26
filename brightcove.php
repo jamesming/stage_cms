@@ -1,4 +1,73 @@
+<?php     
 
+	 function object_to_array($data){
+	  if(is_array($data) || is_object($data)){
+	    $result = array(); 
+	    foreach($data as $key => $value)
+	    { 
+	      $result[$key] = $this->object_to_array($value); 
+	    }
+	    return $result;
+	  }
+	  return $data;
+	}
+
+
+  function jsonDecode ($json) 
+  { 
+      $json = str_replace(array("\\\\", "\\\""), array("&#92;", "&#34;"), $json); 
+      $parts = preg_split("@(\"[^\"]*\")|([\[\]\{\},:])|\s@is", $json, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE); 
+      foreach ($parts as $index => $part) 
+      { 
+          if (strlen($part) == 1) 
+          { 
+              switch ($part) 
+              { 
+                  case "[": 
+                  case "{": 
+                      $parts[$index] = "array("; 
+                      break; 
+                  case "]": 
+                  case "}": 
+                      $parts[$index] = ")"; 
+                      break; 
+                  case ":": 
+                    $parts[$index] = "=>"; 
+                    break;    
+                  case ",": 
+                    break; 
+                  default: 
+                      return null; 
+              } 
+          } 
+          else 
+          { 
+              if ((substr($part, 0, 1) != "\"") || (substr($part, -1, 1) != "\"")) 
+              { 
+                  return null; 
+              } 
+          } 
+      } 
+      $json = str_replace(array("&#92;", "&#34;", "$"), array("\\\\", "\\\"", "\\$"), implode("", $parts)); 
+      return eval("return $json;"); 
+  } 
+
+
+	$json_url = 'http://api.brightcove.com/services/library?command=find_playlist_by_id&media_delivery=http&token=mfu5Nh2a27pJx7LrgZbLx363WrLDHUmtJ5BXY0GkYK4.&playlist_id=1045731469001';
+	$ch = curl_init( $json_url );
+		$options = array(
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_HTTPHEADER => array('Content-type: application/json')
+	);
+	
+	curl_setopt_array( $ch, $options );
+	
+	
+	$result = curl_exec($ch);
+	
+	$videos = json_decode($result)->videos;
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -63,50 +132,53 @@ div.thumb img {
 	width:100%;
 	height:100%;
 }
+.video_links{
+cursor:pointer;	
+}
 </style>
 <script type="text/javascript" language="Javascript">
 
-function JSONscriptRequest(fullUrl) {
-    // REST request path
-    this.fullUrl = fullUrl; 
-    // Keep IE from caching requests
-    this.noCacheIE = '&noCacheIE=' + (new Date()).getTime();
-    // Get the DOM location to put the script tag
-    this.headLoc = document.getElementsByTagName("head").item(0);
-    // Generate a unique script tag id
-    this.scriptId = 'JscriptId' + JSONscriptRequest.scriptCounter++;
-}
-
-// Static script ID counter
-JSONscriptRequest.scriptCounter = 1;
-
-// buildScriptTag method
-//
-JSONscriptRequest.prototype.buildScriptTag = function () {
-
-    // Create the script tag
-    this.scriptObj = document.createElement("script");
-    
-    // Add script object attributes
-    this.scriptObj.setAttribute("type", "text/javascript");
-    this.scriptObj.setAttribute("charset", "utf-8");
-    this.scriptObj.setAttribute("src", this.fullUrl + this.noCacheIE);
-    this.scriptObj.setAttribute("id", this.scriptId);
-}
- 
-// removeScriptTag method
-// 
-JSONscriptRequest.prototype.removeScriptTag = function () {
-    // Destroy the script tag
-    this.headLoc.removeChild(this.scriptObj);  
-}
-
-// addScriptTag method
-//
-JSONscriptRequest.prototype.addScriptTag = function () {
-    // Create the script tag
-    this.headLoc.appendChild(this.scriptObj);
-}
+				function JSONscriptRequest(fullUrl) {
+				    // REST request path
+				    this.fullUrl = fullUrl; 
+				    // Keep IE from caching requests
+				    this.noCacheIE = '&noCacheIE=' + (new Date()).getTime();
+				    // Get the DOM location to put the script tag
+				    this.headLoc = document.getElementsByTagName("head").item(0);
+				    // Generate a unique script tag id
+				    this.scriptId = 'JscriptId' + JSONscriptRequest.scriptCounter++;
+				}
+				
+				// Static script ID counter
+				JSONscriptRequest.scriptCounter = 1;
+				
+				// buildScriptTag method
+				//
+				JSONscriptRequest.prototype.buildScriptTag = function () {
+				
+				    // Create the script tag
+				    this.scriptObj = document.createElement("script");
+				    
+				    // Add script object attributes
+				    this.scriptObj.setAttribute("type", "text/javascript");
+				    this.scriptObj.setAttribute("charset", "utf-8");
+				    this.scriptObj.setAttribute("src", this.fullUrl + this.noCacheIE);
+				    this.scriptObj.setAttribute("id", this.scriptId);
+				}
+				 
+				// removeScriptTag method
+				// 
+				JSONscriptRequest.prototype.removeScriptTag = function () {
+				    // Destroy the script tag
+				    this.headLoc.removeChild(this.scriptObj);  
+				}
+				
+				// addScriptTag method
+				//
+				JSONscriptRequest.prototype.addScriptTag = function () {
+				    // Create the script tag
+				    this.headLoc.appendChild(this.scriptObj);
+				}
 
 </script>
 
@@ -114,19 +186,20 @@ JSONscriptRequest.prototype.addScriptTag = function () {
 
 	
 
-	// The web service call
-
-	var token = "mfu5Nh2a27pJx7LrgZbLx363WrLDHUmtJ5BXY0GkYK4.";
-
-	
-
-	var req = "http://api.brightcove.com/services/library?";
-
+//	// The web service call
+//
+//	var token = "mfu5Nh2a27pJx7LrgZbLx363WrLDHUmtJ5BXY0GkYK4.";
+//
+//// http://api.brightcove.com/services/library?command=find_playlist_by_id&media_delivery=http&token=mfu5Nh2a27pJx7LrgZbLx363WrLDHUmtJ5BXY0GkYK4.&playlist_id=1045731469001
+//
+//
+//	var req = "http://api.brightcove.com/services/library?";
+//
 // 	req += "command=find_all_videos&token=" + encodeURIComponent(token);  // tokens need to be URL-encoded
-
-	req += "command=command=find_playlist_by_id&playlist_id=1045731469001&playlist_fields=videos,videoIds&token=" + encodeURIComponent(token);  // tokens need to be URL-encoded
-
-	req += "&fields=id,name,shortDescription,thumbnailURL,length&callback=response";
+//
+////	req += "command=command=find_playlist_by_id&playlist_id=1045731469001&playlist_fields=videos,videoIds&token=" + encodeURIComponent(token);  // tokens need to be URL-encoded
+//
+//	req += "&fields=id,name,shortDescription,thumbnailURL,length&callback=response";
 
 
 
@@ -170,7 +243,11 @@ JSONscriptRequest.prototype.addScriptTag = function () {
 
 			var str = "";
 
-			str += '<div class="title" onClick="playTitleFromList(' + items[i].id + ')">';
+
+test = 1606789633;
+
+str += '<div class="title" onClick="playTitleFromList(' + items[i].id + ')">';
+//						str += '<div class="title" onClick="playTitleFromList('+test+')">';
 
 			str += '<div class="thumb"><img src="' + items[i].thumbnailURL + '"/></div>';
 
@@ -262,6 +339,18 @@ JSONscriptRequest.prototype.addScriptTag = function () {
 
 <body onload="initCall()">
 
+<?php   
+
+// <img src='".$video->thumbnailURL."' />
+  
+foreach( $videos  as  $key => $video ){
+	echo "<a  class='video_links '  style='clear:both'  onClick='playTitleFromList(".$video->id.")'>".$video->name.
+	"</a><br />";
+}
+
+?>
+
+
 <div id="bcPlayer">
 
 <!-- Start of Brightcove Player -->
@@ -301,8 +390,6 @@ the rest of the HTML is processed and the page load is complete, remove the line
 </div>
 
 <div id="titleList"> </div>
-
-
 
 </body>
 
