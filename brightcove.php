@@ -52,17 +52,21 @@
 	
 	$playlists = array(
 		0 => array(
-					'name' => '101 Extras',
+					'playlist_name' => '101 Extras',
 					'id' => '48759451001'
 					),
 		1 => array(
-					'name' => 'Comedy',
+					'playlist_name' => 'Comedy',
 					'id' => '58518976001'
 					),
 		2 => array(
-					'name' => 'Osmin Webisodes',
+					'playlist_name' => 'Osmin Webisodes',
 					'id' => '1067741571001'
-					)				
+					),
+		3 => array(
+					'playlist_name' => 'Extreme Extras',
+					'id' => '58491372001'
+					),					
 	);
 	
 	
@@ -76,7 +80,9 @@
 			
 			curl_setopt_array( $ch, $options );
 			$result = curl_exec($ch);
-			$videos[]= json_decode($result)->videos;		
+			$video['clips']  = json_decode($result)->videos;	
+			$video['playlist_name'] = $playlist['playlist_name'];
+			$videos[]= 	$video;
 	}
 
 
@@ -707,15 +713,31 @@ the rest of the HTML is processed and the page load is complete, remove the line
 
 
 <style>
-		<?php for( $i = 0; $i < count($videos) ; $i++){ ?>
-			
-.video_scroller.playlist<?php echo $i    ?> li{
+
+.video_scroller li{
 cursor:pointer;	
 margin-right:10px;
 border:1px solid gray;
+width:256px;
+height:80px;
 }
-			
-		<?php } ?>
+
+.video_scroller li .img{
+width:110px;
+height:80px;
+}
+
+.video_scroller li .img-div{
+width:120px;
+}
+
+.video_scroller li .video-name{
+padding-left:5px;
+width:80px;
+font-size:10px;
+font-weight:bold;
+}
+
 </style>
 
 <script type="text/javascript" language="Javascript">
@@ -739,19 +761,23 @@ border:1px solid gray;
 		<?php for( $i = 0; $i < count($videos) ; $i++){ ?>
 		
 				<div  class='  playlist<?php echo  $i   ?>_container' >
+					<?php echo  $videos[$i]['playlist_name']    ?>&nbsp;&nbsp;
 					<button class="prev<?php echo  $i   ?>"><<</button>
 					<button class="next<?php echo  $i   ?>">>></button>
 					        
 					<div class="video_scroller playlist<?php echo  $i   ?>">
 					    <ul>
-					    	<?php foreach($videos[$i] as  $video ){?>
+					    	<?php foreach($videos[$i]['clips'] as  $video ){?>
 									<li onClick='playTitleFromList(<?php echo $video->id    ?>)'>
-										<div>
-											<img   src="<?php echo $video->thumbnailURL    ?>" alt="<?php  echo $video->name   ?>" width="200" height="100" >
+										<div   style='clear:both'  >
+											<div   class='img-div '  style='float:left'>
+												<img   src="<?php echo $video->thumbnailURL    ?>" alt="<?php  echo $video->name   ?>" >
+											</div>
+											<div  class='video-name '   style='float:left'>
+												<?php  echo $video->name   ?>
+											</div>											
 										</div>
-										<div>
-											<?php  echo $video->name   ?>
-										</div>
+
 									</li>
 					    	<?php } ?>
 					    </ul>
