@@ -1,3 +1,21 @@
+<!--  
+easeNone	 Uniform speed between points.
+easeIn	 Begins slowly and accelerates towards end. (quadratic)
+easeOut	 Begins quickly and decelerates towards end. (quadratic)
+easeBoth	 Begins slowly and decelerates towards end. (quadratic)
+easeInStrong	Begins slowly and accelerates towards end. (quartic)
+easeOutStrong	Begins quickly and decelerates towards end. (quartic)
+easeBothStrong	Begins slowly and decelerates towards end. (quartic)
+elasticIn	 Snap in elastic effect.
+elasticOut	 Snap out elastic effect.
+elasticBoth	 Snap both elastic effect.
+backIn	 Backtracks slightly, then reverses direction and moves to end.
+backOut	 Overshoots end, then reverses and comes back to end.
+backBoth	 Backtracks slightly, then reverses direction, overshoots end, then reverses and comes back to end.
+bounceIn	 Bounce off of start.
+bounceOut	 Bounces off end.
+bounceBoth	 Bounces off start and end.
+-->
 <?php     
 	 function object_to_array($data){
 	  if(is_array($data) || is_object($data)){
@@ -66,7 +84,16 @@
 		3 => array(
 					'playlist_name' => 'Extreme Extras',
 					'id' => '58491372001'
-					),					
+					),	
+		5 => array(
+					'playlist_name' => 'Model Latina Miami',
+					'id' => '35098540001'
+					),
+		5 => array(
+					'playlist_name' => 'Mission Menu',
+					'id' => '1163757251001'
+					),							
+									
 	);
 	
 	
@@ -748,6 +775,8 @@ font-weight:bold;
 		    $(".playlist<?php echo $i    ?>" ).jCarouselLite({
 					        btnNext: ".next<?php echo $i    ?>",
 					        btnPrev: ".prev<?php echo $i    ?>",
+							    easing: "backout",
+							    speed: 1000,
    								circular: false,
    								mouseWheel: true,
     							scroll: 3
