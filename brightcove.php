@@ -52,8 +52,8 @@
       return eval("return $json;"); 
   } 
 
-
-	$json_url = 'http://api.brightcove.com/services/library?command=find_playlist_by_id&media_delivery=http&token=mfu5Nh2a27pJx7LrgZbLx363WrLDHUmtJ5BXY0GkYK4.&playlist_id=1045731469001';
+	$playlist_id ='48759451001';
+	$json_url = 'http://api.brightcove.com/services/library?command=find_playlist_by_id&media_delivery=http&token=mfu5Nh2a27pJx7LrgZbLx363WrLDHUmtJ5BXY0GkYK4.&playlist_id='.$playlist_id;
 	$ch = curl_init( $json_url );
 		$options = array(
 		CURLOPT_RETURNTRANSFER => true,
