@@ -48,18 +48,51 @@
       $json = str_replace(array("&#92;", "&#34;", "$"), array("\\\\", "\\\"", "\\$"), implode("", $parts)); 
       return eval("return $json;"); 
   } 
-
-	$playlist_id ='48759451001';
-	$json_url = 'http://api.brightcove.com/services/library?command=find_playlist_by_id&media_delivery=http&token=mfu5Nh2a27pJx7LrgZbLx363WrLDHUmtJ5BXY0GkYK4.&playlist_id='.$playlist_id;
-	$ch = curl_init( $json_url );
-		$options = array(
-		CURLOPT_RETURNTRANSFER => true,
-		CURLOPT_HTTPHEADER => array('Content-type: application/json')
+	
+	
+	$playlists = array(
+		0 => array(
+					'name' => '101 Extras',
+					'id' => '48759451001'
+					),
+		1 => array(
+					'name' => 'Comedy',
+					'id' => '58518976001'
+					),
+		2 => array(
+					'name' => 'Osmin Webisodes',
+					'id' => '1067741571001'
+					)				
 	);
 	
-	curl_setopt_array( $ch, $options );
-	$result = curl_exec($ch);
-	$videos = json_decode($result)->videos;
+	
+	foreach( $playlists  as  $playlist){
+			$json_url = 'http://api.brightcove.com/services/library?command=find_playlist_by_id&media_delivery=http&token=mfu5Nh2a27pJx7LrgZbLx363WrLDHUmtJ5BXY0GkYK4.&playlist_id='.$playlist['id'];
+			$ch = curl_init( $json_url );
+				$options = array(
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_HTTPHEADER => array('Content-type: application/json')
+			);
+			
+			curl_setopt_array( $ch, $options );
+			$result = curl_exec($ch);
+			$videos[]= json_decode($result)->videos;		
+	}
+
+
+	
+	
+//	$playlist_id ='58518976001';
+//	$json_url = 'http://api.brightcove.com/services/library?command=find_playlist_by_id&media_delivery=http&token=mfu5Nh2a27pJx7LrgZbLx363WrLDHUmtJ5BXY0GkYK4.&playlist_id='.$playlist_id;
+//	$ch = curl_init( $json_url );
+//		$options = array(
+//		CURLOPT_RETURNTRANSFER => true,
+//		CURLOPT_HTTPHEADER => array('Content-type: application/json')
+//	);
+//	
+//	curl_setopt_array( $ch, $options );
+//	$result = curl_exec($ch);
+//	$videos2 = json_decode($result)->videos;
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -69,13 +102,7 @@
 <head>
 
 
-<style>
-.video_scroller li{
-cursor:pointer;	
-margin-right:10px;
-border:1px solid gray;
-}
-</style>
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
 <!--  jCarouselLite -->
 <script type="text/javascript" language="Javascript">
@@ -638,55 +665,11 @@ function handler(event) {
 		video.loadVideo(evt.media.id);
 	}
 </script>
-<script type="text/javascript" language="Javascript">
-	$(document).ready(function() { 
-		    $(".video_scroller").jCarouselLite({
-					        btnNext: ".next",
-					        btnPrev: ".prev",
-   								circular: false,
-   								mouseWheel: true,
-    							scroll: 3
-					    });
-	});
-</script>
+
 </head>
 
 <body onload="initCall()">
 
-<button class="prev"><<</button>
-<button class="next">>></button>
-        
-<div class="video_scroller">
-    <ul>
-    	<?php foreach($videos  as  $key => $video ){?>
-				<li onClick='playTitleFromList(<?php echo $video->id    ?>)'>
-					<div>
-						<img   src="<?php echo $video->thumbnailURL    ?>" alt="<?php  echo $video->name   ?>" width="200" height="100" >
-					</div>
-					<div>
-						<?php  echo $video->name   ?>
-					</div>
-				</li>
-    	<?php } ?>
-    </ul>
-</div>
-
-<?php   
-
-
-
-
-// <img src='".$video->thumbnailURL."' />
-  
-//foreach( $videos  as  $key => $video ){
-//	echo "<a  class='video_links '  style='clear:both'  onClick='playTitleFromList(".$video->id.")'>".$video->name.
-//	"</a><br />";
-//}
-
-?>
-
-
-<div id="bcPlayer">
 
 <!-- Start of Brightcove Player -->
 
@@ -722,7 +705,62 @@ the rest of the HTML is processed and the page load is complete, remove the line
 
 <!-- End of Brightcove Player -->
 
-</div>
+
+<style>
+		<?php for( $i = 0; $i < count($videos) ; $i++){ ?>
+			
+.video_scroller.playlist<?php echo $i    ?> li{
+cursor:pointer;	
+margin-right:10px;
+border:1px solid gray;
+}
+			
+		<?php } ?>
+</style>
+
+<script type="text/javascript" language="Javascript">
+	$(document).ready(function() { 
+		
+		<?php for( $i = 0; $i < count($videos) ; $i++){ ?>
+		
+		    $(".playlist<?php echo $i    ?>" ).jCarouselLite({
+					        btnNext: ".next<?php echo $i    ?>",
+					        btnPrev: ".prev<?php echo $i    ?>",
+   								circular: false,
+   								mouseWheel: true,
+    							scroll: 3
+					    });
+		
+		<?php } ?>
+					    
+				    
+	});
+</script>
+		<?php for( $i = 0; $i < count($videos) ; $i++){ ?>
+		
+				<div  class='  playlist<?php echo  $i   ?>_container' >
+					<button class="prev<?php echo  $i   ?>"><<</button>
+					<button class="next<?php echo  $i   ?>">>></button>
+					        
+					<div class="video_scroller playlist<?php echo  $i   ?>">
+					    <ul>
+					    	<?php foreach($videos[$i] as  $video ){?>
+									<li onClick='playTitleFromList(<?php echo $video->id    ?>)'>
+										<div>
+											<img   src="<?php echo $video->thumbnailURL    ?>" alt="<?php  echo $video->name   ?>" width="200" height="100" >
+										</div>
+										<div>
+											<?php  echo $video->name   ?>
+										</div>
+									</li>
+					    	<?php } ?>
+					    </ul>
+					</div>	
+				</div>
+
+		<?php } ?>
+
+
 
 </body>
 
