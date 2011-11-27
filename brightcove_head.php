@@ -82,6 +82,9 @@ background-repeat: no-repeat;
 height:33px;
 width: 150px;
 }
+.red-area-container{
+margin-top:10px;	
+}
 .red-area-container .red-column{
     float: left;
     width: 324px;
@@ -102,6 +105,7 @@ width: 150px;
 }
 
 .red-area-container .red-column li {
+	padding-left:11px;
 height: 96px;
 clear:both;	
 cursor:pointer;
@@ -114,6 +118,7 @@ float:left;
 
 .red-area-container .red-column .img-div img{
 width:150px;
+height:85px;
 }
 
 .red-area-container .red-column .text-div{
@@ -125,7 +130,7 @@ float:left;
 
 .red-area-container .red-column  .text-div .video-name{
 padding-left:11px;
-height:57px;
+height:58px;
 }
 
 .red-area-container .red-column  .text-div .watch-now{
