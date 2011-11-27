@@ -50,6 +50,8 @@
   } 
 	
 	
+	$first_set_of_playlist_scroll_left_right = 5;
+	
 	$playlists = array(
 		0 => array(
 					'playlist_name' => '101 Extras',
@@ -68,13 +70,19 @@
 					'id' => '58491372001'
 					),	
 		5 => array(
-					'playlist_name' => 'Model Latina Miami',
-					'id' => '35098540001'
+					'playlist_name' => 'Model Latina Las Vegas Profiles',
+					'id' => '1067741562001'
 					),
-		5 => array(
+		6 => array(
 					'playlist_name' => 'Mission Menu',
 					'id' => '1163757251001'
-					),							
+					),
+					
+		7 => array(
+					'playlist_name' => 'Exclusives',
+					'id' => '58551281001'
+					),					
+												
 									
 	);
 	
