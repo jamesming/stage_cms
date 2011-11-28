@@ -23,20 +23,29 @@ include('brightcove_head.php');
 	
 	
 <style>
+#black-tab-box{
+	background-image: url("assets/images/Episodes_tab.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	height:252px;
+	width: 319px;	
+}
 .playlist-title{
-	float:left;
-	border:1px solid gray;
-	width:100px;
-	height:20px;
-	margin-right:10px;
-	cursor:pointer;
+    border: 0px solid white;
+    color: white;
+    cursor: pointer;
+    float: left;
+    height: 31px;
+    margin-right: 0px;
+    padding-top: 8px;
+    width: 143px;
+    padding-left: 15px;
 }
 .episodes-videos{
-	border:1px solid gray; 
+	border:0px solid gray; 
 	width:320px; 
-	height:200px; 
+	height:213px; 
 	overflow-y:scroll;
-	background:black;
 	clear:both;
 }
 .clips-videos{
@@ -51,15 +60,15 @@ include('brightcove_head.php');
 }
 .episodes-videos .img-div{
 	float:left;	
-	width:150px;
+	width:152px;
 }
 		.episodes-videos .img-div img{
-		width:150px;
+		width:152px;
 		height:85px;	
 		}
 .episodes-videos .text-div{
 	float: left;
-	width: 120px;
+	width: 119px;
 	padding-top:4px;
 }	
 
@@ -85,16 +94,16 @@ include('brightcove_head.php');
 		
 		$('#clips-title').click(function(event) {
 			$('.episodes-videos').html(clips_global);
+			$('#black-tab-box').css({'background-image':'url("assets/images/Clips_tab.png")'});
 		});	
 		$('#episodes-title').click(function(event) {
 			$('.episodes-videos').html(episodes_global);
+			$('#black-tab-box').css({'background-image':'url("assets/images/Episodes_tab.png")'});
 		});	
 		
 	});
 </script>
-	
-		<?php for( $i = 0; $i <= 1; $i++){ ?>	
-		
+<div  id='black-tab-box'>
 			<div  class=' playlist_name' >
 				<div   id='episodes-title'  class='playlist-title '  >
 					<?php echo  $videos[0]['playlist_name']    ?>
@@ -104,9 +113,10 @@ include('brightcove_head.php');
 				</div>
 				
 			</div>
+
 			<div   class='episodes-videos'  >
 					    <ul>
-					    	<?php foreach($videos[$i]['clips'] as  $video ){?>
+					    	<?php foreach($videos[0]['clips'] as  $video ){?>
 					    	
 									<li onClick='playTitleFromList(<?php echo $video->id    ?>)'>
 
@@ -125,14 +135,11 @@ include('brightcove_head.php');
 									
 					    	<?php } ?>
 					    </ul>
+			</div>		
 
-		<?php } ?>
-		
-		
-		<?php for( $i = 1; $i <= 2; $i++){ ?>	
 			<div   class='clips-videos'  >
 			    <ul>
-		    	<?php foreach($videos[$i]['clips'] as  $video ){?>
+		    	<?php foreach($videos[1]['clips'] as  $video ){?>
 		    	
 						<li onClick='playTitleFromList(<?php echo $video->id    ?>)'>
 
@@ -151,10 +158,10 @@ include('brightcove_head.php');
 						
 		    	<?php } ?>
 					</ul>
-			</div>					
-		<?php } ?>
+			</div>				
+</div>
 	
-	
+
 <?php if( 1==2){?>
 
 		<?php for( $i = 0; $i < $first_set_of_playlist_scroll_left_right -1; $i++){ ?>
