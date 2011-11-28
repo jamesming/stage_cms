@@ -30,7 +30,7 @@ include('brightcove_head.php');
 	height:252px;
 	width: 319px;	
 }
-.playlist-title{
+#black-tab-box .playlist-title{
     border: 0px solid white;
     color: white;
     cursor: pointer;
@@ -41,42 +41,42 @@ include('brightcove_head.php');
     width: 143px;
     padding-left: 15px;
 }
-.episodes-videos{
+#black-tab-box .episodes-videos{
 	border:0px solid gray; 
 	width:320px; 
 	height:213px; 
 	overflow-y:scroll;
 	clear:both;
 }
-.clips-videos{
+#black-tab-box .clips-videos{
 	display:none;
 }
-.episodes-videos li{
+#black-tab-box .episodes-videos li{
     border: 0px solid white;
     clear: both;
     color: white;
     height: 78px;
     margin-bottom: 12px;    
 }
-.episodes-videos .img-div{
+#black-tab-box .episodes-videos .img-div{
 	float:left;	
 	width:152px;
 }
-		.episodes-videos .img-div img{
+		#black-tab-box .episodes-videos .img-div img{
 		width:152px;
 		height:85px;	
 		}
-.episodes-videos .text-div{
+#black-tab-box .episodes-videos .text-div{
 	float: left;
 	width: 119px;
 	padding-top:4px;
 }	
 
-.episodes-videos .text-div .video-name{
+#black-tab-box .episodes-videos .text-div .video-name{
 	padding-left:11px;
 	height:54px;
 }
-.episodes-videos .text-div .watch-now{
+#black-tab-box .episodes-videos .text-div .watch-now{
 	background-image: url("assets/images/watch_now.png");
 	background-position: center center;
 	background-repeat: no-repeat;
