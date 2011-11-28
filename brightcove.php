@@ -18,7 +18,7 @@ include('brightcove_head.php');
 <div  class=' container' >
 	
 <?php     
-//	include('brightcove_player.php');
+	include('brightcove_player.php');
 ?>
 	
 	
@@ -162,7 +162,7 @@ include('brightcove_head.php');
 </div>
 	
 
-<?php if( 1==2){?>
+<?php if( 1==1){?>
 
 		<?php for( $i = 0; $i < $first_set_of_playlist_scroll_left_right -1; $i++){ ?>
 		
@@ -207,7 +207,7 @@ include('brightcove_head.php');
 <?php } ?>
 
 
-<?php if( 1== 2){?>
+<?php if( 1==1){?>
 
 		<div  class='red-area-container ' >
 			
