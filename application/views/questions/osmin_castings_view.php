@@ -97,7 +97,7 @@ cursor:pointer;
 			<div  class='  section-header top' >
 				ENTER CODES WORDS:<br /><span    class='parenthesis ' ></span>
 			</div>
-		<div>
+		<div   style='display:none'  >
 			<table>
 			<tr>
 				<td>Code 1
@@ -230,7 +230,7 @@ cursor:pointer;
 								</td>
 								<td>
 								</td>		
-								<td>&nbsp;
+								<td>and/or
 								</td>								
 							</tr>
 							<tr>
@@ -241,7 +241,7 @@ cursor:pointer;
 									<input name="mobile_tel"  value="">
 								</td>
 								<td>
-									Link for video online:&nbsp;
+									Link to Video Online:&nbsp;
 								</td>		
 								<td><input name="video_link" id="video_link" type="" value="http://">
 								</td>								
