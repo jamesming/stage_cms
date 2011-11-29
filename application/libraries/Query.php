@@ -427,7 +427,8 @@ function query(){
 
 			$image_types_array = array(
 								'feature_nu_spotlight_items_image_id' => 4,
-								'thumb_nu_spotlight_items_image_id' => 5
+								'thumb_nu_spotlight_items_image_id' => 5,
+								'nuspotlight_rect_spotlight_items_image_id' => 42
 							);
 				
 			$nu_spotlight_items_raw = 	$this->CI->tools->object_to_array($nu_spotlight_items_raw);

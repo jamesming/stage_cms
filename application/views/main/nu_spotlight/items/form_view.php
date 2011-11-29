@@ -40,13 +40,23 @@ form#image_nu_spotlight_item_form div#image_nu_spotlight_item_feature{
 	height:222px;
 	margin-left: 72px;
 }
+
+form#image_nu_spotlight_item_form div#nuspotlight_rect_spotlight_items_image_id{
+	background-image: url(<?php echo base_url();    ?>uploads/nu_spotlight_items_images/<?php  	echo $data['nu_spotlight_items'][0]['nuspotlight_rect_spotlight_items_image_id'] ?>/image.png?random=<?php echo rand(5,12334)    ?>);
+	background-repeat: no-repeat;
+	border:1px dotted gray;
+	width:330px;
+	height:220px;
+	margin-left: 12px;
+}
+
 form#image_nu_spotlight_item_form div#image_nu_spotlight_item_thumb{
 	background-image: url(<?php echo base_url();    ?>uploads/nu_spotlight_items_images/<?php  	echo $data['nu_spotlight_items'][0]['thumb_nu_spotlight_items_image_id'] ?>/image.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
 	width:69px;
 	height:37px;
-	margin-left: 82px;
+	margin-left: 12px;
 }
 form#image_nu_spotlight_item_form #textarea_div{
 width:100%;
@@ -121,7 +131,8 @@ display:none;
 					<div  class=' image_assets' >
 							<div image_type='feature' image_type_id='4' class='float_left image_div'  id='image_nu_spotlight_item_feature' nu_spotlight_items_image_id='<?php  	echo $data['nu_spotlight_items'][0]['feature_nu_spotlight_items_image_id'] ?>'>
 							</div>
-							
+							<div image_type='nuspotlight_rect' image_type_id='42' class='float_left image_div'  id='nuspotlight_rect_spotlight_items_image_id' nu_spotlight_items_image_id='<?php  	echo $data['nu_spotlight_items'][0]['nuspotlight_rect_spotlight_items_image_id'] ?>'>
+							</div>
 							<div  image_type='thumb' image_type_id='5' class='float_left image_div'   id='image_nu_spotlight_item_thumb'  nu_spotlight_items_image_id='<?php  	echo $data['nu_spotlight_items'][0]['thumb_nu_spotlight_items_image_id'] ?>'>
 								
 							</div>						

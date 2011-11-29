@@ -1,4 +1,9 @@
 		<style>
+			
+		iframe#iframe_src{
+		width:850px;
+		height:800px;	
+		}
 		img#addNuSpotlightItem{
 			width:30px;	
 			margin:23px 23px 10px 23px;
