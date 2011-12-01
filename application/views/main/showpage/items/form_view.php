@@ -222,6 +222,41 @@ display:none;
 				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo $data['showpage_items'][0]['name']    ?>">
 				</td>
 			</tr>
+			
+			<tr>
+				<td  class='main_table ' > First Video
+				</td>
+				<td  class='main_table '><input name="first_video" id="" type="text" value="<?php echo ( isset( $data['showpage_items'][0]['first_video'] ) ? $data['showpage_items'][0]['first_video'] :'' )   ?>">
+				</td>
+			</tr>
+			<tr>
+				<td  class='main_table ' > Full Episode Playlist
+				</td>
+				<td  class='main_table '><input name="full_episode_playlist" id="" type="text" value="<?php echo ( isset( $data['showpage_items'][0]['full_episode_playlist'] ) ? $data['showpage_items'][0]['full_episode_playlist'] :'' )   ?>">
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td  class='main_table ' > Next On Playlist
+				</td>
+				<td  class='main_table '><input name="next_on_playlist" id="" type="text" value="<?php echo ( isset( $data['showpage_items'][0]['next_on_playlist'] ) ? $data['showpage_items'][0]['next_on_playlist'] :'' )   ?>">
+				</td>
+			</tr>				
+			<tr>
+				<td  class='main_table ' > Sneak Peak
+				</td>
+				<td  class='main_table '><input name="sneak_peak_playlist" id="" type="text" value="<?php echo ( isset( $data['showpage_items'][0]['sneak_peak_playlist'] ) ? $data['showpage_items'][0]['sneak_peak_playlist'] :'' )   ?>">
+				</td>
+			</tr>			
+			
+			<tr>
+				<td  class='main_table ' > Video Extras
+				</td>
+				<td  class='main_table '><input name="video_extras_playlist" id="" type="text" value="<?php echo ( isset( $data['showpage_items'][0]['video_extras_playlist'] ) ? $data['showpage_items'][0]['video_extras_playlist'] :'' )   ?>">
+				</td>
+			</tr>			
+			
 			<tr>
 				<td  class='main_table '> Title
 				</td>
