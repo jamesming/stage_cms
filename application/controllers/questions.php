@@ -324,85 +324,120 @@ Thank you! We appreciate your feedback on Curvy Girls as we strive to bring nuvo
 		echo '<pre>';print_r(  $reports_raw  );echo '</pre>';  exit;
 		
 	}
+	
+	
+	
+	
+	function model_latinas_castings(){
+		
+		$this->load->view('questions/model_latinas_castings_view', 
+			array('data' => array())
+		); 
+		
+	}
+	
+	
+	
+	function model_latinas_thank_you(){	
+		$this->load->view('questions/model_latinas_castings_thank_you_view', 
+			array('data' => array())
+		);   
+	}	
+	
+	function insert_model_latinas_castings(){
+	
+		$table = 'model_latinas_castings';
+		
+		
+		foreach( $this->input->post()  as  $key => $value){
+				$fields_array = array(
+							$key => array('type' => 'varchar(255)')                                          
+            	); 
+
+				$this->my_database_model->add_column_to_table_if_exist(
+					$table, 
+					$fields_array
+				);    					
+		};
+		
+		
+
+		$last_insert_id = $this->my_database_model->insert_table(
+										$table, 
+										$insert_what = $this->input->post()
+									); 
+		
+		$db_response = $this->my_database_model->update_table_where(
+					$table, 
+					$where_array = array('id'=>$last_insert_id),
+					$set_what_array = $this->input->post()
+					);
+					
+					
+		$path_array = array(
+			'folder'=> 'model_latinas_castings', 
+			'model_latinas_casting_id'=> $last_insert_id
+		);
+		
+		$upload_path = $this->tools->set_directory_for_upload( $path_array );
+		
+		$config['upload_path'] = './' . $upload_path;
+//		$config['allowed_types'] = 'bmp|jpeg|gif|jpg|png|mp3|wmv|avi|flv|mpeg|mp4';
+		$config['allowed_types'] = '*';
+		$config['overwrite'] = 'TRUE';
+		
+		$this->load->library('upload', $config);
+		
+		
+		
+		if ( ! $this->upload->do_upload("Filedata")){
+					 echo $this->upload->display_errors(); 
+		}				
+		
+			$this->load->view('questions/model_latinas_castings_thank_you_view', 
+			array('data' => array())
+			); 
+
+		
+	}
+	
+	function model_latinas_casting_candidate(){
+		
+		$reports_raw = $this->my_database_model->select_from_table( 
+			$table = 'model_latinas_castings', 
+			$select_what = '*', 
+			$where_array = array(), 
+			$use_order = TRUE, 
+			$order_field = 'created', 
+			$order_direction = 'desc',
+			$limit = -1
+			);	
+			
+			
+//		foreach( $reports_raw  as  $key => $value){
+//			
+//			$reports[$key] = $value;
+//			
+//			if( $key == id){
+//				
+//				$reports['file_location'] = base_url().'uploads/'';
+//					
+//			};
+//			
+//		}
+			
+		echo '<pre>';print_r(  $reports_raw  );echo '</pre>';  exit;
+		
+	}
+	
+	
 		function t(){
 
-			$table = 'osmin_castings';
+			$table = 'model_latinas_castings';
 			
 			$this->my_database_model->	create_generic_table($table );
 			
-			
-//			
-//			$fields_array = array(
-//			                      'name' => array(
-//			                                               'type' => 'varchar(255)')
-//			              ); 
-//			              
-//			$this->my_database_model->add_column_to_table_if_exist(
-//				$table, 
-//				$fields_array
-//			);  			
-//			
-//			$table = 'polls_questions';
-//			
-//			$this->my_database_model->	create_generic_table($table );
-//			
-//			
-//			
-//			$fields_array = array(
-//			                      'question' => array(
-//			                                               'type' => 'blob'),
-//			                      'polls_name_id' => array(
-//			                                               'type' => 'int(11)')
-//			
-//			              ); 
-//			              
-//			$this->my_database_model->add_column_to_table_if_exist(
-//				$table, 
-//				$fields_array
-//			); 
-//			
-//			
-//			
-//			$table = 'polls_responders';
-//			
-//			$this->my_database_model->	create_generic_table($table );
-//			
-//			
-//			
-//			$fields_array = array(
-//			                      'email' => array(
-//			                                               'type' => 'varchar(255)')
-//			              ); 
-//			              
-//			$this->my_database_model->add_column_to_table_if_exist(
-//				$table, 
-//				$fields_array
-//			);			
-//			             
-//
-//
-//			$table = 'polls_answers';
-//			
-//			$this->my_database_model->	create_generic_table($table );
-//			
-//			
-//			
-//			$fields_array = array(
-//			                      'polls_question_id' => array(
-//			                                               'type' => 'int(11)'),
-//			                      'polls_responder_id' => array(
-//			                                               'type' => 'int(11)'),
-//			                      'answer' => array(
-//			                                               'type' => 'blob')
-//			
-//			              ); 
-//			              
-//			$this->my_database_model->add_column_to_table_if_exist(
-//				$table, 
-//				$fields_array
-//			);                       
-//			
-			
+
 		}
 	
 	
