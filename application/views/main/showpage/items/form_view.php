@@ -244,14 +244,14 @@ display:none;
 				</td>
 			</tr>				
 			<tr>
-				<td  class='main_table ' > Sneak Peak
+				<td  class='main_table ' > Sneak Peak Playlist
 				</td>
 				<td  class='main_table '><input name="sneak_peak_playlist" id="" type="text" value="<?php echo ( isset( $data['showpage_items'][0]['sneak_peak_playlist'] ) ? $data['showpage_items'][0]['sneak_peak_playlist'] :'' )   ?>">
 				</td>
 			</tr>			
 			
 			<tr>
-				<td  class='main_table ' > Video Extras
+				<td  class='main_table ' > Video Extras Playlist
 				</td>
 				<td  class='main_table '><input name="video_extras_playlist" id="" type="text" value="<?php echo ( isset( $data['showpage_items'][0]['video_extras_playlist'] ) ? $data['showpage_items'][0]['video_extras_playlist'] :'' )   ?>">
 				</td>
