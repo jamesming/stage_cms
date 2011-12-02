@@ -392,21 +392,7 @@ display:none;
  							<div   id='iphone_directTo_div' >	
  								
  								<table id='iphone_directTo_table'>
- 									<tr>
- 										<td>
- 											<input <?php   echo ($data['showpage_items'][0]['isHot'] == 1? " checked ": "" )  ?> name="isHot" id="isHot" type="checkbox" value="1">	
- 										</td>
- 										<td>Hot 
- 										</td>
- 										<td>
- 											
-
- 											&nbsp;
- 											
- 											
- 											
- 										</td>
- 									</tr> 									
+									
  									<tr>
  										<td><input name="iphone_directTo" type="radio" value="1"> </td>
  										<td>Internal 
