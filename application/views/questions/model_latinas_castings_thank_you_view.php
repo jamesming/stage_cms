@@ -27,7 +27,7 @@ background:white;
 
 <script type="text/javascript" language="Javascript">
 $(document).ready(function() {
-
+//
 		window.parent.$('#model_latinas_iframe').css({height:'130px'});
 		window.parent.$('#submitnow').css({display:'none'});
 	
