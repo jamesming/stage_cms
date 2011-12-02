@@ -18,7 +18,7 @@ background:white;
 <body>
 	<div style='width:620px;font-size:14px;color:blue;font-weight:bold' >
 		<br /><br /><br />
-		Thanks for submitting your form for the <b>Ultimate Model Latinas</b> casting. You're a brave soul! Tune in to the Season 2 premiere of <i>Operation: Osmin</i> in January to see if you <u>ARE</u> Osmin's next recruit.
+		Thanks for submitting your form for the fab fifth season of nuvoTV’s Model Latina. If you are one of the lucky Latinas chosen for the show, opportunity will knock – or email or phone – loud and clear. So now all you have to do is kick back, cross those well-manicured fingers and hope for the best. Good luck!
 
 	</div>
 

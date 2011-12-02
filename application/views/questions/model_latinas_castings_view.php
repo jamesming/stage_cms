@@ -72,7 +72,7 @@ cursor:pointer;
 			<a target='_blank' href='http://www.mynuvotv.com/assets/pdf/OPERATION_OSMIN_OPEN_CASTING_CALL_GUIDELINES.pdf	'>
 					<img src='http://www.mynuvotv.com/assets/images/pdf.gif'/></a>
 		</td>
-		<td><a  target='_blank' href='http://www.mynuvotv.com/assets/pdf/OPERATION_OSMIN_OPEN_CASTING_CALL_GUIDELINES.pdf	'><b>See Open Casting Guidelines for full details.</b></a>
+		<td><a  target='_blank' href='http://www.mynuvotv.com/assets/pdf/OPERATION_OSMIN_OPEN_CASTING_CALL_GUIDELINES.pdf	'><b>See Casting Guidelines for full details.</b></a>
 	
 		</td>
 	</tr>
@@ -94,69 +94,11 @@ cursor:pointer;
 				method='post' 
 				enctype='multipart/form-data' >
 				
-			<div  class='  section-header top' >
-				ENTER CODES WORDS:<br /><span    class='parenthesis ' ></span>
-			</div>
-		<div   style='display:none'  >
-			<table>
-			<tr>
-				<td>Code 1
-				</td>
-				<td><input  class='codes_inputs '  name="code1" type="" value="">
-				</td>
-				<td>Code 6
-				</td>
-				<td><input  class='codes_inputs '  name="code6" type="" value="">
-				</td>
-			</tr>
-			<tr>
-				<td>Code 2
-				</td>
-				<td><input  class='codes_inputs '  name="code2" type="" value="">
-				</td>
-				<td>Code 7
-				</td>
-				<td><input  class='codes_inputs '  name="code7" type="" value="">
-				</td>
-			</tr>	
-			<tr>
-				<td>Code 3
-				</td>
-				<td><input  class='codes_inputs '  name="code3" type="" value="">
-				</td>
-				<td>Code 8
-				</td>
-				<td><input  class='codes_inputs '  name="code8" type="" value="">
-				</td>
-			</tr>
-			<tr>
-				<td>Code 4
-				</td>
-				<td><input  class='codes_inputs '  name="code4" type="" value="">
-				</td>
-				<td>Code 9
-				</td>
-				<td><input  class='codes_inputs '  name="code9" type="" value="">
-				</td>
-			</tr>	
-			<tr>
-				<td>Code 5
-				</td>
-				<td><input  class='codes_inputs '  name="code5" type="" value="">
-				</td>
-				<td>Code 10
-				</td>
-				<td><input  class='codes_inputs '  name="code10" type="" value="">
-				</td>
-			</tr>				
-			
-		</table>
-		<br /><br />
-		</div>
+
 				
 				
 			<div  class='  section-header top' >
-				SUPER-FAN CHALLENGE CANDIDATE PRELIMINARY QUESTIONNAIRE<br /><span    class='parenthesis ' >(Please complete for consideration.  Required fields denoted by *)</span>
+				MODEL LATINA 5 CASTING FORM<br /><span    class='parenthesis ' ><small>(Please complete for consideration.  Required fields denoted by *)</small></span>
 			</div>
 			<div   class='block' >
 				
@@ -168,13 +110,12 @@ cursor:pointer;
 					</td>
 					<td>Last Name *
 					</td>
-					<td><input  class='required ' name="last_name"  value="">
+					<td ><input  class='required ' name="last_name"  value="">
 					</td>
-					<td>Gender
+					<td>&nbsp;
 					</td>
 					<td>
-						<input name="gender" type='radio' value="M">M
-						<input name="gender" type='radio' value="F">F
+&nbsp;
 					</td>
 				</tr>
 				<tr>
@@ -203,8 +144,7 @@ cursor:pointer;
 			
 			</div>
 			<div  >
-				<div  class='   section-header' >Contact Information:
-				</div>
+
 				<div>
 					<div   >
 						<table  id='contact_info_type'>
@@ -265,119 +205,17 @@ cursor:pointer;
 				</div>
 
 			</div>
-			<div  class='clearfix '   ><br />
+			<div  class='clearfix '   >
+				
+				
+
+				
 			</div>
 			<div  class='block' >
-				Are you a lawful U.S. resident? 			
-						<input name="citizen" type='radio' value="Y">Yes
-						<input name="citizen" type='radio' value="N">No
-			</div>
-			<div class='block'>
-				<div>What are your food habits?
-				</div>
-				<div><textarea name='food_habits'></textarea>
-				</div>
-				
-			</div>
-			<div class='block'>
-				<div>What is your exercise routine?
-				</div>
-				<div><textarea name='excercise_routine'></textarea>	
-				</div>
-				
-			</div>
-			<div class='block'>
-				<div>Do you consider yourself athletic?
-				</div>
-				<div><textarea name='consider_athletic'></textarea>	
-				</div>
-				
-			</div>
-			<div class='block'>
-				What is your current weight?
-				<div><input  class='shorter ' name="weight"  value="">
-				</div>
-				
-			</div>
-			<div class=' section-header'>
-				Background Information:
-			</div>
-			<div class='block'>
-				Have you ever been arrested or had a restraining order placed against you?
-				<div><input name="restraining_order" type='radio' value="Y">Yes
-						<input name="restraining_order" type='radio' value="N">No
-				</div>
-						
-			</div>
-			<div class='block'>
-				Have you ever been treated for any serious physical or mental illness or had any serious injuries?<br />
-						<input name="illness_or_injuries" type='radio' value="Y">Yes
-						<input name="illness_or_injuries" type='radio' value="N">No
-			</div>
-			<div class='block'>
-				<div>If so, please describe:
-				</div>
-				<div><textarea name='describe_illness'></textarea>	
-				</div>
-				
-			</div>
-			<div class='block'>
-				Are you on any prescription medication that you take on a regular basis?
-				<div><input name="prescription_medication" type='radio' value="Y">Yes
-						<input name="prescription_medication" type='radio' value="N">No
-				</div>
-						
-			</div>
-			<div class='block'>
-				<div>If yes, please provide name(s) and for how long:
-				</div>
-				<div><textarea name='prescription_medication_describe'></textarea>
-				</div>
-					
-			</div>
-			<div class='block'>
-				Do you have any allergies or medical conditions:
-						<input name="allergies_or_medical_condition" type='radio' value="Y">Yes
-						<input name="allergies_or_medical_condition" type='radio' value="N">No
-			</div>
-			<div class='block'>
-				<div>If so, please describe:
-				</div>
-				<div><textarea name='allergies_or_medical_condition_describe'></textarea>	
-				</div>
-				
-			</div>
-			<div class='block'>
-				Do you have any physical conditions, phobias or special considerations that should be mentioned here?<br />
-						<input name="special_considerations" type='radio' value="Y">Yes
-						<input name="special_considerations" type='radio' value="N">No
-			</div>
-			<div class='block'>
-				<div>If so, please describe:
-				</div>
-				<div><textarea name='special_considerations_describe'></textarea>	
-				</div>
-				
-			</div>
-			<div class='block'>
-				Have you ever been charged with or convicted of a violent offense or felony?
-				<div><input name="violent_offenses" type='radio' value="Y">Yes
-						<input name="violent_offenses" type='radio' value="N">No
-				</div>
-						
-			</div>
-			<div class='block'>
-				<div>If so, please describe:
-				</div>
-				<div><textarea id='violent_offenses_describe' name='violent_offenses_describe'></textarea>
-				</div>
-					
-			</div>
-			
-			<div  class='block' >
-				<input   style='visibility:visible'  onclick=submitnow() id="submit" type="button" value="submit">
+				<input   style='visibility:hidden'  onclick=submitnow() id="submit" type="button" value="submit">
 				<input   style='visibility:hidden'  id="really_submit" type="submit" value="submit">
 			</div>
+		
 			</form>			
 		</div>
 
