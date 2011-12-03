@@ -72,7 +72,7 @@ cursor:pointer;
 			<a target='_blank' href='http://www.mynuvotv.com/assets/pdf/ml_casting.pdf	'>
 					<img src='http://www.mynuvotv.com/assets/images/pdf.gif'/></a>
 		</td>
-		<td><a  target='_blank' href='http://www.mynuvotv.com/assets/pdf/OPERATION_OSMIN_OPEN_CASTING_CALL_GUIDELINES.pdf	'><b>See Casting Guidelines for full details.</b></a>
+		<td><a  target='_blank' href='http://www.mynuvotv.com/assets/pdf/MODEL_LATINA_5_CASTING_GUIDELINES.pdf	'><b>See Casting Guidelines for full details.</b></a>
 	
 		</td>
 	</tr>
