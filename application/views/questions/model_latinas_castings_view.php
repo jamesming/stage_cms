@@ -69,7 +69,7 @@ cursor:pointer;
 <table  class='pdf '  >
 	<tr>
 		<td align='right'>
-			<a target='_blank' href='http://www.mynuvotv.com/assets/pdf/ml_casting.pdf	'>
+			<a target='_blank' href='http://www.mynuvotv.com/assets/pdf/MODEL_LATINA_5_CASTING_GUIDELINES.pdf'>
 					<img src='http://www.mynuvotv.com/assets/images/pdf.gif'/></a>
 		</td>
 		<td><a  target='_blank' href='http://www.mynuvotv.com/assets/pdf/MODEL_LATINA_5_CASTING_GUIDELINES.pdf	'><b>See Casting Guidelines for full details.</b></a>
