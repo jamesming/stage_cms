@@ -485,7 +485,12 @@ display:none;
 							
 					
 					</div>
+					<div  class='float_left image_assets' >
+							<div image_type='showpage_ipad_hero_landscape' image_type_id='44' class='float_left image_div'  id='image_showpage_ipad_landscape_item_div' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_hero_ipad_landscape_id']) ? $data['showpage_items'][0]['showpage_hero_ipad_landscape_id']:'' )    ?>'>
+							</div>
+							
 					
+					</div>					
 					<div  class='float_left image_assets' >
 							<div image_type='showpage_ipad_hero_thumb' image_type_id='36' class='float_left image_div'  id='image_showpage_ipad_hero_thumb_item_div' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_ipad_hero_thumb_items_id']) ? $data['showpage_items'][0]['showpage_ipad_hero_thumb_items_id']:'' )    ?>'>
 							</div>

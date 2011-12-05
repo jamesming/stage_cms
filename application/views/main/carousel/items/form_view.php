@@ -113,6 +113,14 @@ form#image_carousel_item_form div#hero_ipad_carousel_landscape{
 	margin-left: 10px;
 }
 
+form#image_carousel_item_form div#hero_ipad_carousel_thumb{
+	background-image: url(<?php echo base_url();    ?>uploads/carousel_items_images/<?php  	echo $data['carousel_items'][0]['hero_ipad_carousel_thumb_id'] ?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	background-repeat: no-repeat;
+	border:1px dotted gray;
+	width:100px;
+	height:70px;
+	margin-left: 10px;
+}
 
 form#image_carousel_item_form div.image_div div.icon_container{
 	display:none;
@@ -339,9 +347,10 @@ display:none;
 						
 							<div image_type='hero_landscape_ipad' image_type_id='43' class='float_left image_div'  id='hero_ipad_carousel_landscape' carousel_items_image_id='<?php  	echo $data['carousel_items'][0]['hero_ipad_carousel_landscape_id'] ?>'>
 							</div>
-							
-	
-							
+
+}
+							<div image_type='hero_ipad_thumb' image_type_id='46' class='float_left image_div'  id='hero_ipad_carousel_thumb' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['hero_ipad_carousel_thumb_id']) ? $data['showpage_items'][0]['hero_ipad_carousel_thumb_id']:'' )    ?>'>
+							</div>	
 												
 					</div>
 

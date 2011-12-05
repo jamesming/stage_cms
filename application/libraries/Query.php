@@ -185,7 +185,8 @@ function query(){
 								'hero_ipad_carousel_items_image_id' => 33,
 								'right_tab_ipad_carousel_items_image_id' => 34,
 								'right_tab_border_ipad_carousel_items_image_id' => 35,
-								'hero_ipad_carousel_landscape_id' => 43
+								'hero_ipad_carousel_landscape_id' => 43,
+								'hero_ipad_carousel_thumb_id' => 46
 							);
 				
 			$carousel_items = $this->prepare_array(

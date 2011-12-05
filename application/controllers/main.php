@@ -617,7 +617,11 @@ class Main extends CI_Controller {
 				$new_width  = '153';
 				
     break;	    
-    
+    case 'hero_ipad_thumb':
+
+				$new_width  = '100';
+				
+    break;	      
   }
 
 	$new_height = $this->tools->get_new_size_of (
@@ -1806,20 +1810,24 @@ submitted
 						
 		    break;	
 		    
-		    
 
-		    
-		    
-		    
 		    case 'showpage_hero_ipad':
 	
 						$new_width  = '320';
 						
-		    break;			    
+		    break;		
+		    
+		    case 'showpage_ipad_hero_landscape':
+	
+						$new_width  = '303';
+						
+		    break;				    
+		    
+		    	    
 		    
 		    case 'showpage_ipad_hero_thumb':
 	
-						$new_width  = '262';
+						$new_width  = '100';
 						
 		    break;		    
 		    case 'showpage_hero_mobile_thumb':
