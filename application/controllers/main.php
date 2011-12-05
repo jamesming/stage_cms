@@ -617,7 +617,7 @@ class Main extends CI_Controller {
 				$new_width  = '153';
 				
     break;	    
-    case 'hero_ipad_thumb':
+    case 'hero_ipad_thumb_inactive':
 
 				$new_width  = '100';
 				

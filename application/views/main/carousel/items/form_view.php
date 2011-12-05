@@ -113,15 +113,22 @@ form#image_carousel_item_form div#hero_ipad_carousel_landscape{
 	margin-left: 10px;
 }
 
-form#image_carousel_item_form div#hero_ipad_carousel_thumb{
-	background-image: url(<?php echo base_url();    ?>uploads/carousel_items_images/<?php  	echo $data['carousel_items'][0]['hero_ipad_carousel_thumb_id'] ?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+form#image_carousel_item_form div#hero_ipad_carousel_thumb_inactive{
+	background-image: url(<?php echo base_url();    ?>uploads/carousel_items_images/<?php  	echo $data['carousel_items'][0]['hero_ipad_carousel_thumb_inactive_id'] ?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
 	width:100px;
 	height:70px;
 	margin-left: 10px;
 }
-
+form#image_carousel_item_form div#hero_ipad_carousel_thumb_active{
+	background-image: url(<?php echo base_url();    ?>uploads/carousel_items_images/<?php  	echo $data['carousel_items'][0]['hero_ipad_carousel_thumb_active_id'] ?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	background-repeat: no-repeat;
+	border:1px dotted gray;
+	width:100px;
+	height:70px;
+	margin-left: 10px;
+}
 form#image_carousel_item_form div.image_div div.icon_container{
 	display:none;
 	width:99%;
@@ -349,9 +356,11 @@ display:none;
 							</div>
 
 }
-							<div image_type='hero_ipad_thumb' image_type_id='46' class='float_left image_div'  id='hero_ipad_carousel_thumb' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['hero_ipad_carousel_thumb_id']) ? $data['showpage_items'][0]['hero_ipad_carousel_thumb_id']:'' )    ?>'>
+							<div image_type='hero_ipad_thumb_inactive' image_type_id='46' class='float_left image_div'  id='hero_ipad_carousel_thumb_inactive' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['hero_ipad_carousel_thumb_inactive_id']) ? $data['showpage_items'][0]['hero_ipad_carousel_thumb_inactive_id']:'' )    ?>'>
 							</div>	
-												
+}
+							<div image_type='hero_ipad_thumb_active' image_type_id='47' class='float_left image_div'  id='hero_ipad_carousel_thumb_active' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['hero_ipad_carousel_thumb_active_id']) ? $data['showpage_items'][0]['hero_ipad_carousel_thumb_active_id']:'' )    ?>'>
+							</div>												
 					</div>
 
 				</td>
