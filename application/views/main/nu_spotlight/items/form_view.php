@@ -58,7 +58,6 @@ form#image_nu_spotlight_item_form div#image_nu_spotlight_item_thumb{
 	width:69px;
 	height:37px;
 	margin-left: 12px;
-	display:none;
 }
 form#image_nu_spotlight_item_form #textarea_div{
 width:100%;
