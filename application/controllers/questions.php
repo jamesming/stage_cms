@@ -438,7 +438,6 @@ Thank you! We appreciate your feedback on Curvy Girls as we strive to bring nuvo
 				
 				$files = scandir("uploads/model_latinas_castings/".$report_raw->id);
 				
-				echo '<pre>';print_r(  $files  );echo '</pre>';  exit;
 				$reports['image'] = "<img src='".base_url()."uploads/model_latinas_castings/".$report_raw->id."/".$files[2]."' />";
 			}else{
 				$reports[$key] = $report_raw;
