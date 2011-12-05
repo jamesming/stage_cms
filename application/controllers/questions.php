@@ -432,16 +432,18 @@ Thank you! We appreciate your feedback on Curvy Girls as we strive to bring nuvo
 		foreach( $reports_raw  as  $key => $report_raw){
 			
 			
+			foreach( $report_raw  as  $key => $value){
+					if( $key == 'id'){
+						
+						$files = scandir("uploads/model_latinas_castings/".$report_raw->id);
+						
+						$report['image'] = "<img src='".base_url()."uploads/model_latinas_castings/".$report_raw->id."/".$files[2]."' />";
+					}else{
+						$report[$key] = $report_raw;
+					};				
+			}
 			
-			
-			if( $key == 'id'){
-				
-				$files = scandir("uploads/model_latinas_castings/".$report_raw->id);
-				
-				$reports['image'] = "<img src='".base_url()."uploads/model_latinas_castings/".$report_raw->id."/".$files[2]."' />";
-			}else{
-				$reports[$key] = $report_raw;
-			};
+				$reports[] = $report;
 			
 		}
 		
