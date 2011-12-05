@@ -1793,6 +1793,22 @@ submitted
 						
 		    break;	
 		    
+		    
+		    case 'hero_ipad':
+	
+						$new_width  = '200';
+						
+		    break;	
+		    
+		    
+		    case 'hero_landscape_ipad':
+	
+						$new_width  = '153';
+						
+		    break;	
+		    
+		    
+		    
 		    case 'showpage_hero_ipad':
 	
 						$new_width  = '320';

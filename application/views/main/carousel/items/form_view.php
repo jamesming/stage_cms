@@ -93,6 +93,27 @@ form#image_carousel_item_form div#image_carousel_item_right_tab_border_iphone{
 	height:36px;
 	margin-left: 12px;
 }
+
+
+form#image_carousel_item_form div#hero_ipad_carousel{
+	background-image: url(<?php echo base_url();    ?>uploads/carousel_items_images/<?php  	echo $data['carousel_items'][0]['hero_ipad_carousel_items_image_id'] ?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	background-repeat: no-repeat;
+	border:1px dotted gray;
+	width:102px;
+	height:151px;
+	margin-left: 10px;
+}
+
+form#image_carousel_item_form div#hero_ipad_carousel_landscape{
+	background-image: url(<?php echo base_url();    ?>uploads/carousel_items_images/<?php  	echo $data['carousel_items'][0]['hero_ipad_carousel_landscape_id'] ?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	background-repeat: no-repeat;
+	border:1px dotted gray;
+	width:151px;
+	height:102px;
+	margin-left: 10px;
+}
+
+
 form#image_carousel_item_form div.image_div div.icon_container{
 	display:none;
 	width:99%;
@@ -310,7 +331,22 @@ display:none;
 					</div>
 				</td>
 			</tr>	
-			
+			<tr>
+				<td class='main_table image_assets' colspan=2>
+					<div  class=' image_assets' >
+							<div image_type='hero_ipad' image_type_id='33' class='float_left image_div'  id='hero_ipad_carousel' carousel_items_image_id='<?php  	echo $data['carousel_items'][0]['hero_ipad_carousel_items_image_id'] ?>'>
+							</div>						
+						
+							<div image_type='hero_landscape_ipad' image_type_id='43' class='float_left image_div'  id='hero_ipad_carousel_landscape' carousel_items_image_id='<?php  	echo $data['carousel_items'][0]['hero_ipad_carousel_landscape_id'] ?>'>
+							</div>
+							
+	
+							
+												
+					</div>
+
+				</td>
+			</tr>				
 		</table>
 </form>
 </body>
