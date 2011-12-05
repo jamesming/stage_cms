@@ -402,7 +402,9 @@ Thank you! We appreciate your feedback on Curvy Girls as we strive to bring nuvo
 	}
 	
 	function model_latinas_casting_candidate(){
-		
+
+
+
 		$reports_raw = $this->my_database_model->select_from_table( 
 			$table = 'model_latinas_castings', 
 			$select_what = '*', 
@@ -430,7 +432,7 @@ Thank you! We appreciate your feedback on Curvy Girls as we strive to bring nuvo
 		foreach( $reports_raw  as  $key => $report_raw){
 			
 			if( $key == 'id'){
-				$reports['image'] = "<img src='<?php echo base_url()    ?>uploads/model_latinas_castings/".$report_raw->id."/image.png' />";
+				$reports['image'] = "<img src='".base_url()."uploads/model_latinas_castings/".$report_raw->id."/image.png' />";
 			}else{
 				$reports[$key] = $report_raw;
 			};
