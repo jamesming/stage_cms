@@ -444,7 +444,7 @@ Thank you! We appreciate your feedback on Curvy Girls as we strive to bring nuvo
 			}
 			
 				$reports[] = $report;
-			
+				unset($report);
 		}
 		
 		
