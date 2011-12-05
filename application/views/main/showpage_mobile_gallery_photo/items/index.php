@@ -69,12 +69,12 @@
 						
 						
 						<div  class='float_left name_of '  showpage_mobile_gallery_photo_item_id='<?php echo  $showpage_mobile_gallery_photo_item['id']   ?>'  href='#fancy_zoom_div' >
-							<?php echo  $showpage_mobile_gallery_photo_item['name']   ?>
+							open
 						</div>
 						
 						
 						<div  class='float_left ' >
-							<img src='<?php echo base_url()    ?>uploads/showpage_mobile_gallery_photo_items_images/<?php  echo $showpage_mobile_gallery_photo_item['showpage_iphone_gallery_photo_items_image_id']   ?>/image_tiny.png'/>
+							open
 						</div>
 
 						<div  class='float_left  showpage_iphone_gallery_photo_item_trash' >

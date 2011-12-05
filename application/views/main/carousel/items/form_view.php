@@ -355,10 +355,10 @@ display:none;
 							<div image_type='hero_landscape_ipad' image_type_id='43' class='float_left image_div'  id='hero_ipad_carousel_landscape' carousel_items_image_id='<?php  	echo $data['carousel_items'][0]['hero_ipad_carousel_landscape_id'] ?>'>
 							</div>
 
-}
+
 							<div image_type='hero_ipad_thumb_inactive' image_type_id='46' class='float_left image_div'  id='hero_ipad_carousel_thumb_inactive' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['hero_ipad_carousel_thumb_inactive_id']) ? $data['showpage_items'][0]['hero_ipad_carousel_thumb_inactive_id']:'' )    ?>'>
 							</div>	
-}
+
 							<div image_type='hero_ipad_thumb_active' image_type_id='47' class='float_left image_div'  id='hero_ipad_carousel_thumb_active' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['hero_ipad_carousel_thumb_active_id']) ? $data['showpage_items'][0]['hero_ipad_carousel_thumb_active_id']:'' )    ?>'>
 							</div>												
 					</div>
