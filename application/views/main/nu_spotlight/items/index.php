@@ -44,7 +44,7 @@
 								
 								
 								#nu_spotlight_item_outside_container   .nu_spotlight_item_row .nu_spotlight_item_content{
-								width:456px;
+								width:356px;
 								padding:10px;
 								}
 								
