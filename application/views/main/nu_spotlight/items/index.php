@@ -85,7 +85,7 @@
 						</div>
 						
 						<div  class='float_left feature_image'    >
-							<img src='<?php echo base_url();    ?>uploads/nu_spotlight_items_images/<?php  echo $nu_spotlight_item['feature_nu_spotlight_items_image_id']   ?>/image.png' />
+							<img src='<?php echo base_url();    ?>uploads/nu_spotlight_items_images/<?php  echo $nu_spotlight_item['nuspotlight_rect_spotlight_items_image_id']   ?>/image.png' />
 						</div>
 						
 						<div class='float_left nu_spotlight_item_content' >
@@ -97,10 +97,7 @@
 							<div  class=' nu_spotlight_item_blurb' >
 								<?php  echo $nu_spotlight_item['blurb']  ?>
 							</div>
-							
-							<div class='  nu_spotlight_item_image_thumb'>
-								<img src='<?php echo base_url();    ?>uploads/nu_spotlight_items_images/<?php  echo $nu_spotlight_item['thumb_nu_spotlight_items_image_id']   ?>/image.png' />
-							</div>
+
 							
 						</div>
 						
