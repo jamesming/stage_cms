@@ -426,7 +426,21 @@ Thank you! We appreciate your feedback on Curvy Girls as we strive to bring nuvo
 //			
 //		}
 			
-		echo '<pre>';print_r(  $reports_raw  );echo '</pre>';  exit;
+			
+		foreach( $reports_raw  as  $key => $report_raw){
+			
+			if( $key == 'id'){
+				$reports['image'] = "<img src='<?php echo base_url()    ?>uploads/model_latinas_castings/".$report_raw."/image.png' />";
+			}else{
+				$reports[$key] = $report_raw;
+			};
+			
+		}
+		
+		
+		
+		
+		echo '<pre>';print_r(  $reports );echo '</pre>';  exit;
 		
 	}
 	
