@@ -34,10 +34,10 @@
 								}
 								
 								
-								#nu_spotlight_item_outside_container   .nu_spotlight_item_row .feature_image{
+								#nu_spotlight_item_outside_container   .nu_spotlight_item_row .nuspotlight_rect_spotlight{
 								height:222px;
 								border:1px solid lightgray;
-								width:242px;	
+								width:342px;	
 								
 								}
 								
@@ -84,7 +84,7 @@
 							<?php echo $nu_spotlight_item['name']    ?>
 						</div>
 						
-						<div  class='float_left feature_image'    >
+						<div  class='float_left nuspotlight_rect_spotlight'    >
 							<img src='<?php echo base_url();    ?>uploads/nu_spotlight_items_images/<?php  echo $nu_spotlight_item['nuspotlight_rect_spotlight_items_image_id']   ?>/image.png' />
 						</div>
 						
