@@ -439,11 +439,10 @@ Thank you! We appreciate your feedback on Curvy Girls as we strive to bring nuvo
 						
 						$report['image'] = "<img src='".base_url()."uploads/model_latinas_castings/".$report_raw->id."/".$files[2]."' />";
 					};
-					$report[$key] = $report_raw;			
 			}
-			
-				$reports[] = $report;
-				unset($report);
+			$report[$key] = $report_raw;
+			$reports[] = $report;
+			unset($report);
 		}
 		
 		
