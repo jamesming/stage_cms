@@ -603,7 +603,20 @@ class Main extends CI_Controller {
 
 				$new_width  = '77';
 				
-    break;		    
+    break;	
+    
+    case 'hero_ipad':
+
+				$new_width  = '200';
+				
+    break;	
+    
+    
+    case 'hero_landscape_ipad':
+
+				$new_width  = '153';
+				
+    break;	    
     
   }
 
@@ -1794,18 +1807,7 @@ submitted
 		    break;	
 		    
 		    
-		    case 'hero_ipad':
-	
-						$new_width  = '200';
-						
-		    break;	
-		    
-		    
-		    case 'hero_landscape_ipad':
-	
-						$new_width  = '153';
-						
-		    break;	
+
 		    
 		    
 		    

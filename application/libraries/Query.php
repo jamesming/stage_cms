@@ -519,7 +519,8 @@ function query(){
 								'showpage_hero_android_items_image_id' => 29,
 								'showpage_hero_mobile_thumb_items_image_id' => 30,
 								'showpage_ipad_hero_thumb_items_id' => 36,
-								'showpage_hero_ipad_id' => 37
+								'showpage_hero_ipad_id' => 37,
+								'showpage_hero_ipad_landscape_id' => 44
 							);
 				
 			$showpage_items = $this->prepare_array(

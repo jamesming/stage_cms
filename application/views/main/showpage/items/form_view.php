@@ -116,11 +116,21 @@ form#image_showpage_item_form div#image_showpage_ipad_item_div{
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
-	width:320px;
-	height:480px;
+	width:200px;
+	height:301px;
 	margin-left: 72px;
 }
-
+/* IPAD HERO LANDSCAPE*/
+form#image_showpage_item_form div#image_showpage_ipad_landscape_item_div{
+	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
+	  	echo $data['showpage_items'][0]['showpage_hero_ipad_landscape_id']; 
+	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	background-repeat: no-repeat;
+	border:1px dotted gray;
+	width:301px;
+	height:200px;
+	margin-left: 72px;
+}
 /* IPAD HERO THUMB */
 form#image_showpage_item_form div#image_showpage_ipad_hero_thumb_item_div{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
@@ -128,8 +138,8 @@ form#image_showpage_item_form div#image_showpage_ipad_hero_thumb_item_div{
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
-	width:262px;
-	height:122px;
+	width:100px;
+	height:70px;
 	margin-left: 72px;
 }
 
