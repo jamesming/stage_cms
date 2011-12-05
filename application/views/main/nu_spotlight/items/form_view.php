@@ -39,6 +39,7 @@ form#image_nu_spotlight_item_form div#image_nu_spotlight_item_feature{
 	width:242px;
 	height:222px;
 	margin-left: 72px;
+	display:none;
 }
 
 form#image_nu_spotlight_item_form div#nuspotlight_rect_spotlight_items_image_id{
@@ -57,6 +58,7 @@ form#image_nu_spotlight_item_form div#image_nu_spotlight_item_thumb{
 	width:69px;
 	height:37px;
 	margin-left: 12px;
+	display:none;
 }
 form#image_nu_spotlight_item_form #textarea_div{
 width:100%;
