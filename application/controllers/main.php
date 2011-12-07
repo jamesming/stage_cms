@@ -1828,7 +1828,11 @@ submitted
 						
 		    break;				    
 		    
-		    	    
+		    case 'showpage_ipad_gallery_photo_thumb_inactive':
+	
+						$new_width  = '100';
+						
+		    break;			    	    
 		    
 		    case 'showpage_ipad_hero_thumb':
 	
