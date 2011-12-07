@@ -356,10 +356,10 @@ display:none;
 							</div>
 
 
-							<div image_type='hero_ipad_thumb_inactive' image_type_id='46' class='float_left image_div'  id='hero_ipad_carousel_thumb_inactive' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['hero_ipad_carousel_thumb_inactive_id']) ? $data['showpage_items'][0]['hero_ipad_carousel_thumb_inactive_id']:'' )    ?>'>
+							<div image_type='hero_ipad_thumb_inactive' image_type_id='46' class='float_left image_div'  id='hero_ipad_carousel_thumb_inactive' showpage_items_image_id='<?php echo ( isset( $data['carousel_items'][0]['hero_ipad_carousel_thumb_inactive_id']) ? $data['carousel_items'][0]['hero_ipad_carousel_thumb_inactive_id']:'' )    ?>'>
 							</div>	
 
-							<div image_type='hero_ipad_thumb_active' image_type_id='47' class='float_left image_div'  id='hero_ipad_carousel_thumb_active' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['hero_ipad_carousel_thumb_active_id']) ? $data['showpage_items'][0]['hero_ipad_carousel_thumb_active_id']:'' )    ?>'>
+							<div image_type='hero_ipad_thumb_active' image_type_id='47' class='float_left image_div'  id='hero_ipad_carousel_thumb_active' showpage_items_image_id='<?php echo ( isset( $data['carousel_items'][0]['hero_ipad_carousel_thumb_active_id']) ? $data['carousel_items'][0]['hero_ipad_carousel_thumb_active_id']:'' )    ?>'>
 							</div>												
 					</div>
 
@@ -507,7 +507,11 @@ function submit_inputs(close_fancyzoom){
 	
 }	
 
-function open_dialogue_upload_image( carousel_items_image_id, image_type, image_type_id ){
+function open_dialogue_upload_image( 
+	carousel_items_image_id, 
+	image_type, 
+	image_type_id 
+){
 
 		submit_inputs(close_fancyzoom=0);
 
@@ -523,8 +527,11 @@ function open_dialogue_upload_image( carousel_items_image_id, image_type, image_
 		var width_of_dialog = 410;
 		var left_coord = ($(window).width()/2 - width_of_dialog/2);
 
+		var p = $('div[image_type_id='+image_type_id+']');
+		position = p.position();
+
 		$("#dialog" ).dialog({
-			position:[left_coord,200],
+			position:[left_coord,position.top -95],
 			height: 160,
 			zIndex: -10,
 			width: width_of_dialog,

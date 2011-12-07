@@ -183,8 +183,6 @@ function query(){
 								'right_tab_iphone_carousel_items_image_id' => 8,
 								'right_tab_border_iphone_carousel_items_image_id' => 9,
 								'hero_ipad_carousel_items_image_id' => 33,
-								'right_tab_ipad_carousel_items_image_id' => 34,
-								'right_tab_border_ipad_carousel_items_image_id' => 35,
 								'hero_ipad_carousel_landscape_id' => 43,
 								'hero_ipad_carousel_thumb_inactive_id' => 46,
 								'hero_ipad_carousel_thumb_active_id' => 47
