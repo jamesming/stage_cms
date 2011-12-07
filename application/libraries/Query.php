@@ -517,9 +517,10 @@ function query(){
 								'showpage_hero_iphone_items_image_id' => 11,
 								'showpage_hero_android_items_image_id' => 29,
 								'showpage_hero_mobile_thumb_items_image_id' => 30,
-								'showpage_ipad_hero_thumb_items_id' => 36,
 								'showpage_hero_ipad_id' => 37,
-								'showpage_hero_ipad_landscape_id' => 44
+								'showpage_hero_ipad_landscape_id' => 44,
+								'showpage_ipad_hero_thumb_active_items_id' => 36,
+								'showpage_ipad_hero_thumb_inactive_items_id' => 48
 							);
 				
 			$showpage_items = $this->prepare_array(
@@ -714,6 +715,7 @@ function query(){
 								'showpage_android_gallery_photo_items_image_id' => 26,
 								
 								'showpage_ipad_gallery_photo_items_image_id' => 39,
+								'showpage_ipad_gallery_photo_items_landspage_image_id' => 49,
 								'showpage_ipad_gallery_photo_thumb_inactive_items_image_id' => 41,
 								'showpage_ipad_gallery_photo_thumb_active_items_image_id' => 40
 								
