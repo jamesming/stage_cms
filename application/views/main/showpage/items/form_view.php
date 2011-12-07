@@ -143,10 +143,10 @@ form#image_showpage_item_form div#image_showpage_ipad_hero_thumb_inactive_item_d
 	margin-left: 12px;
 }
 
-/* IPAD HERO THUMB INACTIVE*/
+/* IPAD HERO THUMB ACTIVE*/
 form#image_showpage_item_form div#image_showpage_ipad_hero_thumb_active_item_div{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_items_images/<?php
-	  	echo ( isset( $data['showpage_items'][0]['showpage_ipad_hero_thumb_inactive_items_id']) ? $data['showpage_items'][0]['showpage_ipad_hero_thumb_inactive_items_id']:'' ); 
+	  	echo ( isset( $data['showpage_items'][0]['showpage_ipad_hero_thumb_active_items_id']) ? $data['showpage_items'][0]['showpage_ipad_hero_thumb_active_items_id']:'' ); 
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
@@ -510,7 +510,7 @@ display:none;
 		
 							</div>		
 							<div  class='clearfix  image_assets' >
-									<div image_type='showpage_ipad_gallery_photo_thumb_active' image_type_id='48' class='float_left image_div'  id='image_showpage_ipad_hero_thumb_active_item_div' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_ipad_hero_thumb_active_items_id']) ? $data['showpage_items'][0]['showpage_ipad_hero_thumb_active_items_id']:'' )    ?>'>
+									<div image_type='showpage_ipad_gallery_photo_thumb_active' image_type_id='36' class='float_left image_div'  id='image_showpage_ipad_hero_thumb_active_item_div' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_ipad_hero_thumb_active_items_id']) ? $data['showpage_items'][0]['showpage_ipad_hero_thumb_active_items_id']:'' )    ?>'>
 									</div>
 		
 							</div>								
