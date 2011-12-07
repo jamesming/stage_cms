@@ -1877,19 +1877,24 @@ submitted
 		    		
 		    case 'showpage_ipad_gallery_photo':
 	
-						$new_width  = '320';
+						$new_width  = '200';
+						
+		    break;
+		    case 'showpage_ipad_gallery_landscape_photo':
+	
+						$new_width  = '301';
 						
 		    break;
 
 		    case 'showpage_iphone_gallery_photo_thumb_inactive':
 	
-						$new_width  = '132';
+						$new_width  = '100';
 						
 		    break;		
 
 		    case 'showpage_iphone_gallery_photo_thumb_active':
 	
-						$new_width  = '132';
+						$new_width  = '100';
 						
 		    break;		
 		    

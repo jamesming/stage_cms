@@ -85,9 +85,22 @@ form#image_showpage_mobile_gallery_photo_item_form div#image_showpage_ipad_galle
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
-	width:320px;
-	height:480px;
-	margin-left: 72px;
+	width:200px;
+	height:301px;
+	margin-left: 12px;
+}
+
+
+/* IPAD PHOTO LANDSCAPE*/
+form#image_showpage_mobile_gallery_photo_item_form div#image_showpage_ipad_gallery_landspage_photo_item_div{
+	background-image: url(<?php echo base_url();    ?>uploads/showpage_mobile_gallery_photo_items_images/<?php
+	  	echo $data['showpage_mobile_gallery_photo_items'][0]['showpage_ipad_gallery_photo_items_landspage_image_id']; 
+	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	background-repeat: no-repeat;
+	border:1px dotted gray;
+	width:301px;
+	height:201px;
+	margin-left: 12px;
 }
 
 /* IPAD PHOTO INACTIVE THUMB */
@@ -97,9 +110,9 @@ form#image_showpage_mobile_gallery_photo_item_form div#image_showpage_ipad_galle
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
-	width:262px;
-	height:122px;
-	margin-left: 72px;
+	width:100px;
+	height:70px;
+	margin-left: 12px;
 }
 /* IPAD PHOTO ACTIVE THUMB */
 form#image_showpage_mobile_gallery_photo_item_form div#image_showpage_ipad_gallery_photo_thumb_active_item_div{
@@ -108,9 +121,9 @@ form#image_showpage_mobile_gallery_photo_item_form div#image_showpage_ipad_galle
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
-	width:262px;
-	height:122px;
-	margin-left: 72px;
+	width:100px;
+	height:70px;
+	margin-left: 12px;
 }
 
 
@@ -199,7 +212,16 @@ display:none;
 							
 					
 					</div>
-					 
+					
+					
+					
+					<!--  /* IPAD PHOTO LANDSCAPE*/-->
+					<div  class='float_left image_assets' >
+							<div image_type='showpage_ipad_gallery_landscape_photo' image_type_id='49' class='float_left image_div'  id='image_showpage_ipad_gallery_landspage_photo_item_div' showpage_mobile_gallery_photo_items_image_id='<?php echo $data['showpage_mobile_gallery_photo_items'][0]['showpage_ipad_gallery_photo_items_landspage_image_id']    ?>'>
+							</div>
+							
+					
+					</div>					 
 					 
 					 <!--  /* IPAD PHOTO INACTIVE THUMB */ -->
 					<div  class='float_left image_assets' >
