@@ -1818,7 +1818,7 @@ submitted
 
 		    case 'showpage_hero_ipad':
 	
-						$new_width  = '320';
+						$new_width  = '200';
 						
 		    break;		
 		    
