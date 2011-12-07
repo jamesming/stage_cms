@@ -509,7 +509,7 @@ display:none;
 									</div>
 		
 							</div>		
-							<div  class='clearfix  image_assets' >
+							<div  class='clearfix  image_assets'   style='display:none'  >
 									<div image_type='showpage_ipad_gallery_photo_thumb_active' image_type_id='36' class='float_left image_div'  id='image_showpage_ipad_hero_thumb_active_item_div' showpage_items_image_id='<?php echo ( isset( $data['showpage_items'][0]['showpage_ipad_hero_thumb_active_items_id']) ? $data['showpage_items'][0]['showpage_ipad_hero_thumb_active_items_id']:'' )    ?>'>
 									</div>
 		
