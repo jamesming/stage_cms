@@ -142,7 +142,6 @@ class Main extends CI_Controller {
 								$segment4,
 								$this->input->get()
 						 );
-					
 
 			    break;
 			    
