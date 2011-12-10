@@ -91,9 +91,9 @@
 											}	
 
 		</style>
+
 		<img  class='clearfix ' href='#fancy_zoom_div'  title='Add showpage Item'  id='addshowpageItem' src='<?php echo base_url()    ?>images/add.png'    />
-			
-  	
+
   	<div  id='showpage_item_outside_container'  class='clearfix ' >
 				
 			<div   id='showpage_item_container'>
@@ -105,7 +105,7 @@
 
 				 foreach( $data['showpage_items']  as  $showpage_item ){?>
 				
-					<div  class='clearfix showpage_item_row'>
+					<div  class='clearfix showpage_item_row' showpage_item_id='<?php echo  $showpage_item['id']   ?>' >
 						
 						
 						<div  class='float_left name_of '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  href='#fancy_zoom_div' >
@@ -161,6 +161,19 @@
 		<script type="text/javascript" language="Javascript">  
 			
 			$(document).ready(function() {
+				
+				<?php if( $this->input->get('showpage_item_id') ){?>
+					
+						$('.showpage_item_row[showpage_item_id=<?php echo $this->input->get('showpage_item_id')    ?>]').css({background:'yellow'})
+						
+				    new_position = $('.showpage_item_row[showpage_item_id=<?php echo $this->input->get('showpage_item_id')    ?>]').offset();
+				    
+				    window.scrollTo(new_position.left,new_position.top-100);
+				    
+						
+				<?php } ?>
+				
+
 
 				$('#addshowpageItem').css({cursor:'pointer'}).fancyZoom().click(function(event) {
 

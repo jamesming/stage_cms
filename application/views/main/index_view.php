@@ -124,7 +124,7 @@ height:690px;
   		</ul>
 <?php }else{ ?>	
 
-<a href='<?php  echo  base_url()  ?>index.php/main/index/showpage'>Back</a>&nbsp;|&nbsp;<?php  echo $data['segment3'];   ?>
+<a href='<?php  echo  base_url()  ?>index.php/main/index/showpage?showpage_item_id=<?php echo $this->input->get('showpage_item_id')    ?>'>Back </a>&nbsp;|&nbsp;<?php  echo $data['segment3'];   ?>
 
 <?php } ?>	
 
