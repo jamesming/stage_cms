@@ -563,79 +563,18 @@ function query(){
 
 
 
-			$showpage_cast_items_raw = $this->CI->tools->object_to_array($showpage_cast_items_raw);
 
-			foreach( $showpage_cast_items_raw  as  $keyA => $showpage_item_raw){
-
-				foreach( $showpage_item_raw  as  $field => $value){
-
-					$showpage_item[$field] = $value;
-
-					if( $field == 'id' ){
-
-
-						$showpage_cast_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'showpage_cast_items_images', 
-										$select_what = 'id, order, show_on_showpage', 
-										$where_array = array(
-																		'showpage_cast_item_id'=> $value,
-																		'image_type_id' => '13'
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-
-
-						if( count($showpage_cast_items_images) > 0){				
-
-							$showpage_item['showpage_cast_items_image_id'] = $showpage_cast_items_images[0]->id;
-							$showpage_item['order'] = $showpage_cast_items_images[0]->order;
-							$showpage_item['show_on_showpage'] = $showpage_cast_items_images[0]->show_on_showpage;
-
-
-						}else{
-
-							$showpage_item['showpage_cast_items_image_id'] = 0;
-
-						};
-
-						$showpage_cast_items_images = $this->CI->my_database_model->select_from_table( 
-										$table = 'showpage_cast_items_images', 
-										$select_what = 'id, order, show_on_showpage', 
-										$where_array = array(
-																		'showpage_cast_item_id'=> $value,
-																		'image_type_id' => '22'
-																		), 
-										$use_order = FALSE, 
-										$order_field = '', 
-										$order_direction = 'desc', 
-										$limit = -1
-										);
-
-
-						if( count($showpage_cast_items_images) > 0){				
-
-							$showpage_item['showpage_cast_iphone_items_image_id'] = $showpage_cast_items_images[0]->id;
-
-
-						}else{
-
-							$showpage_item['showpage_cast_iphone_items_image_id'] = 0;
-
-						};
-
-					};
-
-
-
-				};
-
-
-				$showpage_cast_items[] = $showpage_item;
-
-			};
+			$image_types_array = array(
+								'showpage_cast_items_image_id' => 22,
+								'showpage_cast_iphone_items_image_id' => 13,
+								'showpage_cast_ipad_items_image_id' => 38
+							);
+				
+			$showpage_cast_items = $this->prepare_array(
+				$items_tables_raw = $this->CI->tools->object_to_array($showpage_cast_items_raw),
+				$name_of_item_id	 = 'showpage_cast_item_id',
+				$image_table = 'showpage_cast_items_images',
+				$image_types_array);
 
 
 

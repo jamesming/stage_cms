@@ -38,18 +38,30 @@ form#image_showpage_cast_item_form div#image_showpage_cast_item_showpage_cast{
 	border:1px dotted gray;
 	width:148px;
 	height:148px;
-	margin-left: 72px;
+	margin-left: 22px;
 }
 form#image_showpage_cast_item_form div#image_showpage_cast_iphone_item_showpage_cast{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_cast_items_images/<?php
 	  	echo ( isset( $data['showpage_cast_items'][0]['showpage_cast_iphone_items_image_id']) ? $data['showpage_cast_items'][0]['showpage_cast_iphone_items_image_id']:'' ); 
-	?>/image_iphone@2x.png?random=<?php echo rand(5,12334)    ?>);
+	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
-	width:296px;
-	height:296px;
-	margin-left: 72px;
+	width:148px;
+	height:148px;
+	margin-left: 22px;
 }
+
+form#image_showpage_cast_item_form div#image_showpage_cast_ipad_item_showpage_cast{
+	background-image: url(<?php echo base_url();    ?>uploads/showpage_cast_items_images/<?php
+	  	echo ( isset( $data['showpage_cast_items'][0]['showpage_cast_ipad_items_image_id']) ? $data['showpage_cast_items'][0]['showpage_cast_ipad_items_image_id']:'' ); 
+	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
+	background-repeat: no-repeat;
+	border:1px dotted gray;
+	width:185px;
+	height:185px;
+	margin-left: 22px;
+}
+
 form#image_showpage_cast_item_form #short_content{
 width:753px;
 }
@@ -131,6 +143,14 @@ display:none;
 
 					<div  class='float_left image_assets' >
 							<div image_type='showpage_cast_iphone' image_type_id='22' class='float_left image_div'  id='image_showpage_cast_iphone_item_showpage_cast' showpage_cast_items_image_id='<?php echo $data['showpage_cast_items'][0]['showpage_cast_iphone_items_image_id']    ?>'>
+							</div>
+							
+					
+					</div>
+					
+					
+					<div  class='float_left image_assets' >
+							<div image_type='showpage_cast_ipad' image_type_id='38' class='float_left image_div'  id='image_showpage_cast_ipad_item_showpage_cast' showpage_cast_items_image_id='<?php echo $data['showpage_cast_items'][0]['showpage_cast_ipad_items_image_id']    ?>'>
 							</div>
 							
 					

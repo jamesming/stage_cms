@@ -244,6 +244,7 @@ class Main extends CI_Controller {
 	 */
 	 
 	 
+	 // brk 
 	public function get_showpage_cast_form(){
 		
 				$data['showpage_cast_items'] = $this->query->get_showpage_cast_items(
@@ -290,8 +291,7 @@ class Main extends CI_Controller {
 	 * @path /index.php/home/get_showpage_iphone_gallery_photo__form
 	 * @access public
 	 */
-	 
-	 // brk
+
 	public function get_showpage_mobile_gallery_mobile_form(){
 		
 				$data['showpage_mobile_gallery_photo_items'] = $this->query->get_showpage_mobile_gallery_photo_items(
@@ -1875,7 +1875,14 @@ submitted
 	
 						$new_width  = '148';
 						
-		    break;		   
+		    break;		
+		    
+		    case 'showpage_cast_ipad':
+	
+						$new_width  = '185';
+						
+		    break;				    
+		       
 		    
 		    case 'showpage_iphone_gallery_photo':
 	
