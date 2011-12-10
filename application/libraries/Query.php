@@ -565,9 +565,8 @@ function query(){
 
 
 			$image_types_array = array(
-								'showpage_cast_items_image_id' => 22,
-								'showpage_cast_iphone_items_image_id' => 13,
-								'showpage_cast_ipad_items_image_id' => 38
+								'showpage_cast_items_image_id' => 13,
+								'showpage_cast_iphone_items_image_id' => 22
 							);
 				
 			$showpage_cast_items = $this->prepare_array(

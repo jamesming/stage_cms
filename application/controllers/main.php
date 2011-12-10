@@ -1947,7 +1947,28 @@ submitted
 		
 		
 		
+	/* IPAD IMAGES .. TAKE HI-RES AND SHRINK DOWN */
+	if (in_array($image_type, array(
+																	'showpage_cast_iphone'
+																	)
+							)
+		){
+			$new_width = '185';
+			$new_height = $this->tools->get_new_size_of (
+				$what = 'height', 
+				$based_on_new = $new_width, 
+				$orig_width = $width_of_file, 
+				$orig_height = $height_of_file 
+				);
 		
+		
+			$this->tools->clone_and_resize_append_name_of(
+				$appended_suffix = '_ipad', 
+				$full_path = $dir_path . '/' . 'image.png', 
+				$width = $new_width, 
+				$height = $new_height
+				);
+	}		
 		
 		
 	/* IPHONE IMAGES .. TAKE HI-RES AND SHRINK DOWN TO LOW */
