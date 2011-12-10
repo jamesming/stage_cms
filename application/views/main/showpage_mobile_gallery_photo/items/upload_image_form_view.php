@@ -45,13 +45,7 @@ float:left;
 </head>
 
 <body   style='background:lightgray'  >
-	<?php  
-	
-	
-	   
 
-	
-	?>
 <form id='uploadForm' 
 	name='uploadForm' action='<?php echo  base_url();   ?>index.php/main/upload_image' 
 	method='post' 
@@ -62,8 +56,8 @@ float:left;
 
 				<input name="items_image_id"  type="hidden" value="<?php 
 				
-				if( isset($data['showpage_iphone_gallery_photo_items_image_id'])){
-				echo $data['showpage_iphone_gallery_photo_items_image_id'];
+				if( isset($data['showpage_mobile_gallery_photo_items_image_id'])){
+				echo $data['showpage_mobile_gallery_photo_items_image_id'];
 				}else{
 				echo '0';
 				};

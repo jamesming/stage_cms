@@ -708,9 +708,9 @@ function query(){
 
 			$image_types_array = array(
 			
-								'showpage_iphone_gallery_photo_items_image_id' => 23,
-								'showpage_iphone_gallery_photo_thumb_inactive_items_image_id' => 24,
-								'showpage_iphone_gallery_photo_thumb_active_items_image_id' => 25,
+								'showpage_mobile_gallery_photo_items_image_id' => 23,
+								'showpage_mobile_gallery_photo_thumb_inactive_items_image_id' => 24,
+								'showpage_mobile_gallery_photo_thumb_active_items_image_id' => 25,
 								
 								'showpage_android_gallery_photo_items_image_id' => 26,
 								
@@ -732,6 +732,8 @@ function query(){
 				if( isset($showpage_item['order'])){
 					$this->CI->tools->aasort($showpage_mobile_gallery_photo_items,'order');
 				};
+				
+			
 				return $showpage_mobile_gallery_photo_items;
 			}else{
 				return;

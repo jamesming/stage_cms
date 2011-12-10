@@ -291,7 +291,7 @@ class Main extends CI_Controller {
 	 * @access public
 	 */
 	 
-	 
+	 // brk
 	public function get_showpage_mobile_gallery_mobile_form(){
 		
 				$data['showpage_mobile_gallery_photo_items'] = $this->query->get_showpage_mobile_gallery_photo_items(
@@ -305,27 +305,27 @@ class Main extends CI_Controller {
 		
 	}
 	
-	/**
-	 * get_showpage_android_gallery_photo_form
-	 * 
-	 * @package BackEnd
-	 * @author James Ming <jamesming@gmail.com>
-	 * @path /index.php/home/get_showpage_android_gallery_photo__form
-	 * @access public
-	 */
-	 
-	 
-	public function get_showpage_android_gallery_photo_form(){
-		
-				$data['showpage_android_gallery_photo_items'] = $this->query->get_showpage_android_gallery_photo_items(
-							$where_array = array( 'id' => $this->input->get('showpage_android_gallery_photo_item_id')) 
-				);	
-				
-				$this->load->view('main/showpage_android_gallery_photo/items/form_view', 
-					array( 'data' => $data )
-				);
-		
-	}	
+//	/**
+//	 * get_showpage_android_gallery_photo_form
+//	 * 
+//	 * @package BackEnd
+//	 * @author James Ming <jamesming@gmail.com>
+//	 * @path /index.php/home/get_showpage_android_gallery_photo__form
+//	 * @access public
+//	 */
+//	 
+//	 
+//	public function get_showpage_android_gallery_photo_form(){
+//		
+//				$data['showpage_android_gallery_photo_items'] = $this->query->get_showpage_android_gallery_photo_items(
+//							$where_array = array( 'id' => $this->input->get('showpage_android_gallery_photo_item_id')) 
+//				);	
+//				
+//				$this->load->view('main/showpage_android_gallery_photo/items/form_view', 
+//					array( 'data' => $data )
+//				);
+//		
+//	}	
 	
 	/**
 	 * showpage_feature
@@ -1655,7 +1655,7 @@ submitted
 	 * @path /index.php/main/upload_image
 	 * @access public
 	 **/ 
-	
+	// brk
 	function upload_image(){
 		
 			$what_item = $this->input->post('what_item');
@@ -1832,8 +1832,14 @@ submitted
 	
 						$new_width  = '100';
 						
-		    break;			    	    
+		    break;			
 		    
+		        	    
+		    case 'showpage_ipad_gallery_photo_thumb_active':
+	
+						$new_width  = '100';
+						
+		    break;					    
 		    case 'showpage_ipad_hero_thumb':
 	
 						$new_width  = '100';

@@ -34,7 +34,7 @@ margin-top:25px;
 /* IPHONE PHOTO */
 form#image_showpage_mobile_gallery_photo_item_form div#image_showpage_iphone_gallery_photo_item_div{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_mobile_gallery_photo_items_images/<?php
-	  	echo $data['showpage_mobile_gallery_photo_items'][0]['showpage_iphone_gallery_photo_items_image_id']; 
+	  	echo $data['showpage_mobile_gallery_photo_items'][0]['showpage_mobile_gallery_photo_items_image_id']; 
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
@@ -57,7 +57,7 @@ form#image_showpage_mobile_gallery_photo_item_form div#image_showpage_android_ga
 /* IPHONE PHOTO INACTIVE THUMB */
 form#image_showpage_mobile_gallery_photo_item_form div#image_showpage_iphone_gallery_photo_thumb_inactive_item_div{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_mobile_gallery_photo_items_images/<?php
-	  	echo ( isset( $data['showpage_mobile_gallery_photo_items'][0]['showpage_iphone_gallery_photo_thumb_inactive_items_image_id']) ? $data['showpage_mobile_gallery_photo_items'][0]['showpage_iphone_gallery_photo_thumb_inactive_items_image_id']:'' ); 
+	  	echo ( isset( $data['showpage_mobile_gallery_photo_items'][0]['showpage_mobile_gallery_photo_thumb_inactive_items_image_id']) ? $data['showpage_mobile_gallery_photo_items'][0]['showpage_mobile_gallery_photo_thumb_inactive_items_image_id']:'' ); 
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
@@ -68,7 +68,7 @@ form#image_showpage_mobile_gallery_photo_item_form div#image_showpage_iphone_gal
 /* IPHONE PHOTO ACTIVE THUMB */
 form#image_showpage_mobile_gallery_photo_item_form div#image_showpage_iphone_gallery_photo_thumb_active_item_div{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_mobile_gallery_photo_items_images/<?php
-	  	echo ( isset( $data['showpage_mobile_gallery_photo_items'][0]['showpage_iphone_gallery_photo_thumb_active_items_image_id']) ? $data['showpage_mobile_gallery_photo_items'][0]['showpage_iphone_gallery_photo_thumb_active_items_image_id']:'' ); 
+	  	echo ( isset( $data['showpage_mobile_gallery_photo_items'][0]['showpage_mobile_gallery_photo_thumb_active_items_image_id']) ? $data['showpage_mobile_gallery_photo_items'][0]['showpage_mobile_gallery_photo_thumb_active_items_image_id']:'' ); 
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
@@ -170,7 +170,7 @@ display:none;
 				
 				<td class='main_table image_assets'  colspan=2>
 					<div  class='float_left image_assets' >
-							<div image_type='showpage_iphone_gallery_photo' image_type_id='23' class='float_left image_div'  id='image_showpage_iphone_gallery_photo_item_div' showpage_mobile_gallery_photo_items_image_id='<?php echo $data['showpage_mobile_gallery_photo_items'][0]['showpage_iphone_gallery_photo_items_image_id']    ?>'>
+							<div image_type='showpage_iphone_gallery_photo' image_type_id='23' class='float_left image_div'  id='image_showpage_iphone_gallery_photo_item_div' showpage_mobile_gallery_photo_items_image_id='<?php echo $data['showpage_mobile_gallery_photo_items'][0]['showpage_mobile_gallery_photo_items_image_id']    ?>'>
 							</div>
 							
 					
@@ -183,14 +183,14 @@ display:none;
 					
 					</div>
 					<div  class='float_left image_assets' >
-							<div image_type='showpage_iphone_gallery_photo_thumb_inactive' image_type_id='24' class='float_left image_div'  id='image_showpage_iphone_gallery_photo_thumb_inactive_item_div' showpage_mobile_gallery_photo_items_image_id='<?php echo $data['showpage_mobile_gallery_photo_items'][0]['showpage_iphone_gallery_photo_thumb_inactive_items_image_id']    ?>'>
+							<div image_type='showpage_iphone_gallery_photo_thumb_inactive' image_type_id='24' class='float_left image_div'  id='image_showpage_iphone_gallery_photo_thumb_inactive_item_div' showpage_mobile_gallery_photo_items_image_id='<?php echo $data['showpage_mobile_gallery_photo_items'][0]['showpage_mobile_gallery_photo_thumb_inactive_items_image_id']    ?>'>
 							</div>
 							
 					
 					</div>
 
 					<div  class='float_left image_assets' >
-							<div image_type='showpage_iphone_gallery_photo_thumb_active' image_type_id='25' class='float_left image_div'  id='image_showpage_iphone_gallery_photo_thumb_active_item_div' showpage_mobile_gallery_photo_items_image_id='<?php echo $data['showpage_mobile_gallery_photo_items'][0]['showpage_iphone_gallery_photo_thumb_active_items_image_id']    ?>'>
+							<div image_type='showpage_iphone_gallery_photo_thumb_active' image_type_id='25' class='float_left image_div'  id='image_showpage_iphone_gallery_photo_thumb_active_item_div' showpage_mobile_gallery_photo_items_image_id='<?php echo $data['showpage_mobile_gallery_photo_items'][0]['showpage_mobile_gallery_photo_thumb_active_items_image_id']    ?>'>
 							</div>
 							
 					
@@ -225,7 +225,7 @@ display:none;
 					 
 					 <!--  /* IPAD PHOTO INACTIVE THUMB */ -->
 					<div  class='float_left image_assets' >
-							<div image_type='showpage_ipad_gallery_photo_thumb_inactive' image_type_id='41' class='float_left image_div'  id='image_showpage_ipad_gallery_photo_thumb_inactive_item_div' showpage_mobile_gallery_photo_items_image_id='<?php echo $data['showpage_mobile_gallery_photo_items'][0]['showpage_iphone_gallery_photo_thumb_inactive_items_image_id']    ?>'>
+							<div image_type='showpage_ipad_gallery_photo_thumb_inactive' image_type_id='41' class='float_left image_div'  id='image_showpage_ipad_gallery_photo_thumb_inactive_item_div' showpage_mobile_gallery_photo_items_image_id='<?php echo $data['showpage_mobile_gallery_photo_items'][0]['showpage_ipad_gallery_photo_thumb_inactive_items_image_id']    ?>'>
 							</div>
 							
 					
@@ -234,7 +234,7 @@ display:none;
 
 					<!-- /* IPAD PHOTO ACTIVE THUMB */  -->
 					<div  class='float_left image_assets' >
-							<div image_type='showpage_ipad_gallery_photo_thumb_active' image_type_id='40' class='float_left image_div'  id='image_showpage_ipad_gallery_photo_thumb_active_item_div' showpage_mobile_gallery_photo_items_image_id='<?php echo $data['showpage_mobile_gallery_photo_items'][0]['showpage_iphone_gallery_photo_thumb_active_items_image_id']    ?>'>
+							<div image_type='showpage_ipad_gallery_photo_thumb_active' image_type_id='40' class='float_left image_div'  id='image_showpage_ipad_gallery_photo_thumb_active_item_div' showpage_mobile_gallery_photo_items_image_id='<?php echo $data['showpage_mobile_gallery_photo_items'][0]['showpage_ipad_gallery_photo_thumb_active_items_image_id']    ?>'>
 							</div>
 							
 					
@@ -343,7 +343,6 @@ function open_dialogue_upload_image(
  image_type, 
  image_type_id 
  ){
-
 		submit_inputs(close_fancyzoom=0);
 
 		if( showpage_mobile_gallery_photo_items_image_id == null){
@@ -352,7 +351,7 @@ function open_dialogue_upload_image(
 
 		$("#iframe_src_for_image")
 		.css({width:'350px',height:'80px'})
-		.attr('src','<?php echo base_url();    ?>index.php/main/upload_image_form?what_item=showpage_mobile_gallery_photo&showpage_mobile_gallery_photo_item_id=<?php echo $data['showpage_mobile_gallery_photo_items'][0]['id']    ?>&showpage_mobile_gallery_photo_items_image_id=' + showpage_mobile_gallery_photo_items_image_id +'&image_type='+image_type +'&image_type_id='+image_type_id);
+		.attr('src','<?php echo base_url();    ?>index.php/main/upload_image_form?what_item=showpage_mobile_gallery_photo&items_image_id=&showpage_mobile_gallery_photo_item_id=<?php echo $data['showpage_mobile_gallery_photo_items'][0]['id']    ?>&showpage_mobile_gallery_photo_items_image_id=' + showpage_mobile_gallery_photo_items_image_id +'&image_type='+image_type +'&image_type_id='+image_type_id);
 
 			
 		var width_of_dialog = 410;
