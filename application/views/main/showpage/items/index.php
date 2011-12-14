@@ -112,7 +112,9 @@
 							<?php echo  $showpage_item['name']   ?>
 						</div>
 						
-						
+						<div class='float_left '>
+							<input name="isHot" <?php echo (isset($showpage_item['isHot']) && $showpage_item['isHot']==1 ?   ' checked ' :  ''  )    ?> showpage_items_id='<?php echo $showpage_item['id']    ?>'  class='isThisHot'  type="checkbox" value="1">
+						</div>			
 						
 						<div  class='float_left show_page_cast '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  >
 							cast
@@ -161,6 +163,34 @@
 		<script type="text/javascript" language="Javascript">  
 			
 			$(document).ready(function() {
+				
+				
+				
+				$('.isThisHot').click(function(event) {
+					
+						if( $(this).is(':checked')){
+							isHot = 1;
+						}else{
+							isHot = 0;
+						};
+
+						$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
+							table:'showpage_items',
+							id:$(this).attr('showpage_items_id'),
+							crud:'update',
+							set_what_array:'isHot='+isHot
+							},function(xml) {
+							
+								var status = $(xml).find('status').text();
+								var message = $(xml).find('message').text();
+								
+								
+						});	
+							
+							
+				});	
+				
+				
 				
 				<?php if( $this->input->get('showpage_item_id') ){?>
 					

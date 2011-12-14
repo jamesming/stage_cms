@@ -44,24 +44,25 @@ font-weight:bold;
 
 <script type="text/javascript" language="Javascript">
 $(document).ready(function() { 
+	
 
-				if( 	 getTimeZone() == 7 	  // Pacific Coast
-						|| getTimeZone() == 4){   // Eastern
-					air_time = 21; // 9pm
-				}else if(getTimeZone() == 5){ // Central
-					air_time = 20;  // 8pm
-				}else if(getTimeZone() == 6){ // Mountain
-					air_time = 19;  // 7pm
+				if( 	 getTimeZone() == 8 	  // Pacific Coast
+						|| getTimeZone() == 5){   // Eastern
+					airtime = 21; // 9pm
+				}else if(getTimeZone() == 6){ // Central
+					airtime = 20;  // 8pm
+				}else if(getTimeZone() == 7){ // Mountain
+					airtime = 19;  // 7pm
 				};
 
-				month = 9; // Should be 10 for October but javascript takes it down one number
+				month = 0; // Should be 10 for October but javascript takes it down one number
 
 				var austDay = new Date();
 				austDay = new Date(
-					2011, 
+					2012, 
 					month, 
-					18, // day of month
-					air_time, 
+					13, // day of month
+					airtime, 
 					0 // minutes
 					);
 				
@@ -105,7 +106,7 @@ return localTime.getTimezoneOffset()/60 ;
 		</div>
 	</div>
 	<div  class='until '  >
-		UNTIL THE<br />SERIES PREMIERE<br />TUESDAY, OCT 18TH 9/8c
+		UNTIL <br />Day<br />of
 	</div>
 </body>
 
