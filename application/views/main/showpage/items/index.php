@@ -113,7 +113,7 @@
 						</div>
 						
 						<div class='float_left '>
-							<input name="isHot" <?php echo (isset($showpage_item['isHot']) && $showpage_item['isHot']==1 ?   ' checked ' :  ''  )    ?> showpage_items_id='<?php echo $showpage_item['id']    ?>'  class='isThisHot'  type="checkbox" value="1">
+							hot?<input name="isHot" <?php echo (isset($showpage_item['isHot']) && $showpage_item['isHot']==1 ?   ' checked ' :  ''  )    ?> showpage_items_id='<?php echo $showpage_item['id']    ?>'  class='isThisHot'  type="checkbox" value="1">
 						</div>			
 						
 						<div  class='float_left show_page_cast '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  >
@@ -140,6 +140,11 @@
 						<div  class='float_left'  >
 							<a target='_blank' href='http://stage.mynuvotv.com/shows/<?php echo $showpage_item['url_name']    ?>'>preview</a>
 						</div>
+						
+						<div class='float_left '>
+							&nbsp;&nbsp;Publish?<input name="publish" <?php echo (isset($showpage_item['publish']) && $showpage_item['publish']==1 ?   ' checked ' :  ''  )    ?> showpage_items_id='<?php echo $showpage_item['id']    ?>'  class='publish'  type="checkbox" value="1">
+						</div>	
+						
 						<div  class='float_left  showpage_item_trash' >
 							<img src='<?php   echo base_url()  ?>images/trash.gif'   showpage_item_id='<?php echo  $showpage_item['id']   ?>' >
 						</div>	
@@ -190,8 +195,29 @@
 							
 				});	
 				
-				
-				
+				$('.publish').click(function(event) {
+					
+						if( $(this).is(':checked')){
+							publish = 1;
+						}else{
+							publish = 0;
+						};
+
+						$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
+							table:'showpage_items',
+							id:$(this).attr('showpage_items_id'),
+							crud:'update',
+							set_what_array:'publish='+publish
+							},function(xml) {
+							
+								var status = $(xml).find('status').text();
+								var message = $(xml).find('message').text();
+								
+								
+						});	
+							
+							
+				});	
 				<?php if( $this->input->get('showpage_item_id') ){?>
 					
 						$('.showpage_item_row[showpage_item_id=<?php echo $this->input->get('showpage_item_id')    ?>]').css({background:'yellow'})
