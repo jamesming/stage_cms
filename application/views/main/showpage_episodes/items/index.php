@@ -54,7 +54,6 @@
 			<div   id='showpage_episodes_item_container'>
 				
 				<?php
-				
 				if( isset($data['showpage_episodes_items'])){
 					
 

@@ -148,7 +148,7 @@ function prepare_showpage_episodes_items( $segment4, $get_array){
 							
 	
 										
-				$data['showpage_episode_items'] = $showpage_episodes_items;
+				$data['showpage_episodes_items'] = $showpage_episodes_items;
 				$data['showpage_item_id'] = $get_array['showpage_item_id'];
 					
 

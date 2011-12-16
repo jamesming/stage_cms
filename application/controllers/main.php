@@ -123,7 +123,6 @@ class Main extends CI_Controller {
 								$this->input->get()
 						 );
 					
-
 			    break;			    
 			    
 			    

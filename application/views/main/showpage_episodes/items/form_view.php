@@ -32,24 +32,14 @@ padding-bottom:5px;
 form#image_showpage_episodes_item_form table#main div.image_assets{
 margin-top:25px;
 }
-form#image_showpage_episodes_item_form div#image_showpage_episodes_item_showpage_episodes_large{
+form#image_showpage_episodes_item_form div#image_showpage_episodes_item_showpage_episodes{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_episodes_items_images/<?php
-	  	echo $data['showpage_episodes_items'][0]['showpage_episodes_large_items_image_id']; 
+	  	echo $data['showpage_episodes_items'][0]['showpage_episodes_items_image_id']; 
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
 	width:458px;
 	height:248px;
-	margin-left: 72px;
-}
-form#image_showpage_episodes_item_form div#image_showpage_episodes_item_showpage_episodes_small{
-	background-image: url(<?php echo base_url();    ?>uploads/showpage_episodes_items_images/<?php
-	  	echo $data['showpage_episodes_items'][0]['showpage_episodes_small_items_image_id']; 
-	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
-	background-repeat: no-repeat;
-	border:1px dotted gray;
-	width:138px;
-	height:138px;
 	margin-left: 72px;
 }
 form#image_showpage_episodes_item_form #textarea_div{
@@ -111,11 +101,9 @@ display:none;
 			<tr>
 				<td class='main_table image_assets' colspan=2>
 					<div  class=' image_assets' >
-							<div image_type='showpage_episodes_large' image_type_id='16' class='float_left image_div'  id='image_showpage_episodes_item_showpage_episodes_large' showpage_episodes_items_image_id='<?php echo $data['showpage_episodes_items'][0]['showpage_episodes_large_items_image_id']    ?>'>
+							<div image_type='showpage_episodes' image_type_id='50' class='float_left image_div'  id='image_showpage_episodes_item_showpage_episodes' showpage_episodes_items_image_id='<?php echo $data['showpage_episodes_items'][0]['showpage_episodes_items_image_id']    ?>'>
 							</div>
-							
-							<div image_type='showpage_episodes_small' image_type_id='15' class='float_left image_div'  id='image_showpage_episodes_item_showpage_episodes_small' showpage_episodes_items_image_id='<?php echo $data['showpage_episodes_items'][0]['showpage_episodes_small_items_image_id']    ?>'>
-							</div>
+
 					</div>
 
 				</td>
@@ -249,6 +237,7 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 
 
 function submit_inputs(close_fancyzoom){
+	
 
 					$("#text_area").val( mbox.get_html() );
 
