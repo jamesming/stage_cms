@@ -116,6 +116,17 @@ class Main extends CI_Controller {
 
 			    break;
 			    
+			    case 'showpage_episodes':
+		
+						$data = $this->custom->prepare_showpage_episodes_items( 
+								$segment4,
+								$this->input->get()
+						 );
+					
+
+			    break;			    
+			    
+			    
 			    case 'showpage_feature':
 		
 						$data = $this->custom->prepare_showpage_feature_items( 
@@ -348,6 +359,30 @@ class Main extends CI_Controller {
 				);
 		
 	}
+
+
+	/**
+	 * showpage_episodes
+	 * 
+	 * @package BackEnd
+	 * @author James Ming <jamesming@gmail.com>
+	 * @path /index.php/home/showpage_episodes
+	 * @access public
+	 */
+	 
+	 
+	public function get_showpage_episodes_form(){
+		
+				$data['showpage_episodes_items'] = $this->query->get_showpage_episodes_items(
+							$where_array = array( 'id' => $this->input->get('showpage_episodes_item_id')) 
+				);	
+				
+				$this->load->view('main/showpage_episodes/items/form_view', 
+					array( 'data' => $data )
+				);
+		
+	}
+
 
 	/**
 	 * get_carousel_form
@@ -2031,52 +2066,41 @@ submitted
 
 
 function t(){
-	
-	
-				$table = 'showpage_items_images';
+				$table = 'showpage_episodes_items';
 				
-//				$this->my_database_model->	create_generic_table($table );
+				$this->my_database_model->	create_generic_table($table );
 				
 				
 				
 				$fields_array = array(
 				
-															'facebook_top' => array(
-				                                               'type' => 'int(11)'),
-				
-															'facebook_left' => array(
-				                                               'type' => 'int(11)'),   
-				
-															'facebook_width' => array(
-				                                               'type' => 'int(11)'),
-				
-															'facebook_height' => array(
-				                                               'type' => 'int(11)'),  
-				
-															'video_top' => array(
-				                                               'type' => 'int(11)'),
-				
-															'video_left' => array(
-				                                               'type' => 'int(11)'),  	
-				
-															'video_width' => array(
-				                                               'type' => 'int(11)'),
-				
-															'video_height' => array(
-				                                               'type' => 'int(11)'),  		
+	
+															'name' => array(
+				                                               'type' => 'varchar(255)'),			
+	
+															'content' => array(
+				                                               'type' => 'blob'),			
+	
+															'short_version' => array(
+				                                               'type' => 'blob'),		
+															'title' => array(
+				                                               'type' => 'varchar(1024)'),					                                               
 				                                               
-															'facebook_link' => array(
-				                                               'type' => 'int(11)'),
-				
-															'video_link' => array(
-				                                               'type' => 'int(11)'),  						                                               		                                               			                                               				                                                                                           
+	
+															'video_script' => array(
+				                                               'type' => 'blob'),
+				                                               
+				                                               
+															'showpage_item_id' => array(
+				                                               'type' => 'int(11)')		                      		                                                                      		                                               			                                               				                                                                                           
 				              ); 
 				              
 				$this->my_database_model->add_column_to_table_if_exist(
 					$table, 
 					$fields_array
 				);
-              
+              	
+
                       
     
   }  

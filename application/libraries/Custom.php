@@ -139,6 +139,28 @@ function prepare_showpage_cast_items( $segment4, $get_array){
 	
 }
 
+
+function prepare_showpage_episodes_items( $segment4, $get_array){
+	
+				$showpage_episodes_items = $this->CI->query->get_showpage_episodes_items(
+					array('showpage_item_id' => $get_array['showpage_item_id'])
+				);	
+							
+	
+										
+				$data['showpage_episode_items'] = $showpage_episodes_items;
+				$data['showpage_item_id'] = $get_array['showpage_item_id'];
+					
+
+				
+				$data['segment4'] = $segment4;
+				$data['segment3'] = 'showpage_episodes';
+				
+				return $data;
+	
+}
+
+
 function prepare_showpage_photos_items( $segment4, $get_array){
 	
 				$showpage_photos_items = $this->CI->query->get_showpage_photos_items(

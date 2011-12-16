@@ -25,70 +25,47 @@
 					border-bottom:1px solid lightgray;
 					padding:5px;
 					}
+					
+						#showpage_item_outside_container   .showpage_item_row div{
+							margin-left:10px;
+							text-align:left;
+							font-size:11px;	
+							font-weight:bold;
+							font-size:15px;
+							color:gray;
+							width:70px;
+							padding-top:0px;
+							text-align:center;								
+							
+						}
+					
 								#showpage_item_outside_container   .showpage_item_row .name_of{
-								width:110px;
-								font-weight:bold;
-								font-size:20px;
+								width:150px;
 								padding-top:0px;
-								text-align:center;
-								color:gray;
+								text-align:left;
+								margin-left:0px;
 								}
 								
 								#showpage_item_outside_container   .showpage_item_row .show_page_cast{
-								width:110px;
-								font-weight:bold;
-								font-size:20px;
-								padding-top:0px;
-								text-align:center;
-								color:gray;
 								}
 									
 								#showpage_item_outside_container   .showpage_item_row .show_page_feature{
-								width:110px;
-								font-weight:bold;
-								font-size:20px;
-								padding-top:0px;
-								text-align:center;
-								color:gray;
 								}			
 								
 								#showpage_item_outside_container   .showpage_item_row .show_page_photos{
-								width:110px;
-								font-weight:bold;
-								font-size:20px;
-								padding-top:0px;
-								text-align:center;
-								color:gray;
 								}			
 								
 								#showpage_item_outside_container   .showpage_item_row .show_page_mobile_gallery_photo{
-													width:110px;
-													font-weight:bold;
-													font-size:20px;
-													padding-top:0px;
-													text-align:center;
-													color:gray;
-													}
-																						
-								#showpage_item_outside_container   .showpage_item_row .show_page_android_gallery_photo{
-													width:110px;
-													font-weight:bold;
-													font-size:20px;
-													padding-top:0px;
-													text-align:center;
-													color:gray;
-													}
-																						
-																
-																							
-								#showpage_item_outside_container   .showpage_item_row .showpage_item_trash{
-								width:46px;
-								padding-top:90px;
-								}
+									width:100px;
+								}											
 								
-											#showpage_item_outside_container   .showpage_item_row .showpage_item_trash img{
-											width:30px;
-											}	
+								#showpage_item_outside_container   .showpage_item_row .publish{			
+									white-space:nowrap;			
+													}
+
+								#showpage_item_outside_container   .showpage_item_row .preview{			
+									margin-left:52px;	
+								}
 
 		</style>
 
@@ -113,7 +90,7 @@
 						</div>
 						
 						<div class='float_left '>
-							hot?<input name="isHot" <?php echo (isset($showpage_item['isHot']) && $showpage_item['isHot']==1 ?   ' checked ' :  ''  )    ?> showpage_items_id='<?php echo $showpage_item['id']    ?>'  class='isThisHot'  type="checkbox" value="1">
+							<input name="isHot" <?php echo (isset($showpage_item['isHot']) && $showpage_item['isHot']==1 ?   ' checked ' :  ''  )    ?> showpage_items_id='<?php echo $showpage_item['id']    ?>'  class='isThisHot'  type="checkbox" value="1">&nbsp;hot
 						</div>			
 						
 						<div  class='float_left show_page_cast '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  >
@@ -124,6 +101,11 @@
 						<div  class='float_left show_page_feature '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  >
 							features
 						</div>								
+						
+						
+						<div  class='float_left show_page_episodes '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'  >
+							episodes
+						</div>	
 						
 						<div  class='float_left show_page_photos '  showpage_item_id='<?php echo  $showpage_item['id']   ?>'    href='#fancy_zoom_div'>
 							photos
@@ -136,20 +118,18 @@
 						</div>	
 			
 													
-						
-						<div  class='float_left'  >
-							<a target='_blank' href='http://stage.mynuvotv.com/shows/<?php echo $showpage_item['url_name']    ?>'>preview</a>
-						</div>
-						
-						<div class='float_left '>
-							&nbsp;&nbsp;Publish?<input name="publish" <?php echo (isset($showpage_item['publish']) && $showpage_item['publish']==1 ?   ' checked ' :  ''  )    ?> showpage_items_id='<?php echo $showpage_item['id']    ?>'  class='publish'  type="checkbox" value="1">
-						</div>	
-						
-						<div  class='float_left  showpage_item_trash' >
-							<img src='<?php   echo base_url()  ?>images/trash.gif'   showpage_item_id='<?php echo  $showpage_item['id']   ?>' >
-						</div>	
 
 						
+						<div class='float_left publish'>
+							<input name="publish" <?php echo (isset($showpage_item['publish']) && $showpage_item['publish']==1 ?   ' checked ' :  ''  )    ?> showpage_items_id='<?php echo $showpage_item['id']    ?>'  class='publish'  type="checkbox" value="1"/>
+							Publish
+						</div>	
+						
+						
+						<div  class='float_left preview'  >
+							<a target='_blank' href='http://stage.mynuvotv.com/shows/<?php echo $showpage_item['url_name']    ?>'>
+								Preview</a>
+						</div>
 												
 					
 					</div>
@@ -269,7 +249,15 @@
 
 						document.location = '<?php echo  base_url()   ?>index.php/main/index/showpage_feature/items?showpage_item_id=' + $(this).attr('showpage_item_id');
 				
-				});							
+				});			
+				
+				
+				$('#showpage_item_outside_container   .showpage_item_row .show_page_episodes').css({cursor:'pointer'}).click(function(event) {
+					
+
+						document.location = '<?php echo  base_url()   ?>index.php/main/index/showpage_episodes/items?showpage_item_id=' + $(this).attr('showpage_item_id');
+				
+				});											
 				
 				$('#showpage_item_outside_container   .showpage_item_row .show_page_photos').css({cursor:'pointer'}).click(function(event) {
 					
@@ -296,37 +284,7 @@
 						document.location = '<?php echo  base_url()   ?>index.php/main/index/showpage_android_gallery_photo/items?showpage_item_id=' + $(this).attr('showpage_item_id');
 				
 				});		
-				
-				$('.showpage_item_trash img').css({cursor:'pointer'}).click(function(event) {
 
-
-					  if(  confirm('Do you really want to delete this item?')  ){
-					  	
-					  	
-
-									$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
-										table:'showpage_items',
-										crud:'delete_showpage_item',
-										showpage_item_id:$(this).attr('showpage_item_id')
-										
-										},function(xml) {
-										
-											var db_response = $(xml).find('db_response').text();
-										
-											if( db_response == 'ok'){
-												document.location.reload(true);
-											}else{
-												alert(db_response);
-											};
-										
-											
-											
-									});						    
-					  }
-
-					
-					
-				});	
 
   		});
 		</script>		

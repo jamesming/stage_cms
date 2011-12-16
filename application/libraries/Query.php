@@ -590,6 +590,58 @@ function query(){
 	}
 
 
+/**
+ * get_showpage_episodes_items
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @access public
+ * @return array  */ 
+
+	function get_showpage_episodes_items( $where_array = array() ){
+
+			$showpage_episodes_items_raw = $this->CI->my_database_model->select_from_table( 
+			$table = 'showpage_episodes_items', 
+			$select_what = '*', 
+			$where_array, 
+			$use_order = TRUE, 
+			$order_field = 'created', 
+			$order_direction = 'desc', 
+			$limit = -1
+			);
+
+
+
+
+			$image_types_array = array(
+								'showpage_episodes_items_image_id' => 50
+							);
+				
+			$showpage_episodes_items = $this->prepare_array(
+				$items_tables_raw = $this->CI->tools->object_to_array($showpage_episodes_items_raw),
+				$name_of_item_id	 = 'showpage_episodes_item_id',
+				$image_table = 'showpage_episodes_items_images',
+				$image_types_array);
+
+
+
+			if( isset($showpage_episodes_items)){
+				if( isset($showpage_item['order'])){
+					$this->CI->tools->aasort($showpage_episodes_items,'order');
+				};
+				return $showpage_episodes_items;
+			}else{
+				return;
+			};
+
+
+	}
+
+
+
+
+
 	
 /**
  * get_showpage_photos_items
