@@ -244,7 +244,27 @@ display:none;
 				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo $data['showpage_items'][0]['name']    ?>">
 				</td>
 			</tr>
-			
+			<tr>
+				<td  class='main_table ' > Parent
+				</td>
+				<td  class='main_table '>
+					<select name='showpage_parent_id'>
+					<?php foreach( $data['showpage_parents']  as  $showpage_parent ){ ?>	
+							
+							<option 
+								
+								<?php if(  $data['showpage_items'][0]['showpage_parent_id'] == $showpage_parent->id ){?>
+								
+								<?php  echo " selected "   ?>
+								
+								<?php } ?>
+								
+								value='<?php echo $showpage_parent->id    ?>'><?php  echo  $showpage_parent->name  ?></option>
+					
+					<?php } ?>
+					</select>
+				</td>
+			</tr>	
 			<tr>
 				<td  class='main_table ' > First Video
 				</td>

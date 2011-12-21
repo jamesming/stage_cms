@@ -232,6 +232,14 @@ class Main extends CI_Controller {
 	 
 	public function get_showpage_form(){
 		
+		
+				$data['showpage_parents'] = $this->my_database_model->select_from_table( 
+										$table = 'showpage_parents', 
+										$select_what = '*', 
+										array()
+										);
+
+		
 				$data['showpage_items'] = $this->query->get_showpage_items(
 							$where_array = array( 'id' => $this->input->get('showpage_item_id')) 
 				);	
