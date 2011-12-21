@@ -2065,7 +2065,7 @@ submitted
 
 
 function t(){
-				$table = 'showpage_episodes_items';
+				$table = 'showpage_parents';
 				
 				$this->my_database_model->	create_generic_table($table );
 				
@@ -2075,23 +2075,7 @@ function t(){
 				
 	
 															'name' => array(
-				                                               'type' => 'varchar(255)'),			
-	
-															'content' => array(
-				                                               'type' => 'blob'),			
-	
-															'short_version' => array(
-				                                               'type' => 'blob'),		
-															'title' => array(
-				                                               'type' => 'varchar(1024)'),					                                               
-				                                               
-	
-															'video_script' => array(
-				                                               'type' => 'blob'),
-				                                               
-				                                               
-															'showpage_item_id' => array(
-				                                               'type' => 'int(11)')		                      		                                                                      		                                               			                                               				                                                                                           
+				                                               'type' => 'varchar(255)')                		                                                                      		                                               			                                               				                                                                                           
 				              ); 
 				              
 				$this->my_database_model->add_column_to_table_if_exist(
