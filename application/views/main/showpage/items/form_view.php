@@ -263,6 +263,7 @@ display:none;
 					
 					<?php } ?>
 					</select>
+					<input name="season_order" id="" type="text" value="<?php echo ( isset( $data['showpage_items'][0]['season_order'] ) ? $data['showpage_items'][0]['season_order'] :'' )   ?>"   style='width:20px'  >
 				</td>
 			</tr>	
 			<tr>
