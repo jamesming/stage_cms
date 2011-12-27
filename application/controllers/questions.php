@@ -408,7 +408,9 @@ Thank you! We appreciate your feedback on Curvy Girls as we strive to bring nuvo
 		$reports_raw = $this->my_database_model->select_from_table( 
 			$table = 'model_latinas_castings', 
 			$select_what = '*', 
-			$where_array = array(), 
+			$where_array = array(
+			'first_name !='  => ''
+			), 
 			$use_order = TRUE, 
 			$order_field = 'created', 
 			$order_direction = 'desc',
