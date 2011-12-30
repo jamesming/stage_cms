@@ -39,7 +39,7 @@ $this->load->view('header/common_css.php');
 				
 							#carousel_set_outside_container div.row{
 								width:100%;
-								height:80px;
+								height:145px;
 								border-bottom:1px solid lightgray;
 							}
 							
@@ -57,10 +57,11 @@ $this->load->view('header/common_css.php');
 											}
 											
 											#carousel_set_outside_container div.row div.thumbs_container div.thumb{
-												width:69px;
-												height:37px;
-												margin-right:0px;
-												margin-left:-14px;
+										    height: 32px;
+										    margin-left: -14px;
+										    margin-right: 0;
+										    width: 69px;
+										    overflow: hidden;
 											}
 </style>
 <script type="text/javascript" language="Javascript" src = "<?php echo  base_url();   ?>js/jquery.js"></script>		
@@ -99,13 +100,26 @@ $this->load->view('main/calendar/nav_bar.php');
 						<div href='#fancy_zoom_div'  class='float_left thumbs_container' carousel_set_id='<?php echo $carousel_set['id']    ?>' >
 
 
-						<?php foreach( $carousel_set['carousel_items_sets'] as  $carousel_items_set ){?>
+										<?php 
+										$count=0;
+										foreach( $carousel_set['carousel_items_sets'] as  $carousel_items_set ){
+										$count++;
+										?>
+										
+												<div class='thumb'>
+													<img src='<?php   echo base_url()  ?>uploads/carousel_items_images/<?php  echo $carousel_items_set->carousel_items_image_id   ?>/image_tiny.png' />
+												</div>
+												
+												
+						<?php if (in_array($count, array(4,7,9))){?>
 						
-								<div class='float_left thumb'>
-									<img src='<?php   echo base_url()  ?>uploads/carousel_items_images/<?php  echo $carousel_items_set->carousel_items_image_id   ?>/image_tiny.png' />
-								</div>
-						
+						</div>
+						<div href='#fancy_zoom_div'  class='float_left thumbs_container' carousel_set_id='<?php echo $carousel_set['id']    ?>' >
+		
 						<?php } ?>
+												
+										
+										<?php } ?>
 
 
 
