@@ -1,5 +1,5 @@
 <style>
-	/
+
 iframe#iframe_src{
 width:500px;
 height:350px;	
@@ -20,7 +20,7 @@ margin:23px 23px 10px 23px;
 				
 							#carousel_set_outside_container div.row{
 								width:100%;
-								height:90px;
+								height:150px;
 								border-bottom:1px solid lightgray;
 							}
 											#carousel_set_outside_container div.row .carousel_set_name_column{
@@ -36,10 +36,11 @@ margin:23px 23px 10px 23px;
 											}
 											
 														#carousel_set_outside_container div.row div.thumbs_container div.thumb{
-															width:76px;
-															height:67px;
-															margin-right:20px;
-															border:1px dotted gray;
+													    border: 1px dotted gray;
+													    height: 67px;
+													    width: 76px;
+													    overflow: hidden;
+													    height: 31px;
 														}
 											
 											
@@ -71,17 +72,43 @@ margin:23px 23px 10px 23px;
 								<?php  echo $carousel_set['name']   ?>
 							</div>
 				
-							<div href='#fancy_zoom_div'  class='float_left thumbs_container' carousel_set_id='<?php echo $carousel_set['id']    ?>' >
-	
-							<?php foreach( $carousel_set['carousel_items_sets'] as  $carousel_items_set ){?>
-							
-									<div class='float_left thumb'>
-										<img src='<?php   echo base_url()  ?>uploads/carousel_items_images/<?php  echo $carousel_items_set->carousel_items_image_id   ?>/image_tiny.png' />
+				
+							<div  class='float_left ' >
+									<div href='#fancy_zoom_div'  class='float_left  thumbs_container' carousel_set_id='<?php echo $carousel_set['id']    ?>' >
+			
+										<?php
+										
+												 
+													$count = 0;
+													foreach( $carousel_set['carousel_items_sets'] as  $carousel_items_set ){
+													$count++;
+												 	
+												 	?>
+										
+																<div class='thumb'>
+																	<img src='<?php   echo base_url()  ?>uploads/carousel_items_images/<?php  echo $carousel_items_set->carousel_items_image_id   ?>/image_tiny.png' />
+																</div>
+																
+																
+																
+																
+									<?php if (in_array($count, array(4,7,9))){?>
+									
 									</div>
-							
-							<?php } ?>
-	
+									<div href='#fancy_zoom_div'  class='float_left  thumbs_container' carousel_set_id='<?php echo $carousel_set['id']    ?>' >
+										
+									<?php } ?>
+										
+										
+										
+										
+										
+										<?php } ?>
+			
+			
+									</div>																										
 							</div>
+
 							
 							
 							<div  class='float_left  carousel_item_trash' >

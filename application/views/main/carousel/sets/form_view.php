@@ -31,29 +31,28 @@ div.row div.right_tab_container{
 }
 											
 div.row div.right_tab_container div.thumb{
-	
-	width:76px;
-	height:67px;
-	margin-right:20px;
-	border:1px dotted gray;
+    border: 1px dotted gray;
+    height: 31px;
+    width: 76px;
+    overflow: hidden;
 }
 
 div.choice_right_tab_container_div{
-	overflow-y:hidden;
-	overflow-x:scroll;
-	border:1px dotted lightblue;
-	height:110px;
-	width:436px;
-	margin-top:15px;
-	margin-bottom:25px;
-	background:lightgray;
+    background: none repeat scroll 0 0 lightgray;
+    border: 1px dotted lightblue;
+    height: 54px;
+    margin-bottom: 25px;
+    margin-top: 15px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 436px;
 }
 div.choice_right_tab_container_div div.right_tab_container{
-	width:5000px;
+	width:10000px;
 }
 
 .submit_div{
-	margin-top:15px;
+	margin-top:115px;
 }
 #submit{
 padding:5px 20px;
@@ -81,36 +80,7 @@ width:100px;
 					  
 					  ?>" >
 					</div>
-	
-  				<div  class='row right_tab_container_div' >
-			
-						<div class='float_left right_tab_container'  >
-
-
-<?php if( isset($data['carousel_sets'])  ){
-	
-							foreach( $data['carousel_sets'][0]['carousel_items_sets'] as  $carousel_items_set ){?>
-									<div order_num = '<?php echo $carousel_items_set->order;   ?>' class='float_left thumb designate' >
-											<img src='<?php   echo base_url()  ?>uploads/carousel_items_images/<?php  echo $carousel_items_set->carousel_items_image_id;   ?>/image_tiny.png' />
-									</div>
-		
-							<?php }
-}else{
-	
-							for($i=1; $i <=4; $i++){?>
-									<div order_num = '<?php echo $i;   ?>' class='float_left thumb designate' >
-											
-									</div>
-							<?php }
-	
-} ?>
-
-
-							
-
-						</div>
-						
-					</div>	
+					
 					
 					
   				<div  class='clearfix row choice_right_tab_container_div' >
@@ -130,21 +100,82 @@ width:100px;
 
 						</div>
 						
+					</div>						
+	
+  				<div  class='row right_tab_container_div' >
+			
+						<div class='float_left right_tab_container'  >
+
+
+								<?php if( isset($data['carousel_sets'])  ){
+															
+															/* START FOREACH */
+															$count=0;
+															foreach( $data['carousel_sets'][0]['carousel_items_sets'] as  $carousel_items_set ){
+															$count++;
+															?>
+															
+															
+																	<div order_num = '<?php echo $carousel_items_set->order;   ?>' class='thumb designate' >
+																			<img src='<?php   echo base_url()  ?>uploads/carousel_items_images/<?php  echo $carousel_items_set->carousel_items_image_id;   ?>/image_tiny.png' />
+																	</div>
+																	
+																	
+																	
+						<?php if (in_array($count, array(4,7,9))){?>
+							
+						</div>
+						<div class='float_left right_tab_container'  >
+							
+						<?php } ?>
+						
+
+															<?php } /* END FOREACH */
+								}else{
+									
+															for($i=1; $i <=10; $i++){?>
+																
+		
+																	<div order_num = '<?php echo $i;   ?>' class='thumb designate' >
+																			
+																	</div>
+																	
+																	
+						<?php if (in_array($i, array(4,7,9))){?>
+							
+						</div>
+						<div class='float_left right_tab_container'  >
+							
+						<?php } ?>
+																	
+															<?php }
+									
+								} ?>
+
+
+							
+
+						</div>
+						
+						
 					</div>	
+					
+					
+
 					
 					<div  class='submit_div row clearfix '    >
 						
 						<input name="carousel_set_id" type="hidden" value="<?php echo $data['carousel_set_id']    ?>">
 						
-<?php if( isset($data['carousel_sets'])  ){	
-	 foreach( $data['carousel_sets'][0]['carousel_items_sets'] as  $carousel_items_set ){?>
-		<input name="order<?php echo $carousel_items_set->order;   ?>" id="order<?php echo $carousel_items_set->order;   ?>" type="hidden" value="<?php  echo $carousel_items_set->carousel_item_id;   ?>">
-		<?php }
-}else{
-		for($i=1; $i <=4; $i++){?>
-				<input name="order<?php echo $i  ?>" id="order<?php echo $i ?>" type="hidden" value="">
-		<?php }
-} ?>
+							<?php if( isset($data['carousel_sets'])  ){	
+								 foreach( $data['carousel_sets'][0]['carousel_items_sets'] as  $carousel_items_set ){?>
+									<input name="order<?php echo $carousel_items_set->order;   ?>" id="order<?php echo $carousel_items_set->order;   ?>" type="hidden" value="<?php  echo $carousel_items_set->carousel_item_id;   ?>">
+									<?php }
+							}else{
+									for($i=1; $i <=10; $i++){?>
+											<input name="order<?php echo $i  ?>" id="order<?php echo $i ?>" type="hidden" value="">
+									<?php }
+							} ?>
 
 						<input id="submit" type="submit" value="submit">
 					</div>

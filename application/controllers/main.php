@@ -81,6 +81,7 @@ class Main extends CI_Controller {
 						 );
 	 
 
+
 			    break;
 			    
 			    
@@ -933,7 +934,7 @@ class Main extends CI_Controller {
 	 
 function update_carousel_set_order(){
 	
-	
+		
 		$carousel_set_id = $this->input->post('carousel_set_id');
 	
 		if( $this->input->post('carousel_set_id') !=0 ){
@@ -965,7 +966,7 @@ function update_carousel_set_order(){
 		};
 
 
-		for($i=1; $i <=5; $i++){
+		for($i=1; $i <=10; $i++){
 		
 			$this->my_database_model->insert_table(
 													'carousel_items_sets', 
