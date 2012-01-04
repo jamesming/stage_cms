@@ -550,21 +550,31 @@ function query(){
  * @return array  */ 
 
 	function get_showpage_cast_items( $where_array = array() ){
+		
+					$join_array = array(
+									'showpage_cast_items_images' => 'showpage_cast_items_images.showpage_cast_item_id = showpage_cast_items_images.id'
+									);
+				
+				
 
-			$showpage_cast_items_raw = $this->CI->my_database_model->select_from_table( 
-			$table = 'showpage_cast_items', 
-			$select_what = '*', 
-			$where_array, 
-			$use_order = TRUE, 
-			$order_field = 'created', 
-			$order_direction = 'desc', 
-			$limit = -1
-			);
+		
+					$showpage_cast_items_raw = $this->CI->my_database_model->select_from_table( 
+								$table = 'showpage_cast_items', 
+								$select_what = '*', 
+								$where_array, 
+								$use_order = TRUE, 
+								$order_field = 'showpage_cast_items_images.order', 
+								$order_direction = 'asc', 
+								$limit = -1,
+								$use_join = TRUE, 
+								$join_array
+								);
 
 
 
+echo '<pre>';print_r( $showpage_cast_items_raw  );echo '</pre>';  exit;
 
-			$image_types_array = array(
+		$image_types_array = array(
 								'showpage_cast_items_image_id' => 13,
 								'showpage_cast_iphone_items_image_id' => 22
 							);

@@ -137,10 +137,10 @@
 							id:$(this).attr('showpage_cast_items_image_id'),
 							crud:'update',
 							set_what_array:$(this).serialize()
-							},function(xml) {
+							},function(data) {
 							
-								var status = $(xml).find('status').text();
-								var message = $(xml).find('message').text();
+								//alert(data);
+								
 								document.location.reload(true);
 								
 						});		

@@ -122,7 +122,7 @@ function prepare_showpage_items( $segment4, $get_array){
 function prepare_showpage_cast_items( $segment4, $get_array){
 	
 				$showpage_cast_items = $this->CI->query->get_showpage_cast_items(
-					array('showpage_item_id' => $get_array['showpage_item_id'])
+					array('showpage_cast_items.showpage_item_id' => $get_array['showpage_item_id'])
 				);	
 							
 	
