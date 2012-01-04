@@ -387,8 +387,11 @@ display:none;
 					<div  class=' image_assets' >
 							<div image_type='showpage_title' image_type_id='12' class='float_left image_div'  id='image_showpage_title_item_showpage_title' showpage_items_image_id='<?php echo $data['showpage_items'][0]['showpage_title_items_image_id']    ?>'>
 							</div>
-							<input showpage_items_id=<?php echo  $data['showpage_items'][0]['id']   ?>  style='width:20px'   class='float_left ' name="showpage_title_left_margin" id="showpage_title_left_margin" type="text" value="<?php echo  $data['showpage_items'][0]['showpage_title_left_margin']   ?>">
-					
+							<div   class='float_left '  style='width:100px;'  >
+									<input showpage_items_id=<?php echo  $data['showpage_items'][0]['id']   ?>  style='width:20px'   class='float_left ' name="showpage_title_left_margin" id="showpage_title_left_margin" type="text" value="<?php echo  $data['showpage_items'][0]['showpage_title_left_margin']   ?>">
+									<span class='launch' location='http://stage.mynuvotv.com/shows/<?php echo ( isset( $data['showpage_items'][0]['url_name']) ? $data['showpage_items'][0]['url_name']:'' )   ?>'>Preview</span>
+							</div>
+
 					</div>
 
 				</td>
@@ -547,7 +550,7 @@ display:none;
 			<tr>
 				<td   colspan=2>
 					<div>
-						<input  class=' submit' name="" type="button" value="submit">
+						<input  class=' submit' name="" type="button" value="save">
 					</div>
 				</td>
 			</tr>	
@@ -581,6 +584,10 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 	
 
 	$(document).ready(function() {
+		
+				$('.launch').css({cursor:'pointer'}).click(function(event) {
+						window[1] = open($(this).attr('location'), 1);
+				});		
 
 				$('#iphone_directTo_div input').each(function(event) {
 					if( $(this).val() == <?php  echo ( isset( $data['showpage_items'][0]['iphone_directTo']) ? $data['showpage_items'][0]['iphone_directTo']:0 )   ?>){		
