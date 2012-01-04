@@ -87,7 +87,8 @@ display:none;
 				</td>
 				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo $data['feature_items'][0]['name']    ?>">
 					<script type="text/javascript" language="Javascript">
-						$(document).ready(function() { 
+						$(document).ready(function() {
+							alert(''); 
 							$('.launch').css({cursor:'pointer'}).click(function(event) {
 									window[1] = open($(this).attr('location'), 1);
 							});	
