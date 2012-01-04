@@ -552,7 +552,7 @@ function query(){
 	function get_showpage_cast_items( $where_array = array() ){
 		
 					$join_array = array(
-									'showpage_cast_items_images' => 'showpage_cast_items_images.showpage_cast_item_id = showpage_cast_items_images.id'
+									'showpage_cast_items_images' => 'showpage_cast_items_images.showpage_cast_item_id = showpage_cast_items.id'
 									);
 				
 				
