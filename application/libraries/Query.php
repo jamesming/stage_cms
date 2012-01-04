@@ -566,7 +566,9 @@ function query(){
 								content,
 								short_content,
 								isHot,
-								directo
+								directo,
+								showpage_cast_items_images.show_on_showpage,
+								showpage_cast_items_images.order
 								', 
 								$where_array, 
 								$use_order = TRUE, 
