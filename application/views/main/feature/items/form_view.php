@@ -5,7 +5,10 @@
  	
 $this->load->view('header/blueprint_css.php');  
 $this->load->view('header/common_css.php');  
+
 ?>
+<script type="text/javascript" language="Javascript" src = "<?php echo  base_url();   ?>js/jquery.js"></script>
+
 <style>
 body{
 background:white;		
@@ -88,7 +91,6 @@ display:none;
 				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo $data['feature_items'][0]['name']    ?>">
 					<script type="text/javascript" language="Javascript">
 						$(document).ready(function() {
-							alert(''); 
 							$('.launch').css({cursor:'pointer'}).click(function(event) {
 									window[1] = open($(this).attr('location'), 1);
 							});	
@@ -166,7 +168,6 @@ display:none;
 </div>
 </html>
 
-<script type="text/javascript" language="Javascript" src = "<?php echo  base_url();   ?>js/jquery.js"></script>
 <?php 
 
 $this->load->view('footer/jquery_ui_for_dialog.php');    
