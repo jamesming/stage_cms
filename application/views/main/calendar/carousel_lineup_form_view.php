@@ -39,7 +39,7 @@ $this->load->view('header/common_css.php');
 				
 							#carousel_set_outside_container div.row{
 								width:100%;
-								height:145px;
+								height:195px;
 								border-bottom:1px solid lightgray;
 							}
 							
@@ -91,9 +91,9 @@ $this->load->view('main/calendar/nav_bar.php');
   		
   		
   		
-  				<div  class='row ' carousel_set_id='<?php  echo $carousel_set['id']   ?>'>
+  				<div  class='row clearfix' carousel_set_id='<?php  echo $carousel_set['id']   ?>'>
 			
-						<div  href='#fancy_zoom_div'   class='float_left carousel_set_name_column'  carousel_set_id='<?php echo $carousel_set['id']    ?>' >
+						<div  href='#fancy_zoom_div'   class=' carousel_set_name_column'  carousel_set_id='<?php echo $carousel_set['id']    ?>' >
 							<?php  echo $carousel_set['name']   ?>
 						</div>
 			
@@ -106,7 +106,7 @@ $this->load->view('main/calendar/nav_bar.php');
 										$count++;
 										?>
 										
-												<div class='thumb'>
+												<div class='thumb float_left'>
 													<img src='<?php   echo base_url()  ?>uploads/carousel_items_images/<?php  echo $carousel_items_set->carousel_items_image_id   ?>/image_tiny.png' />
 												</div>
 												
@@ -114,7 +114,7 @@ $this->load->view('main/calendar/nav_bar.php');
 						<?php if (in_array($count, array(4,7,9))){?>
 						
 						</div>
-						<div href='#fancy_zoom_div'  class='float_left thumbs_container' carousel_set_id='<?php echo $carousel_set['id']    ?>' >
+						<div href='#fancy_zoom_div'  class='clearfix thumbs_container' carousel_set_id='<?php echo $carousel_set['id']    ?>' >
 		
 						<?php } ?>
 												

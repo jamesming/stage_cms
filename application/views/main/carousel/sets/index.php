@@ -20,7 +20,7 @@ margin:23px 23px 10px 23px;
 				
 							#carousel_set_outside_container div.row{
 								width:100%;
-								height:150px;
+								height:190px;
 								border-bottom:1px solid lightgray;
 							}
 											#carousel_set_outside_container div.row .carousel_set_name_column{
@@ -66,7 +66,7 @@ margin:23px 23px 10px 23px;
 	  		
 	  		
 	  		
-	  				<div  class='row ' >
+	  				<div  class='row clearfix' >
 				
 							<div  href='#fancy_zoom_div'   class='float_left carousel_set_name_column'  carousel_set_id='<?php echo $carousel_set['id']    ?>' >
 								<?php  echo $carousel_set['name']   ?>
@@ -85,7 +85,7 @@ margin:23px 23px 10px 23px;
 												 	
 												 	?>
 										
-																<div class='thumb'>
+																<div class='thumb float_left'>
 																	<img src='<?php   echo base_url()  ?>uploads/carousel_items_images/<?php  echo $carousel_items_set->carousel_items_image_id   ?>/image_tiny.png' />
 																</div>
 																
@@ -95,7 +95,7 @@ margin:23px 23px 10px 23px;
 									<?php if (in_array($count, array(4,7,9))){?>
 									
 									</div>
-									<div href='#fancy_zoom_div'  class='float_left  thumbs_container' carousel_set_id='<?php echo $carousel_set['id']    ?>' >
+									<div href='#fancy_zoom_div'  class='clearfix  thumbs_container' carousel_set_id='<?php echo $carousel_set['id']    ?>' >
 										
 									<?php } ?>
 										

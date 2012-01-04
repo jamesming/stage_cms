@@ -104,7 +104,7 @@ width:100px;
 	
   				<div  class='row right_tab_container_div' >
 			
-						<div class='float_left right_tab_container'  >
+						<div class='clearfix right_tab_container'  >
 
 
 								<?php if( isset($data['carousel_sets'])  ){
@@ -116,7 +116,7 @@ width:100px;
 															?>
 															
 															
-																	<div order_num = '<?php echo $carousel_items_set->order;   ?>' class='thumb designate' >
+																	<div order_num = '<?php echo $carousel_items_set->order;   ?>' class='float_left thumb designate' >
 																			<img src='<?php   echo base_url()  ?>uploads/carousel_items_images/<?php  echo $carousel_items_set->carousel_items_image_id;   ?>/image_tiny.png' />
 																	</div>
 																	
@@ -125,7 +125,7 @@ width:100px;
 						<?php if (in_array($count, array(4,7,9))){?>
 							
 						</div>
-						<div class='float_left right_tab_container'  >
+						<div class='clearfix right_tab_container'  >
 							
 						<?php } ?>
 						
