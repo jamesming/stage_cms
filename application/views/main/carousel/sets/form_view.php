@@ -144,7 +144,7 @@ width:100px;
 						<?php if (in_array($i, array(4,7,9))){?>
 							
 						</div>
-						<div class='clearfixt right_tab_container'  >
+						<div class='clearfix right_tab_container'  >
 							
 						<?php } ?>
 																	
