@@ -32,8 +32,8 @@ div.row div.right_tab_container{
 											
 div.row div.right_tab_container div.thumb{
     border: 1px dotted gray;
-    height: 31px;
-    width: 86px;
+    height: 41px;
+    width: 76px;
     overflow: hidden;
 }
 
