@@ -89,13 +89,7 @@ display:none;
 				<td  class='main_table ' > URL Name
 				</td>
 				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo $data['feature_items'][0]['name']    ?>">
-					<script type="text/javascript" language="Javascript">
-						$(document).ready(function() {
-							$('.launch').css({cursor:'pointer'}).click(function(event) {
-									window[1] = open($(this).attr('location'), 1);
-							});	
-						});
-					</script>
+
 					<span class='launch' location='http://stage.mynuvotv.com/features/<?php echo $data['feature_items'][0]['name']    ?>'>Preview</span>
 				</td>
 			</tr>
@@ -181,6 +175,9 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 
 	$(document).ready(function() {
 		
+				$('.launch').css({cursor:'pointer'}).click(function(event) {
+						window[1] = open($(this).attr('location'), 1);
+				});			
 		
 				$('.image_div').css({cursor:'pointer'}).click(function(event) {
 
