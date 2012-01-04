@@ -571,9 +571,6 @@ function query(){
 								);
 
 
-
-echo '<pre>';print_r( $showpage_cast_items_raw  );echo '</pre>';  exit;
-
 		$image_types_array = array(
 								'showpage_cast_items_image_id' => 13,
 								'showpage_cast_iphone_items_image_id' => 22
