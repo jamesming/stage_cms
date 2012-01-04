@@ -123,7 +123,7 @@ display:none;
 			<tr>
 				<td   colspan=2>
 					<div>
-						<input name="" id="submit" type="button" value="save"><span class='launch' location='http://stage.mynuvotv.com/features/<?php echo $data['feature_items'][0]['name']    ?>'>Preview</span>
+						<input name="" id="submit" type="button" value="save">&nbsp;&nbsp;<span class='launch' location='http://stage.mynuvotv.com/features/<?php echo $data['feature_items'][0]['name']    ?>'>Preview</span>
 					</div>
 				</td>
 			</tr>	
