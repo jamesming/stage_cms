@@ -554,6 +554,8 @@ function query(){
 					$join_array = array(
 									'showpage_cast_items_images' => 'showpage_cast_items_images.showpage_cast_item_id = showpage_cast_items.id'
 									);
+				
+				
 
 		
 					$showpage_cast_items_raw = $this->CI->my_database_model->select_from_table( 
