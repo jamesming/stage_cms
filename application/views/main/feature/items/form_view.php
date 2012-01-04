@@ -87,7 +87,7 @@ display:none;
 				</td>
 				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo $data['feature_items'][0]['name']    ?>">
 					
-					<a target='_blank' href='http://stage.mynuvotv.com/features/<?php echo $data['name']    ?>'>Preview</a>
+					<a target='_blank' href='http://stage.mynuvotv.com/features/<?php echo $data['feature_items'][0]['name']    ?>'>Preview</a>
 				</td>
 			</tr>
 			
