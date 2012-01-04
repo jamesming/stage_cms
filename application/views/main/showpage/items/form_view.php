@@ -249,7 +249,7 @@ display:none;
 				</td>
 				<td  class='main_table '>
 					<select name='showpage_parent_id'>
-						<option value='0'>select</option>
+						<option value='0'>Select Series</option>
 					<?php foreach( $data['showpage_parents']  as  $showpage_parent ){ ?>	
 							
 							<option 
