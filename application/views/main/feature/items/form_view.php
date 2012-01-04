@@ -120,7 +120,7 @@ display:none;
 			<tr>
 				<td   colspan=2>
 					<div>
-						<input name="" id="submit" type="button" value="submit">
+						<input name="" id="submit" type="button" value="save">
 					</div>
 				</td>
 			</tr>	
@@ -270,7 +270,7 @@ function submit_inputs(close_fancyzoom){
 
 							//var db_response = $(xml).find('db_response').text();
 							if( close_fancyzoom == 1){
-															window.parent.location.reload();
+							//								window.parent.location.reload();
 							};
 							
 							// window.parent.$('body').click();
