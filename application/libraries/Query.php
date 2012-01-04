@@ -554,8 +554,6 @@ function query(){
 					$join_array = array(
 									'showpage_cast_items_images' => 'showpage_cast_items_images.showpage_cast_item_id = showpage_cast_items.id'
 									);
-				
-				
 
 		
 					$showpage_cast_items_raw = $this->CI->my_database_model->select_from_table( 
@@ -565,7 +563,7 @@ function query(){
 								$use_order = TRUE, 
 								$order_field = 'showpage_cast_items_images.order', 
 								$order_direction = 'asc', 
-								$limit = -1,
+								$limit = 1,
 								$use_join = TRUE, 
 								$join_array
 								);
