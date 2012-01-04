@@ -560,7 +560,14 @@ function query(){
 		
 					$showpage_cast_items_raw = $this->CI->my_database_model->select_from_table( 
 								$table = 'showpage_cast_items', 
-								$select_what = '*', 
+								$select_what = '
+								showpage_cast_items.id,
+								showpage_cas_items.name,
+								content,
+								short_content,
+								isHot,
+								directo
+								', 
 								$where_array, 
 								$use_order = TRUE, 
 								$order_field = 'showpage_cast_items_images.order', 
