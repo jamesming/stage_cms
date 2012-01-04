@@ -562,7 +562,7 @@ function query(){
 								$table = 'showpage_cast_items', 
 								$select_what = '
 								showpage_cast_items.id,
-								showpage_cas_items.name,
+								showpage_cast_items.name,
 								content,
 								short_content,
 								isHot,
