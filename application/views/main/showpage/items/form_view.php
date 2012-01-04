@@ -250,7 +250,7 @@ display:none;
 				<td  class='main_table '>
 					<select name='showpage_parent_id'>
 					<?php foreach( $data['showpage_parents']  as  $showpage_parent ){ ?>	
-							
+							<option value='0'>select</option>
 							<option 
 								
 								<?php if(  $data['showpage_items'][0]['showpage_parent_id'] == $showpage_parent->id ){?>
