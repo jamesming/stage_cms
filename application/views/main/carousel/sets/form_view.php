@@ -136,7 +136,7 @@ width:100px;
 															for($i=1; $i <=10; $i++){?>
 																
 		
-																	<div order_num = '<?php echo $i;   ?>' class='thumb designate' >
+																	<div order_num = '<?php echo $i;   ?>' class='float_left thumb designate' >
 																			
 																	</div>
 																	
@@ -144,7 +144,7 @@ width:100px;
 						<?php if (in_array($i, array(4,7,9))){?>
 							
 						</div>
-						<div class='float_left right_tab_container'  >
+						<div class='clearfixt right_tab_container'  >
 							
 						<?php } ?>
 																	
