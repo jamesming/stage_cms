@@ -32,7 +32,7 @@ div.row div.right_tab_container{
 											
 div.row div.right_tab_container div.thumb{
     border: 1px dotted gray;
-    height: 41px;
+    height: 31px;
     width: 76px;
     overflow: hidden;
 }
@@ -40,7 +40,7 @@ div.row div.right_tab_container div.thumb{
 div.choice_right_tab_container_div{
     background: none repeat scroll 0 0 lightgray;
     border: 1px dotted lightblue;
-    height: 54px;
+    height: 60px;
     margin-bottom: 25px;
     margin-top: 15px;
     overflow-x: scroll;
