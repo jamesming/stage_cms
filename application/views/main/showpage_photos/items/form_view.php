@@ -123,7 +123,7 @@
  
  
 <div id="content"  class=' container' >
-			<div>Name <input  name="name" id="name" type="" value="<?php echo (isset($data['showpage_photos_items'][0]['name'])?$data['showpage_photos_items'][0]['name']:'');    ?>"><input name="submit" id="submit" type="button" value="submit">
+			<div>Name <input  name="name" id="name" type="" value="<?php echo (isset($data['showpage_photos_items'][0]['name'])?$data['showpage_photos_items'][0]['name']:'');    ?>"><input name="submit" id="submit" type="button" value="submit"> You must click submit first before you add any photos!
 			</div>
 			<div  id="fsUploadProgress" class="fieldset flash">
 			<span class="legend">Upload Queue</span>
