@@ -267,7 +267,7 @@ function submit_inputs(close_fancyzoom){
 						table:'showpage_cast_items',
 						crud:'update',
 						set_what_array: $('#image_showpage_cast_item_form').serialize(),
-						id:'<?php echo $data['showpage_cast_items'][0]['id']    ?>'
+						id:'<?php echo ( isset( $data['showpage_cast_items'][0]['id'] ) ? $data['showpage_cast_items'][0]['id'] :0 )   ?>'
 						},function(xml) {
 
 							//var db_response = $(xml).find('db_response').text();
