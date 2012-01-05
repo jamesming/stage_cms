@@ -266,8 +266,7 @@ class Main extends CI_Controller {
 		
 				$data['showpage_cast_items'] = $this->query->get_showpage_cast_items(
 					array(
-					'showpage_cast_items.id' =>  $this->input->get('showpage_cast_item_id'),
-					'showpage_cast_items_images.image_type_id' => 13
+					'showpage_cast_items.id' =>  $this->input->get('showpage_cast_item_id')
 					)
 				);			
 
