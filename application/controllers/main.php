@@ -266,13 +266,14 @@ class Main extends CI_Controller {
 	public function get_showpage_cast_form(){
 		
 		
-				$data['showpage_cast_items'] = $this->query->get_showpage_cast_items(
+				$data['showpage_cast_items'] =$this->query->get_showpage_cast_items(
 					array(
-					'showpage_cast_items.showpage_item_id' => $this->input->get('showpage_cast_item_id'),
+					'showpage_cast_items.showpage_item_id' =>  $this->input->get('showpage_cast_item_id'),
 					'showpage_cast_items_images.image_type_id' => 13
 					)
 				);			
-echo '<pre>';print_r(  $data['showpage_cast_items']   );echo '</pre>';  exit;
+		
+echo '<pre>';print_r( $data['showpage_cast_items']   );echo '</pre>';  exit;
 				
 				$this->load->view('main/showpage_cast/items/form_view', 
 					array( 'data' => $data )
