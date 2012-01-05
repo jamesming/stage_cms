@@ -32,7 +32,7 @@ margin-top:25px;
 }
 form#image_showpage_cast_item_form div#image_showpage_cast_item_showpage_cast{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_cast_items_images/<?php
-	  	echo $data['showpage_cast_items'][0]['showpage_cast_items_image_id']; 
+	  	echo ( isset( $data['showpage_cast_items'][0]['showpage_cast_items_image_id']) $data['showpage_cast_items'][0]['showpage_cast_items_image_id']? :0 ) ; 
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
