@@ -153,7 +153,7 @@
 							showpage_item_id:<?php  echo $data['showpage_item_id']   ?>,
 							crud:'insert_with_showpage_id'
 							},function(xml) {
-							
+							alert($(xml).find('db_response').text());
 								var status = $(xml).find('status').text();
 								var message = $(xml).find('message').text();
 								$("#iframe_src").attr('src','<?php echo base_url();    ?>index.php/main/get_showpage_cast_form?showpage_cast_item_id=' + $(xml).find('db_response').text()  );
