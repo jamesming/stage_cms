@@ -100,7 +100,7 @@
 
 		
 		<script type="text/javascript" language="Javascript"> 
-			
+						
 			
 			function make_yellow(dom_ele){
 				
@@ -157,7 +157,7 @@
 						});	
 				
 				});		
-				
+
 				
 				$('#feature_item_outside_container   .feature_item_row .name_of').css({cursor:'pointer'}).fancyZoom().click(function(event) {
 					
@@ -172,26 +172,23 @@
 
 					  if(  confirm('Do you really want to delete this item?')  ){
 					  	
-					  	
 
+						
 									$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
 										table:'feature_items',
-										crud:'delete_feature_item',
-										feature_item_id:$(this).attr('feature_item_id')
-										
+										id:$(this).attr('feature_item_id'),
+										crud:'update',
+										set_what_array:'deactivate=1'
 										},function(xml) {
 										
-											var db_response = $(xml).find('db_response').text();
-										
-											if( db_response == 'ok'){
-												document.location.reload(true);
-											}else{
-												alert(db_response);
-											};
-										
+			
+											var db_response = $(xml).find('db_response').text();								
+											alert('deactivated on: '+db_response );
 											
+											window.location.reload(true);
 											
-									});						    
+									});	
+			    
 					  }
 
 					
@@ -199,4 +196,5 @@
 				});	
 
   		});
+  		
 		</script>		

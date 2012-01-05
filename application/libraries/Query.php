@@ -459,7 +459,9 @@ function query(){
 			$feature_items_raw = $this->CI->my_database_model->select_from_table( 
 			$table = 'feature_items', 
 			$select_what = '*', 
-			$where_array, 
+			$where_array = array(
+				'deactivate !=' => '1'			
+			), 
 			$use_order = TRUE, 
 			$order_field = 'created', 
 			$order_direction = 'desc', 
