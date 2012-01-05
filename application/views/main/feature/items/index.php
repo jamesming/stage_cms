@@ -99,7 +99,23 @@
   	</div>
 
 		
-		<script type="text/javascript" language="Javascript">  
+		<script type="text/javascript" language="Javascript"> 
+			
+			
+			function make_yellow(dom_ele){
+				
+				dom_ele.parent().parent().children().css({background:'white'})
+				
+				
+		    new_position = dom_ele.parent().offset();
+		    
+		    window.scrollTo(new_position.left,new_position.top-100);
+				
+				
+				dom_ele.parent().css({background:'yellow'})
+				
+			}
+			 
 			
 			$(document).ready(function() {
 
@@ -145,6 +161,7 @@
 				
 				$('#feature_item_outside_container   .feature_item_row .name_of').css({cursor:'pointer'}).fancyZoom().click(function(event) {
 					
+						make_yellow($(this));
 
 						$("#iframe_src").attr('src','<?php echo base_url();    ?>index.php/main/get_feature_form?feature_item_id=' + $(this).attr('feature_item_id')  );
 				
