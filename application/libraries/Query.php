@@ -566,8 +566,7 @@ function query(){
 								$limit = -1
 								);
 								
-								
-								echo '<pre>';print_r(  $showpage_cast_items_raw );echo '</pre>';  exit;
+
 											
 		}else{
 			
