@@ -125,7 +125,7 @@ display:none;
 				
 				<td class='main_table image_assets'  colspan=2>
 					<div  class='float_left image_assets' >
-							<div image_type='showpage_cast' image_type_id='13' class='float_left image_div'  id='image_showpage_cast_item_showpage_cast' showpage_cast_items_image_id='<?php echo $data['showpage_cast_items'][0]['showpage_cast_items_image_id']    ?>'>
+							<div image_type='showpage_cast' image_type_id='13' class='float_left image_div'  id='image_showpage_cast_item_showpage_cast' showpage_cast_items_image_id='<?php echo ( isset( $data['showpage_cast_items'][0]['showpage_cast_items_image_id']  ) ? $data['showpage_cast_items'][0]['showpage_cast_items_image_id']  :0 )  ?>'>
 							</div>
 							
 					
