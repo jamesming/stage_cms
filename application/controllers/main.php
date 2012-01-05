@@ -439,7 +439,19 @@ class Main extends CI_Controller {
 
 		$db_response = $this->query->update( $this->input->post()  );
 
-		echo  $db_response;
+		header("Content-type: text/xml");	
+		echo "<?xml version=\"1.0\"?>\n ";
+
+		?>
+		
+		<container>
+			<status><?php print_r( $db_response )    ?></status>
+			<message><?php echo 'test2'    ?></message>
+			<db_response><?php echo  $db_response   ?></db_response>
+		</container>
+		
+		
+		<?php  
 
 	}
 
