@@ -92,7 +92,7 @@ display:none;
 			<tr>
 				<td  class='main_table ' > Name
 				</td>
-				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo $data['showpage_cast_items'][0]['name']    ?>">
+				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo ( isset( $data['showpage_cast_items'][0]['name'] ) ? $data['showpage_cast_items'][0]['name'] :'' )   ?>">
 				</td>
 			</tr>
 			<tr>
