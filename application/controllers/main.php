@@ -265,8 +265,8 @@ class Main extends CI_Controller {
 	 // brk 
 	public function get_showpage_cast_form(){
 		
-		
-				$data['showpage_cast_items'] =$this->query->get_showpage_cast_items(
+		echo '<pre>';print_r( $this->input->get('showpage_cast_item_id')   );echo '</pre>';  exit;
+				$data['showpage_cast_items'] = $this->query->get_showpage_cast_items(
 					array(
 					'showpage_cast_items.showpage_item_id' =>  $this->input->get('showpage_cast_item_id'),
 					'showpage_cast_items_images.image_type_id' => 13
