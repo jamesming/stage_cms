@@ -231,8 +231,7 @@ class Main extends CI_Controller {
 	 
 	 
 	public function get_showpage_form(){
-		
-		
+		echo '<pre>';print_r(  $this->input->get('showpage_item_id')  );echo '</pre>';  exit;
 				$data['showpage_parents'] = $this->my_database_model->select_from_table( 
 										$table = 'showpage_parents', 
 										$select_what = '*', 
