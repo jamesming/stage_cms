@@ -271,7 +271,6 @@ class Main extends CI_Controller {
 				);			
 
 
-echo '<pre>';print_r( $data['showpage_cast_items']  );echo '</pre>';  exit;
 				
 				$this->load->view('main/showpage_cast/items/form_view', 
 					array( 'data' => $data )

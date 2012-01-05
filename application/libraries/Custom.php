@@ -122,10 +122,20 @@ function prepare_showpage_items( $segment4, $get_array){
 function prepare_showpage_cast_items( $segment4, $get_array){
 	
 				$showpage_cast_items = $this->CI->query->get_showpage_cast_items(
-					array(
+					$where_array = array(
 					'showpage_cast_items.showpage_item_id' => $get_array['showpage_item_id'],
 					'showpage_cast_items_images.image_type_id' => 13
-					)
+					),
+				$select_what = '
+								showpage_cast_items.id,
+								showpage_cast_items.name,
+								content,
+								short_content,
+								isHot,
+								directo,
+								showpage_cast_items_images.show_on_showpage,
+								showpage_cast_items_images.order
+								'
 				);	
 							
 	

@@ -549,27 +549,33 @@ function query(){
  * @access public
  * @return array  */ 
 
-	function get_showpage_cast_items( $where_array = array() ){
+	function get_showpage_cast_items( $where_array = array(), $select_what = ' * ' ){
 		
+		
+		
+		if( $select_what == ' * ' ){
+			
+
+					$showpage_cast_items_raw = $this->CI->my_database_model->select_from_table( 
+								$table = 'showpage_cast_items', 
+								$select_what, 
+								$where_array, 
+								$use_order = FALSE, 
+								$order_field = '', 
+								$order_direction = 'asc', 
+								$limit = -1
+								);
+											
+		}else{
+			
 					$join_array = array(
 									'showpage_cast_items_images' => 'showpage_cast_items_images.showpage_cast_item_id = showpage_cast_items.id'
 									);
 				
-				
 
-		
 					$showpage_cast_items_raw = $this->CI->my_database_model->select_from_table( 
 								$table = 'showpage_cast_items', 
-								$select_what = '
-								showpage_cast_items.id,
-								showpage_cast_items.name,
-								content,
-								short_content,
-								isHot,
-								directo,
-								showpage_cast_items_images.show_on_showpage,
-								showpage_cast_items_images.order
-								', 
+								$select_what, 
 								$where_array, 
 								$use_order = TRUE, 
 								$order_field = 'showpage_cast_items_images.order', 
@@ -578,7 +584,17 @@ function query(){
 								$use_join = TRUE, 
 								$join_array
 								);
+											
+			
+			
+		};
+		
 
+								
+								
+								
+								
+								
 
 		$image_types_array = array(
 								'showpage_cast_items_image_id' => 13,
