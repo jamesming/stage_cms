@@ -565,6 +565,9 @@ function query(){
 								$order_direction = 'asc', 
 								$limit = -1
 								);
+								
+								
+								echo '<pre>';print_r(  $showpage_cast_items_raw );echo '</pre>';  exit;
 											
 		}else{
 			
