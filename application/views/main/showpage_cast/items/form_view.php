@@ -133,7 +133,7 @@ display:none;
 
 
 					<div  class='float_left image_assets' >
-							<div image_type='showpage_cast_iphone' image_type_id='22' class='float_left image_div'  id='image_showpage_cast_iphone_item_showpage_cast' showpage_cast_items_image_id='<?php echo $data['showpage_cast_items'][0]['showpage_cast_iphone_items_image_id']    ?>'>
+							<div image_type='showpage_cast_iphone' image_type_id='22' class='float_left image_div'  id='image_showpage_cast_iphone_item_showpage_cast' showpage_cast_items_image_id='<?php echo ( isset( $data['showpage_cast_items'][0]['showpage_cast_iphone_items_image_id']) ?$data['showpage_cast_items'][0]['showpage_cast_iphone_items_image_id'] :0 )    ?>'>
 							</div>
 							
 					
