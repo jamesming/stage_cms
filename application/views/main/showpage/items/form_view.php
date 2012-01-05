@@ -388,7 +388,8 @@ display:none;
 							<div image_type='showpage_title' image_type_id='12' class='float_left image_div'  id='image_showpage_title_item_showpage_title' showpage_items_image_id='<?php echo $data['showpage_items'][0]['showpage_title_items_image_id']    ?>'>
 							</div>
 							<div   class='float_left '  style='width:100px;'  >
-									<input showpage_items_id=<?php echo  $data['showpage_items'][0]['id']   ?>  style='width:20px'   class='float_left ' name="showpage_title_left_margin" id="showpage_title_left_margin" type="text" value="<?php echo  $data['showpage_items'][0]['showpage_title_left_margin']   ?>">
+									<input showpage_items_id=<?php echo  $data['showpage_items'][0]['id']   ?>  style='width:20px'   class='float_left showpage_title_margins' name="showpage_title_left_margin" id="showpage_title_left_margin" type="text" value="<?php echo  $data['showpage_items'][0]['showpage_title_left_margin']   ?>">
+									<input showpage_items_id=<?php echo  $data['showpage_items'][0]['id']   ?>  style='width:20px'   class='float_left showpage_title_margins' name="showpage_title_top_margin" id="showpage_title_top_margin" type="text" value="<?php echo  ( isset( $data['showpage_items'][0]['showpage_title_top_margin']) ? $data['showpage_items'][0]['showpage_title_top_margin']:'' )   ?>">
 									<span class='launch' location='http://stage.mynuvotv.com/shows/<?php echo ( isset( $data['showpage_items'][0]['url_name']) ? $data['showpage_items'][0]['url_name']:'' )   ?>'>Preview</span>
 							</div>
 
@@ -595,7 +596,7 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 					};
 				});	
 
-				$('#showpage_title_left_margin').blur(function(event) {
+				$('.showpage_title_margins').blur(function(event) {
 
 							
 						$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
