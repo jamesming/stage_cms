@@ -784,7 +784,7 @@ function query(){
 			$where_array, 
 			$use_order = TRUE, 
 			$order_field = 'order', 
-			$order_direction = 'desc', 
+			$order_direction = 'asc', 
 			$limit = -1
 			);
 			
