@@ -272,7 +272,7 @@ class Main extends CI_Controller {
 					'showpage_cast_items_images.image_type_id' => 13
 					)
 				);			
-
+echo '<pre>';print_r(  $data['showpage_cast_items']   );echo '</pre>';  exit;
 				
 				$this->load->view('main/showpage_cast/items/form_view', 
 					array( 'data' => $data )
