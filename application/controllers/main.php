@@ -231,7 +231,7 @@ class Main extends CI_Controller {
 	 
 	 
 	public function get_showpage_form(){
-		echo '<pre>';print_r(  $this->input->get('showpage_item_id')  );echo '</pre>';  exit;
+
 				$data['showpage_parents'] = $this->my_database_model->select_from_table( 
 										$table = 'showpage_parents', 
 										$select_what = '*', 
@@ -263,7 +263,7 @@ class Main extends CI_Controller {
 	 
 	 // brk 
 	public function get_showpage_cast_form(){
-
+		echo '<pre>';print_r(   $this->input->get('showpage_cast_item_id') );echo '</pre>';  exit;
 				$data['showpage_cast_items'] = $this->query->get_showpage_cast_items(
 					array(
 					'showpage_cast_items.id' =>  $this->input->get('showpage_cast_item_id'),
