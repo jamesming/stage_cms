@@ -32,7 +32,7 @@ margin-top:25px;
 }
 form#image_showpage_cast_item_form div#image_showpage_cast_item_showpage_cast{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_cast_items_images/<?php
-	  	echo ( isset( $data['showpage_cast_items'][0]['showpage_cast_items_image_id']) ? $data['showpage_cast_items'][0]['showpage_cast_items_image_id']:0 ) ; 
+	  	echo $data['showpage_cast_items'][0]['showpage_cast_items_image_id']; 
 	?>/image_tiny.png?random=<?php echo rand(5,12334)    ?>);
 	background-repeat: no-repeat;
 	border:1px dotted gray;
@@ -92,7 +92,7 @@ display:none;
 			<tr>
 				<td  class='main_table ' > Name
 				</td>
-				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo ( isset( $data['showpage_cast_items'][0]['name'] ) ? $data['showpage_cast_items'][0]['name'] :'' )   ?>">
+				<td  class='main_table '><input name="name" id="" type="text" value="<?php echo $data['showpage_cast_items'][0]['name']    ?>">
 				</td>
 			</tr>
 			<tr>
@@ -109,7 +109,7 @@ display:none;
 			<tr>
 				<td   class='main_table ' colspan=2>
 					<div  id='textarea_div'   >
-							<textarea  class=' clearfix' name='content' id='text_area'><?php echo ( isset( $data['showpage_cast_items'][0]['content']) ? $data['showpage_cast_items'][0]['content']:'' )    ?></textarea>
+							<textarea  class=' clearfix' name='content' id='text_area'><?php echo $data['showpage_cast_items'][0]['content']    ?></textarea>
 					</div>
 				</td>
 			</tr>	
@@ -125,7 +125,7 @@ display:none;
 				
 				<td class='main_table image_assets'  colspan=2>
 					<div  class='float_left image_assets' >
-							<div image_type='showpage_cast' image_type_id='13' class='float_left image_div'  id='image_showpage_cast_item_showpage_cast' showpage_cast_items_image_id='<?php echo ( isset( $data['showpage_cast_items'][0]['showpage_cast_items_image_id']  ) ? $data['showpage_cast_items'][0]['showpage_cast_items_image_id']  :0 )  ?>'>
+							<div image_type='showpage_cast' image_type_id='13' class='float_left image_div'  id='image_showpage_cast_item_showpage_cast' showpage_cast_items_image_id='<?php echo $data['showpage_cast_items'][0]['showpage_cast_items_image_id']    ?>'>
 							</div>
 							
 					
@@ -133,7 +133,7 @@ display:none;
 
 
 					<div  class='float_left image_assets' >
-							<div image_type='showpage_cast_iphone' image_type_id='22' class='float_left image_div'  id='image_showpage_cast_iphone_item_showpage_cast' showpage_cast_items_image_id='<?php echo ( isset( $data['showpage_cast_items'][0]['showpage_cast_iphone_items_image_id']) ?$data['showpage_cast_items'][0]['showpage_cast_iphone_items_image_id'] :0 )    ?>'>
+							<div image_type='showpage_cast_iphone' image_type_id='22' class='float_left image_div'  id='image_showpage_cast_iphone_item_showpage_cast' showpage_cast_items_image_id='<?php echo $data['showpage_cast_items'][0]['showpage_cast_iphone_items_image_id']    ?>'>
 							</div>
 							
 					
@@ -267,7 +267,7 @@ function submit_inputs(close_fancyzoom){
 						table:'showpage_cast_items',
 						crud:'update',
 						set_what_array: $('#image_showpage_cast_item_form').serialize(),
-						id:'<?php echo ( isset( $data['showpage_cast_items'][0]['id'] ) ? $data['showpage_cast_items'][0]['id'] :0 )   ?>'
+						id:'<?php echo $data['showpage_cast_items'][0]['id']    ?>'
 						},function(xml) {
 
 							//var db_response = $(xml).find('db_response').text();
@@ -295,7 +295,7 @@ function open_dialogue_upload_image(
 
 		$("#iframe_src_for_image")
 		.css({width:'350px',height:'80px'})
-		.attr('src','<?php echo base_url();    ?>index.php/main/upload_image_form?what_item=showpage_cast&showpage_cast_item_id=<?php echo ( isset( $data['showpage_cast_items'][0]['id'] )  ? $data['showpage_cast_items'][0]['id']:0 )   ?>&showpage_cast_items_image_id=' + showpage_cast_items_image_id +'&image_type='+image_type +'&image_type_id='+image_type_id);
+		.attr('src','<?php echo base_url();    ?>index.php/main/upload_image_form?what_item=showpage_cast&showpage_cast_item_id=<?php echo $data['showpage_cast_items'][0]['id']    ?>&showpage_cast_items_image_id=' + showpage_cast_items_image_id +'&image_type='+image_type +'&image_type_id='+image_type_id);
 
 			
 		var width_of_dialog = 410;
@@ -315,5 +315,4 @@ function open_dialogue_upload_image(
 </script>
 
 <?php
-
 
