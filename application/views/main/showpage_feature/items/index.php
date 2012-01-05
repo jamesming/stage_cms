@@ -23,22 +23,28 @@
 			
 					#showpage_feature_item_outside_container div.showpage_feature_item_row{
 					border-bottom:1px solid lightgray;
-					padding:5px;
+					padding-top:5px;
+					height:80px;
 					}
 								#showpage_feature_item_outside_container   .showpage_feature_item_row .name_of{
 								width:110px;
 								font-weight:bold;
-								font-size:20px;
+								font-size:14px;
 								padding-top:0px;
 								text-align:center;
 								color:gray;
 								}
 								
-	
+											#showpage_feature_item_outside_container   .showpage_feature_item_row .order{
+											width:20px;
+											}								
+											
+				
 											
 								#showpage_feature_item_outside_container   .showpage_feature_item_row .showpage_feature_item_trash{
+								margin-left:5px;
 								width:46px;
-								padding-top:90px;
+								padding-top:0px;
 								}
 								
 											#showpage_feature_item_outside_container   .showpage_feature_item_row .showpage_feature_item_trash img{
@@ -66,7 +72,9 @@
 						<div  class='float_left name_of '  showpage_feature_item_id='<?php echo  $showpage_feature_item['id']   ?>'  href='#fancy_zoom_div' >
 							<?php echo  $showpage_feature_item['name']   ?>
 						</div>
-
+						<div  class=' float_left ' >
+							<input  class='order '  showpage_feature_item_id='<?php  echo $showpage_feature_item['id']   ?>' name="order" type="" value="<?php echo $showpage_feature_item['order']     ?>">
+						</div>
 						<div  class='float_left  showpage_feature_item_trash' >
 							<img src='<?php   echo base_url()  ?>images/trash.gif'   showpage_feature_item_id='<?php echo  $showpage_feature_item['id']   ?>' >
 						</div>			
@@ -87,6 +95,21 @@
 		<script type="text/javascript" language="Javascript">  
 			
 			$(document).ready(function() {
+				
+				$('.order').blur(function(event) {
+
+						$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
+							table:'showpage_feature_items',
+							id:$(this).attr('showpage_feature_item_id'),
+							crud:'update',
+							set_what_array:$(this).serialize()
+							},function(data) {
+							
+
+								document.location.reload(true);
+								
+						});		
+				});		
 
 				$('#addshowpage_featureItem').css({cursor:'pointer'}).fancyZoom().click(function(event) {
 
@@ -116,8 +139,6 @@
 
 
 					  if(  confirm('Do you really want to delete this item?')  ){
-					  	
-					  	
 
 									$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
 										table:'showpage_feature_items',
