@@ -109,7 +109,7 @@ display:none;
 			<tr>
 				<td   class='main_table ' colspan=2>
 					<div  id='textarea_div'   >
-							<textarea  class=' clearfix' name='content' id='text_area'><?php echo $data['showpage_cast_items'][0]['content']    ?></textarea>
+							<textarea  class=' clearfix' name='content' id='text_area'><?php echo ( isset( $data['showpage_cast_items'][0]['content']) ? $data['showpage_cast_items'][0]['content']:'' )    ?></textarea>
 					</div>
 				</td>
 			</tr>	
