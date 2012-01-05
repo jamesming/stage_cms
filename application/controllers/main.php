@@ -263,7 +263,7 @@ class Main extends CI_Controller {
 	 
 	 // brk 
 	public function get_showpage_cast_form(){
-		echo '<pre>';print_r(   $this->input->get('showpage_cast_item_id') );echo '</pre>';  exit;
+		
 				$data['showpage_cast_items'] = $this->query->get_showpage_cast_items(
 					array(
 					'showpage_cast_items.id' =>  $this->input->get('showpage_cast_item_id'),
@@ -271,6 +271,8 @@ class Main extends CI_Controller {
 					)
 				);			
 
+
+echo '<pre>';print_r( $data['showpage_cast_items']  );echo '</pre>';  exit;
 				
 				$this->load->view('main/showpage_cast/items/form_view', 
 					array( 'data' => $data )
