@@ -295,7 +295,7 @@ function open_dialogue_upload_image(
 
 		$("#iframe_src_for_image")
 		.css({width:'350px',height:'80px'})
-		.attr('src','<?php echo base_url();    ?>index.php/main/upload_image_form?what_item=showpage_cast&showpage_cast_item_id=<?php echo ( isset( $data['showpage_cast_items'][0]['id'] ) $data['showpage_cast_items'][0]['id'] ? :0 )   ?>&showpage_cast_items_image_id=' + showpage_cast_items_image_id +'&image_type='+image_type +'&image_type_id='+image_type_id);
+		.attr('src','<?php echo base_url();    ?>index.php/main/upload_image_form?what_item=showpage_cast&showpage_cast_item_id=<?php echo ( isset( $data['showpage_cast_items'][0]['id'] )  ? $data['showpage_cast_items'][0]['id']:0 )   ?>&showpage_cast_items_image_id=' + showpage_cast_items_image_id +'&image_type='+image_type +'&image_type_id='+image_type_id);
 
 			
 		var width_of_dialog = 410;
