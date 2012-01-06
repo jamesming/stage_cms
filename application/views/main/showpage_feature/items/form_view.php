@@ -93,7 +93,7 @@ display:none;
 			<tr>
 				<td  class='main_table '> Title
 				</td>
-				<td  class='main_table '><input name="title" id="" type="text" value="<?php echo $data['showpage_feature_items'][0]['title']    ?>">
+				<td  class='main_table '><input  name="title" id="" type="text" value="<?php echo $data['showpage_feature_items'][0]['title']    ?>">&nbsp;include title?<input showpage_feature_item_id='<?php  echo $data['showpage_feature_items'][0]['id']   ?>' <?php   echo (isset($data['showpage_feature_items'][0]['include_title']) && $data['showpage_feature_items'][0]['include_title'] == 1? " checked ": "" )  ?>  name="include_title" id="include_title" type="checkbox" value="">
 				</td>
 			</tr>
 			
@@ -172,6 +172,36 @@ $this->load->view('javascript/htmlbox_wsiwyg.php');
 	
 
 	$(document).ready(function() {
+		
+		
+		
+				$('#include_title').click(function(event) {
+					
+					
+						if( $(this).is(':checked')){
+							include_title = 1;
+						}else{
+							include_title = 0;
+						};
+
+						$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
+							table:'showpage_feature_items',
+							id:$(this).attr('showpage_feature_item_id'),
+							crud:'update',
+							set_what_array:'include_title='+include_title
+							},function(xml) {
+							
+								var status = $(xml).find('status').text();
+								var message = $(xml).find('message').text();
+								
+								
+						});	
+							
+							
+				});
+		
+		
+		
 		
 		
 				$('.image_div').css({cursor:'pointer'}).click(function(event) {
