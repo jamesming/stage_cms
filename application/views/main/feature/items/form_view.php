@@ -53,6 +53,10 @@ form#image_feature_item_form div#image_feature_item_title_graphic{
 	height:126px;
 	margin-left: 72px;
 }
+form#image_feature_item_form #short_content{
+width:753px;
+}
+
 form#image_feature_item_form #textarea_div{
 width:100%;
 height: 180px;
@@ -119,7 +123,15 @@ display:none;
 
 				</td>
 			</tr>	
-			
+			<tr>
+				<td  class='main_table ' >Shortened 
+				</td>				
+				<td   class='main_table ' >
+					<div    >
+							<textarea    class=' clearfix' name='short_content' id='short_content'><?php echo  ( isset( $data['feature_items'][0]['short_content'] ) ? $data['feature_items'][0]['short_content'] :'' )  ?></textarea>
+					</div>
+				</td>
+			</tr>	
 			<tr>
 				<td   colspan=2>
 					<div>
