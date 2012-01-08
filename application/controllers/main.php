@@ -86,7 +86,7 @@ class Main extends CI_Controller {
 			    
 			    
 			    case 'feature':
-		
+		//brk
 						$data = $this->custom->prepare_feature_items( 
 								$segment4,
 								$this->input->get()
@@ -206,7 +206,7 @@ class Main extends CI_Controller {
 	 
 	 
 	public function get_feature_form(){
-		
+		//brk
 				$data['feature_items'] = $this->query->get_feature_items(
 							$where_array = array( 'id' => $this->input->get('feature_item_id')) 
 				);	

@@ -245,6 +245,7 @@
 				$('#showpage_item_outside_container   .showpage_item_row .name_of').css({cursor:'pointer'}).fancyZoom().click(function(event) {
 					
 						make_yellow($(this));
+						
 						$("#iframe_src").attr('src','<?php echo base_url();    ?>index.php/main/get_showpage_form?showpage_item_id=' + $(this).attr('showpage_item_id')  );
 				
 				});		

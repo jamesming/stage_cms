@@ -90,7 +90,10 @@ function prepare_nu_spotlight_items( $segment4, $get_array){
 function prepare_feature_items( $segment4, $get_array){
 	
 		
-				$feature_items = $this->CI->query->get_feature_items();	
+				$feature_items = $this->CI->query->get_feature_items(
+				$where_array = array(
+				'deactivate !=' => '1'			
+				));	
 										
 				$data['feature_items'] = $feature_items;
 					

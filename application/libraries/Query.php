@@ -459,15 +459,13 @@ function query(){
 			$feature_items_raw = $this->CI->my_database_model->select_from_table( 
 			$table = 'feature_items', 
 			$select_what = '*', 
-			$where_array = array(
-				'deactivate !=' => '1'			
-			), 
+			$where_array, 
 			$use_order = TRUE, 
 			$order_field = 'created', 
 			$order_direction = 'desc', 
 			$limit = -1
 			);
-			
+
 			$image_types_array = array(
 								'feature_large_items_image_id' => 17,
 								'feature_title_graphic_items_image_id' => 20
