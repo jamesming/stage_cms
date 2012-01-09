@@ -73,7 +73,7 @@
 						
 						
 						<div  class='float_left name_of '  feature_item_id='<?php echo  $feature_item['id']   ?>'  href='#fancy_zoom_div' >
-							<?php echo  $feature_item['name']   ?>
+							<?php echo  $feature_item['title']   ?>
 						</div>
 						<div  class='float_left feature_item_launch'   >
 							<a target='_blank' href='http://stage.mynuvotv.com/features/<?php echo $feature_item['name']    ?>'>Preview</a>
