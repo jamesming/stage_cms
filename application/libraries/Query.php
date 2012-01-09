@@ -506,8 +506,8 @@ function query(){
 			$select_what = '*', 
 			$where_array, 
 			$use_order = TRUE, 
-			$order_field = 'created', 
-			$order_direction = 'desc', 
+			$order_field = 'order', 
+			$order_direction = 'asc', 
 			$limit = -1
 			);
 
