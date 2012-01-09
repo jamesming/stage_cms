@@ -37,7 +37,7 @@
 								
 								#event_item_outside_container   .event_item_row .event_item_launch{
 								
-								font-size:30px;
+								font-size:20px;
 								 
 								 margin-right:200px;
 								}								
@@ -70,7 +70,15 @@
 				
 					<div  class='clearfix event_item_row'>
 						
-						
+						<div class='float_left '>
+							<style>
+							.order{
+								width:20px;
+								margin-right:10px;  
+							 }
+							</style>
+							<input  name="order"  id='<?php echo $event_item['id']    ?>' class='order '  type="" value="<?php echo (isset($event_item['order']) ?$event_item['order']:'')    ?>"   >
+						</div>
 						<div  class='float_left name_of '  event_item_id='<?php echo  $event_item['id']   ?>'  href='#fancy_zoom_div' >
 							<?php echo  $event_item['name']   ?>
 						</div>
@@ -78,10 +86,7 @@
 							<a target='_blank' href='http://stage.mynuvotv.com/nu-voices'>Preview</a>
 						</div>	
 						
-						<div class='float_left '>
-							<input <?php echo (isset($event_item['publish']) && $event_item['publish']==1?' checked ':'')    ?>  class='publish 'type="checkbox" value=""  event_item_id='<?php echo  $event_item['id']   ?>'>Publish
-						</div>
-						
+
 						<div  class='float_left  event_item_trash' >
 							<img src='<?php   echo base_url()  ?>images/trash.gif'   event_item_id='<?php echo  $event_item['id']   ?>' >
 						</div>			
@@ -117,6 +122,24 @@
 			 
 			
 			$(document).ready(function() {
+				
+				
+				
+				$('.order').blur(function(event) {
+
+							
+						$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
+							table:'event_items',
+							id:$(this).attr('id'),
+							crud:'update',
+							set_what_array:$(this).serialize()
+							},function(data) {
+
+								document.location.reload(true);
+								
+						});		
+				});			
+				
 
 
 				$('.publish').click(function(event) {
