@@ -488,6 +488,38 @@ function query(){
 			
 	}
 
+
+
+/**
+ * get_event_items
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @access public
+ * @return array  */ 
+	
+	function get_event_items( $where_array = array() ){
+		
+			$event_items = $this->CI->my_database_model->select_from_table( 
+			$table = 'event_items', 
+			$select_what = '*', 
+			$where_array, 
+			$use_order = TRUE, 
+			$order_field = 'created', 
+			$order_direction = 'desc', 
+			$limit = -1
+			);
+
+			if( isset($event_items)){
+				return $event_items;
+			}else{
+				return;
+			};
+			
+			
+	}
+
 /**
  * get_showpage_items
  *

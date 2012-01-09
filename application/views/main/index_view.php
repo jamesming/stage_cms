@@ -20,7 +20,7 @@ height:auto;
 }
 			
 #main_section div#parent_tabs{
-					width:700px;
+					width:780px;
 					clear:both;
 					height:auto;
 					margin:0px 0px 0px 20px;
@@ -48,6 +48,10 @@ height:auto;
 
 #main_section div#parent_tabs li.showpage{
 		background:skyblue;
+}		
+
+#main_section div#parent_tabs li.event{
+		background:gold;
 }				
 #main_section div.children_tabs{
 		width:700px;
@@ -90,7 +94,7 @@ height:690px;
 
 		<div  id='parent_tabs'>
 			
-<?php if (  in_array( $data['segment3'], array('carousel','nu_spotlight','feature','showpage','calendar'))  ) { ?>			
+<?php if (  in_array( $data['segment3'], array('carousel','nu_spotlight','feature','showpage','event','calendar'))  ) { ?>			
   		<ul>
   			<li  class='carousel'>
   				<a href='<?php   echo base_url()  ?>index.php/main/index/carousel'>
@@ -115,8 +119,11 @@ height:690px;
   				Show Pages
   				</a>
   			</li>
-  			
-  			
+  			<li  class='event ' >
+  				<a href='<?php   echo base_url()  ?>index.php/main/index/event'>
+  				Events
+  				</a>
+  			</li>	
   			<li  class='calendar ' >
   				<a href='<?php   echo base_url()  ?>index.php/main/index/calendar'>  				Calendar
   				</a>

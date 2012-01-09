@@ -106,6 +106,26 @@ function prepare_feature_items( $segment4, $get_array){
 	
 }
 
+function prepare_event_items( $segment4, $get_array){
+	
+		
+				$event_items = $this->CI->query->get_event_items(
+				$where_array = array(
+				'deactivate !=' => '1'			
+				));	
+										
+				$data['event_items'] = $event_items;
+					
+
+				
+				$data['segment4'] = $segment4;
+				$data['segment3'] = 'event';
+				
+				return $data;
+	
+}
+
+
 function prepare_showpage_items( $segment4, $get_array){
 	
 		

@@ -86,7 +86,7 @@ class Main extends CI_Controller {
 			    
 			    
 			    case 'feature':
-		//brk
+
 						$data = $this->custom->prepare_feature_items( 
 								$segment4,
 								$this->input->get()
@@ -106,6 +106,20 @@ class Main extends CI_Controller {
 						 
 
 			    break;
+			    
+			    
+			    case 'event':
+
+						$data = $this->custom->prepare_event_items( 
+								$segment4,
+								$this->input->get()
+						 );
+						 
+						 
+						$data['event_items']= $this->tools->object_to_array( $data['event_items']);
+				
+
+			    break;			    
 			    
 			    case 'showpage_cast':
 		
@@ -219,7 +233,30 @@ class Main extends CI_Controller {
 		
 	}	
 	
-	
+	/**
+	 * get_event_form
+	 * 
+	 * @package BackEnd
+	 * @author James Ming <jamesming@gmail.com>
+	 * @path /index.php/home/get_event_form
+	 * @access public
+	 */
+	 
+	 
+	public function get_event_form(){
+
+				$data['event_items'] = $this->query->get_event_items(
+							$where_array = array( 'id' => $this->input->get('event_item_id')) 
+				);	
+				
+				$data['event_items']= $this->tools->object_to_array( $data['event_items']);
+				
+
+				$this->load->view('main/event/items/form_view', 
+					array( 'data' => $data )
+				);
+		
+	}	
 	/**
 	 * get_showpage_form
 	 * 
@@ -2076,7 +2113,7 @@ submitted
 
 
 function t(){
-				$table = 'showpage_parents';
+				$table = 'event_items';
 				
 				$this->my_database_model->	create_generic_table($table );
 				
@@ -2086,7 +2123,9 @@ function t(){
 				
 	
 															'name' => array(
-				                                               'type' => 'varchar(255)')                		                                                                      		                                               			                                               				                                                                                           
+				                                               'type' => 'varchar(255)'),
+				                      'content' => array(
+				                                               'type' => 'blob')
 				              ); 
 				              
 				$this->my_database_model->add_column_to_table_if_exist(
