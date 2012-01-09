@@ -84,7 +84,7 @@ height:690px;
 
 <body>
 <div  id='account_menu' class='container'  >
-<a href='<?php echo base_url()    ?>index.php/home/logout'>Log Outta Here</a>
+<a href='<?php echo base_url()    ?>index.php/home/logout'>Log Out</a>
 </div>
 <div  id='main_section'  class='container  rounded_bg' >
 	<div class="top">
