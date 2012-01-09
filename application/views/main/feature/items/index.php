@@ -37,19 +37,20 @@
 								
 								#feature_item_outside_container   .feature_item_row .feature_item_launch{
 								
-								font-size:30px;
+								font-size:20px;
 								 
 								 margin-right:200px;
 								}								
 									
 											
 								#feature_item_outside_container   .feature_item_row .feature_item_trash{
-								
+								margin-left:70px;
 								}
 								
 
 											#feature_item_outside_container   .feature_item_row .feature_item_trash img{
 											width:30px;
+											
 											}	
 
 		</style>

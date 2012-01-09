@@ -129,7 +129,11 @@ function prepare_event_items( $segment4, $get_array){
 function prepare_showpage_items( $segment4, $get_array){
 	
 		
-				$showpage_items = $this->CI->query->get_showpage_items();	
+				$showpage_items = $this->CI->query->get_showpage_items(
+				$where_array = array(
+				'deactivate !=' => '1'			
+				)
+				);	
 										
 				$data['showpage_items'] = $showpage_items;
 					

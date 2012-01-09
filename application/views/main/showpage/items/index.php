@@ -24,10 +24,11 @@
 					#showpage_item_outside_container div.showpage_item_row{
 					border-bottom:1px solid lightgray;
 					padding:5px;
+					
 					}
 					
 						#showpage_item_outside_container   .showpage_item_row div{
-							margin-left:10px;
+							margin-left:5px;
 							text-align:left;
 							font-size:11px;	
 							font-weight:bold;
@@ -56,16 +57,22 @@
 								}			
 								
 								#showpage_item_outside_container   .showpage_item_row .show_page_mobile_gallery_photo{
-									width:100px;
+									width:50px;
+									white-space:nowrap;	
 								}											
 								
-								#showpage_item_outside_container   .showpage_item_row .publish{			
+								#showpage_item_outside_container   .showpage_item_row .publish{	
+									margin-left:32px;			
 									white-space:nowrap;			
 													}
 
 								#showpage_item_outside_container   .showpage_item_row .preview{			
 									margin-left:52px;	
 								}
+								
+								#showpage_item_outside_container   .showpage_item_row .trash{			
+										margin-left:4px;	
+								}								
 
 		</style>
 
@@ -131,7 +138,9 @@
 								Preview</a>
 						</div>
 												
-					
+						<div  class='float_left  trash' >
+							<img width='20' src='<?php   echo base_url()  ?>images/trash.gif'   showpage_item_id='<?php echo  $showpage_item['id']   ?>' >
+						</div>
 					</div>
 					
 				<?php }
@@ -164,8 +173,35 @@
 			
 			$(document).ready(function() {
 				
-				
-				
+
+				$('.trash img').css({cursor:'pointer'}).click(function(event) {
+
+
+					  if(  confirm('Do you really want to delete this item?')  ){
+					  	
+
+						
+									$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
+										table:'showpage_items',
+										id:$(this).attr('showpage_item_id'),
+										crud:'update',
+										set_what_array:'deactivate=1'
+										},function(xml) {
+										
+			
+											var db_response = $(xml).find('db_response').text();								
+											alert('deactivated on: '+db_response );
+											
+											window.location.reload(true);
+											
+									});	
+			    
+					  }
+
+					
+					
+				});	
+
 				$('.isThisHot').click(function(event) {
 					
 						if( $(this).is(':checked')){
