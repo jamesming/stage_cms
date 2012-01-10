@@ -444,7 +444,7 @@ Thank you! We appreciate your feedback on Curvy Girls as we strive to bring nuvo
 					
 					if( $key == 'video_link'){
 
-						$report['video_link'] = "<a href='".$value."'>".$value."</a>";
+						$report['video_link'] = "<a target='_blank' href='".$value."'>".$value."</a>";
 					};					
 			}
 			$report[$key] = $report_raw;
