@@ -29,6 +29,10 @@ padding-bottom:5px;
 
 form#image_showpage_cast_item_form table#main div.image_assets{
 margin-top:25px;
+width:250px;
+text-align:left;
+margin-right:150px;
+font-size:11px;
 }
 form#image_showpage_cast_item_form div#image_showpage_cast_item_showpage_cast{
 	background-image: url(<?php echo base_url();    ?>uploads/showpage_cast_items_images/<?php
@@ -125,6 +129,8 @@ display:none;
 				
 				<td class='main_table image_assets'  colspan=2>
 					<div  class='float_left image_assets' >
+							<div>Website Image (must not be blank empty)
+							</div>
 							<div image_type='showpage_cast' image_type_id='13' class='float_left image_div'  id='image_showpage_cast_item_showpage_cast' showpage_cast_items_image_id='<?php echo $data['showpage_cast_items'][0]['showpage_cast_items_image_id']    ?>'>
 							</div>
 							
@@ -133,6 +139,8 @@ display:none;
 
 
 					<div  class='float_left image_assets' >
+							<div>Mobile Image.  Must be hi-res(iphone4s)
+							</div>						
 							<div image_type='showpage_cast_iphone' image_type_id='22' class='float_left image_div'  id='image_showpage_cast_iphone_item_showpage_cast' showpage_cast_items_image_id='<?php echo $data['showpage_cast_items'][0]['showpage_cast_iphone_items_image_id']    ?>'>
 							</div>
 							

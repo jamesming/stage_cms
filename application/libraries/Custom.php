@@ -151,7 +151,8 @@ function prepare_showpage_cast_items( $segment4, $get_array){
 				$showpage_cast_items = $this->CI->query->get_showpage_cast_items(
 					$where_array = array(
 					'showpage_cast_items.showpage_item_id' => $get_array['showpage_item_id'],
-					'showpage_cast_items_images.image_type_id' => 13
+					'showpage_cast_items_images.image_type_id' => 13,
+					'deactivate !=' => '1'
 					),
 				$select_what = '
 								showpage_cast_items.id,

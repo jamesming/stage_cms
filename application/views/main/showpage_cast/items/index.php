@@ -2,7 +2,7 @@
 			
 		iframe#iframe_src{
 		width:850px;
-		height:920px;	
+		height:570px;	
 		}
 			
 			
@@ -28,7 +28,7 @@
 								#showpage_cast_item_outside_container   .showpage_cast_item_row .name_of{
 								width:110px;
 								font-weight:bold;
-								font-size:20px;
+								font-size:16px;
 								padding-top:0px;
 								text-align:center;
 								color:gray;
@@ -38,7 +38,7 @@
 											
 								#showpage_cast_item_outside_container   .showpage_cast_item_row .showpage_cast_item_trash{
 								width:46px;
-								padding-top:90px;
+								padding-top:0px;
 								}
 								
 											#showpage_cast_item_outside_container   .showpage_cast_item_row .showpage_cast_item_trash img{
@@ -67,24 +67,26 @@
 				
 					<div  class='clearfix showpage_cast_item_row'>
 						
+						<div class='float_left '>
+							<input  name="order"  showpage_cast_items_image_id='<?php echo $showpage_cast_item['showpage_cast_items_image_id']    ?>'class='order '  type="" value="<?php echo (isset($showpage_cast_item['order']) ?$showpage_cast_item['order']:'')    ?>">
+						</div>
+						<div class='float_left '>
+							<input name="show_on_showpage" <?php echo (isset($showpage_cast_item['show_on_showpage']) && $showpage_cast_item['show_on_showpage']==1?' checked ':'')    ?> showpage_cast_items_image_id='<?php echo $showpage_cast_item['showpage_cast_items_image_id']    ?>'  class='show_on_showpage '  type="checkbox" value="1">
+						</div>	
+																
 						
 						<div  class='float_left name_of '  showpage_cast_item_id='<?php echo  $showpage_cast_item['id']   ?>'  href='#fancy_zoom_div' >
 							<?php echo  $showpage_cast_item['name']   ?>
 						</div>
 						
-						<div class='float_left '>
-							<input name="show_on_showpage" <?php echo (isset($showpage_cast_item['show_on_showpage']) && $showpage_cast_item['show_on_showpage']==1?' checked ':'')    ?> showpage_cast_items_image_id='<?php echo $showpage_cast_item['showpage_cast_items_image_id']    ?>'  class='show_on_showpage '  type="checkbox" value="1">
-						</div>	
-										
-						<div class='float_left '>
-							<input  name="order"  showpage_cast_items_image_id='<?php echo $showpage_cast_item['showpage_cast_items_image_id']    ?>'class='order '  type="" value="<?php echo (isset($showpage_cast_item['order']) ?$showpage_cast_item['order']:'')    ?>">
-						</div>
+
+
 						<div  class='float_left ' >
 							<img src='<?php echo base_url()    ?>uploads/showpage_cast_items_images/<?php  echo $showpage_cast_item['showpage_cast_items_image_id']   ?>/image_tiny.png'/>
 						</div>
 
-						<div  class='float_left  showpage_cast_item_trash' >
-							<img src='<?php   echo base_url()  ?>images/trash.gif'   showpage_cast_item_id='<?php echo  $showpage_cast_item['id']   ?>' >
+						<div  class='float_left  trash' >
+							<img src='<?php   echo base_url()  ?>images/trash.gif'   showpage_cast_item_id='<?php echo  $showpage_cast_item['id']   ?>'   style='margin-left:500px;width:25px'  >
 						</div>			
 					
 					</div>
@@ -103,8 +105,34 @@
 		<script type="text/javascript" language="Javascript">  
 			
 			$(document).ready(function() {
-				
-				
+
+
+				$('.trash img').css({cursor:'pointer'}).click(function(event) {
+
+
+					  if(  confirm('Do you really want to delete this item?')  ){
+						
+								$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
+									table:'showpage_cast_items',
+									id:$(this).attr('showpage_cast_item_id'),
+									crud:'update',
+									set_what_array:'deactivate=1'
+									},function(xml) {
+		
+										var db_response = $(xml).find('db_response').text();								
+										alert('deactivated on: '+db_response );
+										
+										window.location.reload(true);
+										
+								});	
+			    
+					  }
+
+					
+					
+				});	
+
+
 				$('.show_on_showpage').click(function(event) {
 					
 						if( $(this).is(':checked')){
