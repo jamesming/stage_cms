@@ -37,16 +37,23 @@
 								
 											#showpage_feature_item_outside_container   .showpage_feature_item_row .order{
 											width:20px;
+											margin-left:10px;
 											}								
 											
 				
 											
-								#showpage_feature_item_outside_container   .showpage_feature_item_row .showpage_feature_item_trash{
-								margin-left:5px;
+								#showpage_feature_item_outside_container   .showpage_feature_item_row .trash{
+								margin-left:700px;
 								width:46px;
 								padding-top:0px;
 								}
 								
+								
+											#showpage_feature_item_outside_container   .showpage_feature_item_row .trash img{
+											width:25px;
+											}	
+											
+																		
 											#showpage_feature_item_outside_container   .showpage_feature_item_row .showpage_feature_item_trash img{
 											width:30px;
 											}	
@@ -67,15 +74,15 @@
 				 foreach( $data['showpage_feature_items']  as  $showpage_feature_item ){?>
 				
 					<div  class='clearfix showpage_feature_item_row'>
-						
+						<div  class=' float_left ' >
+							<input  class='order '  showpage_feature_item_id='<?php  echo $showpage_feature_item['id']   ?>' name="order" type="" value="<?php echo $showpage_feature_item['order']     ?>">
+						</div>						
 						
 						<div  class='float_left name_of '  showpage_feature_item_id='<?php echo  $showpage_feature_item['id']   ?>'  href='#fancy_zoom_div' >
 							<?php echo  $showpage_feature_item['name']   ?>
 						</div>
-						<div  class=' float_left ' >
-							<input  class='order '  showpage_feature_item_id='<?php  echo $showpage_feature_item['id']   ?>' name="order" type="" value="<?php echo $showpage_feature_item['order']     ?>">
-						</div>
-						<div  class='float_left  showpage_feature_item_trash' >
+
+						<div  class='float_left  trash' >
 							<img src='<?php   echo base_url()  ?>images/trash.gif'   showpage_feature_item_id='<?php echo  $showpage_feature_item['id']   ?>' >
 						</div>			
 					
@@ -95,6 +102,35 @@
 		<script type="text/javascript" language="Javascript">  
 			
 			$(document).ready(function() {
+				
+				
+				
+				$('.trash img').css({cursor:'pointer'}).click(function(event) {
+
+
+					  if(  confirm('Do you really want to delete this item?')  ){
+						
+								$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
+									table:'showpage_feature_items',
+									id:$(this).attr('showpage_feature_item_id'),
+									crud:'update',
+									set_what_array:'deactivate=1'
+									},function(xml) {
+		
+										var db_response = $(xml).find('db_response').text();								
+										alert('deactivated on: '+db_response );
+										
+										window.location.reload(true);
+										
+								});	
+			    
+					  }
+
+					
+					
+				});	
+				
+				
 				
 				$('.order').blur(function(event) {
 

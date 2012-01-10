@@ -266,7 +266,9 @@ function prepare_showpage_feature_items( $segment4, $get_array){
 	
 		
 				$showpage_feature_items = $this->CI->query->get_showpage_feature_items(
-				array('showpage_item_id' => $get_array['showpage_item_id'])
+				array(
+							'showpage_item_id' => $get_array['showpage_item_id'],
+							'deactivate !=' => '1')
 				);	
 										
 				$data['showpage_feature_items'] = $showpage_feature_items;
