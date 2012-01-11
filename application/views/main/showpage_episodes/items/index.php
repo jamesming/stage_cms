@@ -26,9 +26,9 @@
 					padding:5px;
 					}
 								#showpage_episodes_item_outside_container   .showpage_episodes_item_row .name_of{
-								width:110px;
+								width:410px;
 								font-weight:bold;
-								font-size:20px;
+								font-size:12px;
 								padding-top:0px;
 								text-align:center;
 								color:gray;
@@ -38,11 +38,11 @@
 											
 								#showpage_episodes_item_outside_container   .showpage_episodes_item_row .showpage_episodes_item_trash{
 								width:46px;
-								padding-top:90px;
+								padding-top:px;
 								}
 								
 											#showpage_episodes_item_outside_container   .showpage_episodes_item_row .showpage_episodes_item_trash img{
-											width:30px;
+											width:20px;
 											}	
 
 		</style>
