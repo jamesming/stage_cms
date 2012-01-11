@@ -61,7 +61,9 @@
 				
 					<div  class='clearfix showpage_episodes_item_row'>
 						
-						
+						<div class='float_left '>
+							<input  name="order"  showpage_episodes_item_id='<?php echo $showpage_episodes_item['id']    ?>' class='order '  type="" value="<?php echo (isset($showpage_episodes_item['order']) ? $showpage_episodes_item['order']:'')    ?>"   style='width:20px' >
+						</div>
 						<div  class='float_left name_of '  showpage_episodes_item_id='<?php echo  $showpage_episodes_item['id']   ?>'  href='#fancy_zoom_div' >
 							<?php echo  $showpage_episodes_item['name']   ?>
 						</div>
@@ -86,6 +88,23 @@
 		<script type="text/javascript" language="Javascript">  
 			
 			$(document).ready(function() {
+				
+				
+				$('.order').blur(function(event) {
+
+							
+						$.post("<?php echo base_url(). 'index.php/main/ajax_update';    ?>",{
+							table:'showpage_episodes_items',
+							id:$(this).attr('showpage_episodes_item_id'),
+							crud:'update',
+							set_what_array:$(this).serialize()
+							},function(data) {
+							
+
+								document.location.reload(true);
+								
+						});		
+				});						
 
 				$('#addshowpage_episodesItem').css({cursor:'pointer'}).fancyZoom().click(function(event) {
 
